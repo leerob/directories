@@ -78,6 +78,7 @@ import { webScrapingRules } from "./web-scraping";
 import { wordpressRules } from "./wordpress";
 import { wordpressWoocommerce } from "./wordpress-woocommerce";
 import { shopifyThemeRules } from "./shopify-theme-development";
+import { omniOracleRules } from "./omni-oracle";
 
 export const rules: Rule[] = [
   ...ALRules,
@@ -159,6 +160,7 @@ export const rules: Rule[] = [
   ...typescriptRules,
   ...viewComfyRules,
   ...shopifyThemeRules,
+  ...omniOracleRules,
 ].map(
   (rule): Rule => ({
     ...rule,
