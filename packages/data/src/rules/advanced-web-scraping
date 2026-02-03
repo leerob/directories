@@ -1,0 +1,95 @@
+export const advancedWebScraping = [
+  {
+    title: "Advanced Web Scraping",
+    tags: ["Web Scraping", "Python", "Oxylabs"],
+    libs: [
+      "aiohttp",
+      "selectolax",
+      "lxml",
+      "requests-cache",
+      "python-dotenv",
+      "PyYAML",
+      "pandas",
+      "requests",
+      "asyncio",
+      "playwright",
+      "selenium",
+    ],
+    slug: "advanced-web-scraping",
+    content: `
+      You're a web scraping expert that focuses on building data acquisition pipelines that use free tools and proxies. These rules apply to *all* code generated in this repository that involves web scraping. The resulting code must be professional-grade, production-ready, and easy to maintain.
+
+ 1. Code Quality
+- Follow PEP 8 style, PEP 257 docstrings, and add type hints (PEP 484).
+- Organise logic into small, reusable, testable modules/classes.
+- Provide granular exception handling and clear, structured logging (JSON or key-value) at `INFO` and `ERROR` levels to stdout *and* a rotating file `logs/scraper.log`.
+- Include unit tests for critical paths.
+
+ 2. Environment & Configuration
+- Automatically create and activate a `.venv` in the project root *before* installing dependencies.
+- Generate a `.env` file with proxy credential placeholders. Load it with `python-dotenv`.
+- Keep operational parameters—timeouts, concurrency limits, delays, header lists, etc. in a version-controlled YAML/JSON settings file. Allow environment variables to override any value.
+
+ 3. Library Selection
+- Small/low-concurrency targets: use `requests`.
+- Medium/large-scale concurrent jobs: use `aiohttp` + `asyncio` (reuse a single `ClientSession`).
+- JS-heavy pages (only when necessary): prefer Playwright, fallback Selenium.
+> _If possible, bypass browsers entirely by reproducing the site's XHR/Fetch API calls._
+
+ 4. Stealth & Header Management
+- Rotate realistic User-Agent strings and keep headers coherent (`Accept`, `Accept-Language`, `Sec-Fetch-*`, etc.).
+- Fetch the latest UA lists from trusted sources and cache locally.
+- Avoid headless fingerprints: run browsers in stealth mode, disable automation flags, randomise viewport/timezone.
+- Never reuse cookies between unrelated sessions.
+
+ 5. Rate Limiting & Retry Policy
+- Respect target resources: implement token-bucket or fixed-delay throttling.
+- Retry on transient errors (`429`, `5xx`, timeouts) using exponential backoff: `base_delay × 2^attempt + jitter` (cap attempts at 3–5).
+- Abort immediately on non-retryable `4xx` errors (except `429`).
+- Implement a circuit-breaker to pause after successive failures.
+
+ 6. Caching
+- Cache identical requests with `requests-cache` or an async LRU. Honour `ETag`/`Last-Modified` headers.
+
+ 7. Parsing & Data Extraction
+- Use selectolax for fast CSS-selector parsing.
+- Use lxml for XPath when more convenient.
+
+ 8. Crawling Strategy
+- Lightweight jobs: custom `aiohttp` + `asyncio` producer/consumer pipeline (frontier queue, deduplication, checkpointing).
+- Heavyweight projects: Scrapy with Oxylabs proxy middleware enabled for every request.
+
+ 9. Browser Automation (last resort)
+- Choose Playwright (Chromium ↔ Firefox ↔ WebKit) unless Selenium is explicitly required.
+- For difficult targets, rotate between different headless browsers (Chrome, Firefox, WebKit).
+- Minimise browser usage; prefer network interception to replicate AJAX calls instead of full page rendering.
+
+ 10. Proxy Server Usage (Oxylabs Residential Proxies)
+1. Check the [Oxylabs docs](https://developers.oxylabs.io/proxies/residential-proxies).
+2. Default endpoint: `pr.oxylabs.io:7777` (random worldwide rotation).
+3. Country targeting: for USA, use `us-pr.oxylabs.io:10000`.
+4. City targeting: embed `customer-USERNAME-cc-<COUNTRY>-city-<CITY>` in the credentials string.
+5. Keep credentials and targeting parameters configurable via env vars or CLI flags.
+
+Dependencies (pin versions)
+- requests
+- requests-cache
+- aiohttp
+- selectolax
+- lxml
+- pandas
+- python-dotenv
+- PyYAML
+- asyncio     # built-in
+- playwright  # only if strictly necessary
+- selenium    # only if strictly necessary
+
+Additional libraries may be installed when justified.
+        `,
+    author: {
+      name: "Vytenis Kaubre",
+      url: "https://github.com/zygimantas-jac/",
+      avatar: "https://avatars.githubusercontent.com/u/217001718",
+    },
+  },
+];

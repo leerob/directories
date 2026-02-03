@@ -1,0 +1,127 @@
+# Chatwoot Project Documentation
+
+## Estructura del Proyecto
+@app/models/
+- Modelos principales como Conversation, Message, Contact, Account
+- Usar validaciones de ActiveRecord y callbacks cuando sea necesario
+
+@app/controllers/
+- Controllers RESTful siguiendo convenciones Rails
+- API controllers en api/v1/
+- Usar strong parameters y manejo de errores consistente
+
+@app/services/
+- Servicios para lógica de negocio compleja
+- Mantener servicios pequeños y enfocados
+- Ejemplos: MessageTemplates, WebhookDelivery
+
+@app/jobs/
+- Jobs de Sidekiq para tareas asíncronas
+- Nombrar jobs con sufijo Job (ej: NotificationJob)
+
+@app/javascript/
+- Componentes Vue.js
+- Store de Vuex
+- Helpers y utilidades frontend
+
+## Convenciones de Código
+
+### Ruby
+```ruby
+# Ejemplo de servicio
+class ConversationUpdateService
+  def initialize(conversation, params)
+    @conversation = conversation
+    @params = params
+  end
+
+  def perform
+    update_status
+    notify_participants
+  end
+
+  private
+
+  def update_status
+    # lógica aquí
+  end
+end
+```
+
+### Vue
+```vue
+<!-- Ejemplo de componente -->
+<template>
+  <div class="conversation-view">
+    <message-list :messages="messages" />
+    <reply-box @send="handleSend" />
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ConversationView',
+  props: {
+    conversationId: {
+      type: Number,
+      required: true
+    }
+  }
+}
+</script>
+```
+
+## Patrones Comunes
+
+### WebSockets
+- Usar Action Cable para comunicación en tiempo real
+- Mantener canales específicos por funcionalidad
+- Implementar reconexión automática
+
+### Redis
+- Usar para caché y colas de trabajo
+- Implementar rate limiting cuando sea necesario
+- Mantener TTL apropiado para datos en caché
+
+### Testing
+- Specs descriptivos usando RSpec
+- Factories con FactoryBot
+- Mocks y stubs cuando sea apropiado
+
+## Archivos Clave
+@config/routes.rb - Rutas de la aplicación
+@app/javascript/app.js - Entrada principal frontend
+@app/models/conversation.rb - Modelo central
+@app/controllers/api/v1/base_controller.rb - Controlador base API
+
+## Seguridad
+- Validar permisos usando Pundit
+- Sanitizar inputs
+- Implementar rate limiting
+- Usar JWT para autenticación API
+
+## Performance
+- Índices en columnas frecuentemente consultadas
+- Eager loading para evitar N+1
+- Caché de fragmentos en vistas
+- Optimizar consultas grandes
+
+## Comandos Útiles
+```bash
+# Development
+bundle exec rails s
+yarn dev
+
+# Testing
+bundle exec rspec
+yarn test
+
+# Linting
+bundle exec rubocop
+yarn lint
+```
+
+## Referencias
+- @Documentación API
+- @Guía de Contribución
+- @Setup Local

@@ -141,4 +141,48 @@ export const wordpressRules = [
         "https://avatars.githubusercontent.com/u/28095255?v=4",
     },
   },
+  {
+    tags: ["WordPress", "PHP"],
+    title: "Concise WordPress Development Rules",
+    slug: "wordpress-development-rules",
+    libs: [],
+    content: `
+# WordPress Development Rules
+
+## Code Style
+- PHP 7.4+ with \`declare(strict_types=1);\`
+- WordPress PHP Coding Standards
+- OOP where it improves modularity
+- Lowercase hyphenated directories: \`wp-content/themes/my-theme\`
+- Minimal comments—only for non-obvious logic
+
+## Core Principles
+- Never modify core files—use hooks exclusively
+- Use core functions before custom solutions
+- Child themes for all customizations
+- \`$wpdb->prepare()\` for all dynamic queries
+- Nonce verification on all form submissions
+- Escape output, sanitize input—no exceptions
+
+## Database
+- \`$wpdb\` abstraction layer only
+- \`dbDelta()\` for schema changes
+- Transients API for caching
+
+## Assets & AJAX
+- \`wp_enqueue_script()\` / \`wp_enqueue_style()\` exclusively
+- REST API preferred over \`admin-ajax.php\`
+
+## Output Expectations
+- Working code, not explanations
+- Production-ready security practices baked in
+- No boilerplate comments or placeholder text
+- If something is unclear, ask—don't assume
+    `,
+    author: {
+      name: "Josh Holtzclaw",
+      url: "https://www.linkedin.com/in/joshuaholtzclaw/",
+      avatar: "https://avatars.githubusercontent.com/joshuaevan",
+    },
+  },
 ];

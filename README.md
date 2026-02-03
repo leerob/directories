@@ -2,7 +2,7 @@
 
 # How to Contribute to Directories
 
-### This guide will help you understand how to add new rules or prompts to the both Cursor and Windsurf Directories.
+### This guide will help you understand how to add new rules or prompts to the Cursor Directory.
 
 #### 1. Fork the Repo
 
@@ -10,19 +10,19 @@
 
 If you want to submit a **new rule** that does not already exist in the Directories, follow these steps:
 
-1. **Locate the Rule Index**:  
+1. **Locate the Rule Index**:
 
-   Add your new rule in the `packages/data/rules/index.ts` file. For example:
+   Add your new rule in the `packages/data/src/rules/index.ts` file. For example:
    
    ```typescript
    import { cRules } from "./rules/c";
 
 2. **Create a Rule File**:
     
-    Create a new file in the `packages/data/rules/` directory with the appropriate name. For example, if you're adding a rule for Next.js, name the file `nextjs.ts`.
+    Create a new file in the `packages/data/src/rules/` directory with the appropriate name. For example, if you're adding a rule for Next.js, name the file `nextjs.ts`.
 
 3. **Define the Rule**:
-   
+
     Add your prompts inside the newly created file. Refer to the existing rules for formatting guidance.  Make sure your prompts are accurate, clear, and helpful to developers.
 
     Your prompts should:
@@ -37,7 +37,7 @@ If you want to add new prompts to an existing rule, follow these steps:
 
 1. **Find the Existing Rule**:
 
-    Navigate to the `packages/data/rules/` directory and open the relevant file for the rule you want to update. For example, if you're adding prompts for **Next.js**, open `nextjs.ts`.
+    Navigate to the `packages/data/src/rules/` directory and open the relevant file for the rule you want to update. For example, if you're adding prompts for **Next.js**, open `nextjs.ts`.
 
 2. **Add Your New Prompts**:
 
@@ -69,7 +69,7 @@ If you want to add new prompts to an existing rule, follow these steps:
 
   5. **author**: Include details about yourself as the contributor. This helps others recognize your contributions and allows them to reach out if needed.
 
-  
+
      - **name**: Your full name or GitHub username.
      - **URL**: A link to your GitHub, Twitter, website, or any other profile you want to share. This is optional but recommended.
      - **avatar**: The URL path to an image or avatar that represents you. You can use a photo from a service like Gravatar or any image hosting service.

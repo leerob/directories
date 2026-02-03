@@ -8,6 +8,8 @@ import { astroRules } from "./astro";
 import { autohotkeyRules } from "./autohotkey";
 import { blazorRules } from "./blazor";
 import { bootstrapRules } from "./bootstrap";
+import { cotiEthers } from "./coti-ethers";
+import { buddyOsRules } from "./buddy-os";
 import { cRules } from "./c";
 import { chromeExtensionRules } from "./chrome-extension";
 import { convexRules } from "./convex";
@@ -23,11 +25,14 @@ import { elixirRules } from "./elixir";
 import { expoReactNativeRules } from "./expo";
 import { fastapiRules } from "./fastapi";
 import { fastifyRules } from "./fastify";
+import { fastmcpRules } from "./fastmcp";
 import { flaskRules } from "./flask";
 import { flutterRules } from "./flutter";
+import { frontendArchitectureRules } from "./frontend-architecture";
 import { frontEndRules } from "./front-end";
 import { gatsbyRules } from "./gastby";
 import { ghostTailwindcssRules } from "./ghost-tailwindcss";
+import { gitcommitRules } from "./gitcommit";
 import { globalRules } from "./global";
 import { goRules } from "./go";
 import { htmlAndCssRules } from "./htmlandcss";
@@ -42,24 +47,31 @@ import { luaRules } from "./lua";
 import { manifestRules } from "./manifest";
 import { metaPromptRules } from "./meta-prompt";
 import { monorepoTamagui } from "./monorepo-tamagui";
+import { nangoRules } from "./nango";
 import { nestjsRules } from "./nestjs";
 import { nextjsRules } from "./nextjs";
+import { nextjsSecurityAuditRules } from "./nextjs-security-audit";
 import { nuxtJsRules } from "./nuxtjs";
 import { odooRules } from "./odoo";
 import { onchainkitRules } from "./onchainkit";
 import { openApiUserStoryRules } from "./open-api-user-story";
 import { pixiJsRules } from "./pixijs";
 import { playwrightRules } from "./playwright";
+import { plasmicRules } from "./plasmic";
 import { prismaRules } from "./prisma";
 import { pythonRules } from "./python";
 import { railsRules } from "./rails";
 import { reactNativeRules } from "./react-native";
+import { reactVite2026 } from "./react-vite-2026";
 import { remixRules } from "./remix";
+import { remultRules } from "./remult";
 import { robocorpRules } from "./robocorp";
 import { rspecRules } from "./rspec";
 import { rustRules } from "./rust";
 import { salesforceRules } from "./salesforce";
+import { sparkRules } from "./spark";
 import { sanityRules } from "./sanity";
+import { scoutRules } from "./scout";
 import { solanaRules } from "./solana";
 import { solidityRules } from "./solidity";
 import { svelteRules } from "./svelte";
@@ -67,6 +79,7 @@ import { svelteKitRules } from "./sveltekit";
 import { swiftuiRules } from "./swift";
 import { tauriRules } from "./tauri";
 import { technicalTutorialsRules } from "./technical-tutorials";
+import { technicalWriterRules } from "./technical-writer";
 import { terraformRules } from "./terraform";
 import { typescriptRules } from "./typescript";
 import { uiuxRules } from "./uiux-design";
@@ -78,7 +91,14 @@ import { webDevelopmentRules } from "./web-development";
 import { webScrapingRules } from "./web-scraping";
 import { wordpressRules } from "./wordpress";
 import { wordpressWoocommerce } from "./wordpress-woocommerce";
+import { kotlinJetpackRules } from "./kotlin-jetpack";
+import { expressJsRules } from "./expressjs";
+import { rushRules } from "./rush";
+import { phpRules } from "./php";
 import { shopifyThemeRules } from "./shopify-theme-development";
+import {RRules} from "./r"
+import { reactRules } from "./react";
+import { zettelkastenRules } from "./zettelkasten";
 
 export const rules: Rule[] = [
   ...ALRules,
@@ -88,8 +108,11 @@ export const rules: Rule[] = [
   ...arduinoFrameworkRules,
   ...autohotkeyRules,
   ...blazorRules,
+  ...buddyOsRules,
   ...cosmwasmRules,
   ...bootstrapRules,
+  ...frontEndRules,
+  ...cotiEthers,
   ...chromeExtensionRules,
   ...convexRules,
   ...cppRules,
@@ -104,11 +127,12 @@ export const rules: Rule[] = [
   ...expoReactNativeRules,
   ...fastapiRules,
   ...fastifyRules,
+  ...fastmcpRules,
   ...flaskRules,
   ...flutterRules,
-  ...frontEndRules,
   ...gatsbyRules,
   ...ghostTailwindcssRules,
+  ...gitcommitRules,
   ...globalRules,
   ...goRules,
   ...htmlAndCssRules,
@@ -124,31 +148,40 @@ export const rules: Rule[] = [
   ...manifestRules,
   ...metaPromptRules,
   ...monorepoTamagui,
+  ...nangoRules,
   ...nestjsRules,
   ...nextjsRules,
+  ...nextjsSecurityAuditRules,
   ...nuxtJsRules,
   ...odooRules,
   ...onchainkitRules,
   ...openApiUserStoryRules,
   ...pixiJsRules,
   ...playwrightRules,
+  ...plasmicRules,
   ...prismaRules,
   ...pythonRules,
   ...railsRules,
   ...reactNativeRules,
+  ...reactRules,
+  ...reactVite2026,
+  ...remultRules,
   ...remixRules,
   ...robocorpRules,
   ...rspecRules,
   ...rustRules,
   ...salesforceRules,
   ...sanityRules,
+  ...scoutRules,
   ...solanaRules,
   ...solidityRules,
+  ...sparkRules,
   ...svelteRules,
   ...svelteKitRules,
   ...swiftuiRules,
   ...tauriRules,
   ...technicalTutorialsRules,
+  ...technicalWriterRules,
   ...terraformRules,
   ...uiuxRules,
   ...unityCSharpRules,
@@ -159,8 +192,13 @@ export const rules: Rule[] = [
   ...wordpressRules,
   ...wordpressWoocommerce,
   ...typescriptRules,
+  ...kotlinJetpackRules,
   ...viewComfyRules,
+  ...rushRules,
+  ...phpRules,
   ...shopifyThemeRules,
+  ...RRules
+  ...zettelkastenRules,
 ].map(
   (rule): Rule => ({
     ...rule,

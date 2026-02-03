@@ -37,6 +37,7 @@ const formSchema = z.object({
   }),
   logo: z.string().optional(),
   company_id: z.string().optional(),
+  config: z.record(z.string(), z.any()).nullable(),
 });
 
 export type MCPData = {
@@ -124,6 +125,36 @@ export function EditMCPForm({ data }: { data: MCPData }) {
                   <Textarea
                     placeholder="Write a description..."
                     {...field}
+                    className="placeholder:text-[#878787] border-border min-h-[100px]"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+                    <FormField
+            control={form.control}
+            name="config"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Config</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Paste your MCP config here"
+                    value={
+                      field.value ? JSON.stringify(field.value, null, 2) : ""
+                    }
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      try {
+                        field.onChange(val ? JSON.parse(val) : null);
+                      } catch {
+                        // If invalid JSON, just store as string for now (or ignore)
+                        field.onChange(val);
+                      }
+                    }}
+                    onBlur={field.onBlur}
+                    name={field.name}
                     className="placeholder:text-[#878787] border-border min-h-[100px]"
                   />
                 </FormControl>
