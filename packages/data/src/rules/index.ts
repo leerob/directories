@@ -21,10 +21,12 @@ import { devopsRules } from "./devops-backend";
 import { djangoRules } from "./django";
 import { dotnetRules } from "./dotnet";
 import { drupalRules } from "./drupal";
+import { electronRules } from "./electron";
 import { elixirRules } from "./elixir";
 import { expoReactNativeRules } from "./expo";
 import { fastapiRules } from "./fastapi";
 import { fastifyRules } from "./fastify";
+import { flaskRules } from "./flask"
 import { fastmcpRules } from "./fastmcp";
 import { flaskRules } from "./flask";
 import { flutterRules } from "./flutter";
@@ -49,6 +51,7 @@ import { metaPromptRules } from "./meta-prompt";
 import { monorepoTamagui } from "./monorepo-tamagui";
 import { nangoRules } from "./nango";
 import { nestjsRules } from "./nestjs";
+import { netlifyRules } from "./netlify";
 import { nextjsRules } from "./nextjs";
 import { nextjsSecurityAuditRules } from "./nextjs-security-audit";
 import { nuxtJsRules } from "./nuxtjs";
@@ -91,6 +94,7 @@ import { webDevelopmentRules } from "./web-development";
 import { webScrapingRules } from "./web-scraping";
 import { wordpressRules } from "./wordpress";
 import { wordpressWoocommerce } from "./wordpress-woocommerce";
+import { zetaChainRules } from "./zetachain";
 import { kotlinJetpackRules } from "./kotlin-jetpack";
 import { expressJsRules } from "./expressjs";
 import { rushRules } from "./rush";
@@ -123,6 +127,7 @@ export const rules: Rule[] = [
   ...djangoRules,
   ...dotnetRules,
   ...drupalRules,
+  ...electronRules,
   ...elixirRules,
   ...expoReactNativeRules,
   ...fastapiRules,
@@ -150,6 +155,7 @@ export const rules: Rule[] = [
   ...monorepoTamagui,
   ...nangoRules,
   ...nestjsRules,
+  ...netlifyRules,
   ...nextjsRules,
   ...nextjsSecurityAuditRules,
   ...nuxtJsRules,
@@ -192,6 +198,7 @@ export const rules: Rule[] = [
   ...wordpressRules,
   ...wordpressWoocommerce,
   ...typescriptRules,
+  ...zetaChainRules,
   ...kotlinJetpackRules,
   ...viewComfyRules,
   ...rushRules,
@@ -229,19 +236,20 @@ export function getRuleBySlug(slug: string) {
 }
 
 export interface Rule {
-  title: string;
-  slug: string;
-  tags: string[];
-  libs: string[];
-  content: string;
-  author?: {
-    name: string;
-    url: string | null;
-    avatar: string | null;
-  };
-}
+    title: string;
+    slug: string;
+    tags: string[];
+    libs: string[];
+    content: string;
+    author?: {
+      name: string;
+      url: string | null;
+      avatar: string | null;
+    };
+  }
+
 
 export type Section = {
-  tag: string;
-  rules: Rule[];
-};
+    tag: string;
+    rules: Rule[];
+  };
