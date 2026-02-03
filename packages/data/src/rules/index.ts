@@ -36,6 +36,7 @@ import { ionicRules } from "./ionic";
 import { javaRules } from "./java";
 import { jaxRules } from "./jax";
 import { juliaRules } from "./julia";
+import { kotlinAndroidXmlRules } from "./kotlin-android-xml";
 import { laravelRules } from "./laravel";
 import { luaRules } from "./lua";
 import { manifestRules } from "./manifest";
@@ -117,6 +118,7 @@ export const rules: Rule[] = [
   ...javaRules,
   ...jaxRules,
   ...juliaRules,
+  ...kotlinAndroidXmlRules,
   ...laravelRules,
   ...luaRules,
   ...manifestRules,
