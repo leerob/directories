@@ -8,12 +8,12 @@ import { astroRules } from "./astro";
 import { autohotkeyRules } from "./autohotkey";
 import { blazorRules } from "./blazor";
 import { bootstrapRules } from "./bootstrap";
-import { cotiEthers } from "./coti-ethers";
 import { buddyOsRules } from "./buddy-os";
 import { cRules } from "./c";
 import { chromeExtensionRules } from "./chrome-extension";
 import { convexRules } from "./convex";
 import { cosmwasmRules } from "./cosmwasm";
+import { cotiEthers } from "./coti-ethers";
 import { cppRules } from "./cpp";
 import { dataAnalystRules } from "./data-analyst";
 import { deepLearningRules } from "./deep-learning";
@@ -24,14 +24,14 @@ import { drupalRules } from "./drupal";
 import { electronRules } from "./electron";
 import { elixirRules } from "./elixir";
 import { expoReactNativeRules } from "./expo";
+import { expressJsRules } from "./expressjs";
 import { fastapiRules } from "./fastapi";
 import { fastifyRules } from "./fastify";
-import { flaskRules } from "./flask"
 import { fastmcpRules } from "./fastmcp";
 import { flaskRules } from "./flask";
 import { flutterRules } from "./flutter";
-import { frontendArchitectureRules } from "./frontend-architecture";
 import { frontEndRules } from "./front-end";
+import { frontendArchitectureRules } from "./frontend-architecture";
 import { gatsbyRules } from "./gastby";
 import { ghostTailwindcssRules } from "./ghost-tailwindcss";
 import { gitcommitRules } from "./gitcommit";
@@ -44,6 +44,7 @@ import { javaRules } from "./java";
 import { jaxRules } from "./jax";
 import { juliaRules } from "./julia";
 import { kotlinAndroidXmlRules } from "./kotlin-android-xml";
+import { kotlinJetpackRules } from "./kotlin-jetpack";
 import { laravelRules } from "./laravel";
 import { luaRules } from "./lua";
 import { manifestRules } from "./manifest";
@@ -58,25 +59,30 @@ import { nuxtJsRules } from "./nuxtjs";
 import { odooRules } from "./odoo";
 import { onchainkitRules } from "./onchainkit";
 import { openApiUserStoryRules } from "./open-api-user-story";
+import { phpRules } from "./php";
 import { pixiJsRules } from "./pixijs";
-import { playwrightRules } from "./playwright";
 import { plasmicRules } from "./plasmic";
+import { playwrightRules } from "./playwright";
 import { prismaRules } from "./prisma";
 import { pythonRules } from "./python";
+import { RRules } from "./r";
 import { railsRules } from "./rails";
+import { reactRules } from "./react";
 import { reactNativeRules } from "./react-native";
 import { reactVite2026 } from "./react-vite-2026";
 import { remixRules } from "./remix";
 import { remultRules } from "./remult";
 import { robocorpRules } from "./robocorp";
 import { rspecRules } from "./rspec";
+import { rushRules } from "./rush";
 import { rustRules } from "./rust";
 import { salesforceRules } from "./salesforce";
-import { sparkRules } from "./spark";
 import { sanityRules } from "./sanity";
 import { scoutRules } from "./scout";
+import { shopifyThemeRules } from "./shopify-theme-development";
 import { solanaRules } from "./solana";
 import { solidityRules } from "./solidity";
+import { sparkRules } from "./spark";
 import { svelteRules } from "./svelte";
 import { svelteKitRules } from "./sveltekit";
 import { swiftuiRules } from "./swift";
@@ -95,13 +101,6 @@ import { webScrapingRules } from "./web-scraping";
 import { wordpressRules } from "./wordpress";
 import { wordpressWoocommerce } from "./wordpress-woocommerce";
 import { zetaChainRules } from "./zetachain";
-import { kotlinJetpackRules } from "./kotlin-jetpack";
-import { expressJsRules } from "./expressjs";
-import { rushRules } from "./rush";
-import { phpRules } from "./php";
-import { shopifyThemeRules } from "./shopify-theme-development";
-import {RRules} from "./r"
-import { reactRules } from "./react";
 import { zettelkastenRules } from "./zettelkasten";
 
 export const rules: Rule[] = [
@@ -204,7 +203,7 @@ export const rules: Rule[] = [
   ...rushRules,
   ...phpRules,
   ...shopifyThemeRules,
-  ...RRules
+  ...RRules,
   ...zettelkastenRules,
 ].map(
   (rule): Rule => ({
@@ -236,20 +235,19 @@ export function getRuleBySlug(slug: string) {
 }
 
 export interface Rule {
-    title: string;
-    slug: string;
-    tags: string[];
-    libs: string[];
-    content: string;
-    author?: {
-      name: string;
-      url: string | null;
-      avatar: string | null;
-    };
-  }
-
+  title: string;
+  slug: string;
+  tags: string[];
+  libs: string[];
+  content: string;
+  author?: {
+    name: string;
+    url: string | null;
+    avatar: string | null;
+  };
+}
 
 export type Section = {
-    tag: string;
-    rules: Rule[];
-  };
+  tag: string;
+  rules: Rule[];
+};

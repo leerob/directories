@@ -282,7 +282,7 @@ FILE: README.md
 
 The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is a new, standardized way to provide context and tools to your LLMs, and FastMCP makes building MCP servers and clients simple and intuitive. Create tools, expose resources, define prompts, and connect components with clean, Pythonic code.
 
-```python
+\`\`\`python
 # server.py
 from fastmcp import FastMCP
 
@@ -295,12 +295,12 @@ def add(a: int, b: int) -> int:
 
 if __name__ == "__main__":
     mcp.run()
-```
+\`\`\`
 
 Run the server locally:
-```bash
+\`\`\`bash
 fastmcp run server.py
-```
+\`\`\`
 
 ### 📚 Documentation
 
@@ -309,8 +309,8 @@ FastMCP's complete documentation is available at **[gofastmcp.com](https://gofas
 Documentation is also available in [llms.txt format](https://llmstxt.org/), which is a simple markdown standard that LLMs can consume easily. 
 
 There are two ways to access the LLM-friendly documentation:
-- [`llms.txt`](https://gofastmcp.com/llms.txt) is essentially a sitemap, listing all the pages in the documentation.
-- [`llms-full.txt`](https://gofastmcp.com/llms-full.txt) contains the entire documentation. Note this may exceed the context window of your LLM.
+- [\`llms.txt\`](https://gofastmcp.com/llms.txt) is essentially a sitemap, listing all the pages in the documentation.
+- [\`llms-full.txt\`](https://gofastmcp.com/llms-full.txt) contains the entire documentation. Note this may exceed the context window of your LLM.
 
 ---
 
@@ -321,7 +321,7 @@ There are two ways to access the LLM-friendly documentation:
 - [Why FastMCP?](#why-fastmcp)
 - [Installation](#installation)
 - [Core Concepts](#core-concepts)
-  - [The `FastMCP` Server](#the-fastmcp-server)
+  - [The \`FastMCP\` Server](#the-fastmcp-server)
   - [Tools](#tools)
   - [Resources \& Templates](#resources--templates)
   - [Prompts](#prompts)
@@ -345,8 +345,8 @@ There are two ways to access the LLM-friendly documentation:
 
 The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but specifically designed for LLM interactions. MCP servers can:
 
-- Expose data through **Resources** (similar to `GET` requests; load info into context)
-- Provide functionality through **Tools** (similar to `POST`/`PUT` requests; execute actions)
+- Expose data through **Resources** (similar to \`GET\` requests; load info into context)
+- Provide functionality through **Tools** (similar to \`POST\`/\`PUT\` requests; execute actions)
 - Define interaction patterns through **Prompts** (reusable templates)
 - And more!
 
@@ -372,9 +372,9 @@ FastMCP aims to be:
 
 We recommend installing FastMCP with [uv](https://docs.astral.sh/uv/):
 
-```bash
+\`\`\`bash
 uv pip install fastmcp
-```
+\`\`\`
 
 For full installation instructions, including verification, upgrading from the official MCPSDK, and developer setup, see the [**Installation Guide**](https://gofastmcp.com/getting-started/installation).
 
@@ -382,37 +382,37 @@ For full installation instructions, including verification, upgrading from the o
 
 These are the building blocks for creating MCP servers and clients with FastMCP.
 
-### The `FastMCP` Server
+### The \`FastMCP\` Server
 
 The central object representing your MCP application. It holds your tools, resources, and prompts, manages connections, and can be configured with settings like [authentication providers](https://gofastmcp.com/servers/fastmcp#authentication).
 
-```python
+\`\`\`python
 from fastmcp import FastMCP
 
 # Create a server instance
 mcp = FastMCP(name="MyAssistantServer")
-```
+\`\`\`
 
 Learn more in the [**FastMCP Server Documentation**](https://gofastmcp.com/servers/fastmcp).
 
 ### Tools
 
-Tools allow LLMs to perform actions by executing your Python functions (sync or async). Ideal for computations, API calls, or side effects (like `POST`/`PUT`). FastMCP handles schema generation from type hints and docstrings. Tools can return various types, including text, JSON-serializable objects, and even images using the [`fastmcp.Image`](https://gofastmcp.com/servers/tools#return-values) helper.
+Tools allow LLMs to perform actions by executing your Python functions (sync or async). Ideal for computations, API calls, or side effects (like \`POST\`/\`PUT\`). FastMCP handles schema generation from type hints and docstrings. Tools can return various types, including text, JSON-serializable objects, and even images using the [\`fastmcp.Image\`](https://gofastmcp.com/servers/tools#return-values) helper.
 
-```python
+\`\`\`python
 @mcp.tool()
 def multiply(a: float, b: float) -> float:
     """Multiplies two numbers."""
     return a * b
-```
+\`\`\`
 
 Learn more in the [**Tools Documentation**](https://gofastmcp.com/servers/tools).
 
 ### Resources & Templates
 
-Resources expose read-only data sources (like `GET` requests). Use `@mcp.resource("your://uri")`. Use `{placeholders}` in the URI to create dynamic templates that accept parameters, allowing clients to request specific data subsets.
+Resources expose read-only data sources (like \`GET\` requests). Use \`@mcp.resource("your://uri")\`. Use \`{placeholders}\` in the URI to create dynamic templates that accept parameters, allowing clients to request specific data subsets.
 
-```python
+\`\`\`python
 # Static resource
 @mcp.resource("config://version")
 def get_version(): 
@@ -423,36 +423,36 @@ def get_version():
 def get_profile(user_id: int):
     # Fetch profile for user_id...
     return {"name": f"User {user_id}", "status": "active"}
-```
+\`\`\`
 
 Learn more in the [**Resources & Templates Documentation**](https://gofastmcp.com/servers/resources).
 
 ### Prompts
 
-Prompts define reusable message templates to guide LLM interactions. Decorate functions with `@mcp.prompt()`. Return strings or `Message` objects.
+Prompts define reusable message templates to guide LLM interactions. Decorate functions with \`@mcp.prompt()\`. Return strings or \`Message\` objects.
 
-```python
+\`\`\`python
 @mcp.prompt()
 def summarize_request(text: str) -> str:
     """Generate a prompt asking for a summary."""
     return f"Please summarize the following text:\n\n{text}"
-```
+\`\`\`
 
 Learn more in the [**Prompts Documentation**](https://gofastmcp.com/servers/prompts).
 
 ### Context
 
-Access MCP session capabilities within your tools, resources, or prompts by adding a `ctx: Context` parameter. Context provides methods for:
-*   **Logging:** Log messages to MCP clients with `ctx.info()`, `ctx.error()`, etc.
-*   **LLM Sampling:** Use `ctx.sample()` to request completions from the client's LLM.
-*   **HTTP Request:** Use `ctx.http_request()` to make HTTP requests to other servers.
-*   **Resource Access:** Use `ctx.read_resource()` to access resources on the server
-*   **Progress Reporting:** Use `ctx.report_progress()` to report progress to the client.
+Access MCP session capabilities within your tools, resources, or prompts by adding a \`ctx: Context\` parameter. Context provides methods for:
+*   **Logging:** Log messages to MCP clients with \`ctx.info()\`, \`ctx.error()\`, etc.
+*   **LLM Sampling:** Use \`ctx.sample()\` to request completions from the client's LLM.
+*   **HTTP Request:** Use \`ctx.http_request()\` to make HTTP requests to other servers.
+*   **Resource Access:** Use \`ctx.read_resource()\` to access resources on the server
+*   **Progress Reporting:** Use \`ctx.report_progress()\` to report progress to the client.
 *   and more...
 
-To access the context, add a parameter annotated as `Context` to any mcp-decorated function. FastMCP will automatically inject the correct context object when the function is called.
+To access the context, add a parameter annotated as \`Context\` to any mcp-decorated function. FastMCP will automatically inject the correct context object when the function is called.
 
-```python
+\`\`\`python
 from fastmcp import FastMCP, Context
 
 mcp = FastMCP("My MCP Server")
@@ -470,17 +470,17 @@ async def process_data(uri: str, ctx: Context):
 
     # Return the summary
     return summary.text
-```
+\`\`\`
 
 Learn more in the [**Context Documentation**](https://gofastmcp.com/servers/context).
 
 ### MCP Clients
 
-Interact with *any* MCP server programmatically using the `fastmcp.Client`. It supports various transports (Stdio, SSE, In-Memory) and often auto-detects the correct one. The client can also handle advanced patterns like server-initiated **LLM sampling requests** if you provide an appropriate handler.
+Interact with *any* MCP server programmatically using the \`fastmcp.Client\`. It supports various transports (Stdio, SSE, In-Memory) and often auto-detects the correct one. The client can also handle advanced patterns like server-initiated **LLM sampling requests** if you provide an appropriate handler.
 
-Critically, the client allows for efficient **in-memory testing** of your servers by connecting directly to a `FastMCP` server instance via the `FastMCPTransport`, eliminating the need for process management or network calls during tests.
+Critically, the client allows for efficient **in-memory testing** of your servers by connecting directly to a \`FastMCP\` server instance via the \`FastMCPTransport\`, eliminating the need for process management or network calls during tests.
 
-```python
+\`\`\`python
 from fastmcp import Client
 
 async def main():
@@ -495,11 +495,11 @@ async def main():
     async with Client("http://localhost:8000/sse") as client:
         # ... use the client
         pass
-```
+\`\`\`
 
 To use clients to test servers, use the following pattern:
 
-```python
+\`\`\`python
 from fastmcp import FastMCP, Client
 
 mcp = FastMCP("My MCP Server")
@@ -508,11 +508,11 @@ async def main():
     # Connect via in-memory transport
     async with Client(mcp) as client:
         # ... use the client
-```
+\`\`\`
 
 FastMCP also supports connecting to multiple servers through a single unified client using the standard MCP configuration format:
 
-```python
+\`\`\`python
 from fastmcp import Client
 
 # Standard MCP configuration with multiple servers
@@ -531,7 +531,7 @@ async def main():
         # Access tools and resources with server prefixes
         forecast = await client.call_tool("weather_get_forecast", {"city": "London"})
         answer = await client.call_tool("assistant_answer_question", {"query": "What is MCP?"})
-```
+\`\`\`
 
 Learn more in the [**Client Documentation**](https://gofastmcp.com/clients/client) and [**Transports Documentation**](https://gofastmcp.com/clients/transports).
 
@@ -541,27 +541,27 @@ FastMCP introduces powerful ways to structure and deploy your MCP applications.
 
 ### Proxy Servers
 
-Create a FastMCP server that acts as an intermediary for another local or remote MCP server using `FastMCP.as_proxy()`. This is especially useful for bridging transports (e.g., remote SSE to local Stdio) or adding a layer of logic to a server you don't control.
+Create a FastMCP server that acts as an intermediary for another local or remote MCP server using \`FastMCP.as_proxy()\`. This is especially useful for bridging transports (e.g., remote SSE to local Stdio) or adding a layer of logic to a server you don't control.
 
 Learn more in the [**Proxying Documentation**](https://gofastmcp.com/patterns/proxy).
 
 ### Composing MCP Servers
 
-Build modular applications by mounting multiple `FastMCP` instances onto a parent server using `mcp.mount()` (live link) or `mcp.import_server()` (static copy).
+Build modular applications by mounting multiple \`FastMCP\` instances onto a parent server using \`mcp.mount()\` (live link) or \`mcp.import_server()\` (static copy).
 
 Learn more in the [**Composition Documentation**](https://gofastmcp.com/patterns/composition).
 
 ### OpenAPI & FastAPI Generation
 
-Automatically generate FastMCP servers from existing OpenAPI specifications (`FastMCP.from_openapi()`) or FastAPI applications (`FastMCP.from_fastapi()`), instantly bringing your web APIs to the MCP ecosystem.
+Automatically generate FastMCP servers from existing OpenAPI specifications (\`FastMCP.from_openapi()\`) or FastAPI applications (\`FastMCP.from_fastapi()\`), instantly bringing your web APIs to the MCP ecosystem.
 
 Learn more: [**OpenAPI Integration**](https://gofastmcp.com/patterns/openapi) | [**FastAPI Integration**](https://gofastmcp.com/patterns/fastapi).
 
 ## Running Your Server
 
-The main way to run a FastMCP server is by calling the `run()` method on your server instance:
+The main way to run a FastMCP server is by calling the \`run()\` method on your server instance:
 
-```python
+\`\`\`python
 # server.py
 from fastmcp import FastMCP
 
@@ -573,24 +573,24 @@ def hello(name: str) -> str:
 
 if __name__ == "__main__":
     mcp.run()  # Default: uses STDIO transport
-```
+\`\`\`
 
 FastMCP supports three transport protocols:
 
 **STDIO (Default)**: Best for local tools and command-line scripts.
-```python
+\`\`\`python
 mcp.run(transport="stdio")  # Default, so transport argument is optional
-```
+\`\`\`
 
 **Streamable HTTP**: Recommended for web deployments.
-```python
+\`\`\`python
 mcp.run(transport="streamable-http", host="127.0.0.1", port=8000, path="/mcp")
-```
+\`\`\`
 
 **SSE**: For compatibility with existing SSE clients.
-```python
+\`\`\`python
 mcp.run(transport="sse", host="127.0.0.1", port=8000)
-```
+\`\`\`
 
 See the [**Running Server Documentation**](https://gofastmcp.com/deployment/running-server) for more details.
 
@@ -606,54 +606,54 @@ Contributions are the core of open source! We welcome improvements and features.
 ### Setup
 
 1. Clone the repository: 
-   ```bash
+   \`\`\`bash
    git clone https://github.com/jlowin/fastmcp.git 
    cd fastmcp
-   ```
+   \`\`\`
 2. Create and sync the environment: 
-   ```bash
+   \`\`\`bash
    uv sync
-   ```
+   \`\`\`
    This installs all dependencies, including dev tools.
    
-3. Activate the virtual environment (e.g., `source .venv/bin/activate` or via your IDE).
+3. Activate the virtual environment (e.g., \`source .venv/bin/activate\` or via your IDE).
 
 ### Unit Tests
 
 FastMCP has a comprehensive unit test suite. All PRs must introduce or update tests as appropriate and pass the full suite.
 
 Run tests using pytest:
-```bash
+\`\`\`bash
 pytest
-```
+\`\`\`
 or if you want an overview of the code coverage
-```bash
+\`\`\`bash
 uv run pytest --cov=src --cov=examples --cov-report=html
-```
+\`\`\`
 
 ### Static Checks
 
-FastMCP uses `pre-commit` for code formatting, linting, and type-checking. All PRs must pass these checks (they run automatically in CI).
+FastMCP uses \`pre-commit\` for code formatting, linting, and type-checking. All PRs must pass these checks (they run automatically in CI).
 
 Install the hooks locally:
-```bash
+\`\`\`bash
 uv run pre-commit install
-```
-The hooks will now run automatically on `git commit`. You can also run them manually at any time:
-```bash
+\`\`\`
+The hooks will now run automatically on \`git commit\`. You can also run them manually at any time:
+\`\`\`bash
 pre-commit run --all-files
 # or via uv
 uv run pre-commit run --all-files
-```
+\`\`\`
 
 ### Pull Requests
 
 1.  Fork the repository on GitHub.
-2.  Create a feature branch from `main`.
+2.  Create a feature branch from \`main\`.
 3.  Make your changes, including tests and documentation updates.
 4.  Ensure tests and pre-commit hooks pass.
 5.  Commit your changes and push to your fork.
-6.  Open a pull request against the `main` branch of `jlowin/fastmcp`.
+6.  Open a pull request against the \`main\` branch of \`jlowin/fastmcp\`.
 
 Please open an issue or discussion for questions or suggestions before starting significant work!
 
@@ -673,25 +673,25 @@ This file provides guidance for autonomous coding agents working inside the **Fa
 
 | Path             | Purpose                                                                                  |
 | ---------------- | ---------------------------------------------------------------------------------------- |
-| `src/fastmcp/`   | Library source code (Python ≥ 3.10)                                                      |
-| `  └─server/`    | Server implementation, `FastMCP`, auth, networking                                       |
-| `  └─client/`    | High‑level client SDK + helpers                                                          |
-| `  └─resources/` | MCP resources and resource templates                                                     |
-| `  └─prompts/`   | Prompt templates                                                                         |
-| `  └─tools/`     | Tool implementations                                                                     |
-| `tests/`         | Pytest test‑suite                                                                        |
-| `docs/`          | Mintlify‑flavoured Markdown, published to [https://gofastmcp.com](https://gofastmcp.com) |
-| `examples/`      | Minimal runnable demos                                                                   |
+| \`src/fastmcp/\`   | Library source code (Python ≥ 3.10)                                                      |
+| \`  └─server/\`    | Server implementation, \`FastMCP\`, auth, networking                                       |
+| \`  └─client/\`    | High‑level client SDK + helpers                                                          |
+| \`  └─resources/\` | MCP resources and resource templates                                                     |
+| \`  └─prompts/\`   | Prompt templates                                                                         |
+| \`  └─tools/\`     | Tool implementations                                                                     |
+| \`tests/\`         | Pytest test‑suite                                                                        |
+| \`docs/\`          | Mintlify‑flavoured Markdown, published to [https://gofastmcp.com](https://gofastmcp.com) |
+| \`examples/\`      | Minimal runnable demos                                                                   |
 
 ---
 
 ## Mandatory dev workflow
 
-```bash
+\`\`\`bash
 uv sync                              # install dependencies
 uv run pre-commit run --all-files    # Ruff + Prettier + Pyright
 uv run pytest                        # run full test suite
-```
+\`\`\`
 
 *Tests must pass* and *lint/typing must be clean* before committing.
 
@@ -699,12 +699,12 @@ uv run pytest                        # run full test suite
 
 There are four major MCP object types:
 
-- Tools (`src/tools/`)
-- Resources (`src/resources/`)
-- Resource Templates (`src/resources/`)
-- Prompts (`src/prompts`)
+- Tools (\`src/tools/\`)
+- Resources (\`src/resources/\`)
+- Resource Templates (\`src/resources/\`)
+- Prompts (\`src/prompts\`)
 
-While these have slightly different semantics and implementations, in general changes that affect interactions with any one (like adding tags, importing, etc.) will need to be adopted, applied, and tested on all others. Be sure to look at not only the object definition but also the related `Manager` (e.g. `ToolManager`, `ResourceManager`, and `PromptManager`). Also note that while resources and resource templates are different objects, they both are handled by the `ResourceManager`.
+While these have slightly different semantics and implementations, in general changes that affect interactions with any one (like adding tags, importing, etc.) will need to be adopted, applied, and tested on all others. Be sure to look at not only the object definition but also the related \`Manager\` (e.g. \`ToolManager\`, \`ResourceManager\`, and \`PromptManager\`). Also note that while resources and resource templates are different objects, they both are handled by the \`ResourceManager\`.
 
 ---
 
@@ -720,10 +720,10 @@ While these have slightly different semantics and implementations, in general ch
 ## Development guidelines
 
 1. **Set up** the environment:
-   ```bash
+   \`\`\`bash
    uv sync && uv run pre-commit run --all-files
-   ```
-2. **Run tests**: `uv run pytest` until they pass.
+   \`\`\`
+2. **Run tests**: \`uv run pytest\` until they pass.
 3. **Iterate**: if a command fails, read the output, fix the code, retry.
 4. Make the smallest set of changes that achieve the desired outcome.
 5. Always read code before modifying it blindly.
@@ -2558,31 +2558,31 @@ FILE: Windows_Notes.md
 ================================================
 # Getting your development environment set up properly
 To get your environment up and running properly, you'll need a slightly different set of commands that are windows specific:
-```bash
+\`\`\`bash
 uv venv
 .venv\Scripts\activate
 uv pip install -e ".[dev]"
-```
+\`\`\`
 
 This will install the package in editable mode, and install the development dependencies.
 
 
-# Fixing `AttributeError: module 'collections' has no attribute 'Callable'`
-- open `.venv\Lib\site-packages\pyreadline\py3k_compat.py`
-- change `return isinstance(x, collections.Callable)` to 
-``` 
+# Fixing \`AttributeError: module 'collections' has no attribute 'Callable'\`
+- open \`.venv\Lib\site-packages\pyreadline\py3k_compat.py\`
+- change \`return isinstance(x, collections.Callable)\` to 
+\`\`\` 
 from collections.abc import Callable
 return isinstance(x, Callable)
-```
+\`\`\`
 
 # Helpful notes
 For developing FastMCP
 ## Install local development version of FastMCP into a local FastMCP project server
 - ensure
 - change directories to your FastMCP Server location so you can install it in your .venv
-- run `.venv\Scripts\activate` to activate your virtual environment
+- run \`.venv\Scripts\activate\` to activate your virtual environment
 - Then run a series of commands to uninstall the old version and install the new
-```bash
+\`\`\`bash
 # First uninstall
 uv pip uninstall fastmcp
 
@@ -2596,21 +2596,21 @@ uv pip install --no-cache-dir -e C:\Users\justj\PycharmProjects\fastmcp
 
 # Check that it installed properly and has the correct git hash
 pip show fastmcp
-```
+\`\`\`
 
 ## Running the FastMCP server with Inspector
 MCP comes with a node.js application called Inspector that can be used to inspect the FastMCP server. To run the inspector, you'll need to install node.js and npm. Then you can run the following commands:
-```bash
+\`\`\`bash
 fastmcp dev server.py
-```
+\`\`\`
 This will launch a web app on http://localhost:5173/ that you can use to inspect the FastMCP server.
 
 ## If you start development before creating a fork - your get out of jail free card
-- Add your fork as a new remote to your local repository `git remote add fork git@github.com:YOUR-USERNAME/REPOSITORY-NAME.git`
+- Add your fork as a new remote to your local repository \`git remote add fork git@github.com:YOUR-USERNAME/REPOSITORY-NAME.git\`
   - This will add your repo, short named 'fork', as a remote to your local repository
-- Verify that it was added correctly by running `git remote -v`
+- Verify that it was added correctly by running \`git remote -v\`
 - Commit your changes
-- Push your changes to your fork `git push fork <branch>`
+- Push your changes to your fork \`git push fork <branch>\`
 - Create your pull request on GitHub 
 
 
@@ -2834,20 +2834,20 @@ icon: stars
 
 import { VersionBadge } from '/snippets/version-badge.mdx'
 
-In addition to basic server interaction, FastMCP clients can also handle more advanced features and server interaction patterns. The `Client` constructor accepts additional configuration to handle these server requests.
+In addition to basic server interaction, FastMCP clients can also handle more advanced features and server interaction patterns. The \`Client\` constructor accepts additional configuration to handle these server requests.
 
 <Tip>
-To enable many of these features, you must provide an appropriate handler or callback function. For example. In most cases, if you do not provide a handler, FastMCP's default handler will emit a `DEBUG` level log.
+To enable many of these features, you must provide an appropriate handler or callback function. For example. In most cases, if you do not provide a handler, FastMCP's default handler will emit a \`DEBUG\` level log.
 </Tip>
 
 ## Logging and Notifications
 
 <VersionBadge version="2.0.0" />
-MCP servers can emit logs to clients. To process these logs, you can provide a `log_handler` to the client.
+MCP servers can emit logs to clients. To process these logs, you can provide a \`log_handler\` to the client.
 
-The `log_handler` must be an async function that accepts a single argument, which is an instance of `fastmcp.client.logging.LogMessage`. This has attributes like `level`, `logger`, and `data`.
+The \`log_handler\` must be an async function that accepts a single argument, which is an instance of \`fastmcp.client.logging.LogMessage\`. This has attributes like \`level\`, \`logger\`, and \`data\`.
 
-```python {2, 12}
+\`\`\`python {2, 12}
 from fastmcp import Client
 from fastmcp.client.logging import LogMessage
 
@@ -2861,14 +2861,14 @@ client_with_logging = Client(
     ...,
     log_handler=log_handler,
 )
-```
+\`\`\`
 ## Progress Monitoring
 
 <VersionBadge version="2.3.5" />
 
 MCP servers can report progress during long-running operations. The client can set a progress handler to receive and process these updates.
 
-```python {2, 13}
+\`\`\`python {2, 13}
 from fastmcp import Client
 from fastmcp.client.progress import ProgressHandler
 
@@ -2883,13 +2883,13 @@ client = Client(
     ...,
     progress_handler=my_progress_handler
 )
-```
+\`\`\`
 
-By default, FastMCP uses a handler that logs progress updates at the debug level. This default handler properly handles cases where `total` or `message` might be None.
+By default, FastMCP uses a handler that logs progress updates at the debug level. This default handler properly handles cases where \`total\` or \`message\` might be None.
 
 You can override the progress handler for specific tool calls:
 
-```python
+\`\`\`python
 # Client uses the default debug logger for progress
 client = Client(...)
 
@@ -2903,7 +2903,7 @@ async with client:
         {"param": "value"}, 
         progress_handler=my_progress_handler
     )
-```
+\`\`\`
 
 A typical progress update includes:
 - Current progress value (e.g., 2 of 5 steps completed)
@@ -2914,11 +2914,11 @@ A typical progress update includes:
 
 <VersionBadge version="2.0.0" />
 
-MCP Servers can request LLM completions from clients. The client can provide a `sampling_handler` to handle these requests. The sampling handler receives a list of messages and other parameters from the server, and should return a string completion.
+MCP Servers can request LLM completions from clients. The client can provide a \`sampling_handler\` to handle these requests. The sampling handler receives a list of messages and other parameters from the server, and should return a string completion.
 
-The following example uses the `marvin` library to generate a completion:
+The following example uses the \`marvin\` library to generate a completion:
 
-```python {8-17, 21}
+\`\`\`python {8-17, 21}
 import marvin
 from fastmcp import Client
 from fastmcp.client.sampling import (
@@ -2941,7 +2941,7 @@ client = Client(
     ...,
     sampling_handler=sampling_handler,
 )
-```
+\`\`\`
 
 
 ## Roots
@@ -2955,15 +2955,15 @@ Servers can request roots from clients, and clients can notify servers when thei
 To set the roots when creating a client, users can either provide a list of roots (which can be a list of strings) or an async function that returns a list of roots.
 
 <CodeGroup>
-```python Static Roots {5}
+\`\`\`python Static Roots {5}
 from fastmcp import Client
 
 client = Client(
     ..., 
     roots=["/path/to/root1", "/path/to/root2"],
 )
-```
-```python Dynamic Roots Callback {4-6, 10}
+\`\`\`
+\`\`\`python Dynamic Roots Callback {4-6, 10}
 from fastmcp import Client
 from fastmcp.client.roots import RequestContext
 
@@ -2975,7 +2975,7 @@ client = Client(
     ..., 
     roots=roots_callback,
 )
-```
+\`\`\`
 </CodeGroup>
 
 
@@ -2993,32 +2993,32 @@ import { VersionBadge } from '/snippets/version-badge.mdx'
 
 <VersionBadge version="2.0.0" />
 
-The `fastmcp.Client` provides a high-level, asynchronous interface for interacting with any Model Context Protocol (MCP) server, whether it's built with FastMCP or another implementation. It simplifies communication by handling protocol details and connection management.
+The \`fastmcp.Client\` provides a high-level, asynchronous interface for interacting with any Model Context Protocol (MCP) server, whether it's built with FastMCP or another implementation. It simplifies communication by handling protocol details and connection management.
 
 ## FastMCP Client
 
-The FastMCP Client architecture separates the protocol logic (`Client`) from the connection mechanism (`Transport`).
+The FastMCP Client architecture separates the protocol logic (\`Client\`) from the connection mechanism (\`Transport\`).
 
-- **`Client`**: Handles sending MCP requests (like `tools/call`, `resources/read`), receiving responses, and managing callbacks.
-- **`Transport`**: Responsible for establishing and maintaining the connection to the server (e.g., via WebSockets, SSE, Stdio, or in-memory).
+- **\`Client\`**: Handles sending MCP requests (like \`tools/call\`, \`resources/read\`), receiving responses, and managing callbacks.
+- **\`Transport\`**: Responsible for establishing and maintaining the connection to the server (e.g., via WebSockets, SSE, Stdio, or in-memory).
 
 ### Transports
 
-Clients must be initialized with a `transport`. You can either provide an already instantiated transport object, or provide a transport source and let FastMCP attempt to infer the correct transport to use.
+Clients must be initialized with a \`transport\`. You can either provide an already instantiated transport object, or provide a transport source and let FastMCP attempt to infer the correct transport to use.
 
-The following inference rules are used to determine the appropriate `ClientTransport` based on the input type:
+The following inference rules are used to determine the appropriate \`ClientTransport\` based on the input type:
 
-1.  **`ClientTransport` Instance**: If you provide an already instantiated transport object, it's used directly.
-2.  **`FastMCP` Instance**: Creates a `FastMCPTransport` for efficient in-memory communication (ideal for testing). This also works with a **FastMCP 1.0 server** created via `mcp.server.fastmcp.FastMCP`.
-3.  **`Path` or `str` pointing to an existing file**:
-    *   If it ends with `.py`: Creates a `PythonStdioTransport` to run the script using `python`.
-    *   If it ends with `.js`: Creates a `NodeStdioTransport` to run the script using `node`.
-4.  **`AnyUrl` or `str` pointing to a URL that begins with `http://` or `https://`**:
-    *   Creates a `StreamableHttpTransport`
-5.  **`MCPConfig` or dictionary matching MCPConfig schema**: Creates a client that connects to one or more MCP servers specified in the config.
-6.  **Other**: Raises a `ValueError` if the type cannot be inferred.
+1.  **\`ClientTransport\` Instance**: If you provide an already instantiated transport object, it's used directly.
+2.  **\`FastMCP\` Instance**: Creates a \`FastMCPTransport\` for efficient in-memory communication (ideal for testing). This also works with a **FastMCP 1.0 server** created via \`mcp.server.fastmcp.FastMCP\`.
+3.  **\`Path\` or \`str\` pointing to an existing file**:
+    *   If it ends with \`.py\`: Creates a \`PythonStdioTransport\` to run the script using \`python\`.
+    *   If it ends with \`.js\`: Creates a \`NodeStdioTransport\` to run the script using \`node\`.
+4.  **\`AnyUrl\` or \`str\` pointing to a URL that begins with \`http://\` or \`https://\`**:
+    *   Creates a \`StreamableHttpTransport\`
+5.  **\`MCPConfig\` or dictionary matching MCPConfig schema**: Creates a client that connects to one or more MCP servers specified in the config.
+6.  **Other**: Raises a \`ValueError\` if the type cannot be inferred.
 
-```python
+\`\`\`python
 import asyncio
 from fastmcp import Client, FastMCP
 
@@ -3041,11 +3041,11 @@ print(client_stdio.transport)
 # <FastMCP(server='TestServer')>
 # <StreamableHttp(url='https://example.com/mcp')>
 # <PythonStdioTransport(command='python', args=['/path/to/your/my_mcp_server.py'])>
-```
+\`\`\`
 
-You can also initialize a client from an MCP configuration dictionary or `MCPConfig` file:
+You can also initialize a client from an MCP configuration dictionary or \`MCPConfig\` file:
 
-```python
+\`\`\`python
 from fastmcp import Client
 
 config = {
@@ -3056,28 +3056,28 @@ config = {
 }
 
 client_config = Client(config)
-```
+\`\`\`
 <Tip>
-For more control over connection details (like headers for SSE, environment variables for Stdio), you can instantiate the specific `ClientTransport` class yourself and pass it to the `Client`. See the [Transports](/clients/transports) page for details.
+For more control over connection details (like headers for SSE, environment variables for Stdio), you can instantiate the specific \`ClientTransport\` class yourself and pass it to the \`Client\`. See the [Transports](/clients/transports) page for details.
 </Tip>
 
 ### Multi-Server Clients
 
 <VersionBadge version="2.4.0" />
 
-FastMCP supports creating clients that connect to multiple MCP servers through a single client interface using a standard MCP configuration format (`MCPConfig`). This configuration approach makes it easy to connect to multiple specialized servers or create composable systems with a simple, declarative syntax.
+FastMCP supports creating clients that connect to multiple MCP servers through a single client interface using a standard MCP configuration format (\`MCPConfig\`). This configuration approach makes it easy to connect to multiple specialized servers or create composable systems with a simple, declarative syntax.
 
 <Note>
 The MCP configuration format follows an emerging standard and may evolve as the specification matures. FastMCP will strive to maintain compatibility with future versions, but be aware that field names or structure might change.
 </Note>
 
-When you create a client with an `MCPConfig` containing multiple servers:
+When you create a client with an \`MCPConfig\` containing multiple servers:
 
 1. FastMCP creates a composite client that internally mounts all servers using their config names as prefixes
-2. Tools and resources from each server are accessible with appropriate prefixes in the format `servername_toolname` and `protocol://servername/resource/path`
+2. Tools and resources from each server are accessible with appropriate prefixes in the format \`servername_toolname\` and \`protocol://servername/resource/path\`
 3. You interact with this as a single unified client, with requests automatically routed to the appropriate server
 
-```python
+\`\`\`python
 from fastmcp import Client
 
 # Create a standard MCP configuration with multiple servers
@@ -3115,7 +3115,7 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-```
+\`\`\`
 
 If your configuration has only a single server, FastMCP will create a direct client to that server without any prefixing.
 
@@ -3123,9 +3123,9 @@ If your configuration has only a single server, FastMCP will create a direct cli
 
 ### Connection Lifecycle
 
-The client operates asynchronously and must be used within an `async with` block. This context manager handles establishing the connection, initializing the MCP session, and cleaning up resources upon exit.
+The client operates asynchronously and must be used within an \`async with\` block. This context manager handles establishing the connection, initializing the MCP session, and cleaning up resources upon exit.
 
-```python
+\`\`\`python
 import asyncio
 from fastmcp import Client
 
@@ -3149,27 +3149,27 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-```
+\`\`\`
 
-You can make multiple calls to the server within the same `async with` block using the established session.
+You can make multiple calls to the server within the same \`async with\` block using the established session.
 
 ### Client Methods
 
-The `Client` provides methods corresponding to standard MCP requests:
+The \`Client\` provides methods corresponding to standard MCP requests:
 
 <Warning>
-The standard client methods return user-friendly representations that may change as the protocol evolves. For consistent access to the complete data structure, use the `*_mcp` methods described later.
+The standard client methods return user-friendly representations that may change as the protocol evolves. For consistent access to the complete data structure, use the \`*_mcp\` methods described later.
 </Warning>
 
 #### Tool Operations
 
-*   **`list_tools()`**: Retrieves a list of tools available on the server.
-    ```python
+*   **\`list_tools()\`**: Retrieves a list of tools available on the server.
+    \`\`\`python
     tools = await client.list_tools()
     # tools -> list[mcp.types.Tool]
-    ```
-*   **`call_tool(name: str, arguments: dict[str, Any] | None = None, timeout: float | None = None, progress_handler: ProgressHandler | None = None)`**: Executes a tool on the server.
-    ```python
+    \`\`\`
+*   **\`call_tool(name: str, arguments: dict[str, Any] | None = None, timeout: float | None = None, progress_handler: ProgressHandler | None = None)\`**: Executes a tool on the server.
+    \`\`\`python
     result = await client.call_tool("add", {"a": 5, "b": 3})
     # result -> list[mcp.types.TextContent | mcp.types.ImageContent | ...]
     print(result[0].text) # Assuming TextContent, e.g., '8'
@@ -3183,26 +3183,26 @@ The standard client methods return user-friendly representations that may change
         {"param": "value"},
         progress_handler=my_progress_handler
     )
-    ```
+    \`\`\`
     *   Arguments are passed as a dictionary. FastMCP servers automatically handle JSON string parsing for complex types if needed.
-    *   Returns a list of content objects (usually `TextContent` or `ImageContent`).
-    *   The optional `timeout` parameter limits the maximum execution time (in seconds) for this specific call, overriding any client-level timeout.
-    *   The optional `progress_handler` parameter receives progress updates during execution, overriding any client-level progress handler.
+    *   Returns a list of content objects (usually \`TextContent\` or \`ImageContent\`).
+    *   The optional \`timeout\` parameter limits the maximum execution time (in seconds) for this specific call, overriding any client-level timeout.
+    *   The optional \`progress_handler\` parameter receives progress updates during execution, overriding any client-level progress handler.
 
 #### Resource Operations
 
-*   **`list_resources()`**: Retrieves a list of static resources.
-    ```python
+*   **\`list_resources()\`**: Retrieves a list of static resources.
+    \`\`\`python
     resources = await client.list_resources()
     # resources -> list[mcp.types.Resource]
-    ```
-*   **`list_resource_templates()`**: Retrieves a list of resource templates.
-    ```python
+    \`\`\`
+*   **\`list_resource_templates()\`**: Retrieves a list of resource templates.
+    \`\`\`python
     templates = await client.list_resource_templates()
     # templates -> list[mcp.types.ResourceTemplate]
-    ```
-*   **`read_resource(uri: str | AnyUrl)`**: Reads the content of a resource or a resolved template.
-    ```python
+    \`\`\`
+*   **\`read_resource(uri: str | AnyUrl)\`**: Reads the content of a resource or a resolved template.
+    \`\`\`python
     # Read a static resource
     readme_content = await client.read_resource("file:///path/to/README.md")
     # readme_content -> list[mcp.types.TextResourceContents | mcp.types.BlobResourceContents]
@@ -3211,24 +3211,24 @@ The standard client methods return user-friendly representations that may change
     # Read a resource generated from a template
     weather_content = await client.read_resource("data://weather/london")
     print(weather_content[0].text) # Assuming text JSON
-    ```
+    \`\`\`
 
 #### Prompt Operations
 
-*   **`list_prompts()`**: Retrieves available prompt templates.
-*   **`get_prompt(name: str, arguments: dict[str, Any] | None = None)`**: Retrieves a rendered prompt message list.
+*   **\`list_prompts()\`**: Retrieves available prompt templates.
+*   **\`get_prompt(name: str, arguments: dict[str, Any] | None = None)\`**: Retrieves a rendered prompt message list.
 
 ### Raw MCP Protocol Objects
 
 <VersionBadge version="2.2.7" />
 
-The FastMCP client attempts to provide a "friendly" interface to the MCP protocol, but sometimes you may need access to the raw MCP protocol objects. Each of the main client methods that returns data has a corresponding `*_mcp` method that returns the raw MCP protocol objects directly.
+The FastMCP client attempts to provide a "friendly" interface to the MCP protocol, but sometimes you may need access to the raw MCP protocol objects. Each of the main client methods that returns data has a corresponding \`*_mcp\` method that returns the raw MCP protocol objects directly.
 
 <Warning>
-The standard client methods (without `_mcp`) return user-friendly representations of MCP data, while `*_mcp` methods will always return the complete MCP protocol objects. As the protocol evolves, changes to these user-friendly representations may occur and could potentially be breaking. If you need consistent, stable access to the full data structure, prefer using the `*_mcp` methods.
+The standard client methods (without \`_mcp\`) return user-friendly representations of MCP data, while \`*_mcp\` methods will always return the complete MCP protocol objects. As the protocol evolves, changes to these user-friendly representations may occur and could potentially be breaking. If you need consistent, stable access to the full data structure, prefer using the \`*_mcp\` methods.
 </Warning>
 
-```python
+\`\`\`python
 # Standard method - returns just the list of tools
 tools = await client.list_tools()
 # tools -> list[mcp.types.Tool]
@@ -3237,18 +3237,18 @@ tools = await client.list_tools()
 result = await client.list_tools_mcp()
 # result -> mcp.types.ListToolsResult
 tools = result.tools
-```
+\`\`\`
 
 Available raw MCP methods:
 
-*   **`list_tools_mcp()`**: Returns `mcp.types.ListToolsResult`
-*   **`call_tool_mcp(name, arguments)`**: Returns `mcp.types.CallToolResult`
-*   **`list_resources_mcp()`**: Returns `mcp.types.ListResourcesResult`
-*   **`list_resource_templates_mcp()`**: Returns `mcp.types.ListResourceTemplatesResult`
-*   **`read_resource_mcp(uri)`**: Returns `mcp.types.ReadResourceResult`
-*   **`list_prompts_mcp()`**: Returns `mcp.types.ListPromptsResult`
-*   **`get_prompt_mcp(name, arguments)`**: Returns `mcp.types.GetPromptResult`
-*   **`complete_mcp(ref, argument)`**: Returns `mcp.types.CompleteResult`
+*   **\`list_tools_mcp()\`**: Returns \`mcp.types.ListToolsResult\`
+*   **\`call_tool_mcp(name, arguments)\`**: Returns \`mcp.types.CallToolResult\`
+*   **\`list_resources_mcp()\`**: Returns \`mcp.types.ListResourcesResult\`
+*   **\`list_resource_templates_mcp()\`**: Returns \`mcp.types.ListResourceTemplatesResult\`
+*   **\`read_resource_mcp(uri)\`**: Returns \`mcp.types.ReadResourceResult\`
+*   **\`list_prompts_mcp()\`**: Returns \`mcp.types.ListPromptsResult\`
+*   **\`get_prompt_mcp(name, arguments)\`**: Returns \`mcp.types.GetPromptResult\`
+*   **\`complete_mcp(ref, argument)\`**: Returns \`mcp.types.CompleteResult\`
 
 These methods are especially useful for debugging or when you need to access metadata or fields that aren't exposed by the simplified methods.
 
@@ -3258,19 +3258,19 @@ These methods are especially useful for debugging or when you need to access met
 
 The client can be used to ping the server to verify connectivity.
 
-```python
+\`\`\`python
 async with client:
     await client.ping()
     print("Server is reachable")
-```
+\`\`\`
 
 #### Session Management
 
-When using stdio transports, clients support a `keep_alive` feature (enabled by default) that maintains subprocess sessions between connection contexts. You can manually control this behavior using the client's `close()` method.
+When using stdio transports, clients support a \`keep_alive\` feature (enabled by default) that maintains subprocess sessions between connection contexts. You can manually control this behavior using the client's \`close()\` method.
 
-When `keep_alive=False`, the client will automatically close the session when the context manager exits.
+When \`keep_alive=False\`, the client will automatically close the session when the context manager exits.
 
-```python
+\`\`\`python
 from fastmcp import Client
 
 client = Client("my_mcp_server.py")  # keep_alive=True by default
@@ -3281,7 +3281,7 @@ async def example():
     
     async with client:
         await client.ping()  # Same subprocess as above
-```
+\`\`\`
 
 <Note>
 For detailed examples and configuration options, see [Session Management in Transports](/clients/transports#session-management).
@@ -3293,7 +3293,7 @@ For detailed examples and configuration options, see [Session Management in Tran
 
 You can control request timeouts at both the client level and individual request level:
 
-```python
+\`\`\`python
 from fastmcp import Client
 from fastmcp.exceptions import McpError
 
@@ -3316,7 +3316,7 @@ async with client:
     except McpError as e:
         # Handle timeout error
         print(f"The task timed out: {e}")
-```
+\`\`\`
 
 <Warning>
 Timeout behavior varies between transport types:
@@ -3329,9 +3329,9 @@ For consistent behavior across all transports, we recommend explicitly setting t
 
 #### Error Handling
 
-When a `call_tool` request results in an error on the server (e.g., the tool function raised an exception), the `client.call_tool()` method will raise a `fastmcp.client.ClientError`.
+When a \`call_tool\` request results in an error on the server (e.g., the tool function raised an exception), the \`client.call_tool()\` method will raise a \`fastmcp.client.ClientError\`.
 
-```python
+\`\`\`python
 async def safe_call_tool():
     async with client:
         try:
@@ -3347,12 +3347,12 @@ async def safe_call_tool():
 
 # Example Output if division by zero occurs:
 # Tool call failed: Division by zero is not allowed.
-```
+\`\`\`
 
-Other errors, like connection failures, will raise standard Python exceptions (e.g., `ConnectionError`, `TimeoutError`). 
+Other errors, like connection failures, will raise standard Python exceptions (e.g., \`ConnectionError\`, \`TimeoutError\`). 
 
 <Tip>
-The client transport often has its own error-handling mechanisms, so you can not always trap errors like those raised by `call_tool` outside of the `async with` block. Instead, you can use `call_tool_mcp()` to get the raw `mcp.types.CallToolResult` object and handle errors yourself by checking its `isError` attribute.
+The client transport often has its own error-handling mechanisms, so you can not always trap errors like those raised by \`call_tool\` outside of the \`async with\` block. Instead, you can use \`call_tool_mcp()\` to get the raw \`mcp.types.CallToolResult\` object and handle errors yourself by checking its \`isError\` attribute.
 </Tip>
 
 
@@ -3371,23 +3371,23 @@ import { VersionBadge } from "/snippets/version-badge.mdx"
 
 <VersionBadge version="2.0.0" />
 
-The FastMCP `Client` relies on a `ClientTransport` object to handle the specifics of connecting to and communicating with an MCP server. FastMCP provides several built-in transport implementations for common connection methods.
+The FastMCP \`Client\` relies on a \`ClientTransport\` object to handle the specifics of connecting to and communicating with an MCP server. FastMCP provides several built-in transport implementations for common connection methods.
 
-While the `Client` often infers the correct transport automatically (see [Client Overview](/clients/client#transport-inference)), you can also instantiate transports explicitly for more control.
+While the \`Client\` often infers the correct transport automatically (see [Client Overview](/clients/client#transport-inference)), you can also instantiate transports explicitly for more control.
 
 <Tip>
-Clients are lightweight objects, so don't hesitate to create new ones as needed. However, be mindful of the context management - each time you open a client context (`async with client:`), a new connection or process starts. For best performance, keep client contexts open while performing multiple operations rather than repeatedly opening and closing them.
+Clients are lightweight objects, so don't hesitate to create new ones as needed. However, be mindful of the context management - each time you open a client context (\`async with client:\`), a new connection or process starts. For best performance, keep client contexts open while performing multiple operations rather than repeatedly opening and closing them.
 </Tip>
 
 ## Choosing a Transport
 
 Choose the transport that best fits your use case:
 
-- **Connecting to Remote/Persistent Servers:** Use `StreamableHttpTransport` (recommended, default for HTTP URLs) or `SSETransport` (legacy option) for web-based deployments.
+- **Connecting to Remote/Persistent Servers:** Use \`StreamableHttpTransport\` (recommended, default for HTTP URLs) or \`SSETransport\` (legacy option) for web-based deployments.
 
-- **Local Development/Testing:** Use `FastMCPTransport` for in-memory, same-process testing of your FastMCP servers.
+- **Local Development/Testing:** Use \`FastMCPTransport\` for in-memory, same-process testing of your FastMCP servers.
 
-- **Running Local Servers:** Use `UvxStdioTransport` (Python/uv) or `NpxStdioTransport` (Node/npm) if you need to run MCP servers as packaged tools.
+- **Running Local Servers:** Use \`UvxStdioTransport\` (Python/uv) or \`NpxStdioTransport\` (Node/npm) if you need to run MCP servers as packaged tools.
 
 ## Network Transports
 
@@ -3401,15 +3401,15 @@ Streamable HTTP is the recommended transport for web-based deployments, providin
 
 #### Overview
 
-- **Class:** `fastmcp.client.transports.StreamableHttpTransport`
-- **Inferred From:** URLs starting with `http://` or `https://` (default for HTTP URLs since v2.3.0) that do not contain `/sse/` in the path
-- **Server Compatibility:** Works with FastMCP servers running in `streamable-http` mode
+- **Class:** \`fastmcp.client.transports.StreamableHttpTransport\`
+- **Inferred From:** URLs starting with \`http://\` or \`https://\` (default for HTTP URLs since v2.3.0) that do not contain \`/sse/\` in the path
+- **Server Compatibility:** Works with FastMCP servers running in \`streamable-http\` mode
 
 #### Basic Usage
 
 The simplest way to use Streamable HTTP is to let the transport be inferred from a URL:
 
-```python
+\`\`\`python
 from fastmcp import Client
 import asyncio
 
@@ -3422,22 +3422,22 @@ async def main():
         print(f"Available tools: {tools}")
 
 asyncio.run(main())
-```
+\`\`\`
 
 You can also explicitly instantiate the transport:
 
-```python
+\`\`\`python
 from fastmcp.client.transports import StreamableHttpTransport
 
 transport = StreamableHttpTransport(url="https://example.com/mcp")
 client = Client(transport)
-```
+\`\`\`
 
 #### Authentication with Headers
 
 For servers requiring authentication:
 
-```python
+\`\`\`python
 from fastmcp import Client
 from fastmcp.client.transports import StreamableHttpTransport
 
@@ -3448,7 +3448,7 @@ transport = StreamableHttpTransport(
 )
 
 client = Client(transport)
-```
+\`\`\`
 
 ### SSE (Server-Sent Events)
 
@@ -3458,15 +3458,15 @@ Server-Sent Events (SSE) is a transport that allows servers to push data to clie
 
 #### Overview
 
-- **Class:** `fastmcp.client.transports.SSETransport`
-- **Inferred From:** HTTP URLs containing `/sse/` in the path
-- **Server Compatibility:** Works with FastMCP servers running in `sse` mode
+- **Class:** \`fastmcp.client.transports.SSETransport\`
+- **Inferred From:** HTTP URLs containing \`/sse/\` in the path
+- **Server Compatibility:** Works with FastMCP servers running in \`sse\` mode
 
 #### Basic Usage
 
-The simplest way to use SSE is to let the transport be inferred from a URL with `/sse/` in the path:
+The simplest way to use SSE is to let the transport be inferred from a URL with \`/sse/\` in the path:
 
-```python
+\`\`\`python
 from fastmcp import Client
 import asyncio
 
@@ -3479,22 +3479,22 @@ async def main():
         print(f"Available tools: {tools}")
 
 asyncio.run(main())
-```
+\`\`\`
 
-You can also explicitly instantiate the transport for URLs that do not contain `/sse/` in the path or for more control: 
+You can also explicitly instantiate the transport for URLs that do not contain \`/sse/\` in the path or for more control: 
 
-```python
+\`\`\`python
 from fastmcp.client.transports import SSETransport
 
 transport = SSETransport(url="https://example.com/sse")
 client = Client(transport)
-```
+\`\`\`
 
 #### Authentication with Headers
 
 SSE transport also supports custom headers for authentication:
 
-```python
+\`\`\`python
 from fastmcp import Client
 from fastmcp.client.transports import SSETransport
 
@@ -3505,17 +3505,17 @@ transport = SSETransport(
 )
 
 client = Client(transport)
-```
+\`\`\`
 
 #### When to Use SSE vs. Streamable HTTP
 
 - **Use Streamable HTTP when:**
   - Setting up new deployments (recommended default)
   - You need bidirectional streaming
-  - You're connecting to FastMCP servers running in `streamable-http` mode
+  - You're connecting to FastMCP servers running in \`streamable-http\` mode
 
 - **Use SSE when:**
-  - Connecting to legacy FastMCP servers running in `sse` mode
+  - Connecting to legacy FastMCP servers running in \`sse\` mode
   - Working with infrastructure optimized for Server-Sent Events
 
 ## Local Transports
@@ -3524,15 +3524,15 @@ These transports manage an MCP server running as a subprocess, communicating wit
 
 ### Session Management
 
-All stdio transports support a `keep_alive` parameter (default: `True`) that controls session persistence across multiple client context managers:
+All stdio transports support a \`keep_alive\` parameter (default: \`True\`) that controls session persistence across multiple client context managers:
 
-- **`keep_alive=True` (default)**: The subprocess and session are maintained between client context exits and re-entries. This improves performance when making multiple separate connections to the same server.
-- **`keep_alive=False`**: A new subprocess is started for each client context, ensuring complete isolation between sessions.
+- **\`keep_alive=True\` (default)**: The subprocess and session are maintained between client context exits and re-entries. This improves performance when making multiple separate connections to the same server.
+- **\`keep_alive=False\`**: A new subprocess is started for each client context, ensuring complete isolation between sessions.
 
-When `keep_alive=True`, you can manually close the session using `await client.close()` if needed. This will terminate the subprocess and require a new one to be started on the next connection.
+When \`keep_alive=True\`, you can manually close the session using \`await client.close()\` if needed. This will terminate the subprocess and require a new one to be started on the next connection.
 
 <CodeGroup>
-```python keep_alive=True
+\`\`\`python keep_alive=True
 from fastmcp import Client
 
 # Client with keep_alive=True (default)
@@ -3555,8 +3555,8 @@ async def example():
         await client.ping()
 
 asyncio.run(example())
-```
-```python keep_alive=False
+\`\`\`
+\`\`\`python keep_alive=False
 from fastmcp import Client
 
 # Client with keep_alive=False
@@ -3576,18 +3576,18 @@ async def example():
         await client.ping()
 
 asyncio.run(example())
-```
+\`\`\`
 </CodeGroup>
 
 ### Python Stdio
 
-- **Class:** `fastmcp.client.transports.PythonStdioTransport`
-- **Inferred From:** Paths to `.py` files
+- **Class:** \`fastmcp.client.transports.PythonStdioTransport\`
+- **Inferred From:** Paths to \`.py\` files
 - **Use Case:** Running a Python-based MCP server script in a subprocess
 
 This is the most common way to interact with local FastMCP servers during development or when integrating with tools that expect to launch a server script.
 
-```python
+\`\`\`python
 from fastmcp import Client
 from fastmcp.client.transports import PythonStdioTransport
 
@@ -3611,21 +3611,21 @@ async def main():
         print(f"Connected via Python Stdio, found tools: {tools}")
 
 asyncio.run(main())
-```
+\`\`\`
 
 <Warning>
-The server script must include logic to start the MCP server and listen on stdio, typically via `mcp.run()` or `fastmcp.server.run()`. The Client only launches the script; it doesn't inject the server logic.
+The server script must include logic to start the MCP server and listen on stdio, typically via \`mcp.run()\` or \`fastmcp.server.run()\`. The Client only launches the script; it doesn't inject the server logic.
 </Warning>
 
 ### Node.js Stdio
 
-- **Class:** `fastmcp.client.transports.NodeStdioTransport`
-- **Inferred From:** Paths to `.js` files
+- **Class:** \`fastmcp.client.transports.NodeStdioTransport\`
+- **Inferred From:** Paths to \`.js\` files
 - **Use Case:** Running a Node.js-based MCP server script in a subprocess
 
 Similar to the Python transport, but for JavaScript servers.
 
-```python
+\`\`\`python
 from fastmcp import Client
 from fastmcp.client.transports import NodeStdioTransport
 
@@ -3647,17 +3647,17 @@ async def main():
         print(f"Connected via Node.js Stdio, found tools: {tools}")
 
 asyncio.run(main())
-```
+\`\`\`
 
 ### UVX Stdio (Experimental)
 
-- **Class:** `fastmcp.client.transports.UvxStdioTransport`
+- **Class:** \`fastmcp.client.transports.UvxStdioTransport\`
 - **Inferred From:** Not automatically inferred
-- **Use Case:** Running an MCP server packaged as a Python tool using [`uvx`](https://docs.astral.sh/uv/reference/cli/#uvx)
+- **Use Case:** Running an MCP server packaged as a Python tool using [\`uvx\`](https://docs.astral.sh/uv/reference/cli/#uvx)
 
 This is useful for executing MCP servers distributed as command-line tools or packages without installing them into your environment.
 
-```python
+\`\`\`python
 from fastmcp import Client
 from fastmcp.client.transports import UvxStdioTransport
 
@@ -3675,17 +3675,17 @@ async def main():
         print(f"Analysis result: {result}")
 
 asyncio.run(main())
-```
+\`\`\`
 
 ### NPX Stdio (Experimental)
 
-- **Class:** `fastmcp.client.transports.NpxStdioTransport`
+- **Class:** \`fastmcp.client.transports.NpxStdioTransport\`
 - **Inferred From:** Not automatically inferred
-- **Use Case:** Running an MCP server packaged as an NPM package using `npx`
+- **Use Case:** Running an MCP server packaged as an NPM package using \`npx\`
 
-Similar to `UvxStdioTransport`, but for the Node.js ecosystem.
+Similar to \`UvxStdioTransport\`, but for the Node.js ecosystem.
 
-```python
+\`\`\`python
 from fastmcp import Client
 from fastmcp.client.transports import NpxStdioTransport
 
@@ -3702,19 +3702,19 @@ async def main():
         print(f"Result: {result}")
 
 asyncio.run(main())
-```
+\`\`\`
 
 ## In-Memory Transports
 
 ### FastMCP Transport
 
-- **Class:** `fastmcp.client.transports.FastMCPTransport`
-- **Inferred From:** An instance of `fastmcp.server.FastMCP` or a **FastMCP 1.0 server** (`mcp.server.fastmcp.FastMCP`)
+- **Class:** \`fastmcp.client.transports.FastMCPTransport\`
+- **Inferred From:** An instance of \`fastmcp.server.FastMCP\` or a **FastMCP 1.0 server** (\`mcp.server.fastmcp.FastMCP\`)
 - **Use Case:** Connecting directly to a FastMCP server instance in the same Python process
 
 This is extremely useful for testing your FastMCP servers.
 
-```python
+\`\`\`python
 from fastmcp import FastMCP, Client
 import asyncio
 
@@ -3734,7 +3734,7 @@ async def main():
         print(f"In-memory call result: {result}")
 
 asyncio.run(main())
-```
+\`\`\`
 
 Communication happens through efficient in-memory queues, making it very fast and ideal for unit testing. 
 
@@ -3744,13 +3744,13 @@ Communication happens through efficient in-memory queues, making it very fast an
 
 <VersionBadge version="2.4.0" />
 
-- **Class:** `fastmcp.client.transports.MCPConfigTransport`
-- **Inferred From:** An instance of `MCPConfig` or a dictionary matching the MCPConfig schema
+- **Class:** \`fastmcp.client.transports.MCPConfigTransport\`
+- **Inferred From:** An instance of \`MCPConfig\` or a dictionary matching the MCPConfig schema
 - **Use Case:** Connecting to one or more MCP servers defined in a configuration object
 
 MCPConfig follows an emerging standard for MCP server configuration but is subject to change as the specification evolves. The standard supports both local servers (running via stdio) and remote servers (accessed via HTTP).
 
-```python
+\`\`\`python
 from fastmcp import Client
 
 # Configuration for multiple MCP servers (both local and remote)
@@ -3790,7 +3790,7 @@ async def main():
         docs = await client.read_resource("resource://assistant/docs/mcp")
 
 asyncio.run(main())
-```
+\`\`\`
 
 If your configuration has only a single server, the client will connect directly to that server without any prefixing. This makes it convenient to switch between single and multi-server configurations without changing your client code.
 
@@ -3819,19 +3819,19 @@ While FastMCP provides standalone server capabilities, you can also integrate yo
 - Combining multiple services in a single application
 - Leveraging existing authentication and middleware
 
-Please note that all FastMCP servers have a `run()` method that can be used to start the server. This guide focuses on integration with broader ASGI frameworks.
+Please note that all FastMCP servers have a \`run()\` method that can be used to start the server. This guide focuses on integration with broader ASGI frameworks.
 
 ## ASGI Server
 
 FastMCP servers can be created as [Starlette](https://www.starlette.io/) ASGI apps for straightforward hosting or integration into existing applications.
 
-The first step is to obtain a Starlette application instance from your FastMCP server using the `http_app()` method:
+The first step is to obtain a Starlette application instance from your FastMCP server using the \`http_app()\` method:
 
 <Tip>
-The `http_app()` method is new in FastMCP 2.3.2. In older versions, use `sse_app()` for SSE transport or `streamable_http_app()` for Streamable HTTP transport.
+The \`http_app()\` method is new in FastMCP 2.3.2. In older versions, use \`sse_app()\` for SSE transport or \`streamable_http_app()\` for Streamable HTTP transport.
 </Tip>
 
-```python
+\`\`\`python
 from fastmcp import FastMCP
 
 mcp = FastMCP("MyServer")
@@ -3845,28 +3845,28 @@ http_app = mcp.http_app()
 
 # For legacy SSE transport (deprecated)
 sse_app = mcp.http_app(transport="sse")
-```
+\`\`\`
 
 Both approaches return a Starlette application that can be integrated with other ASGI-compatible web frameworks.
 
-The returned app stores the `FastMCP` instance on `app.state.fastmcp_server`, so you
-can access it from custom middleware or routes via `request.app.state.fastmcp_server`.
+The returned app stores the \`FastMCP\` instance on \`app.state.fastmcp_server\`, so you
+can access it from custom middleware or routes via \`request.app.state.fastmcp_server\`.
 
-The MCP server's endpoint is mounted at the root path `/mcp` for Streamable HTTP transport, and `/sse` for SSE transport, though you can change these paths by passing a `path` argument to the `http_app()` method:
+The MCP server's endpoint is mounted at the root path \`/mcp\` for Streamable HTTP transport, and \`/sse\` for SSE transport, though you can change these paths by passing a \`path\` argument to the \`http_app()\` method:
 
-```python
+\`\`\`python
 # For Streamable HTTP transport
 http_app = mcp.http_app(path="/custom-mcp-path")
 
 # For SSE transport (deprecated)
 sse_app = mcp.http_app(path="/custom-sse-path", transport="sse")
-```
+\`\`\`
 
 ### Running the Server
 
-To run the FastMCP server, you can use the `uvicorn` ASGI server:
+To run the FastMCP server, you can use the \`uvicorn\` ASGI server:
 
-```python
+\`\`\`python
 from fastmcp import FastMCP
 import uvicorn
 
@@ -3876,13 +3876,13 @@ http_app = mcp.http_app()
 
 if __name__ == "__main__":
     uvicorn.run(http_app, host="0.0.0.0", port=8000)
-```
+\`\`\`
 
 Or, from the command line:
 
-```bash
+\`\`\`bash
 uvicorn path.to.your.app:http_app --host 0.0.0.0 --port 8000
-```
+\`\`\`
 
 ### Custom Middleware
 
@@ -3890,7 +3890,7 @@ uvicorn path.to.your.app:http_app --host 0.0.0.0 --port 8000
 
 You can add custom Starlette middleware to your FastMCP ASGI apps by passing a list of middleware instances to the app creation methods:
 
-```python
+\`\`\`python
 from fastmcp import FastMCP
 from starlette.middleware import Middleware
 from starlette.middleware.cors import CORSMiddleware
@@ -3905,7 +3905,7 @@ custom_middleware = [
 
 # Create ASGI app with custom middleware
 http_app = mcp.http_app(middleware=custom_middleware)
-```
+\`\`\`
 
 
 ## Starlette Integration
@@ -3914,7 +3914,7 @@ http_app = mcp.http_app(middleware=custom_middleware)
 
 You can mount your FastMCP server in another Starlette application:
 
-```python
+\`\`\`python
 from fastmcp import FastMCP
 from starlette.applications import Starlette
 from starlette.routing import Mount
@@ -3933,9 +3933,9 @@ app = Starlette(
     ],
     lifespan=mcp_app.lifespan,
 )
-```
+\`\`\`
 
-The MCP endpoint will be available at `/mcp-server/mcp` of the resulting Starlette app.
+The MCP endpoint will be available at \`/mcp-server/mcp\` of the resulting Starlette app.
 
 <Warning>
 For Streamable HTTP transport, you **must** pass the lifespan context from the FastMCP app to the resulting Starlette app, as nested lifespans are not recognized. Otherwise, the FastMCP server's session manager will not be properly initialized.
@@ -3946,7 +3946,7 @@ For Streamable HTTP transport, you **must** pass the lifespan context from the F
 
 You can create complex routing structures by nesting mounts:
 
-```python
+\`\`\`python
 from fastmcp import FastMCP
 from starlette.applications import Starlette
 from starlette.routing import Mount
@@ -3963,9 +3963,9 @@ app = Starlette(
     routes=[Mount("/outer", app=inner_app)],
     lifespan=mcp_app.lifespan,
 )
-```
+\`\`\`
 
-In this setup, the MCP server is accessible at the `/outer/inner/mcp` path of the resulting Starlette app.
+In this setup, the MCP server is accessible at the \`/outer/inner/mcp\` path of the resulting Starlette app.
 
 <Warning>
 For Streamable HTTP transport, you **must** pass the lifespan context from the FastMCP app to the *outer* Starlette app, as nested lifespans are not recognized. Otherwise, the FastMCP server's session manager will not be properly initialized.
@@ -3976,7 +3976,7 @@ For Streamable HTTP transport, you **must** pass the lifespan context from the F
 
 FastAPI is built on Starlette, so you can mount your FastMCP server in a similar way:
 
-```python
+\`\`\`python
 from fastmcp import FastMCP
 from fastapi import FastAPI
 from starlette.routing import Mount
@@ -3990,9 +3990,9 @@ mcp_app = mcp.http_app(path='/mcp')
 # Create a FastAPI app and mount the MCP server
 app = FastAPI(lifespan=mcp_app.lifespan)
 app.mount("/mcp-server", mcp_app)
-```
+\`\`\`
 
-The MCP endpoint will be available at `/mcp-server/mcp` of the resulting FastAPI app.
+The MCP endpoint will be available at \`/mcp-server/mcp\` of the resulting FastAPI app.
 
 <Warning>
 For Streamable HTTP transport, you **must** pass the lifespan context from the FastMCP app to the resulting FastAPI app, as nested lifespans are not recognized. Otherwise, the FastMCP server's session manager will not be properly initialized.
@@ -4001,9 +4001,9 @@ For Streamable HTTP transport, you **must** pass the lifespan context from the F
 
 ## Custom Routes
 
-In addition to adding your FastMCP server to an existing ASGI app, you can also add custom web routes to your FastMCP server, which will be exposed alongside the MCP endpoint. To do so, use the `@custom_route` decorator. Note that this is less flexible than using a full ASGI framework, but can be useful for adding simple endpoints like health checks to your standalone server.
+In addition to adding your FastMCP server to an existing ASGI app, you can also add custom web routes to your FastMCP server, which will be exposed alongside the MCP endpoint. To do so, use the \`@custom_route\` decorator. Note that this is less flexible than using a full ASGI framework, but can be useful for adding simple endpoints like health checks to your standalone server.
 
-```python
+\`\`\`python
 from fastmcp import FastMCP
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse
@@ -4013,7 +4013,7 @@ mcp = FastMCP("MyServer")
 @mcp.custom_route("/health", methods=["GET"])
 async def health_check(request: Request) -> PlainTextResponse:
     return PlainTextResponse("OK")
-```
+\`\`\`
 
 These routes will be included in the FastMCP app when mounted in your web application.
 
@@ -4054,28 +4054,28 @@ import { VersionBadge } from "/snippets/version-badge.mdx"
 
 FastMCP provides a command-line interface (CLI) that makes it easy to run, develop, and install your MCP servers. The CLI is automatically installed when you install FastMCP.
 
-```bash
+\`\`\`bash
 fastmcp --help
-```
+\`\`\`
 
 ## Commands Overview
 
 | Command | Purpose | Dependency Management |
 | ------- | ------- | --------------------- |
-| `run` | Run a FastMCP server directly | Uses your current environment; you are responsible for ensuring all dependencies are available |
-| `dev` | Run a server with the MCP Inspector for testing | Creates an isolated environment; dependencies must be explicitly specified with `--with` and/or `--with-editable` |
-| `install` | Install a server in the Claude desktop app | Creates an isolated environment; dependencies must be explicitly specified with `--with` and/or `--with-editable` |
-| `version` | Display version information | N/A |
+| \`run\` | Run a FastMCP server directly | Uses your current environment; you are responsible for ensuring all dependencies are available |
+| \`dev\` | Run a server with the MCP Inspector for testing | Creates an isolated environment; dependencies must be explicitly specified with \`--with\` and/or \`--with-editable\` |
+| \`install\` | Install a server in the Claude desktop app | Creates an isolated environment; dependencies must be explicitly specified with \`--with\` and/or \`--with-editable\` |
+| \`version\` | Display version information | N/A |
 
 ## Command Details
 
-### `run`
+### \`run\`
 
 Run a FastMCP server directly or proxy a remote server.
 
-```bash
+\`\`\`bash
 fastmcp run server.py
-```
+\`\`\`
 
 <Tip>
 This command runs the server directly in your current Python environment. You are responsible for ensuring all dependencies are available.
@@ -4085,26 +4085,26 @@ This command runs the server directly in your current Python environment. You ar
 
 | Option | Flag | Description |
 | ------ | ---- | ----------- |
-| Transport | `--transport`, `-t` | Transport protocol to use (`stdio`, `streamable-http`, or `sse`) |
-| Host | `--host` | Host to bind to when using http transport (default: 127.0.0.1) |
-| Port | `--port`, `-p` | Port to bind to when using http transport (default: 8000) |
-| Log Level | `--log-level`, `-l` | Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL) |
+| Transport | \`--transport\`, \`-t\` | Transport protocol to use (\`stdio\`, \`streamable-http\`, or \`sse\`) |
+| Host | \`--host\` | Host to bind to when using http transport (default: 127.0.0.1) |
+| Port | \`--port\`, \`-p\` | Port to bind to when using http transport (default: 8000) |
+| Log Level | \`--log-level\`, \`-l\` | Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL) |
 
 #### Server Specification
 <VersionBadge version="2.3.5" />
 
 The server can be specified in three ways:
-1. `server.py` - imports the module and looks for a FastMCP object named `mcp`, `server`, or `app`. Errors if no such object is found.
-2. `server.py:custom_name` - imports and uses the specified server object
-3. `http://server-url/path` or `https://server-url/path` - connects to a remote server and creates a proxy
+1. \`server.py\` - imports the module and looks for a FastMCP object named \`mcp\`, \`server\`, or \`app\`. Errors if no such object is found.
+2. \`server.py:custom_name\` - imports and uses the specified server object
+3. \`http://server-url/path\` or \`https://server-url/path\` - connects to a remote server and creates a proxy
 
 <Tip>
-When using `fastmcp run` with a local file, it **ignores** the `if __name__ == "__main__"` block entirely. Instead, it finds your server object and calls its `run()` method directly with the transport options you specify. This means you can use `fastmcp run` to override the transport specified in your code.
+When using \`fastmcp run\` with a local file, it **ignores** the \`if __name__ == "__main__"\` block entirely. Instead, it finds your server object and calls its \`run()\` method directly with the transport options you specify. This means you can use \`fastmcp run\` to override the transport specified in your code.
 </Tip>
 
 For example, if your code contains:
 
-```python
+\`\`\`python
 # server.py
 from fastmcp import FastMCP
 
@@ -4115,19 +4115,19 @@ def hello(name: str) -> str:
     return f"Hello, {name}!"
 
 if __name__ == "__main__":
-    # This is ignored when using `fastmcp run`!
+    # This is ignored when using \`fastmcp run\`!
     mcp.run(transport="stdio")
-```
+\`\`\`
 
-You can run it with Streamable HTTP transport regardless of what's in the `__main__` block:
+You can run it with Streamable HTTP transport regardless of what's in the \`__main__\` block:
 
-```bash
+\`\`\`bash
 fastmcp run server.py --transport streamable-http --port 8000
-```
+\`\`\`
 
 **Examples**
 
-```bash
+\`\`\`bash
 # Run a local server with Streamable HTTP transport on a custom port
 fastmcp run server.py --transport streamable-http --port 8000
 
@@ -4136,34 +4136,34 @@ fastmcp run https://example.com/mcp-server
 
 # Connect to a remote server with specified log level
 fastmcp run https://example.com/mcp-server --log-level DEBUG
-```
+\`\`\`
 
-### `dev`
+### \`dev\`
 
 Run a MCP server with the [MCP Inspector](https://github.com/modelcontextprotocol/inspector) for testing.
 
-```bash
+\`\`\`bash
 fastmcp dev server.py
-```
+\`\`\`
 
 <Tip> 
-This command runs your server in an isolated environment. All dependencies must be explicitly specified using the `--with` and/or `--with-editable` options.
+This command runs your server in an isolated environment. All dependencies must be explicitly specified using the \`--with\` and/or \`--with-editable\` options.
 </Tip>
 
 <Warning>
-The `dev` command is a shortcut for testing a server over STDIO only. When the Inspector launches, you may need to:
+The \`dev\` command is a shortcut for testing a server over STDIO only. When the Inspector launches, you may need to:
 1. Select "STDIO" from the transport dropdown
 2. Connect manually
 
 This command does not support HTTP testing. To test a server over HTTP:
 1. Start your server manually with HTTP transport using either:
-   ```bash
+   \`\`\`bash
    fastmcp run server.py --transport streamable-http
-   ```
+   \`\`\`
    or
-   ```bash
+   \`\`\`bash
    python server.py  # Assuming your __main__ block sets HTTP transport
-   ```
+   \`\`\`
 2. Open the MCP Inspector separately and connect to your running server
 </Warning>
 
@@ -4171,62 +4171,62 @@ This command does not support HTTP testing. To test a server over HTTP:
 
 | Option | Flag | Description |
 | ------ | ---- | ----------- |
-| Editable Package | `--with-editable`, `-e` | Directory containing pyproject.toml to install in editable mode |
-| Additional Packages | `--with` | Additional packages to install (can be used multiple times) |
-| Inspector Version | `--inspector-version` | Version of the MCP Inspector to use |
-| UI Port | `--ui-port` | Port for the MCP Inspector UI |
-| Server Port | `--server-port` | Port for the MCP Inspector Proxy server |
+| Editable Package | \`--with-editable\`, \`-e\` | Directory containing pyproject.toml to install in editable mode |
+| Additional Packages | \`--with\` | Additional packages to install (can be used multiple times) |
+| Inspector Version | \`--inspector-version\` | Version of the MCP Inspector to use |
+| UI Port | \`--ui-port\` | Port for the MCP Inspector UI |
+| Server Port | \`--server-port\` | Port for the MCP Inspector Proxy server |
 
 **Example**
 
-```bash
+\`\`\`bash
 # Run dev server with editable mode and additional packages
 fastmcp dev server.py -e . --with pandas --with matplotlib
-```
+\`\`\`
 
-### `install`
+### \`install\`
 
 Install a MCP server in the Claude desktop app.
 
-```bash
+\`\`\`bash
 fastmcp install server.py
-```
+\`\`\`
 
 
-Note that for security reasons, Claude runs every MCP server in a completely isolated environment. Therefore, all dependencies must be explicitly specified using the `--with` and/or `--with-editable` options (following `uv` conventions) or by attaching them to your server in code via the `dependencies` parameter.
+Note that for security reasons, Claude runs every MCP server in a completely isolated environment. Therefore, all dependencies must be explicitly specified using the \`--with\` and/or \`--with-editable\` options (following \`uv\` conventions) or by attaching them to your server in code via the \`dependencies\` parameter.
 <Warning>
-- **`uv` must be installed and available in your system PATH**. Claude Desktop runs in its own isolated environment and needs `uv` to manage dependencies.
-- **On macOS, it is recommended to install `uv` globally with Homebrew** so that Claude Desktop will detect it: `brew install uv`. Installing `uv` with other methods may not make it accessible to Claude Desktop.
+- **\`uv\` must be installed and available in your system PATH**. Claude Desktop runs in its own isolated environment and needs \`uv\` to manage dependencies.
+- **On macOS, it is recommended to install \`uv\` globally with Homebrew** so that Claude Desktop will detect it: \`brew install uv\`. Installing \`uv\` with other methods may not make it accessible to Claude Desktop.
 </Warning>
 
 <Warning>
-The `install` command currently only sets up servers for STDIO transport. When installed in the Claude desktop app, your server will be run using STDIO regardless of any transport configuration in your code.
+The \`install\` command currently only sets up servers for STDIO transport. When installed in the Claude desktop app, your server will be run using STDIO regardless of any transport configuration in your code.
 </Warning>
 
 #### Options
 
 | Option | Flag | Description |
 | ------ | ---- | ----------- |
-| Server Name | `--name`, `-n` | Custom name for the server |
-| Editable Package | `--with-editable`, `-e` | Directory containing pyproject.toml to install in editable mode |
-| Additional Packages | `--with` | Additional packages to install (can be used multiple times) |
-| Environment Variables | `--env-var`, `-v` | Environment variables in KEY=VALUE format (can be used multiple times) |
-| Environment File | `--env-file`, `-f` | Load environment variables from a .env file |
+| Server Name | \`--name\`, \`-n\` | Custom name for the server |
+| Editable Package | \`--with-editable\`, \`-e\` | Directory containing pyproject.toml to install in editable mode |
+| Additional Packages | \`--with\` | Additional packages to install (can be used multiple times) |
+| Environment Variables | \`--env-var\`, \`-v\` | Environment variables in KEY=VALUE format (can be used multiple times) |
+| Environment File | \`--env-file\`, \`-f\` | Load environment variables from a .env file |
 
 **Example**
 
-```bash
+\`\`\`bash
 # Install server with custom name, dependencies, and environment variables
 fastmcp install server.py -n "My Analysis Server" -e . --with pandas --env-var API_KEY=12345
-```
+\`\`\`
 
-### `version`
+### \`version\`
 
 Display version information about FastMCP and related components.
 
-```bash
+\`\`\`bash
 fastmcp version
-```
+\`\`\`
 
 
 
@@ -4244,15 +4244,15 @@ import { VersionBadge } from '/snippets/version-badge.mdx'
 
 FastMCP servers can be run in different ways depending on your application's needs, from local command-line tools to persistent web services. This guide covers the primary methods for running your server, focusing on the available transport protocols: STDIO, Streamable HTTP, and SSE.
 
-## The `run()` Method
+## The \`run()\` Method
 
-FastMCP servers can be run directly from Python by calling the `run()` method on a `FastMCP` instance.
+FastMCP servers can be run directly from Python by calling the \`run()\` method on a \`FastMCP\` instance.
 
 <Tip>
-For maximum compatibility, it's best practice to place the `run()` call within an `if __name__ == "__main__":` block. This ensures the server starts only when the script is executed directly, not when imported as a module.
+For maximum compatibility, it's best practice to place the \`run()\` call within an \`if __name__ == "__main__":\` block. This ensures the server starts only when the script is executed directly, not when imported as a module.
 </Tip>
 
-```python {9-10} my_server.py
+\`\`\`python {9-10} my_server.py
 from fastmcp import FastMCP
 
 mcp = FastMCP(name="MyServer")
@@ -4263,36 +4263,36 @@ def hello(name: str) -> str:
 
 if __name__ == "__main__":
     mcp.run()
-```
-You can now run this MCP server by executing `python my_server.py`.
+\`\`\`
+You can now run this MCP server by executing \`python my_server.py\`.
 
-MCP servers can be run with a variety of different transport options, depending on your application's requirements. The `run()` method can take a `transport` argument and other transport-specific keyword arguments to configure how the server operates.
+MCP servers can be run with a variety of different transport options, depending on your application's requirements. The \`run()\` method can take a \`transport\` argument and other transport-specific keyword arguments to configure how the server operates.
 
 ## The FastMCP CLI
 
 FastMCP also provides a command-line interface for running servers without modifying the source code. After installing FastMCP, you can run your server directly from the command line:
 
-```bash
+\`\`\`bash
 fastmcp run server.py
-```
+\`\`\`
 
 <Tip>
-**Important**: When using `fastmcp run`, it **ignores** the `if __name__ == "__main__"` block entirely. Instead, it looks for a FastMCP object named `mcp`, `server`, or `app` and calls its `run()` method directly with the transport options you specify.
+**Important**: When using \`fastmcp run\`, it **ignores** the \`if __name__ == "__main__"\` block entirely. Instead, it looks for a FastMCP object named \`mcp\`, \`server\`, or \`app\` and calls its \`run()\` method directly with the transport options you specify.
 
-This means you can use `fastmcp run` to override the transport specified in your code, which is particularly useful for testing or changing deployment methods without modifying the code.
+This means you can use \`fastmcp run\` to override the transport specified in your code, which is particularly useful for testing or changing deployment methods without modifying the code.
 </Tip>
 
 You can specify transport options and other configuration:
 
-```bash
+\`\`\`bash
 fastmcp run server.py --transport sse --port 9000
-```
+\`\`\`
 
-For development and testing, you can use the `dev` command to run your server with the MCP Inspector:
+For development and testing, you can use the \`dev\` command to run your server with the MCP Inspector:
 
-```bash
+\`\`\`bash
 fastmcp dev server.py
-```
+\`\`\`
 
 See the [CLI documentation](/deployment/cli) for detailed information about all available commands and options.
 
@@ -4310,16 +4310,16 @@ Below is a comparison of available transport options to help you choose the righ
 
 The STDIO transport is the default and most widely compatible option for local MCP server execution. It is ideal for local tools, command-line integrations, and clients like Claude Desktop. However, it has the disadvantage of having to run the MCP code locally, which can introduce security concerns with third-party servers.
 
-STDIO is the default transport, so you don't need to specify it when calling `run()`. However, you can specify it explicitly to make your intent clear:
+STDIO is the default transport, so you don't need to specify it when calling \`run()\`. However, you can specify it explicitly to make your intent clear:
 
-```python {6}
+\`\`\`python {6}
 from fastmcp import FastMCP
 
 mcp = FastMCP()
 
 if __name__ == "__main__":
     mcp.run(transport="stdio")
-```
+\`\`\`
 
 When using Stdio transport, you will typically *not* run the server yourself as a separate process. Rather, your *clients* will spin up a new server process for each session. As such, no additional configuration is required.
 
@@ -4329,17 +4329,17 @@ When using Stdio transport, you will typically *not* run the server yourself as 
 
 Streamable HTTP is a modern, efficient transport for exposing your MCP server via HTTP. It is the recommended transport for web-based deployments.
 
-To run a server using Streamable HTTP, you can use the `run()` method with the `transport` argument set to `"streamable-http"`. This will start a Uvicorn server on the default host (`127.0.0.1`), port (`8000`), and path (`/mcp`).
+To run a server using Streamable HTTP, you can use the \`run()\` method with the \`transport\` argument set to \`"streamable-http"\`. This will start a Uvicorn server on the default host (\`127.0.0.1\`), port (\`8000\`), and path (\`/mcp\`).
 <CodeGroup>
-```python {6} server.py
+\`\`\`python {6} server.py
 from fastmcp import FastMCP
 
 mcp = FastMCP()
 
 if __name__ == "__main__":
     mcp.run(transport="streamable-http")
-```
-```python {5} client.py
+\`\`\`
+\`\`\`python {5} client.py
 import asyncio
 from fastmcp import Client
 
@@ -4349,13 +4349,13 @@ async def example():
 
 if __name__ == "__main__":
     asyncio.run(example())
-```
+\`\`\`
 </CodeGroup>
 
-To customize the host, port, path, or log level, provide appropriate keyword arguments to the `run()` method.
+To customize the host, port, path, or log level, provide appropriate keyword arguments to the \`run()\` method.
 
 <CodeGroup>
-```python {8-11} server.py
+\`\`\`python {8-11} server.py
 from fastmcp import FastMCP
 
 mcp = FastMCP()
@@ -4368,8 +4368,8 @@ if __name__ == "__main__":
         path="/my-custom-path",
         log_level="debug",
     )
-```
-```python {5} client.py
+\`\`\`
+\`\`\`python {5} client.py
 import asyncio
 from fastmcp import Client
 
@@ -4379,7 +4379,7 @@ async def example():
 
 if __name__ == "__main__":
     asyncio.run(example())
-```
+\`\`\`
 </CodeGroup>
 
 
@@ -4392,18 +4392,18 @@ New applications should use Streamable HTTP transport instead.
 
 Server-Sent Events (SSE) is an HTTP-based protocol for server-to-client streaming. While FastMCP still supports SSE, it is deprecated and Streamable HTTP is preferred for new projects.
 
-To run a server using SSE, you can use the `run()` method with the `transport` argument set to `"sse"`. This will start a Uvicorn server on the default host (`127.0.0.1`), port (`8000`), and with default SSE path (`/sse`) and message path (`/messages/`).
+To run a server using SSE, you can use the \`run()\` method with the \`transport\` argument set to \`"sse"\`. This will start a Uvicorn server on the default host (\`127.0.0.1\`), port (\`8000\`), and with default SSE path (\`/sse\`) and message path (\`/messages/\`).
 
 <CodeGroup>
-```python {6} server.py
+\`\`\`python {6} server.py
 from fastmcp import FastMCP
 
 mcp = FastMCP()
 
 if __name__ == "__main__":
     mcp.run(transport="sse")
-```
-```python {3,7} client.py
+\`\`\`
+\`\`\`python {3,7} client.py
 import asyncio
 from fastmcp import Client
 from fastmcp.client.transports import SSETransport
@@ -4416,17 +4416,17 @@ async def example():
 
 if __name__ == "__main__":
     asyncio.run(example())
-```
+\`\`\`
 </CodeGroup>
 
 <Tip>
-Notice that the client in the above example uses an explicit `SSETransport` to connect to the server. FastMCP will attempt to infer the appropriate transport from the provided configuration, but HTTP URLs are assumed to be Streamable HTTP (as of FastMCP 2.3.0).
+Notice that the client in the above example uses an explicit \`SSETransport\` to connect to the server. FastMCP will attempt to infer the appropriate transport from the provided configuration, but HTTP URLs are assumed to be Streamable HTTP (as of FastMCP 2.3.0).
 </Tip>
 
-To customize the host, port, or log level, provide appropriate keyword arguments to the `run()` method. You can also adjust the SSE path (which clients should connect to) and the message POST endpoint (which clients use to send subsequent messages).
+To customize the host, port, or log level, provide appropriate keyword arguments to the \`run()\` method. You can also adjust the SSE path (which clients should connect to) and the message POST endpoint (which clients use to send subsequent messages).
 
 <CodeGroup>
-```python {8-12} server.py
+\`\`\`python {8-12} server.py
 from fastmcp import FastMCP
 
 mcp = FastMCP()
@@ -4439,8 +4439,8 @@ if __name__ == "__main__":
         log_level="debug",
         path="/my-custom-sse-path",
     )
-```
-```python {7} client.py
+\`\`\`
+\`\`\`python {7} client.py
 import asyncio
 from fastmcp import Client
 from fastmcp.client.transports import SSETransport
@@ -4453,16 +4453,16 @@ async def example():
 
 if __name__ == "__main__":
     asyncio.run(example())
-```
+\`\`\`
 </CodeGroup>
 
 
 
 ## Async Usage
 
-FastMCP provides both synchronous and asynchronous APIs for running your server. The `run()` method seen in previous examples is a synchronous method that internally uses `anyio.run()` to run the asynchronous server. For applications that are already running in an async context, FastMCP provides the `run_async()` method.
+FastMCP provides both synchronous and asynchronous APIs for running your server. The \`run()\` method seen in previous examples is a synchronous method that internally uses \`anyio.run()\` to run the asynchronous server. For applications that are already running in an async context, FastMCP provides the \`run_async()\` method.
 
-```python {10-12}
+\`\`\`python {10-12}
 from fastmcp import FastMCP
 import asyncio
 
@@ -4478,21 +4478,21 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-```
+\`\`\`
 
 <Warning>
-The `run()` method cannot be called from inside an async function because it already creates its own async event loop internally. If you attempt to call `run()` from inside an async function, you'll get an error about the event loop already running.
+The \`run()\` method cannot be called from inside an async function because it already creates its own async event loop internally. If you attempt to call \`run()\` from inside an async function, you'll get an error about the event loop already running.
 
-Always use `run_async()` inside async functions and `run()` in synchronous contexts.
+Always use \`run_async()\` inside async functions and \`run()\` in synchronous contexts.
 </Warning>
 
-Both `run()` and `run_async()` accept the same transport arguments, so all the examples above apply to both methods.
+Both \`run()\` and \`run_async()\` accept the same transport arguments, so all the examples above apply to both methods.
 
 ## Custom Routes
 
-You can also add custom web routes to your FastMCP server, which will be exposed alongside the MCP endpoint. To do so, use the `@custom_route` decorator. Note that this is less flexible than using a full ASGI framework, but can be useful for adding simple endpoints like health checks to your standalone server.
+You can also add custom web routes to your FastMCP server, which will be exposed alongside the MCP endpoint. To do so, use the \`@custom_route\` decorator. Note that this is less flexible than using a full ASGI framework, but can be useful for adding simple endpoints like health checks to your standalone server.
 
-```python
+\`\`\`python
 from fastmcp import FastMCP
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse
@@ -4505,7 +4505,7 @@ async def health_check(request: Request) -> PlainTextResponse:
 
 if __name__ == "__main__":
     mcp.run()
-```
+\`\`\`
 
 
 ================================================
@@ -4521,32 +4521,32 @@ We recommend using [uv](https://docs.astral.sh/uv/getting-started/installation/)
 
 If you plan to use FastMCP in your project, you can add it as a dependency with:
 
-```bash
+\`\`\`bash
 uv add fastmcp
-```
+\`\`\`
 
-Alternatively, you can install it directly with `pip` or `uv pip`:
+Alternatively, you can install it directly with \`pip\` or \`uv pip\`:
 <CodeGroup>
-    ```bash uv
+    \`\`\`bash uv
     uv pip install fastmcp
-    ```
+    \`\`\`
 
-    ```bash pip
+    \`\`\`bash pip
     pip install fastmcp
-    ```
+    \`\`\`
 </CodeGroup>
 
 ### Verify Installation
 
 To verify that FastMCP is installed correctly, you can run the following command:
 
-```bash
+\`\`\`bash
 fastmcp version
-```
+\`\`\`
 
 You should see output like the following:
 
-```bash
+\`\`\`bash
 $ fastmcp version
 
 FastMCP version:   0.4.2.dev41+ga077727.d20250410
@@ -4554,13 +4554,13 @@ MCP version:                                1.6.0
 Python version:                            3.12.2
 Platform:            macOS-15.3.1-arm64-arm-64bit
 FastMCP root path:            ~/Developer/fastmcp
-```
+\`\`\`
 ## Upgrading from the Official MCP SDK
 
-Upgrading from the official MCP SDK's FastMCP 1.0 to FastMCP 2.0 is generally straightforward. The core server API is highly compatible, and in many cases, changing your import statement from `from mcp.server.fastmcp import FastMCP` to `from fastmcp import FastMCP` will be sufficient. 
+Upgrading from the official MCP SDK's FastMCP 1.0 to FastMCP 2.0 is generally straightforward. The core server API is highly compatible, and in many cases, changing your import statement from \`from mcp.server.fastmcp import FastMCP\` to \`from fastmcp import FastMCP\` will be sufficient. 
 
 
-```python {1-5}
+\`\`\`python {1-5}
 # Before
 # from mcp.server.fastmcp import FastMCP
 
@@ -4568,16 +4568,16 @@ Upgrading from the official MCP SDK's FastMCP 1.0 to FastMCP 2.0 is generally st
 from fastmcp import FastMCP
 
 mcp = FastMCP("My MCP Server")
-```
+\`\`\`
 <Warning>
-Prior to `fastmcp==2.3.0` and `mcp==1.8.0`, the 2.x API always mirrored the 1.0 API. However, as the projects diverge, this can not be guaranteed. You may see deprecation warnings if you attempt to use 1.0 APIs in FastMCP 2.x. Please refer to this documentation for details on new capabilities.
+Prior to \`fastmcp==2.3.0\` and \`mcp==1.8.0\`, the 2.x API always mirrored the 1.0 API. However, as the projects diverge, this can not be guaranteed. You may see deprecation warnings if you attempt to use 1.0 APIs in FastMCP 2.x. Please refer to this documentation for details on new capabilities.
 </`,
     author: {
       name: "Venkatesh", // Replace with your name
       url: "https://github.com/Venkateshvenki404224", // Replace with your URL
-      avatar: null
-    }
-  }
+      avatar: null,
+    },
+  },
 ];
 
 export type Rule = {
@@ -4591,4 +4591,4 @@ export type Rule = {
     url: string | null;
     avatar: string | null;
   };
-}; 
+};
