@@ -247,4 +247,10 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "Gravity Swarm",
+    url: "https://github.com/antoinedelorme/gravity-swarm-mcp",
+    description:
+      "Agent reputation network — enlist, compute deterministic tasks (FFT, SHA chain, Monte Carlo), answer open questions, submit proofs, earn ELO via MCP tools. Handles Nostr BIP-340 signing internally. npm: gravity-swarm-mcp",
+  },
 ];
