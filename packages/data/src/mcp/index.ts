@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "FormBack",
+    url: "https://github.com/otopba/formback/tree/main/mcp",
+    description:
+      "MCP server for FormBack — the form backend API for static sites. Manage forms, view submissions, and check account stats directly from AI assistants like Claude and Cursor.",
+    logo: "https://formback.email/favicon.svg",
+  },
 ];
