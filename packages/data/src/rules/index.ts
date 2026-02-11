@@ -99,6 +99,7 @@ import { vueTsRules } from "./vue";
 import { webDevelopmentRules } from "./web-development";
 import { webScrapingRules } from "./web-scraping";
 import { wordpressRules } from "./wordpress";
+import { wordpressMcpRules } from "./wordpress-mcp";
 import { wordpressWoocommerce } from "./wordpress-woocommerce";
 import { zetaChainRules } from "./zetachain";
 import { zettelkastenRules } from "./zettelkasten";
@@ -194,6 +195,7 @@ export const rules: Rule[] = [
   ...webDevelopmentRules,
   ...webScrapingRules,
   ...wordpressRules,
+  ...wordpressMcpRules,
   ...wordpressWoocommerce,
   ...typescriptRules,
   ...softwareCraftsmanshipRules,
