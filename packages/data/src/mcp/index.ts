@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "Money",
+    url: "https://github.com/Parsons-ai/money-mcp-server",
+    description:
+      "Personal finance assistant — track transactions, budgets, net worth, and subscriptions via Plaid-connected bank data. Query your finances with natural language.",
+    logo: "https://money.parsons.ai/favicon.ico",
+  },
 ];
