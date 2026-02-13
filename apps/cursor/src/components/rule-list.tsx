@@ -1,15 +1,12 @@
 "use client";
 
-import { AdCard } from "@/components/ad-card";
 import { RuleCard } from "@/components/rule-card";
 import { RuleCardSmall } from "@/components/rule-card-small";
-import { ads } from "@/data/ads";
 import type { Section } from "@directories/data/rules";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import slugify from "slugify";
-import { AdCardSmall } from "./ad-card-small";
 import { Button } from "./ui/button";
 
 const ITEMS_PER_PAGE = 6;
@@ -25,32 +22,6 @@ export function RuleList({
 }) {
   const [search, setSearch] = useQueryState("q");
   const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
-  const [randomAds, setRandomAds] = useState<Record<string, (typeof ads)[0]>>(
-    {},
-  );
-  const [isMounted, setIsMounted] = useState(false);
-
-  // Set mounted state
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  // Generate random ads after component mounts on client
-  useEffect(() => {
-    const newRandomAds: Record<string, (typeof ads)[0]> = {};
-    sections.forEach((section, sectionIndex) => {
-      section.rules.forEach((_, ruleIndex) => {
-        const position = `${sectionIndex}-${ruleIndex}`;
-        if (!randomAds[position]) {
-          const randomIndex = Math.floor(Math.random() * ads.length);
-          newRandomAds[position] = ads[randomIndex];
-        } else {
-          newRandomAds[position] = randomAds[position];
-        }
-      });
-    });
-    setRandomAds(newRandomAds);
-  }, [sections]);
 
   // Reset visible items when search changes
   useEffect(() => {
@@ -85,13 +56,6 @@ export function RuleList({
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
-
-  const getRandomAd = (sectionIndex: number, ruleIndex: number) => {
-    const position = `${sectionIndex}-${ruleIndex}`;
-    return randomAds[position] || ads[0];
-  };
-
-  let totalItemsCount = 0;
 
   if (!filteredSections.length) {
     return (
@@ -154,32 +118,13 @@ export function RuleList({
               small ? "lg:grid-cols-4" : "lg:grid-cols-2 xl:grid-cols-3"
             }`}
           >
-            {section.rules.map((rule, idx2) => {
-              totalItemsCount++;
-              const shouldShowAd =
-                totalItemsCount % 9 === 2 ||
-                (totalItemsCount > 2 && (totalItemsCount - 2) % 9 === 0);
-
-              return (
-                <Fragment key={`${idx}-${idx2.toString()}`}>
-                  {small ? (
-                    <>
-                      <RuleCardSmall rule={rule} small />
-                      {isMounted && shouldShowAd && (
-                        <AdCardSmall ad={getRandomAd(idx, idx2)} small />
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      <RuleCard key={`${idx}-${idx2.toString()}`} rule={rule} />
-                      {isMounted && shouldShowAd && (
-                        <AdCard ad={getRandomAd(idx, idx2)} />
-                      )}
-                    </>
-                  )}
-                </Fragment>
-              );
-            })}
+            {section.rules.map((rule, idx2) =>
+              small ? (
+                <RuleCardSmall key={`${idx}-${idx2.toString()}`} rule={rule} small />
+              ) : (
+                <RuleCard key={`${idx}-${idx2.toString()}`} rule={rule} />
+              )
+            )}
           </div>
         </section>
       ))}

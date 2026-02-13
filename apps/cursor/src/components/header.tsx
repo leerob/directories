@@ -25,7 +25,6 @@ const navigationLinks = [
   { href: "/members", label: "Members" },
   { href: "/games", label: "Games" },
   { href: "/learn", label: "Learn" },
-  { href: "/advertise", label: "Advertise" },
   { href: "/about", label: "About" },
   { href: "/companies", label: "Companies" },
   { href: "/events", label: "Events" },

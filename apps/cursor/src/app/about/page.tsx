@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export const metadata = {
   title: "About Cursor Directory",
   description: "Why we built Cursor Directory",
@@ -84,24 +82,7 @@ export default function About() {
           </p>
         </section>
 
-        <section>
-          <h2 className="text-xl mb-2">Disclaimer</h2>
-          <p className="text-[#878787] leading-relaxed text-sm">
-            Cursor Directory is an independent community project. We are not
-            affiliated with, endorsed by, or sponsored by Anysphere Inc., the
-            creators of Cursor. This site is built by the community, for the
-            community.
-          </p>
-        </section>
       </div>
-
-      <Image
-        src="https://midday.ai/cdn-cgi/image/width=1920,quality=80//_next/static/media/founders.c6158766.png"
-        alt="Midday founders"
-        width={1920}
-        height={1080}
-        className="rounded-lg mb-12 mt-12"
-      />
     </div>
   );
 }

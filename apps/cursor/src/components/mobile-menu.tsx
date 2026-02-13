@@ -17,7 +17,6 @@ const navigationLinks = [
   { href: "/mcp", label: "MCP Store" },
   { href: "/learn", label: "Learn" },
   { href: "/games", label: "Games" },
-  { href: "/advertise", label: "Advertise" },
   { href: "/about", label: "About" },
   { href: "/events", label: "Events" },
 ] as const;

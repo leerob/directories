@@ -1,4 +1,3 @@
-import { Banner } from "@/components/banner";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { GlobalModals } from "@/components/modals/global-modals";
@@ -109,16 +108,8 @@ export default function RootLayout({
               </Button>
             </a>
 
-            <Banner />
             <Toaster />
             <GlobalModals />
-
-            <footer className="py-8 text-center">
-              <p className="text-[11px] text-[#878787]/60">
-                This site is not affiliated with, endorsed by, or sponsored by
-                Anysphere Inc.
-              </p>
-            </footer>
           </NuqsAdapter>
         </ThemeProvider>
       </body>

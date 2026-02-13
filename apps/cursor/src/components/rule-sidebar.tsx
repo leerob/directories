@@ -1,10 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { rulePageAds } from "@/data/ads";
 import { generateNameAbbr, isImageUrl } from "@/lib/utils";
 import type { Rule } from "@directories/data/rules";
 import Link from "next/link";
 import slugify from "slugify";
-import { AdRulePage } from "./ad-rule-page";
 
 export function RuleSidebar({ rule }: { rule: Rule }) {
   return (
@@ -39,8 +37,6 @@ export function RuleSidebar({ rule }: { rule: Rule }) {
           <h3 className="text-sm font-medium">{rule.author?.name}</h3>
         </div>
       </div>
-
-      <AdRulePage ad={rulePageAds[0]} />
     </div>
   );
 }
