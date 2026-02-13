@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "Taskade",
+    url: "https://github.com/taskade/mcp",
+    description:
+      "Official Taskade MCP server with 62+ tools for managing workspaces, projects, tasks, AI agents, templates, and media. Works with Claude, Cursor, Windsurf, and all MCP clients.",
+    logo: "https://www.taskade.com/static_images/taskade-circle-logo-full-black.png",
+  },
 ];
