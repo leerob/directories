@@ -7,6 +7,12 @@ export type MCP = {
 
 export default [
   {
+    name: "AgentPMT",
+    url: "https://github.com/Apoth3osis-ai/agentpmt-mcp-public",
+    description:
+      "AI agent marketplace for automated employees, workflows, skills, and tool orchestration via a single MCP connection.",
+  },
+  {
     name: "Upstash",
     url: "https://github.com/upstash/mcp-server",
     description:
