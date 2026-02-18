@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "OMEGA",
+    url: "https://github.com/omega-memory/omega-memory",
+    description:
+      "Persistent memory for AI coding agents. #1 on LongMemEval benchmark (95.4%, 466/500). 12 MCP tools for semantic search, auto-capture, and cross-session learning. Local-first with zero cloud dependency.",
+    logo: "https://omegamax.co/icon.svg",
+  },
 ];
