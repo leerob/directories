@@ -247,4 +247,10 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "CryptoMinute",
+    url: "https://github.com/zkoranges/crypto_minute/tree/main/cmd/mcp",
+    description:
+      "AI-powered crypto news intelligence MCP server with 8 tools: news search, narrative analytics, AI-clustered stories, Reddit sentiment, YouTube engagement, historical prices, token metadata, and Telegram flash posts.",
+  },
 ];
