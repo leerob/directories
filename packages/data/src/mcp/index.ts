@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "EVC Team Relay MCP",
+    url: "https://github.com/entire-vc/evc-team-relay-mcp",
+    description:
+      "Read, search, and write Obsidian vault notes via Team Relay collaborative server. Supports shared folders, real-time sync, and AI agent access.",
+    logo: "https://avatars.githubusercontent.com/u/73277481?v=4",
+  },
 ];
