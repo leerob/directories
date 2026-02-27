@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "NotebookLM",
+    url: "https://github.com/roomi-fields/notebooklm-mcp",
+    description:
+      "Full automation of Google NotebookLM — Q&A with citations, audio podcasts, video summaries, content generation, source management, and notebook library.",
+    logo: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690b6.svg",
+  },
 ];
