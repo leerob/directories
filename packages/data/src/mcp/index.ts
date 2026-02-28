@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "Xquik",
+    url: "https://github.com/Xquik-dev/x-twitter-scraper",
+    description:
+      "Real-time X (Twitter) data platform with 22 MCP tools. Search tweets, monitor accounts, extract followers, run giveaway draws, look up profiles, check follow relationships, and access trending topics.",
+    logo: "https://avatars.githubusercontent.com/u/263527900?v=4",
+  },
 ];
