@@ -7,6 +7,12 @@ export type MCP = {
 
 export default [
   {
+    name: "0nMCP",
+    url: "https://github.com/0nork/0nMCP",
+    description:
+      "Universal AI API Orchestrator — 564 tools across 26 services. Stripe, Slack, Discord, SendGrid, GitHub, Shopify, Gmail, Google Sheets, Jira, and more. Vault encryption, Business Deed transfer, Application Engine. Visit 0nmcp.com for guides and community.",
+  },
+  {
     name: "Upstash",
     url: "https://github.com/upstash/mcp-server",
     description:
