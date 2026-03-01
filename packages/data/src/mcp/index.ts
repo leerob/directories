@@ -247,4 +247,10 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "Screaming Frog SEO Spider",
+    url: "https://github.com/bzsasson/screaming-frog-mcp",
+    description:
+      "Crawl websites, export SEO data, and manage crawls via Screaming Frog SEO Spider. Install with uvx screaming-frog-mcp or pip install screaming-frog-mcp.",
+  },
 ];
