@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "x402 Service Discovery",
+    url: "https://github.com/rplryan/x402-discovery-mcp",
+    description:
+      "Discover, evaluate, and route AI agent payments across 250+ x402-compatible services. Provides trust scores, latency data, signed attestations, and intelligent routing for the x402 HTTP payment protocol.",
+    logo: "https://x402-discovery-api.onrender.com/logo.png",
+  },
 ];
