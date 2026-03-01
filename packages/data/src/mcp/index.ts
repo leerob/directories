@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "AI Site Scorer",
+    url: "https://github.com/MinglesAI/ai-site-scorer",
+    description:
+      "Analyze any website for AI/LLM readiness directly from Cursor or Claude Desktop. Runs 18 automated checks (Schema.org, llms.txt, robots.txt, E-E-A-T, Open Graph) and returns per-platform scores for ChatGPT, Perplexity, Claude, and Gemini — plus IDE-ready fix prompts.",
+    logo: "https://ai-readiness.mingles.ai/og-image.png",
+  },
 ];
