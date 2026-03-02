@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "SkillBoss",
+    url: "https://github.com/heeyo-life/skillboss-mcp",
+    description:
+      "Unified AI gateway providing one API key for 100+ services: Claude, GPT, Gemini, DeepSeek, DALL-E, Midjourney, Runway, ElevenLabs, Firecrawl, and more. OpenAI-compatible API works with existing code.",
+    logo: "https://skillboss.co/logo.png",
+  },
 ];
