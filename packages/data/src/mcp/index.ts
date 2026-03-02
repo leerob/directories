@@ -247,4 +247,10 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "mac-use-mcp",
+    url: "https://github.com/antbotlab/mac-use-mcp",
+    description:
+      "Zero-dependency macOS desktop automation for AI agents. Screenshot, mouse, keyboard, clipboard, and window control via MCP. 18 tools, macOS 13+, one command: npx mac-use-mcp.",
+  },
 ];
