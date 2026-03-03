@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "GrantAi",
+    url: "https://github.com/solonai-com/grantai",
+    description:
+      "Persistent memory for AI agents. Provides infinite context with sub-millisecond recall. Local-first, AES-256 encrypted, works across Claude Code, Cursor, Windsurf, and any MCP client.",
+    logo: "https://raw.githubusercontent.com/solonai-com/grantai/main/assets/logo-400x400.png",
+  },
 ];
