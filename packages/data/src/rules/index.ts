@@ -14,6 +14,7 @@ import { chromeExtensionRules } from "./chrome-extension";
 import { convexRules } from "./convex";
 import { cosmwasmRules } from "./cosmwasm";
 import { cotiEthers } from "./coti-ethers";
+import { cursorDesignerRules } from "./cursor-designer";
 import { cppRules } from "./cpp";
 import { dataAnalystRules } from "./data-analyst";
 import { deepLearningRules } from "./deep-learning";
@@ -116,6 +117,7 @@ export const rules: Rule[] = [
   ...bootstrapRules,
   ...frontEndRules,
   ...cotiEthers,
+  ...cursorDesignerRules,
   ...chromeExtensionRules,
   ...convexRules,
   ...cppRules,
