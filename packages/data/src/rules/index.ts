@@ -57,6 +57,7 @@ import { nextjsSecurityAuditRules } from "./nextjs-security-audit";
 import { nuxtJsRules } from "./nuxtjs";
 import { odooRules } from "./odoo";
 import { onchainkitRules } from "./onchainkit";
+import { pincerpayRules } from "./pincerpay";
 import { openApiUserStoryRules } from "./open-api-user-story";
 import { phpRules } from "./php";
 import { pixiJsRules } from "./pixijs";
@@ -159,6 +160,7 @@ export const rules: Rule[] = [
   ...nuxtJsRules,
   ...odooRules,
   ...onchainkitRules,
+  ...pincerpayRules,
   ...openApiUserStoryRules,
   ...pixiJsRules,
   ...playwrightRules,
