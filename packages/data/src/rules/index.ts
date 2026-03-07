@@ -90,6 +90,7 @@ import { tauriRules } from "./tauri";
 import { technicalTutorialsRules } from "./technical-tutorials";
 import { technicalWriterRules } from "./technical-writer";
 import { terraformRules } from "./terraform";
+import { ttsVoiceWorkflowRules } from "./tts-voice-workflows";
 import { typescriptRules } from "./typescript";
 import { uiuxRules } from "./uiux-design";
 import { unityCSharpRules } from "./unity-c-sharp";
@@ -187,6 +188,7 @@ export const rules: Rule[] = [
   ...technicalTutorialsRules,
   ...technicalWriterRules,
   ...terraformRules,
+  ...ttsVoiceWorkflowRules,
   ...uiuxRules,
   ...unityCSharpRules,
   ...vivadoRules,
