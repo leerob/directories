@@ -68,6 +68,7 @@ import { RRules } from "./r";
 import { railsRules } from "./rails";
 import { reactRules } from "./react";
 import { reactNativeRules } from "./react-native";
+import { reactNextjsStrictRules } from "./react-nextjs-strict";
 import { reactVite2026 } from "./react-vite-2026";
 import { remixRules } from "./remix";
 import { remultRules } from "./remult";
@@ -167,6 +168,7 @@ export const rules: Rule[] = [
   ...pythonRules,
   ...railsRules,
   ...reactNativeRules,
+  ...reactNextjsStrictRules,
   ...reactRules,
   ...reactVite2026,
   ...remultRules,
