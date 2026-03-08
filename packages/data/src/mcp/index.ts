@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "SeedFlip",
+    url: "https://github.com/bockenstette1/seedflip",
+    description:
+      "100+ curated design systems for AI coding agents. Give your agent design taste instead of guessing colors and fonts. Returns production-ready tokens in Tailwind, CSS, shadcn/ui, or raw format.",
+    logo: "https://seedflip.co/flip-white.png",
+  },
 ];
