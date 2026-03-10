@@ -45,6 +45,7 @@ import { jaxRules } from "./jax";
 import { juliaRules } from "./julia";
 import { kotlinJetpackRules } from "./kotlin-jetpack";
 import { laravelRules } from "./laravel";
+import { lucidUiRules } from "./lucid-ui";
 import { luaRules } from "./lua";
 import { manifestRules } from "./manifest";
 import { metaPromptRules } from "./meta-prompt";
@@ -147,6 +148,7 @@ export const rules: Rule[] = [
   ...jaxRules,
   ...juliaRules,
   ...laravelRules,
+  ...lucidUiRules,
   ...luaRules,
   ...manifestRules,
   ...metaPromptRules,
