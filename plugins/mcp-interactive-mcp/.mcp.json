@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "interactive-mcp": {
+      "description": "Interactive MCP is an AI‑enhanced MCP notification system that delivers real‑time chat completion alerts and gathers user feedback on the fly. Boost your workflow with instant, actionable notifications and seamless interactive feedback. ",
+      "installUrl": "https://github.com/ttommyth/interactive-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Interactive MCP",
+    "description": "Interactive MCP is an AI‑enhanced MCP notification system that delivers real‑time chat completion alerts and gathers user feedback on the fly. Boost your workflow with instant, actionable notifications and seamless interactive feedback. ",
+    "homepage": "https://github.com/ttommyth/interactive-mcp",
+    "provider": "database"
+  }
+}

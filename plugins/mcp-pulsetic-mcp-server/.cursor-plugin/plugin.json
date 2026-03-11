@@ -1,0 +1,14 @@
+{
+  "name": "mcp-pulsetic-mcp-server",
+  "version": "1.0.0",
+  "description": "The Pulsetic MCP Server connects Pulsetic monitoring with AI agents and MCP-compatible tools, enabling direct access to uptime data, cron monitoring results, incident management workflows, and status page information through the Model Context Protocol (MCP).\n\nIt allows teams to securely expose operational monitoring data in a structured format, making it easy to build AI-driven automation, monitoring assistants, and intelligent operational workflows without custom middleware.",
+  "author": {
+    "name": "Pulsetic MCP Server MCP"
+  },
+  "homepage": "https://github.com/designmodo/pulsetic-mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/0ud4xln9n4sp.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-lara-translate-mcp",
+  "version": "1.0.0",
+  "description": "MCP (Model Context Protocol) Server for Lara Translate API, enabling powerful translation capabilities with support for language detection and context-aware translations.",
+  "author": {
+    "name": "Lara Translate MCP Server MCP"
+  },
+  "homepage": "https://github.com/translated/lara-mcp/",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/biarvcyvr8d.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

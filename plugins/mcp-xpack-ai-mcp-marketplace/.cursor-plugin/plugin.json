@@ -1,0 +1,14 @@
+{
+  "name": "mcp-xpack-ai-mcp-marketplace",
+  "version": "1.0.0",
+  "description": "XPack.AI is an incredible MCP platform that empowers your AI Agent to connect with thousands of real-world data sources and tools in under a minute. Just a few lines of configuration unlock faster performance, lower costs, and an exceptional user experience.",
+  "author": {
+    "name": "xpack.ai-MCP Marketplace MCP"
+  },
+  "homepage": "https://xpack.ai",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/2nti1oj86dp.jpg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

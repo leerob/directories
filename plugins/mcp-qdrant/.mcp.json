@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "qdrant": {
+      "description": "Implement semantic memory using the Qdrant vector search engine",
+      "installUrl": "https://github.com/qdrant/mcp-server-qdrant/"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Qdrant",
+    "description": "Implement semantic memory using the Qdrant vector search engine",
+    "homepage": "https://github.com/qdrant/mcp-server-qdrant/",
+    "provider": "database"
+  }
+}

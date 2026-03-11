@@ -1,0 +1,13 @@
+{
+  "name": "mcp-todoist",
+  "version": "1.0.0",
+  "description": "Task management integration",
+  "author": {
+    "name": "Todoist MCP"
+  },
+  "homepage": "https://github.com/abhiz123/todoist-mcp-server",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

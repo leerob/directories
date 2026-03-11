@@ -12,15 +12,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Suspense, useState } from "react";
 import { CommandMenu } from "./command-menu";
+import type { PluginItem } from "./command-menu";
 import { MobileMenu } from "./mobile-menu";
 import { Button } from "./ui/button";
 import { UserMenu } from "./user-menu";
 
 const navigationLinks = [
-  { href: "/rules", label: "Rules" },
+  { href: "/plugins", label: "Plugins" },
   { href: "/board", label: "Trending" },
   { href: "/jobs", label: "Jobs" },
-  { href: "/mcp", label: "MCPs" },
   { href: "/generate", label: "Generate" },
   { href: "/members", label: "Members" },
   { href: "/games", label: "Games" },
@@ -30,7 +30,7 @@ const navigationLinks = [
   { href: "/events", label: "Events" },
 ] as const;
 
-export function Header() {
+export function Header({ plugins }: { plugins: PluginItem[] }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -96,7 +96,7 @@ export function Header() {
         </div>
       </div>
       <MobileMenu />
-      <CommandMenu open={open} setOpen={setOpen} />
+      <CommandMenu open={open} setOpen={setOpen} plugins={plugins} />
     </div>
   );
 }

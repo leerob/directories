@@ -1,0 +1,20 @@
+{
+  "name": "pixijs",
+  "version": "1.0.0",
+  "description": "Pixi.js TypeScript Game Development Rules",
+  "author": {
+    "name": "Václav Vančura"
+  },
+  "keywords": [
+    "cloudflare",
+    "Game Development",
+    "ionic-capacitor",
+    "Mobile",
+    "pixi.js",
+    "Pixi.js",
+    "TypeScript",
+    "vercel",
+    "Web"
+  ],
+  "rules": "rules"
+}

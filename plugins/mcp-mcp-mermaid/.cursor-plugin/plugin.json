@@ -1,0 +1,14 @@
+{
+  "name": "mcp-mcp-mermaid",
+  "version": "1.0.0",
+  "description": "❤️ Generate mermaid diagram and chart with AI MCP dynamically.",
+  "author": {
+    "name": "MCP Mermaid MCP"
+  },
+  "homepage": "https://github.com/hustcc/mcp-mermaid",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/5ed440goqp3.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

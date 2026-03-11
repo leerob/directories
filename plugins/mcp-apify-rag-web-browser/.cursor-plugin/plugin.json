@@ -1,0 +1,13 @@
+{
+  "name": "mcp-apify-rag-web-browser",
+  "version": "1.0.0",
+  "description": "Web browser for LLM apps similar to a web browser in ChatGPT. It queries Google Search, scrapes the top N pages from the results, and returns their cleaned content as Markdown.",
+  "author": {
+    "name": "Apify RAG Web Browser MCP"
+  },
+  "homepage": "https://apify.com/apify/rag-web-browser#anthropic-model-context-protocol-mcp-server",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

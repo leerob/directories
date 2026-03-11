@@ -1,0 +1,13 @@
+{
+  "name": "mcp-google-ads-mcp-by-trueclicks",
+  "version": "1.0.0",
+  "description": "Google Ads MCP by TrueClicks enables your AI (like Claude) to securely access and query your Google Ads account data. It supports both Windows and macOS, including Intel and ARM-based systems. It connects AIs to Google Ads using GAQL.app as a backend.",
+  "author": {
+    "name": "Google Ads MCP by TrueClicks MCP"
+  },
+  "homepage": "https://github.com/TrueClicks/google-ads-mcp-js",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

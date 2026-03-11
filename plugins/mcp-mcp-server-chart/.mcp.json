@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mcp-server-chart": {
+      "description": "🤖 A visualization Model Context Protocol server for generating visual charts using AntV.",
+      "installUrl": "https://github.com/antvis/mcp-server-chart"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "MCP Server Chart",
+    "description": "🤖 A visualization Model Context Protocol server for generating visual charts using AntV.",
+    "homepage": "https://github.com/antvis/mcp-server-chart",
+    "provider": "database"
+  }
+}

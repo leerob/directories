@@ -1,0 +1,14 @@
+{
+  "name": "mcp-dodo-payments",
+  "version": "1.0.0",
+  "description": "The Dodo Payments MCP Server integrates with agentic frameworks to provide a lightweight, serverless-compatible interface for AI-driven payment operations like billing, subscriptions, and customer management. It enables autonomous agents to securely act on behalf of users using the Dodo Payments API.",
+  "author": {
+    "name": "Dodo Payments MCP"
+  },
+  "homepage": "https://docs.dodopayments.com/api-reference/mcp-server",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/7x1evcz99u.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

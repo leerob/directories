@@ -1,0 +1,14 @@
+{
+  "name": "mcp-cursor10x",
+  "version": "1.0.0",
+  "description": "The Cursor10x MCP is a persistent multi-dimensional memory system for Cursor that enhances AI assistants with conversation context, project history, and code relationships across sessions.",
+  "author": {
+    "name": "Cursor10x MCP"
+  },
+  "homepage": "https://github.com/aurda012/cursor10x-mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/1qikjzbwm61.jpg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

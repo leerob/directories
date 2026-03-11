@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "tauri-development-mcp-server": {
+      "name": "tauri"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Tauri Development MCP Server",
+    "description": "Build, test, and debug mobile and desktop apps with the Tauri framework. Screenshots, DOM state, and console logs from your running app give the AI rich context to understand what's happening—and tools to interact with it.",
+    "homepage": "https://hypothesi.github.io/mcp-server-tauri/guides/getting-started",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=tauri&config=eyJjb21tYW5kIjoibnB4IC15IEBoeXBvdGhlc2kvdGF1cmktbWNwLXNlcnZlciJ9",
+    "provider": "database"
+  }
+}

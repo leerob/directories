@@ -1,0 +1,14 @@
+{
+  "name": "mcp-cloudflare",
+  "version": "1.0.0",
+  "description": "Cloudflare MCP Server is a tool designed to deploy, configure, and interact with resources on the Cloudflare developer platform, including Workers, KV storage, R2 storage, and D1 databases, through the Model Context Protocol (MCP).",
+  "author": {
+    "name": "Cloudflare MCP"
+  },
+  "homepage": "https://github.com/cloudflare/mcp-server-cloudflare",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/2d40xjfd3s1.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-docker",
+  "version": "1.0.0",
+  "description": "Manage containers, images, volumes, and networks",
+  "author": {
+    "name": "Docker MCP"
+  },
+  "homepage": "https://github.com/ckreiling/mcp-server-docker",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/eor42x3k8r7.jpg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

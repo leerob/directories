@@ -1,0 +1,14 @@
+{
+  "name": "mcp-twelve-data-mcp-server",
+  "version": "1.0.0",
+  "description": "Twelve Data MCP Server delivers real-time and historical financial market data, including live quotes, statements, and analysis data. Twelve Data covers global stocks, forex, cryptocurrencies, ETFS, and more. It integrates seamlessly with trading platforms and tools, enabling developers to access and process market insights efficiently. Optimized for performance, the MCP server ensures accurate, timely data to support trading strategies and analytics.",
+  "author": {
+    "name": "Twelve Data MCP Server MCP"
+  },
+  "homepage": "https://github.com/twelvedata/mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/xi6efb98a6.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

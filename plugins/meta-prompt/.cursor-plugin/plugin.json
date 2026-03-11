@@ -1,0 +1,17 @@
+{
+  "name": "meta-prompt",
+  "version": "1.0.0",
+  "description": "Question-Answering Trajectory Analyzer",
+  "author": {
+    "name": "Zachary BENSALEM"
+  },
+  "keywords": [
+    "Acting",
+    "Critique",
+    "Meta-Prompt",
+    "Reflection",
+    "Trajectory Analysis",
+    "WebShop"
+  ],
+  "rules": "rules"
+}

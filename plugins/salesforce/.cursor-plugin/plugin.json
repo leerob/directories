@@ -1,0 +1,16 @@
+{
+  "name": "salesforce",
+  "version": "1.0.0",
+  "description": "Salesforce Development",
+  "author": {
+    "name": "Edoardo Cremaschi"
+  },
+  "keywords": [
+    "Apex",
+    "Force.com",
+    "LWC",
+    "Salesforce",
+    "SFDX"
+  ],
+  "rules": "rules"
+}

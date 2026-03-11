@@ -1,0 +1,13 @@
+{
+  "name": "mcp-filesystem",
+  "version": "1.0.0",
+  "description": "Secure file operations with configurable access controls",
+  "author": {
+    "name": "Filesystem MCP"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "brave-search": {
+      "description": "Web and local search using Brave's Search API",
+      "installUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Brave Search",
+    "description": "Web and local search using Brave's Search API",
+    "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search",
+    "provider": "database"
+  }
+}

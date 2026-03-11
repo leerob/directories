@@ -1,8 +1,5 @@
-import { Menu } from "@/components/menu";
-import { RuleList } from "@/components/rule-list";
-import { Tabs } from "@/components/tabs";
-import { officialRulesSections } from "@/data/official";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title:
@@ -15,16 +12,5 @@ export const dynamic = "force-static";
 export const revalidate = 86400; // Revalidate once every day
 
 export default async function Page() {
-  return (
-    <div className="flex w-full h-full">
-      <div className="hidden md:flex mt-12 sticky top-12 h-[calc(100vh-3rem)]">
-        <Menu />
-      </div>
-
-      <main className="flex-1 p-6 pt-4 md:pt-16 space-y-8">
-        <Tabs />
-        <RuleList sections={officialRulesSections} />
-      </main>
-    </div>
-  );
+  redirect("/plugins");
 }

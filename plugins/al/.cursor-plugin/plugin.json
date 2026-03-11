@@ -1,0 +1,15 @@
+{
+  "name": "al",
+  "version": "1.0.0",
+  "description": "AL Microsoft Business Central Development Cursor Rules",
+  "author": {
+    "name": "David Bulpitt"
+  },
+  "keywords": [
+    "al",
+    "AL",
+    "Business Central",
+    "business-central"
+  ],
+  "rules": "rules"
+}

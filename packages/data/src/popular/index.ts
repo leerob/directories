@@ -3,12 +3,17 @@ import { getSections } from "../rules";
 
 export async function getPopularRules() {
   const sections = getSections();
+  const hasRedisConfig =
+    Boolean(process.env.UPSTASH_REDIS_REST_URL) &&
+    Boolean(process.env.UPSTASH_REDIS_REST_TOKEN);
 
   const sectionsWithCounts = await Promise.all(
     sections.map(async (section) => {
       const rulesWithCounts = await Promise.all(
         section.rules.map(async (rule) => {
-          const count = await redis.get(`rules:${rule.slug}`);
+          const count = hasRedisConfig
+            ? await redis.get(`rules:${rule.slug}`)
+            : 0;
           return {
             ...rule,
             count: Number(count) || 0,

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mailtrap-email-sending": {
+      "description": "Integrates with Mailtrap Email Platform to enable sending transactional emails via API.",
+      "installUrl": "https://go.midday.ai/4VANoW7"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Mailtrap Email Sending",
+    "description": "Integrates with Mailtrap Email Platform to enable sending transactional emails via API.",
+    "homepage": "https://go.midday.ai/4VANoW7",
+    "provider": "database"
+  }
+}

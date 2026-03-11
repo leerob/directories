@@ -1,0 +1,14 @@
+{
+  "name": "mcp-obsidian-markdown-notes",
+  "version": "1.0.0",
+  "description": "Read and search through Markdown notes in Obsidian vaults",
+  "author": {
+    "name": "Obsidian Markdown Notes MCP"
+  },
+  "homepage": "https://github.com/calclavia/mcp-obsidian",
+  "logo": "https://cdn.brandfetch.io/idGpyxH_Fa/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

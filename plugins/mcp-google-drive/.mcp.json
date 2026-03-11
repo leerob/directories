@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "google-drive": {
+      "description": "File access and search capabilities for Google Drive",
+      "installUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Google Drive",
+    "description": "File access and search capabilities for Google Drive",
+    "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive",
+    "provider": "database"
+  }
+}

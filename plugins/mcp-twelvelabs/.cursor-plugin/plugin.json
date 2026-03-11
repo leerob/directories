@@ -1,0 +1,14 @@
+{
+  "name": "mcp-twelvelabs",
+  "version": "1.0.0",
+  "description": "The TwelveLabs MCP Server provides seamless integration with the TwelveLabs platform. This server enables AI assistants and applications to interact with TwelveLabs powerful video analysis capabilities through a standardized MCP interface.",
+  "author": {
+    "name": "TwelveLabs MCP"
+  },
+  "homepage": "https://mcp-install-instructions.alpic.cloud/servers/twelvelabs-mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/zj9re2tu6o9.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

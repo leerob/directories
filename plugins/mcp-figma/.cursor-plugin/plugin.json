@@ -1,0 +1,14 @@
+{
+  "name": "mcp-figma",
+  "version": "1.0.0",
+  "description": "Proivde coding agents with design data direct from Figma for far more accurate design implementations in one-shot.",
+  "author": {
+    "name": "Figma MCP"
+  },
+  "homepage": "https://github.com/GLips/Figma-Context-MCP",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/dzswosx8do9.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

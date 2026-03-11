@@ -1,0 +1,13 @@
+{
+  "name": "julia",
+  "version": "1.0.0",
+  "description": "Julia Data Science Cursor Rules",
+  "author": {
+    "name": "Jan Siml"
+  },
+  "keywords": [
+    "DataScience",
+    "Julia"
+  ],
+  "rules": "rules"
+}

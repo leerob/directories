@@ -1,0 +1,14 @@
+{
+  "name": "mcp-snowflake",
+  "version": "1.0.0",
+  "description": "Interact with Snowflake databases",
+  "author": {
+    "name": "Snowflake MCP"
+  },
+  "homepage": "https://github.com/datawiz168/mcp-snowflake-service",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/0zcv3459unjm.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

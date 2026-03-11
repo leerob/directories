@@ -1,0 +1,14 @@
+{
+  "name": "swift",
+  "version": "1.0.0",
+  "description": "SwiftUI COT Developer Cursor Rules",
+  "author": {
+    "name": "Samzong Lu"
+  },
+  "keywords": [
+    "COT",
+    "Swift",
+    "SwiftUI"
+  ],
+  "rules": "rules"
+}

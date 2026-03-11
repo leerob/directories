@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "pulumi-mcp-server": {
+      "name": "pulumi"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Pulumi MCP Server",
+    "description": "The Pulumi Model Context Protocol (MCP) server enables AI-powered coding assistants to help you codify cloud architectures and get diffs for infrastructure changes right in your development environment",
+    "homepage": "https://github.com/pulumi/mcp-server",
+    "deepLink": "https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=pulumi&config=eyJjb21tYW5kIjoibnB4IEBwdWx1bWkvbWNwLXNlcnZlckBsYXRlc3Qgc3RkaW8ifQ%3D%3D",
+    "provider": "database"
+  }
+}

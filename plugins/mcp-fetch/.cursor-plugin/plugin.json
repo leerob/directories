@@ -1,0 +1,14 @@
+{
+  "name": "mcp-fetch",
+  "version": "1.0.0",
+  "description": "Fetch is a Model Context Protocol (MCP) server designed for web content fetching and conversion, allowing Large Language Models (LLMs) to retrieve and process content from web pages by converting HTML into markdown for easier consumption.",
+  "author": {
+    "name": "Fetch MCP"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/x9m6r946ut.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

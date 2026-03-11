@@ -1,0 +1,20 @@
+{
+  "name": "gastby",
+  "version": "1.0.0",
+  "description": "Gatsby Cursor Rules",
+  "author": {
+    "name": "Nathan Brachotte"
+  },
+  "keywords": [
+    "gatsby",
+    "Gatsby",
+    "graphql",
+    "GraphQL",
+    "react",
+    "React",
+    "tailwind",
+    "Tailwind",
+    "TypeScript"
+  ],
+  "rules": "rules"
+}

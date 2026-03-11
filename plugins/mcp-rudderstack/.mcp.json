@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "rudderstack": {
+      "name": "RudderStack"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "RudderStack",
+    "description": "This MCP server exposes RudderStack (Customer Data Infrastructure) workspaces to AI clients, enabling natural‑language pipeline inspection, debugging, and configuration changes from tools like Claude Desktop and Cursor.",
+    "homepage": "https://www.rudderstack.com/docs/ai-features/rudderstack-ai/connect/",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=RudderStack&config=eyJ1cmwiOiJodHRwczovL21jcC5ydWRkZXJzdGFjay5jb20vbWNwIn0%3D",
+    "provider": "database"
+  }
+}

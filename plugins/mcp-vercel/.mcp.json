@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "vercel": {
+      "description": "Integrates with Vercel's serverless infrastructure to provide a lightweight endpoint for AI model interactions and tasks like chatbots, content generation, and data analysis.",
+      "installUrl": "https://github.com/nganiet/mcp-vercel"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Vercel",
+    "description": "Integrates with Vercel's serverless infrastructure to provide a lightweight endpoint for AI model interactions and tasks like chatbots, content generation, and data analysis.",
+    "homepage": "https://github.com/nganiet/mcp-vercel",
+    "provider": "static"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "prisma",
+  "version": "1.0.0",
+  "description": "Prisma ORM Cursor Rules",
+  "author": {
+    "name": "gniting"
+  },
+  "keywords": [
+    "ORM",
+    "prisma",
+    "Prisma",
+    "TypeScript"
+  ],
+  "rules": "rules"
+}

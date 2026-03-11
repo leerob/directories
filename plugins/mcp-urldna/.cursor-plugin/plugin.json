@@ -1,0 +1,14 @@
+{
+  "name": "mcp-urldna",
+  "version": "1.0.0",
+  "description": "Scan and analyze potentially malicious URLs using the urlDNA\n",
+  "author": {
+    "name": "urlDNA MCP"
+  },
+  "homepage": "https://github.com/urldna/mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/r12gkrit2qd.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

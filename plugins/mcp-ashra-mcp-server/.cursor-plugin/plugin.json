@@ -1,0 +1,14 @@
+{
+  "name": "mcp-ashra-mcp-server",
+  "version": "1.0.0",
+  "description": "Extract structured data from any website with a simple SDK call. No scraping code, no headless browsers - just prompt and get JSON.",
+  "author": {
+    "name": "Ashra MCP Server MCP"
+  },
+  "homepage": "https://github.com/getrupt/ashra-mcp/tree/main/src/operations",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/o9tfdlsaej9.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

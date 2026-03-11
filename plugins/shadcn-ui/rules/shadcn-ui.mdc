@@ -1,0 +1,16 @@
+---
+title: Shadcn
+slug: shadcn-ui
+description: Shadcn
+alwaysApply: false
+source: apps/cursor/src/data/official/shadcn-ui
+tags:
+  - UI
+  - Components
+  - Shadcn
+authorName: shadcn
+authorUrl: https://x.com/shadcn
+authorAvatar: https://pbs.twimg.com/profile_images/1593304942210478080/TUYae5z7_400x400.jpg
+---
+
+

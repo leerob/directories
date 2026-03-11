@@ -1,0 +1,17 @@
+{
+  "name": "angular",
+  "version": "1.0.0",
+  "description": "Angular Cursor Rules",
+  "author": {
+    "name": "Ralph Olazo"
+  },
+  "keywords": [
+    "angular",
+    "Angular",
+    "cordova",
+    "firebase",
+    "firestore",
+    "ionic"
+  ],
+  "rules": "rules"
+}

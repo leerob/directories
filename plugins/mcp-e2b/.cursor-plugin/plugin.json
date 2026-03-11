@@ -1,0 +1,14 @@
+{
+  "name": "mcp-e2b",
+  "version": "1.0.0",
+  "description": "Execute code in secure cloud sandboxes",
+  "author": {
+    "name": "E2B MCP"
+  },
+  "homepage": "https://github.com/e2b-dev/mcp-server",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/pyd9x15usz8.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

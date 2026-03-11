@@ -1,0 +1,22 @@
+{
+  "name": "expressjs",
+  "version": "1.0.0",
+  "description": "Express.js Best Practices",
+  "author": {
+    "name": "David Bulpitt"
+  },
+  "keywords": [
+    "Backend",
+    "cors",
+    "dotenv",
+    "express",
+    "Express.js",
+    "fs",
+    "helmet",
+    "http",
+    "morgan",
+    "Node.js",
+    "path"
+  ],
+  "rules": "rules"
+}

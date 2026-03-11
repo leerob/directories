@@ -1,0 +1,23 @@
+{
+  "name": "react-vite-2026",
+  "version": "1.0.0",
+  "description": "Enterprise React 19 + Vite 7 Architecture",
+  "author": {
+    "name": "Mehmet Emin KARADAĞ"
+  },
+  "keywords": [
+    "@tanstack/react-query",
+    "@tanstack/react-router",
+    "orval",
+    "Orval",
+    "react",
+    "React",
+    "tailwindcss",
+    "TailwindCSS",
+    "TanStack",
+    "TypeScript",
+    "vite",
+    "Vite"
+  ],
+  "rules": "rules"
+}

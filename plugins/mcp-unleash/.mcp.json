@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "unleash": {
+      "name": "unleash"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Unleash",
+    "description": "An MCP server for Unleash feature flagging, and your new best coding buddy. It provides API support as well as language- and framework-specific coding guidance for evaluating and wrapping new functionalities automatically.",
+    "homepage": "https://docs.getunleash.io/integrate/mcp",
+    "deepLink": "https://cursor.com/en/install-mcp?name=unleash&config=eyJjb21tYW5kIjoibnB4IC15IEB1bmxlYXNoL21jcEBsYXRlc3QiLCJlbnYiOnsiVU5MRUFTSF9CQVNFX1VSTCI6IiIsIlVOTEVBU0hfUEFUIjoiIn19",
+    "provider": "database"
+  }
+}

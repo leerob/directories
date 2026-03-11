@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "search1api": {
+      "description": "Unified API for search, crawling, and sitemaps",
+      "installUrl": "https://github.com/fatwang2/search1api-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Search1API",
+    "description": "Unified API for search, crawling, and sitemaps",
+    "homepage": "https://github.com/fatwang2/search1api-mcp",
+    "provider": "static"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "kubernetes": {
+      "description": "Manage pods, deployments, and services",
+      "installUrl": "https://github.com/Flux159/mcp-server-kubernetes"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Kubernetes",
+    "description": "Manage pods, deployments, and services",
+    "homepage": "https://github.com/Flux159/mcp-server-kubernetes",
+    "provider": "database"
+  }
+}

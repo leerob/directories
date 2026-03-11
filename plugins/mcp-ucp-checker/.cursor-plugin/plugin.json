@@ -1,0 +1,14 @@
+{
+  "name": "mcp-ucp-checker",
+  "version": "1.0.0",
+  "description": "Use a concise, benefit-driven summary: \"Check if any domain supports Universal Commerce Protocol (UCP). Returns verification status, bot policies (GPTBot, ClaudeBot), and commerce capabilities for agentic workflows.",
+  "author": {
+    "name": "UCP Checker MCP"
+  },
+  "homepage": "https://github.com/ucpchecker",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/4erk45yfqzf.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

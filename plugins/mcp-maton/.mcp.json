@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "maton": {
+      "description": "Connect to your SaaS tools like HubSpot, Salesforce, and more",
+      "installUrl": "https://github.com/maton-ai/agent-toolkit"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Maton",
+    "description": "Connect to your SaaS tools like HubSpot, Salesforce, and more",
+    "homepage": "https://github.com/maton-ai/agent-toolkit",
+    "provider": "database"
+  }
+}

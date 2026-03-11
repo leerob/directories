@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "tinybird": {
+      "description": "Interface with the Tinybird serverless ClickHouse platform",
+      "installUrl": "https://github.com/tinybirdco/mcp-tinybird"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Tinybird",
+    "description": "Interface with the Tinybird serverless ClickHouse platform",
+    "homepage": "https://github.com/tinybirdco/mcp-tinybird",
+    "provider": "database"
+  }
+}

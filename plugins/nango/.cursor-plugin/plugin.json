@@ -1,0 +1,14 @@
+{
+  "name": "nango",
+  "version": "1.0.0",
+  "description": "Nango Integrations Best Practices",
+  "author": {
+    "name": "Ayodeji Adeoti"
+  },
+  "keywords": [
+    "Integration",
+    "JavaScript",
+    "Nango"
+  ],
+  "rules": "rules"
+}

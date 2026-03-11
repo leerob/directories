@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "suppr-mcp": {
+      "name": "suppr"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Suppr-MCP (超能文献)",
+    "description": "Suppr - AI-powered document translation and academic search service. Supports high-quality translation of PDF, DOCX, PPTX and other formats in 11 languages with optimized mathematical formula handling. Includes PubMed-integrated intelligent literature search for researchers.\n\nAPI Endpoint: https://openapi.suppr.wilddata.cn\nWeb Portal: https://suppr.wilddata.cn\n",
+    "homepage": "https://github.com/WildDataX/suppr-mcp",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=suppr&config=ewogICJjb21tYW5kIjogIm5weCIsCiAgImFyZ3MiOiBbIi15IiwgInN1cHByLW1jcCJdLAogICJlbnYiOiB7CiAgICAiU1VQUFJfQVBJX0tFWSI6ICIiCiAgfQp9",
+    "provider": "database"
+  }
+}

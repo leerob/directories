@@ -1,0 +1,14 @@
+{
+  "name": "mcp-gibsonai",
+  "version": "1.0.0",
+  "description": "Effortlessly design, deploy, and scale production-grade databases in minutes. Just describe your requirements in natural language, and GibsonAI generates the rest:\n\n- A managed, AI-optimized database usable from anywhere, including serverless functions\n- CRUD API with documentation to manage your data\n- ORM models and validation schemas\n- Entity-Relationship Diagram (ERD) to visualize your database\n- Distinct development and production environments\n... and much more\n\nGet started at gibsonai.com",
+  "author": {
+    "name": "GibsonAI MCP"
+  },
+  "homepage": "https://docs.gibsonai.com/#mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/mrjjij2effc.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

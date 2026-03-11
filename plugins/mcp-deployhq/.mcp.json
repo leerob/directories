@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "deployhq": {
+      "name": "deployhq"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "DeployHQ",
+    "description": "MCP server for DeployHQ that enables AI agents to interact with your deployment automation platform. Provides comprehensive tools for managing projects, servers, and deployments through natural language. ",
+    "homepage": "https://github.com/deployhq/deployhq-mcp-server#readme",
+    "deepLink": "  cursor://anysphere.cursor-deeplink/mcp/install?name=deployhq&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsImRlcGxveWhxLW1jcC1zZXJ2ZXIiXSwiZW52Ijp7IkRFUExPWUhRX0VNQUlMIjoiIiwiREVQTE9ZSFFfQVBJX0tFWSI6IiIsIkRFUExPWUhRX0FDQ09VTlQiOiIifX0K",
+    "provider": "database"
+  }
+}

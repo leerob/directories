@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "cursor-mcp-installer-mcp": {
+      "description": "A Model Context Protocol (MCP) server for installing and configuring other MCP servers within Cursor IDE.\n\n",
+      "installUrl": "https://github.com/matthewdcage/cursor-mcp-installer"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Cursor MCP Installer MCP",
+    "description": "A Model Context Protocol (MCP) server for installing and configuring other MCP servers within Cursor IDE.\n\n",
+    "homepage": "https://github.com/matthewdcage/cursor-mcp-installer",
+    "provider": "database"
+  }
+}

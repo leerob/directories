@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "metabase-mcp": {
+      "description": "Connect AI assistants to your Metabase analytics platform. Access dashboards, execute queries, and retrieve data seamlessly through conversational interfaces. Enhance your analytics experience with structured data access and robust error handling.",
+      "installUrl": "https://github.com/hyeongjun-dev/metabase-mcp-server"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Metabase MCP",
+    "description": "Connect AI assistants to your Metabase analytics platform. Access dashboards, execute queries, and retrieve data seamlessly through conversational interfaces. Enhance your analytics experience with structured data access and robust error handling.",
+    "homepage": "https://github.com/hyeongjun-dev/metabase-mcp-server",
+    "provider": "database"
+  }
+}

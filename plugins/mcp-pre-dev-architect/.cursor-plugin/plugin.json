@@ -1,0 +1,14 @@
+{
+  "name": "mcp-pre-dev-architect",
+  "version": "1.0.0",
+  "description": "10x your coding agent with pre.dev. \n\nAsk pre.dev to help with any task and it will architect a complete solution ready for an agent to execute on. ",
+  "author": {
+    "name": "pre.dev Architect MCP"
+  },
+  "homepage": "https://docs.pre.dev/mcp-server",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/t181skcm8vo.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

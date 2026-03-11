@@ -1,0 +1,14 @@
+{
+  "name": "mcp-vercel",
+  "version": "1.0.0",
+  "description": "Integrates with Vercel's serverless infrastructure to provide a lightweight endpoint for AI model interactions and tasks like chatbots, content generation, and data analysis.",
+  "author": {
+    "name": "Vercel MCP"
+  },
+  "homepage": "https://github.com/nganiet/mcp-vercel",
+  "logo": "https://cdn.brandfetch.io/idDpCfN4VD/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

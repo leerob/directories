@@ -1,0 +1,27 @@
+{
+  "name": "flutter",
+  "version": "1.0.0",
+  "description": "Flutter & Dart Expert with Provider (Ephemeral) & Bloc (App) State Managements",
+  "author": {
+    "name": "Muhammad Hamza"
+  },
+  "keywords": [
+    "AutoRoute",
+    "Bloc",
+    "Clean Architecture",
+    "Cubit",
+    "Dartz",
+    "Feature-first",
+    "Firebase",
+    "Flutter",
+    "flutter_bloc",
+    "Freezed",
+    "GetIt",
+    "Hooks",
+    "Layers",
+    "Provider",
+    "Riverpod",
+    "Supabase"
+  ],
+  "rules": "rules"
+}

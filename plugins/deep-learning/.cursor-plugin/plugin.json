@@ -1,0 +1,17 @@
+{
+  "name": "deep-learning",
+  "version": "1.0.0",
+  "description": "Deep Learning Developer Python Cursor Rules",
+  "author": {
+    "name": "Yu Changqian"
+  },
+  "keywords": [
+    "Deep Learning",
+    "Diffusion",
+    "LLM",
+    "Python",
+    "PyTorch",
+    "Transformer"
+  ],
+  "rules": "rules"
+}

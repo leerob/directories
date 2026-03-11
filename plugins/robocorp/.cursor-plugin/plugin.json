@@ -1,0 +1,13 @@
+{
+  "name": "robocorp",
+  "version": "1.0.0",
+  "description": "RoboCorp Python Cursor Rules",
+  "author": {
+    "name": "Thiago Martins"
+  },
+  "keywords": [
+    "Python",
+    "RoboCorp"
+  ],
+  "rules": "rules"
+}

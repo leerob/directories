@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "kong-konnect": {
+      "name": "kong-konnect"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Kong Konnect",
+    "description": "Manage your Kong Konnect API infrastructure right from your development environment.\n\nLearn more about it here: https://developer.konghq.com/konnect-platform/konnect-mcp/",
+    "homepage": "https://developer.konghq.com/konnect-platform/konnect-mcp/installation/#cursor",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=kong-konnect&config=eyJ1cmwiOiJodHRwczovL3VzLm1jcC5rb25naHEuY29tLyIsImhlYWRlcnMiOnsiQXV0aG9yaXphdGlvbiI6IkJlYXJlciBZT1VSX0tPTk5FQ1RfUEFUIn19",
+    "provider": "database"
+  }
+}

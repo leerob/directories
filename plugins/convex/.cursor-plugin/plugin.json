@@ -1,0 +1,13 @@
+{
+  "name": "convex",
+  "version": "1.0.0",
+  "description": "Convex Cursor Rules",
+  "author": {
+    "name": "Tom Redman"
+  },
+  "keywords": [
+    "convex",
+    "Convex"
+  ],
+  "rules": "rules"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-suppr-mcp",
+  "version": "1.0.0",
+  "description": "Suppr - AI-powered document translation and academic search service. Supports high-quality translation of PDF, DOCX, PPTX and other formats in 11 languages with optimized mathematical formula handling. Includes PubMed-integrated intelligent literature search for researchers.\n\nAPI Endpoint: https://openapi.suppr.wilddata.cn\nWeb Portal: https://suppr.wilddata.cn\n",
+  "author": {
+    "name": "Suppr-MCP (超能文献) MCP"
+  },
+  "homepage": "https://github.com/WildDataX/suppr-mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/wijax8tc2s.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

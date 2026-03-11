@@ -1,0 +1,14 @@
+{
+  "name": "mcp-qdrant",
+  "version": "1.0.0",
+  "description": "Implement semantic memory using the Qdrant vector search engine",
+  "author": {
+    "name": "Qdrant MCP"
+  },
+  "homepage": "https://github.com/qdrant/mcp-server-qdrant/",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/tc9emb3zgon.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

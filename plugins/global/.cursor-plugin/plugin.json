@@ -1,0 +1,12 @@
+{
+  "name": "global",
+  "version": "1.0.0",
+  "description": "Global Cursor Rules",
+  "author": {
+    "name": "Matias Fanger"
+  },
+  "keywords": [
+    "Global"
+  ],
+  "rules": "rules"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-pgyer-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server for PGYER platform, supports uploading, querying apps, etc.",
+  "author": {
+    "name": "pgyer mcp server MCP"
+  },
+  "homepage": "https://github.com/PGYER/pgyer-mcp-server",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/fucgt0snihr.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

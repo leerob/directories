@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "postgresql": {
+      "description": "A Model Context Protocol server that provides read-only access to PostgreSQL databases. This server enables LLMs to inspect database schemas and execute read-only queries.",
+      "installUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "PostgreSQL",
+    "description": "A Model Context Protocol server that provides read-only access to PostgreSQL databases. This server enables LLMs to inspect database schemas and execute read-only queries.",
+    "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres",
+    "provider": "database"
+  }
+}

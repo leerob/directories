@@ -1,7 +1,7 @@
 "use client";
 
 import { createClient } from "@/utils/supabase/client";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useQueryStates } from "nuqs";
@@ -27,7 +27,6 @@ type User = {
 
 export function UserMenu() {
   const pathname = usePathname();
-  const supabase = createClient();
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -38,7 +37,16 @@ export function UserMenu() {
 
   useEffect(() => {
     async function getUser() {
+      if (
+        !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+        !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      ) {
+        setIsLoading(false);
+        return;
+      }
+
       setIsLoading(true);
+      const supabase = createClient();
       const session = await supabase.auth.getSession();
 
       if (!session.data.session) {
@@ -62,6 +70,15 @@ export function UserMenu() {
   }, [pathname]);
 
   const handleSignOut = async () => {
+    if (
+      !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+      !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    ) {
+      setUser(null);
+      return;
+    }
+
+    const supabase = createClient();
     await supabase.auth.signOut();
     setUser(null);
   };

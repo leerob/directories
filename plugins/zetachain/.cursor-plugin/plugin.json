@@ -1,0 +1,17 @@
+{
+  "name": "zetachain",
+  "version": "1.0.0",
+  "description": "ZetaChain Development Rules",
+  "author": {
+    "name": "ZetaChain"
+  },
+  "keywords": [
+    "Blockchain",
+    "Cross-Chain",
+    "Multi-Chain",
+    "Solidity",
+    "Universal Apps",
+    "ZetaChain"
+  ],
+  "rules": "rules"
+}

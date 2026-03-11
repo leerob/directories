@@ -1,0 +1,13 @@
+{
+  "name": "mcp-json-resume",
+  "version": "1.0.0",
+  "description": "Updates your resume as your code. Will add new skills and projects as you develop.",
+  "author": {
+    "name": "JSON Resume MCP"
+  },
+  "homepage": "https://github.com/jsonresume/mcp",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "viewcomfy",
+  "version": "1.0.0",
+  "description": "ViewComfy API Rules",
+  "author": {
+    "name": "Guillaume Bieler"
+  },
+  "keywords": [
+    "Python"
+  ],
+  "rules": "rules"
+}

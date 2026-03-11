@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "obsidian-markdown-notes": {
+      "description": "Read and search through Markdown notes in Obsidian vaults",
+      "installUrl": "https://github.com/calclavia/mcp-obsidian"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Obsidian Markdown Notes",
+    "description": "Read and search through Markdown notes in Obsidian vaults",
+    "homepage": "https://github.com/calclavia/mcp-obsidian",
+    "provider": "static"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "java",
+  "version": "1.0.0",
+  "description": "Java Quarkus Cursor Rules",
+  "author": {
+    "name": "Xinhua Gu"
+  },
+  "keywords": [
+    "GraalVM",
+    "Jakarta EE",
+    "Java",
+    "MicroProfile",
+    "Quarkus",
+    "Spring",
+    "Spring-Boot",
+    "Vert.x"
+  ],
+  "rules": "rules"
+}

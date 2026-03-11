@@ -1,0 +1,15 @@
+{
+  "name": "r",
+  "version": "1.0.0",
+  "description": "R Programming Best Practices Assistant",
+  "author": {
+    "name": "Mohamed El Fodil Ihaddaden"
+  },
+  "keywords": [
+    "data-science",
+    "r",
+    "rstats",
+    "statistics"
+  ],
+  "rules": "rules"
+}

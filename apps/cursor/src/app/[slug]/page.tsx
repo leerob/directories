@@ -1,7 +1,6 @@
-import { Menu } from "@/components/menu";
-import { RuleCard } from "@/components/rule-card";
-import { RuleSidebar } from "@/components/rule-sidebar";
 import { getRuleBySlug, rules } from "@directories/data/rules";
+import { getPluginByLegacyRuleSlug } from "@directories/data/plugins";
+import { redirect } from "next/navigation";
 
 type Params = Promise<{ slug: string }>;
 
@@ -23,28 +22,12 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }: { params: Params }) {
   const { slug } = await params;
-  const rule = getRuleBySlug(slug);
-
-  if (!rule) {
-    return <div>Rule not found</div>;
+  const plugin = getPluginByLegacyRuleSlug(slug);
+  if (plugin) {
+    redirect(`/plugins/${plugin.slug}`);
   }
 
-  return (
-    <div className="flex w-full h-full">
-      <div className="hidden md:flex mt-12 sticky top-12 h-[calc(100vh-3rem)]">
-        <Menu />
-      </div>
-
-      <main className="flex-1 p-6 pt-24 flex flex-col-reverse xl:flex-row gap-4 xl:gap-8">
-        <div className="w-full max-w-[1000px]">
-          <RuleCard rule={rule} isPage={true} />
-        </div>
-        <div className="w-full lg:w-auto lg:flex-shrink-0">
-          <RuleSidebar rule={rule} />
-        </div>
-      </main>
-    </div>
-  );
+  return <div>Rule not found</div>;
 }
 
 export const revalidate = 86400; // Revalidate every 24 hours (86400 seconds)

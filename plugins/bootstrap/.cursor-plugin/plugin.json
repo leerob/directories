@@ -1,0 +1,14 @@
+{
+  "name": "bootstrap",
+  "version": "1.0.0",
+  "description": "Bootstrap Cursor Rules",
+  "author": {
+    "name": "Christian Radev"
+  },
+  "keywords": [
+    "bootstrap",
+    "html",
+    "Web Development"
+  ],
+  "rules": "rules"
+}

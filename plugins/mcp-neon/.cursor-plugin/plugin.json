@@ -1,0 +1,14 @@
+{
+  "name": "mcp-neon",
+  "version": "1.0.0",
+  "description": "Interact with the Neon serverless Postgres platform",
+  "author": {
+    "name": "Neon MCP"
+  },
+  "homepage": "https://github.com/neondatabase-labs/mcp-server-neon",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/oy68m9rzcql.webp",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

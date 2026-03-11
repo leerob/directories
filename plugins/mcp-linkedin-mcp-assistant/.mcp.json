@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "linkedin-mcp-assistant": {
+      "description": "LiGo MCP is the first Claude + ChatGPT integration built for LinkedIn creators.\n\nIt gives your AI assistant access to your post history - so it can analyze what works, write in your voice, and publish or schedule content directly.\n\nSet it up once, use it daily. No prompt engineering needed.\n\nUse it to:\n\n- Build a LinkedIn-native content engine\n- Post in your voice, fast\n- Schedule straight from chat",
+      "installUrl": "https://github.com/ertiqah/linkedin-mcp-runner"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "LinkedIn MCP Assistant",
+    "description": "LiGo MCP is the first Claude + ChatGPT integration built for LinkedIn creators.\n\nIt gives your AI assistant access to your post history - so it can analyze what works, write in your voice, and publish or schedule content directly.\n\nSet it up once, use it daily. No prompt engineering needed.\n\nUse it to:\n\n- Build a LinkedIn-native content engine\n- Post in your voice, fast\n- Schedule straight from chat",
+    "homepage": "https://github.com/ertiqah/linkedin-mcp-runner",
+    "provider": "database"
+  }
+}

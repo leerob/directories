@@ -1,0 +1,14 @@
+{
+  "name": "open-api-user-story",
+  "version": "1.0.0",
+  "description": "User Story for Open API",
+  "author": {
+    "name": "Guardia"
+  },
+  "keywords": [
+    "OAS",
+    "Open API",
+    "User Story"
+  ],
+  "rules": "rules"
+}

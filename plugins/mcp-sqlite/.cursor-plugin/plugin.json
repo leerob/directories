@@ -1,0 +1,13 @@
+{
+  "name": "mcp-sqlite",
+  "version": "1.0.0",
+  "description": "Database interaction and business intelligence features",
+  "author": {
+    "name": "SQLite MCP"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

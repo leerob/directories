@@ -1,0 +1,15 @@
+{
+  "name": "android",
+  "version": "1.0.0",
+  "description": "Android Cursor Rules",
+  "author": {
+    "name": "aman satija"
+  },
+  "keywords": [
+    "android",
+    "compose",
+    "jetpack",
+    "kotlin"
+  ],
+  "rules": "rules"
+}

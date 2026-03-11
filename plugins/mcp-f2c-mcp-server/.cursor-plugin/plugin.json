@@ -1,0 +1,14 @@
+{
+  "name": "mcp-f2c-mcp-server",
+  "version": "1.0.0",
+  "description": "🎨 Convert Figma design nodes to high-fidelity HTML/CSS markup, Industry-leading position\n📚 Provides Figma design context to AI coding tools like Cursor\n🚀 Supports Figma file URLs with fileKey and nodeId parameters",
+  "author": {
+    "name": "F2C MCP Server MCP"
+  },
+  "homepage": "https://github.com/f2c-ai/f2c-mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/aodhdez6z0k.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

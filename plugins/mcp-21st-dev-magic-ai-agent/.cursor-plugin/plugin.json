@@ -1,0 +1,14 @@
+{
+  "name": "mcp-21st-dev-magic-ai-agent",
+  "version": "1.0.0",
+  "description": "Magic AI Agent is an AI-driven tool designed to assist developers in creating modern UI components through natural language descriptions, streamlining the UI development process.",
+  "author": {
+    "name": "21st.dev Magic AI Agent MCP"
+  },
+  "homepage": "https://github.com/21st-dev/magic-mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/dzx0qvoinfd.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "rails",
+  "version": "1.0.0",
+  "description": "Rails Ruby API Cursor Rules",
+  "author": {
+    "name": "Ikenna Okpala"
+  },
+  "keywords": [
+    "API",
+    "Code Review",
+    "factorybot",
+    "hotwire",
+    "OpenAPI",
+    "postgresql",
+    "rails",
+    "Rails",
+    "Rails Way",
+    "rspec",
+    "RSpec",
+    "ruby",
+    "Ruby",
+    "tailwind",
+    "Testing"
+  ],
+  "rules": "rules"
+}

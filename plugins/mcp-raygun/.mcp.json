@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "raygun": {
+      "description": "Access crash reporting and monitoring data",
+      "installUrl": "https://github.com/MindscapeHQ/mcp-server-raygun"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Raygun",
+    "description": "Access crash reporting and monitoring data",
+    "homepage": "https://github.com/MindscapeHQ/mcp-server-raygun",
+    "provider": "database"
+  }
+}

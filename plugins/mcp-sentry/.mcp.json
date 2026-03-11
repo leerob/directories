@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "sentry": {
+      "description": "A Model Context Protocol server for retrieving and analyzing issues from Sentry.io. This server provides tools to inspect error reports, stacktraces, and other debugging information from your Sentry account.",
+      "installUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/sentry"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Sentry",
+    "description": "A Model Context Protocol server for retrieving and analyzing issues from Sentry.io. This server provides tools to inspect error reports, stacktraces, and other debugging information from your Sentry account.",
+    "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/sentry",
+    "provider": "static"
+  }
+}

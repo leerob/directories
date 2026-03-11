@@ -1,0 +1,13 @@
+{
+  "name": "manifest",
+  "version": "1.0.0",
+  "description": "Manifest Cursor Rules",
+  "author": {
+    "name": "Bruno Perez"
+  },
+  "keywords": [
+    "Backend development",
+    "Manifest"
+  ],
+  "rules": "rules"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "lua",
+  "version": "1.0.0",
+  "description": "Lua Development Best Practices",
+  "author": {
+    "name": "Bleed Kagax"
+  },
+  "keywords": [
+    "Corona SDK",
+    "Game Development",
+    "LÖVE",
+    "Lua",
+    "LuaJIT",
+    "Scripting"
+  ],
+  "rules": "rules"
+}

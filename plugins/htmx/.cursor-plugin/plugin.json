@@ -1,0 +1,14 @@
+{
+  "name": "htmx",
+  "version": "1.0.0",
+  "description": "htmx Cursor Rules",
+  "author": {
+    "name": "Christian Radev"
+  },
+  "keywords": [
+    "html",
+    "htmx",
+    "Web Development"
+  ],
+  "rules": "rules"
+}

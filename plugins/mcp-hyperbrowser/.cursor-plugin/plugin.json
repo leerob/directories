@@ -1,0 +1,14 @@
+{
+  "name": "mcp-hyperbrowser",
+  "version": "1.0.0",
+  "description": "Cloud Browsers for AI Agents. Scrape, navigate, and interact with the web using Hyperbrowser's Model Context Protocol (MCP) servers.",
+  "author": {
+    "name": "Hyperbrowser MCP"
+  },
+  "homepage": "https://hyperbrowser.ai/hb-logo.png",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/barthebx7ws.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -32,8 +32,8 @@ export function HeroTitle({ totalUsers }: { totalUsers: number }) {
           generate
         </Link>{" "}
         rules, browse{" "}
-        <Link href="/mcp" className="border-b border-border border-dashed">
-          MCPs
+        <Link href="/plugins" className="border-b border-border border-dashed">
+          plugins
         </Link>
         , post and follow the latest news on the board, learn, connect, and
         discover{" "}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-tinybird",
+  "version": "1.0.0",
+  "description": "Interface with the Tinybird serverless ClickHouse platform",
+  "author": {
+    "name": "Tinybird MCP"
+  },
+  "homepage": "https://github.com/tinybirdco/mcp-tinybird",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/6ry45t95rr4.webp",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

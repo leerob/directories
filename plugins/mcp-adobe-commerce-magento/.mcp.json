@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "adobe-commerce-magento": {
+      "description": "A Model Context Protocol (MCP) tool for integrating with the Adobe Commerce/ Magento REST API. No direct SQL or server access required.",
+      "installUrl": "https://github.com/codexpect/adobe-commerce-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Adobe Commerce / Magento",
+    "description": "A Model Context Protocol (MCP) tool for integrating with the Adobe Commerce/ Magento REST API. No direct SQL or server access required.",
+    "homepage": "https://github.com/codexpect/adobe-commerce-mcp",
+    "provider": "database"
+  }
+}

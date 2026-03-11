@@ -1,0 +1,14 @@
+{
+  "name": "mcp-unleash",
+  "version": "1.0.0",
+  "description": "An MCP server for Unleash feature flagging, and your new best coding buddy. It provides API support as well as language- and framework-specific coding guidance for evaluating and wrapping new functionalities automatically.",
+  "author": {
+    "name": "Unleash MCP"
+  },
+  "homepage": "https://docs.getunleash.io/integrate/mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/num1t2kzf3q.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-compresto-mcp",
+  "version": "1.0.0",
+  "description": "A Model Context Protocol (MCP) server for Compresto, providing AI assistants with real-time data about Compresto's usage statistics.",
+  "author": {
+    "name": "Compresto MCP MCP"
+  },
+  "homepage": "https://github.com/dqhieu/compresto-mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/hv1orz8jdub.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

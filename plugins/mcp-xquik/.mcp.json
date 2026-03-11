@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "xquik": {
+      "description": "Xquik is a Real-time X (Twitter) data platform. 22 MCP tools for tweet search, user lookup, follower/following extraction, engagement metrics, giveaway draws, trending topics, account monitoring with webhooks, reply/retweet/quote extraction, community & Space data, and mutual follow checks. OAuth 2.1 + PKCE authentication, Streamable HTTP transport.",
+      "installUrl": "https://docs.xquik.com/mcp/overview#mcp-server",
+      "cursorDeepLink": "https://xquik.com/mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Xquik",
+    "description": "Xquik is a Real-time X (Twitter) data platform. 22 MCP tools for tweet search, user lookup, follower/following extraction, engagement metrics, giveaway draws, trending topics, account monitoring with webhooks, reply/retweet/quote extraction, community & Space data, and mutual follow checks. OAuth 2.1 + PKCE authentication, Streamable HTTP transport.",
+    "homepage": "https://docs.xquik.com/mcp/overview#mcp-server",
+    "deepLink": "https://xquik.com/mcp",
+    "provider": "database"
+  }
+}

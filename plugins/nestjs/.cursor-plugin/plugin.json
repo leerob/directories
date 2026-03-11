@@ -1,0 +1,17 @@
+{
+  "name": "nestjs",
+  "version": "1.0.0",
+  "description": "Clean NestJs APIs with TypeScript Cursor Rules",
+  "author": {
+    "name": "Alberto Basalo"
+  },
+  "keywords": [
+    "@app/common",
+    "API",
+    "mikro-orm",
+    "NestJs",
+    "Node",
+    "TypeScript"
+  ],
+  "rules": "rules"
+}

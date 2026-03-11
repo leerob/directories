@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mcp-linkedinads": {
+      "name": "RadiateB2B LinkedIn Advertising"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "mcp-linkedinads",
+    "description": "Analyse your LinkedIn Ads performance. Compare to benchmarks and get optimisation recommendations.",
+    "homepage": "https://github.com/radiateb2b/mcp-linkedinads",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=RadiateB2B%20LinkedIn%20Advertising&config=eyJjb21tYW5kIjoibnB4IG1jcC1yZW1vdGUgaHR0cHM6Ly9tY3AucmFkaWF0ZWIyYi5jb20vc3NlIC0taGVhZGVyIEF1dGhvcml6YXRpb246IEJlYXJlciA8eW91ciBwcml2YXRlIGFjY2VzcyB0b2tlbj4ifQ%3D%3D",
+    "provider": "database"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-slack",
+  "version": "1.0.0",
+  "description": "Slack is a channel management and messaging solution that enables seamless interaction within workspaces, integrating with various tools for efficiency.",
+  "author": {
+    "name": "Slack MCP"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/qvo8s5lobd.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

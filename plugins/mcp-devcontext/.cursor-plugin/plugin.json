@@ -1,0 +1,14 @@
+{
+  "name": "mcp-devcontext",
+  "version": "1.0.0",
+  "description": "DevContext is a state-of-the-art context management system for software development, implementing the Model Context Protocol (MCP) with advanced context retrieval techniques. Empower your development workflow with intelligent context awareness - DevContext understands your codebase, conversations, and development patterns to provide relevant context exactly when you need it.",
+  "author": {
+    "name": "DevContext MCP"
+  },
+  "homepage": "https://github.com/aurda012/devcontext",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/zhf4bqihd1c.jpeg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

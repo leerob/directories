@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "red-telephone-keeping-a-human-in-the-loop": {
+      "description": "Stop AI hallucinations. A Human-in-the-Loop MCP server that pauses Agent execution and requests approval via Telegram before sensitive actions. Includes \"Approve/Deny\" buttons and customisable urgency levels.",
+      "installUrl": "https://dantehark.gumroad.com/l/redphone"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Red Telephone - Keeping a Human in the Loop.",
+    "description": "Stop AI hallucinations. A Human-in-the-Loop MCP server that pauses Agent execution and requests approval via Telegram before sensitive actions. Includes \"Approve/Deny\" buttons and customisable urgency levels.",
+    "homepage": "https://dantehark.gumroad.com/l/redphone",
+    "provider": "database"
+  }
+}

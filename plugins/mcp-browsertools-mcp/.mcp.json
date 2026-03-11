@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "browsertools-mcp": {
+      "description": "Analyze logs & interact with your browser for rapid debugging",
+      "installUrl": "https://github.com/AgentDeskAI/browser-tools-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "BrowserTools MCP",
+    "description": "Analyze logs & interact with your browser for rapid debugging",
+    "homepage": "https://github.com/AgentDeskAI/browser-tools-mcp",
+    "provider": "database"
+  }
+}

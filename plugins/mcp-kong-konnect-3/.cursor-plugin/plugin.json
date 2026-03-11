@@ -1,0 +1,14 @@
+{
+  "name": "mcp-kong-konnect-3",
+  "version": "1.0.0",
+  "description": "Manage your Kong Konnect API infrastructure right from your development environment.\n\nLearn more about it here: https://developer.konghq.com/konnect-platform/konnect-mcp/",
+  "author": {
+    "name": "Kong Konnect MCP"
+  },
+  "homepage": "https://developer.konghq.com/konnect-platform/konnect-mcp/installation/#cursor",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/8hlyrgb6fsl.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

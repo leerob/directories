@@ -1,0 +1,14 @@
+{
+  "name": "mcp-1shot-api",
+  "version": "1.0.0",
+  "description": "1Shot API is a high-throughput transaction relayer service for EVM blockchain networks. It provides extensive tooling for facilitating agentic payments and web3 product development. 1Shot API's mcp server exposes tools to AI-coding environments like Cursor to produce fully-functional onchain agents and products that interact with smart contracts with minimal prompting. ",
+  "author": {
+    "name": "1Shot API MCP"
+  },
+  "homepage": "https://docs.1shotapi.com/index.html",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/4o5iheccdn5.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

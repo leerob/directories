@@ -1,0 +1,23 @@
+{
+  "name": "monorepo-tamagui",
+  "version": "1.0.0",
+  "description": "Monorepo using Tamagui",
+  "author": {
+    "name": "Davide Del Gatto"
+  },
+  "keywords": [
+    "Expo",
+    "i18n",
+    "i18next",
+    "Monorepo",
+    "Next.js",
+    "Solito",
+    "Stripe",
+    "Supabase",
+    "Tamagui",
+    "Turbo",
+    "Zod",
+    "Zustand"
+  ],
+  "rules": "rules"
+}

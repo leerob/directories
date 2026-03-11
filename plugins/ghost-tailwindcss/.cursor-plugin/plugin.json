@@ -1,0 +1,16 @@
+{
+  "name": "ghost-tailwindcss",
+  "version": "1.0.0",
+  "description": "ghost CMS with Tailwind CSS Cursor Rules",
+  "author": {
+    "name": "ghostFam"
+  },
+  "keywords": [
+    "Alpine.js",
+    "alpinejs",
+    "Ghost",
+    "tailwindcss",
+    "TailwindCSS"
+  ],
+  "rules": "rules"
+}

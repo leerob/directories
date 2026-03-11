@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "xpackai-mcp-marketplace": {
+      "name": "xpack-mcp-market"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "xpack.ai-MCP Marketplace",
+    "description": "XPack.AI is an incredible MCP platform that empowers your AI Agent to connect with thousands of real-world data sources and tools in under a minute. Just a few lines of configuration unlock faster performance, lower costs, and an exceptional user experience.",
+    "homepage": "https://xpack.ai",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=xpack-mcp-market&config=eyJ1cmwiOiJodHRwczovL2FwaS54cGFjay5haS92MS9tY3A%2FYXBpa2V5PXtZb3VyLVhQYWNrLUFQSS1LZXl9IiwidHlwZSI6InNzZSJ9",
+    "provider": "database"
+  }
+}

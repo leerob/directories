@@ -1,0 +1,14 @@
+{
+  "name": "mcp-convex",
+  "version": "1.0.0",
+  "description": "Cursor, the AI code editor, makes it easy to write and maintain apps built with Convex. Let's walk through how to setup Cursor for the best possible results with Convex.",
+  "author": {
+    "name": "Convex MCP"
+  },
+  "homepage": "https://docs.convex.dev/ai/using-cursor#setup-the-convex-mcp-server",
+  "logo": "https://pbs.twimg.com/profile_images/1886599096636694528/0Y8VYt94_400x400.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

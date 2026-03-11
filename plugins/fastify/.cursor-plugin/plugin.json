@@ -1,0 +1,14 @@
+{
+  "name": "fastify",
+  "version": "1.0.0",
+  "description": "Fastify TypeScript Cursor Rules",
+  "author": {
+    "name": "Daniel Mendes"
+  },
+  "keywords": [
+    "fastify",
+    "Fastify",
+    "typescript"
+  ],
+  "rules": "rules"
+}

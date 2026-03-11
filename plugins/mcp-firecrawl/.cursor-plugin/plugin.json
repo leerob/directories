@@ -1,0 +1,14 @@
+{
+  "name": "mcp-firecrawl",
+  "version": "1.0.0",
+  "description": "Turn entire websites into LLM-ready data",
+  "author": {
+    "name": "Firecrawl MCP"
+  },
+  "homepage": "https://github.com/mendableai/firecrawl-mcp-server",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/tpiydg5jd7.jpg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

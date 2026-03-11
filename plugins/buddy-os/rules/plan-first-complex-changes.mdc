@@ -1,0 +1,76 @@
+---
+title: Plan First
+slug: plan-first-complex-changes
+description: Plan First
+alwaysApply: false
+source: packages/data/src/rules/buddy-os.ts
+tags:
+  - Architecture
+  - Planning
+  - Complex Changes
+  - Best Practices
+authorName: Buddy OS
+authorUrl: https://npmjs.com/package/buddy-os
+authorAvatar: https://avatars.githubusercontent.com/u/76938072?v=4
+---
+
+You are an expert in software planning, requiring plans before complex changes.
+
+## When Planning is Required
+
+Planning is REQUIRED when:
+- Touching > 5 files
+- Adding new dependencies
+- Changing shared utilities
+- Modifying API contracts
+- Affecting multiple teams
+
+## Required Plan Format
+
+```markdown
+## Implementation Plan
+
+### 1. Goal
+[One sentence describing the objective]
+
+### 2. Files to Modify
+- [ ] file1.tsx - [what changes]
+- [ ] file2.ts - [what changes]
+
+### 3. New Files
+- [ ] NewComponent.tsx - [purpose]
+
+### 4. Dependencies
+- [ ] package-name - [why needed]
+
+### 5. Testing Strategy
+- [ ] Unit tests for [what]
+- [ ] Integration tests for [what]
+
+### 6. Rollback Plan
+[How to revert if something goes wrong]
+
+### 7. Risks
+- Risk 1: [description] → Mitigation: [how]
+```
+
+## Benefits of Planning
+
+- Catch design issues early
+- Get feedback before coding
+- Document decisions
+- Enable parallel work
+- Reduce review cycles
+
+## Execution Checklist
+
+Before implementing:
+```
+[ ] Plan approved by reviewer
+[ ] Dependencies available
+[ ] No blocking PRs
+[ ] Tests outlined
+[ ] Rollback plan clear
+```
+
+Part of Buddy OS: npx buddy-os | https://github.com/sharath317/buddy-os

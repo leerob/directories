@@ -1,0 +1,14 @@
+{
+  "name": "mcp-mcp-server-webcrawl",
+  "version": "1.0.0",
+  "description": "Advanced search and retrieval for web crawler data.  \n\nWith mcp-server-webcrawl, your MCP client filters and analyzes web content under your direction or autonomously, extracting insights from your web content. \n\nThe server includes a fulltext search interface with boolean support, resource filtering by type, HTTP status, headers, size, and more.  Support for WARC, wget, InterroBot, Katana, and SiteOne web crawlers is available out of the gate. \n\nmcp-server-webcrawl is open source.",
+  "author": {
+    "name": "mcp-server-webcrawl MCP"
+  },
+  "homepage": "https://github.com/pragmar/mcp-server-webcrawl",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/eqwj1rghnld.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

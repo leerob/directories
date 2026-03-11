@@ -1,0 +1,13 @@
+{
+  "name": "mcp-mcp-linkedinads",
+  "version": "1.0.0",
+  "description": "Analyse your LinkedIn Ads performance. Compare to benchmarks and get optimisation recommendations.",
+  "author": {
+    "name": "mcp-linkedinads MCP"
+  },
+  "homepage": "https://github.com/radiateb2b/mcp-linkedinads",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

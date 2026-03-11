@@ -1,5 +1,5 @@
 import WelcomeEmail from "@/emails/templates/welcome";
-import { resend } from "@/lib/resend";
+import { getResend } from "@/lib/resend";
 import { createClient } from "@/utils/supabase/server";
 import { waitUntil } from "@vercel/functions";
 import { differenceInSeconds } from "date-fns";
@@ -26,16 +26,19 @@ export async function GET(request: Request) {
           new Date(data.session.user.created_at),
         ) < 20
       ) {
-        waitUntil(
-          resend.emails.send({
-            from: "Cursor Directory <hello@transactional.cursor.directory>",
-            to: data.session.user.email!,
-            subject: "Welcome to Cursor Directory",
-            react: WelcomeEmail({
-              name: data.session.user.user_metadata.full_name,
+        const resend = getResend();
+        if (resend) {
+          waitUntil(
+            resend.emails.send({
+              from: "Cursor Directory <hello@transactional.cursor.directory>",
+              to: data.session.user.email!,
+              subject: "Welcome to Cursor Directory",
+              react: WelcomeEmail({
+                name: data.session.user.user_metadata.full_name,
+              }),
             }),
-          }),
-        );
+          );
+        }
       }
 
       if (isLocalEnv) {

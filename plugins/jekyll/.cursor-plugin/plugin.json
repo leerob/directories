@@ -1,0 +1,14 @@
+{
+  "name": "jekyll",
+  "version": "1.0.0",
+  "description": "Jekyll Cursor Rules",
+  "author": {
+    "name": "Alberto Gallego"
+  },
+  "keywords": [
+    "jekyll",
+    "Jekyll",
+    "tailwind"
+  ],
+  "rules": "rules"
+}

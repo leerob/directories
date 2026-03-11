@@ -1,0 +1,14 @@
+{
+  "name": "mcp-token-metrics",
+  "version": "1.0.0",
+  "description": "The Token Metrics Model Context Protocol (MCP) server provides comprehensive cryptocurrency data, analytics, and insights through function calling. This server enables AI assistants and agents to access Token Metrics' powerful API for real-time crypto market data, trading signals, price predictions, and advanced analytics.",
+  "author": {
+    "name": "Token Metrics MCP"
+  },
+  "homepage": "https://github.com/token-metrics/mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/fvstcx1brkc.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

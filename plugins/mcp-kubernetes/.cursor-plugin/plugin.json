@@ -1,0 +1,14 @@
+{
+  "name": "mcp-kubernetes",
+  "version": "1.0.0",
+  "description": "Manage pods, deployments, and services",
+  "author": {
+    "name": "Kubernetes MCP"
+  },
+  "homepage": "https://github.com/Flux159/mcp-server-kubernetes",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/ey5taygqwr.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

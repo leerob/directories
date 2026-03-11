@@ -1,0 +1,21 @@
+{
+  "name": "nuxtjs",
+  "version": "1.0.0",
+  "description": "Nuxt - Typescript",
+  "author": {
+    "name": "Nuxt"
+  },
+  "keywords": [
+    "Nuxt",
+    "nuxt/ui",
+    "NuxtJS",
+    "pinia",
+    "radix-vue",
+    "shadcn-vue",
+    "tailwind",
+    "TypeScript",
+    "Vue",
+    "vueuse"
+  ],
+  "rules": "rules"
+}

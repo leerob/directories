@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "1shot-api": {
+      "name": "1Shot API"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "1Shot API",
+    "description": "1Shot API is a high-throughput transaction relayer service for EVM blockchain networks. It provides extensive tooling for facilitating agentic payments and web3 product development. 1Shot API's mcp server exposes tools to AI-coding environments like Cursor to produce fully-functional onchain agents and products that interact with smart contracts with minimal prompting. ",
+    "homepage": "https://docs.1shotapi.com/index.html",
+    "deepLink": "https://cursor.com/en-US/install-mcp?name=1Shot%20API&config=eyJ1cmwiOiJodHRwczovL21jcC4xc2hvdGFwaS5jb20vbWNwIiwidHJhbnNwb3J0Ijoic3RyZWFtYWJsZUh0dHAiLCJhdXRoIjp7IkNMSUVOVF9JRCI6IlA1SmR1dzgwdnBWQUlOZ1c4bG5Od2dhazlBTGdmQklTIiwic2NvcGVzIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJlbWFpbCIsIm9mZmxpbmVfYWNjZXNzIl19LCJoZWFkZXJzIjp7fX0%3D",
+    "provider": "database"
+  }
+}

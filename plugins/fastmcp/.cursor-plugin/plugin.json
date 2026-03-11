@@ -1,0 +1,14 @@
+{
+  "name": "fastmcp",
+  "version": "1.0.0",
+  "description": "FastMCP Best Practices",
+  "author": {
+    "name": "Venkatesh"
+  },
+  "keywords": [
+    "Best Practices",
+    "FastMCP",
+    "Performance"
+  ],
+  "rules": "rules"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "shadcn-ui",
+  "version": "1.0.0",
+  "description": "Shadcn",
+  "author": {
+    "name": "shadcn"
+  },
+  "keywords": [
+    "Components",
+    "Shadcn",
+    "UI"
+  ],
+  "rules": "rules"
+}

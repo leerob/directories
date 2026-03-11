@@ -6,6 +6,7 @@
   "exports": {
     "./rules": "./src/rules/index.ts",
     "./mcp": "./src/mcp/index.ts",
+    "./plugins": "./src/plugins/index.ts",
     "./popular": "./src/popular/index.ts"
   },
   "dependencies": {

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "logfire-mcp-server": {
+      "description": "This MCP server enables LLMs to retrieve your application's telemetry data, analyze distributed traces, and make use of the results of arbitrary SQL queries executed using the Logfire APIs.",
+      "installUrl": "https://github.com/pydantic/logfire-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Logfire MCP Server",
+    "description": "This MCP server enables LLMs to retrieve your application's telemetry data, analyze distributed traces, and make use of the results of arbitrary SQL queries executed using the Logfire APIs.",
+    "homepage": "https://github.com/pydantic/logfire-mcp",
+    "provider": "database"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "ticket-tailor-mcp": {
+      "name": "TicketTailor"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Ticket Tailor MCP",
+    "description": "The Ticket Tailor Model Context Protocol (MCP) server enables AI assistants to interact with your Ticket Tailor box office through a standardised interface. This allows you to manage events, tickets, orders, and more using natural language commands with compatible AI tools.",
+    "homepage": "https://developers.tickettailor.com/docs/mcp/",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=TicketTailor&config=eyJ1cmwiOiJodHRwczovL21jcC50aWNrZXR0YWlsb3IuYWkvc3NlIn0%3D",
+    "provider": "database"
+  }
+}

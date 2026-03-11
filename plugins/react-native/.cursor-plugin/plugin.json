@@ -1,0 +1,19 @@
+{
+  "name": "react-native",
+  "version": "1.0.0",
+  "description": "React Native Cursor Rules",
+  "author": {
+    "name": "Will Sims"
+  },
+  "keywords": [
+    "Expo",
+    "React",
+    "React Native",
+    "React Navigation",
+    "React three fiber",
+    "Tailwind CSS",
+    "three.js",
+    "TypeScript"
+  ],
+  "rules": "rules"
+}

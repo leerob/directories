@@ -1,0 +1,12 @@
+{
+  "name": "autohotkey",
+  "version": "1.0.0",
+  "description": "AutoHotkey Cursor Rules",
+  "author": {
+    "name": "the-Automator"
+  },
+  "keywords": [
+    "AutoHotkey"
+  ],
+  "rules": "rules"
+}

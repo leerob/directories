@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "caiyun-weather": {
+      "description": "Caiyun Weather is a weather data service that provides real-time weather information, forecasts, and historical weather data through an API.\n\nKey features of Caiyun Weather:\n- Real-time weather data retrieval for specific locations.\n- Hourly and daily weather forecasts.\n- Historical weather data for the past 24 hours.\n- Weather alerts for specific locations.\nComprehensive weather metrics including temperature, humidity, wind speed, and air quality indices.",
+      "installUrl": "https://github.com/caiyunapp/mcp-caiyun-weather"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Caiyun Weather",
+    "description": "Caiyun Weather is a weather data service that provides real-time weather information, forecasts, and historical weather data through an API.\n\nKey features of Caiyun Weather:\n- Real-time weather data retrieval for specific locations.\n- Hourly and daily weather forecasts.\n- Historical weather data for the past 24 hours.\n- Weather alerts for specific locations.\nComprehensive weather metrics including temperature, humidity, wind speed, and air quality indices.",
+    "homepage": "https://github.com/caiyunapp/mcp-caiyun-weather",
+    "provider": "database"
+  }
+}

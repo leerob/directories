@@ -1,0 +1,14 @@
+{
+  "name": "mcp-google-drive",
+  "version": "1.0.0",
+  "description": "File access and search capabilities for Google Drive",
+  "author": {
+    "name": "Google Drive MCP"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/oz4xg0ru8t8.jpg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

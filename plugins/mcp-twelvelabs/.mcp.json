@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "twelvelabs": {
+      "name": "twelvelabs-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "TwelveLabs",
+    "description": "The TwelveLabs MCP Server provides seamless integration with the TwelveLabs platform. This server enables AI assistants and applications to interact with TwelveLabs powerful video analysis capabilities through a standardized MCP interface.",
+    "homepage": "https://mcp-install-instructions.alpic.cloud/servers/twelvelabs-mcp",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=twelvelabs-mcp&config=eyJ1cmwiOiJodHRwczovL21jcC50d2VsdmVsYWJzLmlvIiwiaGVhZGVycyI6eyJ4LWFwaS1rZXkiOiJZT1VSX1RXRUxWRUxBQlNfQVBJX0tFWSJ9fQ%3D%3D",
+    "provider": "database"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-raygun",
+  "version": "1.0.0",
+  "description": "Access crash reporting and monitoring data",
+  "author": {
+    "name": "Raygun MCP"
+  },
+  "homepage": "https://github.com/MindscapeHQ/mcp-server-raygun",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/a9c33dyc6dg.jpg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

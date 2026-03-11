@@ -1,0 +1,17 @@
+{
+  "name": "plasmic",
+  "version": "1.0.0",
+  "description": "Plasmic Cursor Rules",
+  "author": {
+    "name": "Plasmic"
+  },
+  "keywords": [
+    "Low-code",
+    "next.js",
+    "Next.js",
+    "Plasmic",
+    "react",
+    "React"
+  ],
+  "rules": "rules"
+}

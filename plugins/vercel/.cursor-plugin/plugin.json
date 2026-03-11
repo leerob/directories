@@ -1,0 +1,12 @@
+{
+  "name": "vercel",
+  "version": "1.0.0",
+  "description": "Vercel - Typescript",
+  "author": {
+    "name": "Vercel"
+  },
+  "keywords": [
+    "Vercel"
+  ],
+  "rules": "rules"
+}

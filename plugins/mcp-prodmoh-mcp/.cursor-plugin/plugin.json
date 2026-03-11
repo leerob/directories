@@ -1,0 +1,14 @@
+{
+  "name": "mcp-prodmoh-mcp",
+  "version": "1.0.0",
+  "description": "Prodmoh MCP brings your PRDs, user stories, acceptance criteria, and product requirements from your Prodmoh.com workspace directly into Cursor via MCP.\nIt eliminates context switching and gives Cursor’s AI full access to real product specs, enabling accurate code generation, API scaffolding, refactoring, and unit test creation using actual requirements.\n\nDevelopers can fetch PRDs, search product docs, and generate aligned code/tests without leaving the editor.",
+  "author": {
+    "name": "Prodmoh MCP MCP"
+  },
+  "homepage": "https://github.com/ProdMoh/prodmoh-mcp.git",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/kb6heyu706.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

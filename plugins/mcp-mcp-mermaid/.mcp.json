@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mcp-mermaid": {
+      "name": "mcp-mermaid"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "MCP Mermaid",
+    "description": "❤️ Generate mermaid diagram and chart with AI MCP dynamically.",
+    "homepage": "https://github.com/hustcc/mcp-mermaid",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=mcp-mermaid&config=eyJjb21tYW5kIjoibnB4IC15IG1jcC1tZXJtYWlkIn0%3D",
+    "provider": "database"
+  }
+}

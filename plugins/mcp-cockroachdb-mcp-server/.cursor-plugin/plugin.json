@@ -1,0 +1,14 @@
+{
+  "name": "mcp-cockroachdb-mcp-server",
+  "version": "1.0.0",
+  "description": "The CockroachDB MCP Server is a natural language interface designed for agentic applications to manage, monitor and query data in CockroachDB.",
+  "author": {
+    "name": "CockroachDB MCP Server MCP"
+  },
+  "homepage": "https://github.com/amineelkouhen/mcp-cockroachdb",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/t4gbojis35i.avif",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

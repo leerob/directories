@@ -1,0 +1,16 @@
+---
+title: Hono
+slug: hono
+description: Hono
+alwaysApply: false
+source: apps/cursor/src/data/official/hono
+tags:
+  - Hono
+  - API
+  - Typescript
+authorName: Hono
+authorUrl: https://x.com/honojs
+authorAvatar: https://pbs.twimg.com/profile_images/1562960963359293446/rGjvMLR1_400x400.jpg
+---
+
+

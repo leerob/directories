@@ -1,0 +1,14 @@
+{
+  "name": "mcp-sanity",
+  "version": "1.0.0",
+  "description": "Create, query, and manage Sanity content, releases, datasets, and schemas.",
+  "author": {
+    "name": "Sanity MCP"
+  },
+  "homepage": "https://www.sanity.io/docs/compute-and-ai/mcp-server",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/13pdx06zlark.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "technical-writing",
+  "version": "1.0.0",
+  "description": "Technical Writer / Documentation Specialist",
+  "author": {
+    "name": "Cursor Directory"
+  },
+  "keywords": [
+    "Developer Content",
+    "Documentation",
+    "Technical Writing",
+    "Tutorials"
+  ],
+  "rules": "rules"
+}

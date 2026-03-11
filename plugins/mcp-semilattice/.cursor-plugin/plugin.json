@@ -1,0 +1,14 @@
+{
+  "name": "mcp-semilattice",
+  "version": "1.0.0",
+  "description": "Test content, personalise features, and A/B test decisions with accurate audience prediction. Semilattice MCP lets agents predict things about your audience. Your agent could predict which email subject line or website copy your audience would prefer. Or it could predict which use cases your audience wants in a new product experience. Audience predictions are >87% accurate on average and take <20 seconds to complete.",
+  "author": {
+    "name": "Semilattice - audience prediction MCP"
+  },
+  "homepage": "https://docs.semilattice.ai/mcp/connect#cursor",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/6jl51nfscnv.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

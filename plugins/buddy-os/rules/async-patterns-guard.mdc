@@ -1,0 +1,162 @@
+---
+title: Async Patterns Guard
+slug: async-patterns-guard
+description: Async Patterns Guard
+alwaysApply: false
+source: packages/data/src/rules/buddy-os.ts
+tags:
+  - React
+  - Async
+  - useEffect
+  - Race Conditions
+  - Memory Leaks
+libs:
+  - React
+authorName: Buddy OS
+authorUrl: https://npmjs.com/package/buddy-os
+authorAvatar: https://avatars.githubusercontent.com/u/76938072?v=4
+---
+
+You are an expert in preventing race conditions and memory leaks in React async operations.
+
+## The Golden Rule
+
+EVERY async operation in useEffect MUST have an AbortController.
+
+## Pattern: Async Data Fetching
+
+```typescript
+// ✅ ALWAYS use this pattern
+useEffect(() => {
+  const controller = new AbortController();
+  let isMounted = true;
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(url, {
+        signal: controller.signal
+      });
+      
+      if (!response.ok) throw new Error('Failed');
+      
+      const data = await response.json();
+      
+      // Only update state if still mounted
+      if (isMounted) {
+        setData(data);
+        setError(null);
+      }
+    } catch (err) {
+      // Ignore abort errors
+      if (err.name !== 'AbortError' && isMounted) {
+        setError(err);
+      }
+    } finally {
+      if (isMounted) {
+        setLoading(false);
+      }
+    }
+  };
+
+  fetchData();
+
+  return () => {
+    isMounted = false;
+    controller.abort();
+  };
+}, [url]);
+```
+
+## Pattern: Debounced Search
+
+```typescript
+// ✅ Debounce with cleanup
+useEffect(() => {
+  const controller = new AbortController();
+  
+  const timeoutId = setTimeout(async () => {
+    try {
+      const results = await searchApi(query, {
+        signal: controller.signal
+      });
+      setResults(results);
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        setError(err);
+      }
+    }
+  }, 300);
+
+  return () => {
+    clearTimeout(timeoutId);
+    controller.abort();
+  };
+}, [query]);
+```
+
+## Pattern: Polling with Cleanup
+
+```typescript
+// ✅ Interval with abort
+useEffect(() => {
+  const controller = new AbortController();
+  
+  const poll = async () => {
+    try {
+      const status = await checkStatus({
+        signal: controller.signal
+      });
+      setStatus(status);
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        console.error('Polling error:', err);
+      }
+    }
+  };
+
+  poll(); // Initial fetch
+  const intervalId = setInterval(poll, 5000);
+
+  return () => {
+    clearInterval(intervalId);
+    controller.abort();
+  };
+}, []);
+```
+
+## Anti-Patterns to Avoid
+
+```typescript
+// ❌ No cleanup - causes memory leaks
+useEffect(() => {
+  fetchData().then(setData);
+}, [id]);
+
+// ❌ No abort - causes race conditions
+useEffect(() => {
+  const load = async () => {
+    const data = await fetchData();
+    setData(data); // May update with stale data
+  };
+  load();
+}, [id]);
+
+// ❌ Ignore pattern without abort check
+useEffect(() => {
+  let ignore = false;
+  fetchData().then(data => {
+    if (!ignore) setData(data);
+  });
+  return () => { ignore = true; };
+}, [id]);
+// Still has in-flight request!
+```
+
+## Detection Rules
+
+Flag as violation:
+1. useEffect with async function but no AbortController
+2. Fetch/axios call without signal option
+3. State updates without mounted check
+4. setTimeout/setInterval without cleanup

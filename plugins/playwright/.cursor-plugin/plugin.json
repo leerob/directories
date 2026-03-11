@@ -1,0 +1,16 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "Playwright Cursor Rules",
+  "author": {
+    "name": "Douglas Urrea Ocampo"
+  },
+  "keywords": [
+    "JavaScript",
+    "playwright",
+    "Playwright",
+    "Testing",
+    "TypeScript"
+  ],
+  "rules": "rules"
+}

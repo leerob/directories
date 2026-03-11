@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "urldna": {
+      "name": "urlDNA"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "urlDNA",
+    "description": "Scan and analyze potentially malicious URLs using the urlDNA\n",
+    "homepage": "https://github.com/urldna/mcp",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=urlDNA&config=eyJlbnYiOnsiYXV0aG9yaXphdGlvbiI6Ijx1cmxETkFfQVBJX0tFWT4ifSwiY29tbWFuZCI6InB5dGhvbiA8WU9VUl9QQVRIPi9ydW4ucHkifQ%3D%3D",
+    "provider": "database"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-logfire-mcp-server",
+  "version": "1.0.0",
+  "description": "This MCP server enables LLMs to retrieve your application's telemetry data, analyze distributed traces, and make use of the results of arbitrary SQL queries executed using the Logfire APIs.",
+  "author": {
+    "name": "Logfire MCP Server MCP"
+  },
+  "homepage": "https://github.com/pydantic/logfire-mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/ar8y4w20eao.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

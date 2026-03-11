@@ -1,0 +1,15 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "TypeScript, Electron, and Desktop App Cursor Rules",
+  "author": {
+    "name": "Akinshola Samuel AKINDE"
+  },
+  "keywords": [
+    "Desktop",
+    "Electron",
+    "Electron Builder",
+    "TypeScript"
+  ],
+  "rules": "rules"
+}

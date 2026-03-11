@@ -1,0 +1,14 @@
+{
+  "name": "mcp-autodock",
+  "version": "1.0.0",
+  "description": "Autodock copies your local work to a cloud environment and gives you secure, live URLs to your frontend, backend, and any other services. No setup, no CORS issues, no port forwarding, no \"I accidentally left the server on overnight.\"",
+  "author": {
+    "name": "Autodock MCP"
+  },
+  "homepage": "https://autodock.io/mcp-server",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/k6rirovje8k.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

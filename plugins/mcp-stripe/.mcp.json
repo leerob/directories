@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "stripe": {
+      "description": "Interact with the Stripe API",
+      "installUrl": "https://github.com/stripe/agent-toolkit/tree/main/modelcontextprotocol"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Stripe",
+    "description": "Interact with the Stripe API",
+    "homepage": "https://github.com/stripe/agent-toolkit/tree/main/modelcontextprotocol",
+    "provider": "database"
+  }
+}

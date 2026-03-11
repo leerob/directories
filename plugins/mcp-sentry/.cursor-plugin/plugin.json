@@ -1,0 +1,14 @@
+{
+  "name": "mcp-sentry",
+  "version": "1.0.0",
+  "description": "A Model Context Protocol server for retrieving and analyzing issues from Sentry.io. This server provides tools to inspect error reports, stacktraces, and other debugging information from your Sentry account.",
+  "author": {
+    "name": "Sentry MCP"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/sentry",
+  "logo": "https://cdn.brandfetch.io/idag_928SW/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

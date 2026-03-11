@@ -1,0 +1,14 @@
+{
+  "name": "mcp-rudderstack",
+  "version": "1.0.0",
+  "description": "This MCP server exposes RudderStack (Customer Data Infrastructure) workspaces to AI clients, enabling natural‑language pipeline inspection, debugging, and configuration changes from tools like Claude Desktop and Cursor.",
+  "author": {
+    "name": "RudderStack MCP"
+  },
+  "homepage": "https://www.rudderstack.com/docs/ai-features/rudderstack-ai/connect/",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/6ytsavi7r0f.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

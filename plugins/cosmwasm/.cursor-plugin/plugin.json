@@ -1,0 +1,16 @@
+{
+  "name": "cosmwasm",
+  "version": "1.0.0",
+  "description": "CosmWasm Smart Contract Development Rules",
+  "author": {
+    "name": "Phili Liao"
+  },
+  "keywords": [
+    "Blockchain",
+    "Cosmos",
+    "CosmWasm",
+    "IBC",
+    "Rust"
+  ],
+  "rules": "rules"
+}

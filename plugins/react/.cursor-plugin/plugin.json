@@ -1,0 +1,20 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "React Best Practices",
+  "author": {
+    "name": "Bruno Carneiro"
+  },
+  "keywords": [
+    "Cypress",
+    "React",
+    "React Testing Library",
+    "Shadcn UI",
+    "TailwindCSS",
+    "TanStack Query",
+    "TypeScript",
+    "Vitest",
+    "Zustand"
+  ],
+  "rules": "rules"
+}

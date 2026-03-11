@@ -1,0 +1,22 @@
+{
+  "name": "elixir",
+  "version": "1.0.0",
+  "description": "Elixir Development Cursor Rules",
+  "author": {
+    "name": "Adam Juras"
+  },
+  "keywords": [
+    "Backend Development",
+    "ecto",
+    "elixir",
+    "Elixir",
+    "ex",
+    "live_view",
+    "phoenix",
+    "Phoenix",
+    "phoenix-framework",
+    "postgresql",
+    "tailwind"
+  ],
+  "rules": "rules"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "trigger",
+  "version": "1.0.0",
+  "description": "Trigger.dev - Typescript",
+  "author": {
+    "name": "Trigger.dev"
+  },
+  "keywords": [
+    "Trigger.dev"
+  ],
+  "rules": "rules"
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "neon": {
+      "name": "Neon"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Neon",
+    "description": "Interact with the Neon serverless Postgres platform",
+    "homepage": "https://github.com/neondatabase-labs/mcp-server-neon",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=Neon&config=eyJjb21tYW5kIjoibnB4IC15IG1jcC1yZW1vdGUgaHR0cHM6Ly9tY3AubmVvbi50ZWNoL3NzZSJ9",
+    "provider": "database"
+  }
+}

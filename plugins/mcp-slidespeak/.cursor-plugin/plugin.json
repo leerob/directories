@@ -1,0 +1,14 @@
+{
+  "name": "mcp-slidespeak",
+  "version": "1.0.0",
+  "description": "Create Presentation using MCP. SlideSpeak allows you to generate PowerPoint presentations with AI within seconds. Create, edit and modify presentations to automate reports, proposals and more.",
+  "author": {
+    "name": "SlideSpeak MCP"
+  },
+  "homepage": "https://github.com/SlideSpeak/slidespeak-mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/wdevlobtqm9.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

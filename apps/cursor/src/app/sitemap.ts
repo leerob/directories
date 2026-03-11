@@ -1,14 +1,12 @@
-import { getCompanies, getMCPs } from "@/data/queries";
-import { getSections } from "@directories/data/rules";
+import { getCompanies } from "@/data/queries";
+import { getPlugins } from "@directories/data/plugins";
 import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://cursor.directory";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Get all rules sections
-  const sections = getSections();
+  const plugins = getPlugins();
 
-  // Base routes
   const routes: MetadataRoute.Sitemap = [
     {
       url: BASE_URL,
@@ -17,13 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: `${BASE_URL}/rules`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/rules/popular`,
+      url: `${BASE_URL}/plugins`,
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.9,
@@ -34,50 +26,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily",
       priority: 0.9,
     },
-    {
-      url: `${BASE_URL}/mcp`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
   ];
 
-  // Add routes for each rules section
-  for (const section of sections) {
-    for (const rule of section.rules) {
-      routes.push({
-        url: `${BASE_URL}/${rule.slug}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.7,
-      });
-    }
-  }
-
-  for (const section of sections) {
+  for (const plugin of plugins) {
     routes.push({
-      url: `${BASE_URL}/rules/${section.slug}`,
+      url: `${BASE_URL}/plugins/${plugin.slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.7,
     });
   }
 
-  // Add routes for each MCP integration
-  const { data: mcpData } = await getMCPs();
-
-  if (mcpData) {
-    for (const mcp of mcpData) {
-      routes.push({
-        url: `${BASE_URL}/mcp/${mcp.slug}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.6,
-      });
-    }
-  }
-
-  // Add routes for each company
   const { data: companyData } = await getCompanies();
 
   if (companyData) {

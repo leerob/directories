@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "sanity": {
+      "name": "Sanity"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Sanity",
+    "description": "Create, query, and manage Sanity content, releases, datasets, and schemas.",
+    "homepage": "https://www.sanity.io/docs/compute-and-ai/mcp-server",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=Sanity&config=eyJ1cmwiOiJodHRwczovL21jcC5zYW5pdHkuaW8iLCJ0eXBlIjoiaHR0cCJ9Cg==",
+    "provider": "database"
+  }
+}

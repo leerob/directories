@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "snowflake": {
+      "description": "Interact with Snowflake databases",
+      "installUrl": "https://github.com/datawiz168/mcp-snowflake-service"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Snowflake",
+    "description": "Interact with Snowflake databases",
+    "homepage": "https://github.com/datawiz168/mcp-snowflake-service",
+    "provider": "database"
+  }
+}

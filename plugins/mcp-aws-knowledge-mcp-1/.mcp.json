@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "aws-knowledge-mcp": {
+      "name": "aws-knowledge-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "AWS Knowledge MCP",
+    "description": "A fully managed remote MCP server that provides up-to-date documentation, code samples, and other official AWS content.",
+    "homepage": "https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server/",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=aws-knowledge-mcp&config=eyJ1cmwiOiJodHRwczovL2tub3dsZWRnZS1tY3AuZ2xvYmFsLmFwaS5hd3MifQ==",
+    "provider": "database"
+  }
+}

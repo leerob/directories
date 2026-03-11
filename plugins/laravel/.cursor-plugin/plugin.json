@@ -1,0 +1,31 @@
+{
+  "name": "laravel",
+  "version": "1.0.0",
+  "description": "Comprehensive Laravel PHP Cursor Rules: Best Practices and Key Principles.",
+  "author": {
+    "name": "Ruchit Patel"
+  },
+  "keywords": [
+    "Alpine.js",
+    "alpinejs",
+    "daisyui",
+    "DaisyUI",
+    "Flux UI",
+    "fluxui",
+    "Franework",
+    "laravel",
+    "Laravel",
+    "livewire",
+    "Livewire",
+    "php",
+    "PHP",
+    "tailwind",
+    "Tailwind CSS",
+    "tailwindcss",
+    "TailwindCSS",
+    "tallstack",
+    "Vite",
+    "Vue.js"
+  ],
+  "rules": "rules"
+}

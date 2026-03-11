@@ -1,0 +1,19 @@
+{
+  "name": "terraform",
+  "version": "1.0.0",
+  "description": "Terraform + Cloud Infrastructure as Code Best Practices",
+  "author": {
+    "name": "Abdeldjalil Sichaib"
+  },
+  "keywords": [
+    "AWS",
+    "Azure",
+    "Cloud",
+    "GCP",
+    "Infrastructure as Code",
+    "Terraform",
+    "Terraform Cloud",
+    "Vault"
+  ],
+  "rules": "rules"
+}

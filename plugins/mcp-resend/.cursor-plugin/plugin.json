@@ -1,0 +1,14 @@
+{
+  "name": "mcp-resend",
+  "version": "1.0.0",
+  "description": "This is a simple MCP server that sends emails using Resend's API. Why? Now you can let Cursor or Claude Desktop compose emails for you and send it right away without having to copy and paste the email content.",
+  "author": {
+    "name": "Resend MCP"
+  },
+  "homepage": "https://github.com/resend/mcp-send-email",
+  "logo": "https://pbs.twimg.com/profile_images/1749861436074151936/MPN32ysD_400x400.jpg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "coti-ethers",
+  "version": "1.0.0",
+  "description": "Coti Ethers Web3modal Cursor Rules",
+  "author": {
+    "name": "Upendra Singh"
+  },
+  "keywords": [
+    "blockchain",
+    "coti-ethers",
+    "onboarding",
+    "smart-contracts",
+    "typescript",
+    "wallet-connection",
+    "web3modal",
+    "web3modal/react"
+  ],
+  "rules": "rules"
+}

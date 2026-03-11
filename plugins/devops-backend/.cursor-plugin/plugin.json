@@ -1,0 +1,17 @@
+{
+  "name": "devops-backend",
+  "version": "1.0.0",
+  "description": "DevOps Engineer Rules",
+  "author": {
+    "name": "Ivan Barjaktarov"
+  },
+  "keywords": [
+    "ansible",
+    "azure",
+    "bash",
+    "devops",
+    "kubernetes",
+    "python"
+  ],
+  "rules": "rules"
+}

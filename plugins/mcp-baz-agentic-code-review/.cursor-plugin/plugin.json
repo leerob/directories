@@ -1,0 +1,14 @@
+{
+  "name": "mcp-baz-agentic-code-review",
+  "version": "1.0.0",
+  "description": "Baz is an AI-powered coding platform leveraging specialized models and embeddings to address the limitations of traditional coding tools. Developers no longer have to manually piece together the impact of pull requests; Baz models, analyzes and reviews code changes, detecting breaking changes, enforcing consistency, and highlighting misaligned coding patterns. Baz makes every review faster, more accurate, and aligned with the real-world impact of the code changes being made.",
+  "author": {
+    "name": "Baz: Agentic Code Review MCP"
+  },
+  "homepage": "https://docs.baz.co/basics/model-context-protocol",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/9xoav5ftbkl.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

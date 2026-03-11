@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "infobip": {
+      "name": "infobip-sms"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Infobip",
+    "description": "Infobip MCP Servers let you build AI agents to interact with the Infobip platform through the Model Context Protocol (MCP).\nConnect to Infobip and enable your agents to perform actions, such as sending messages over channels like SMS, WhatsApp, or Viber, or managing customer data in a controlled, production-grade environment.\nNo more complex integrations or digging through endless documentation. Just plug in and let your AI do the talking.",
+    "homepage": "https://github.com/infobip/mcp",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=infobip-sms&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIm1jcC1yZW1vdGUiLCJodHRwczovL21jcC5pbmZvYmlwLmNvbS9zbXMiLCItLXN0YXRpYy1vYXV0aC1jbGllbnQtbWV0YWRhdGEiLCJ7XCJzY29wZVwiOlwic21zOm1hbmFnZSBwcm9maWxlXCJ9Il19",
+    "provider": "database"
+  }
+}

@@ -1,0 +1,19 @@
+---
+title: Python Test Case Generator
+slug: python-testing-generator
+description: Python Test Case Generator
+alwaysApply: false
+source: packages/data/src/rules/python.ts
+tags:
+  - Function
+  - Python
+  - Testing
+authorName: Zachary BENSALEM
+authorUrl: https://www.qredence.ai
+authorAvatar: https://gravatar.com/inspiringc58f5ea0ba
+---
+
+Test Case Generation Prompt
+You are an AI coding assistant that can write unique, diverse,
+and intuitive unit tests for functions given the signature and
+docstring.

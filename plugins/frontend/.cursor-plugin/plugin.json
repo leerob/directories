@@ -1,0 +1,41 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Front-End Developer",
+  "author": {
+    "name": "Mohammadali Karimi"
+  },
+  "keywords": [
+    "Accessibility",
+    "AI SDK",
+    "App Router",
+    "Bootstrap",
+    "CSS",
+    "Framer Motion",
+    "Frontend",
+    "Genql",
+    "GraphQL",
+    "HTML",
+    "JavaScript",
+    "next",
+    "Next.js",
+    "node",
+    "Node.js",
+    "Radix UI",
+    "react",
+    "React",
+    "redux",
+    "Redux UI",
+    "Responsive Design",
+    "shadcn",
+    "Shadcn UI",
+    "Supabase",
+    "tailwind",
+    "Tailwind",
+    "Tailwind CSS",
+    "TailwindCSS",
+    "TypeScript",
+    "Zod"
+  ],
+  "rules": "rules"
+}

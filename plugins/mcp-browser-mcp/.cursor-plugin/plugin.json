@@ -1,0 +1,14 @@
+{
+  "name": "mcp-browser-mcp",
+  "version": "1.0.0",
+  "description": "Automate your local Chrome browser",
+  "author": {
+    "name": "Browser MCP MCP"
+  },
+  "homepage": "https://browsermcp.io/",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/fcnjicu69jc.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

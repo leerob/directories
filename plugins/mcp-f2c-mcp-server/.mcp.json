@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "f2c-mcp-server": {
+      "description": "🎨 Convert Figma design nodes to high-fidelity HTML/CSS markup, Industry-leading position\n📚 Provides Figma design context to AI coding tools like Cursor\n🚀 Supports Figma file URLs with fileKey and nodeId parameters",
+      "installUrl": "https://github.com/f2c-ai/f2c-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "F2C MCP Server",
+    "description": "🎨 Convert Figma design nodes to high-fidelity HTML/CSS markup, Industry-leading position\n📚 Provides Figma design context to AI coding tools like Cursor\n🚀 Supports Figma file URLs with fileKey and nodeId parameters",
+    "homepage": "https://github.com/f2c-ai/f2c-mcp",
+    "provider": "database"
+  }
+}

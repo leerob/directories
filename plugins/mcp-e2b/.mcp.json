@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "e2b": {
+      "description": "Execute code in secure cloud sandboxes",
+      "installUrl": "https://github.com/e2b-dev/mcp-server"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "E2B",
+    "description": "Execute code in secure cloud sandboxes",
+    "homepage": "https://github.com/e2b-dev/mcp-server",
+    "provider": "database"
+  }
+}

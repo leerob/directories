@@ -1,0 +1,2549 @@
+{
+  "name": "cursor-directory",
+  "owner": {
+    "name": "Cursor Directory"
+  },
+  "metadata": {
+    "description": "Community plugins for Cursor from cursor.directory"
+  },
+  "plugins": [
+    {
+      "name": "abap",
+      "source": "abap",
+      "description": "ABAP Cursor Rules",
+      "keywords": [
+        "ABAP"
+      ]
+    },
+    {
+      "name": "al",
+      "source": "al",
+      "description": "AL Microsoft Business Central Development Cursor Rules",
+      "keywords": [
+        "al",
+        "AL",
+        "Business Central",
+        "business-central"
+      ]
+    },
+    {
+      "name": "android",
+      "source": "android",
+      "description": "Android Cursor Rules",
+      "keywords": [
+        "android",
+        "compose",
+        "jetpack",
+        "kotlin"
+      ]
+    },
+    {
+      "name": "angular",
+      "source": "angular",
+      "description": "Angular Cursor Rules",
+      "keywords": [
+        "angular",
+        "Angular",
+        "cordova",
+        "firebase",
+        "firestore",
+        "ionic"
+      ]
+    },
+    {
+      "name": "arduino-framework",
+      "source": "arduino-framework",
+      "description": "Arduino-Framework Cursor Rules",
+      "keywords": [
+        "arduino",
+        "Arduino-Framework",
+        "esp32"
+      ]
+    },
+    {
+      "name": "astro",
+      "source": "astro",
+      "description": "Astro Cursor Rules",
+      "keywords": [
+        "astro",
+        "Astro",
+        "tailwind"
+      ]
+    },
+    {
+      "name": "autohotkey",
+      "source": "autohotkey",
+      "description": "AutoHotkey Cursor Rules",
+      "keywords": [
+        "AutoHotkey"
+      ]
+    },
+    {
+      "name": "blazor",
+      "source": "blazor",
+      "description": "Blazor Cursor Rules",
+      "keywords": [
+        "ASP.NET Core",
+        "aspnetcore",
+        "blazor",
+        "Blazor",
+        "C#"
+      ]
+    },
+    {
+      "name": "bootstrap",
+      "source": "bootstrap",
+      "description": "Bootstrap Cursor Rules",
+      "keywords": [
+        "bootstrap",
+        "html",
+        "Web Development"
+      ]
+    },
+    {
+      "name": "buddy-os",
+      "source": "buddy-os",
+      "description": "Accessibility Guard",
+      "keywords": [
+        "A11y",
+        "Accessibility",
+        "Architecture",
+        "Async",
+        "Best Practices",
+        "Code Review",
+        "Complex Changes",
+        "Components",
+        "CSR",
+        "Forms",
+        "Functional Components",
+        "Git",
+        "Hooks",
+        "Hydration",
+        "Memory Leaks",
+        "Next.js",
+        "Performance",
+        "Planning",
+        "PR",
+        "Quality Gates",
+        "Race Conditions",
+        "React",
+        "React Hook Form",
+        "react-hook-form",
+        "SSR",
+        "TypeScript",
+        "useEffect",
+        "WCAG",
+        "Yup"
+      ]
+    },
+    {
+      "name": "chrome-extension",
+      "source": "chrome-extension",
+      "description": "Chrome Extension Development Best Practices",
+      "keywords": [
+        "Browser API",
+        "Chrome API",
+        "Chrome Extension",
+        "JavaScript",
+        "Jest",
+        "TypeScript",
+        "Webpack"
+      ]
+    },
+    {
+      "name": "cloudflare",
+      "source": "cloudflare",
+      "description": "Cloudflare Workers Best Practices",
+      "keywords": [
+        "agents",
+        "Agents",
+        "Cloudflare Workers",
+        "JavaScript",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "convex",
+      "source": "convex",
+      "description": "Convex Cursor Rules",
+      "keywords": [
+        "convex",
+        "Convex"
+      ]
+    },
+    {
+      "name": "cosmwasm",
+      "source": "cosmwasm",
+      "description": "CosmWasm Smart Contract Development Rules",
+      "keywords": [
+        "Blockchain",
+        "Cosmos",
+        "CosmWasm",
+        "IBC",
+        "Rust"
+      ]
+    },
+    {
+      "name": "coti-ethers",
+      "source": "coti-ethers",
+      "description": "Coti Ethers Web3modal Cursor Rules",
+      "keywords": [
+        "blockchain",
+        "coti-ethers",
+        "onboarding",
+        "smart-contracts",
+        "typescript",
+        "wallet-connection",
+        "web3modal",
+        "web3modal/react"
+      ]
+    },
+    {
+      "name": "cpp",
+      "source": "cpp",
+      "description": "C++ Development Cursor Rules",
+      "keywords": [
+        "Backend Development",
+        "c++",
+        "cpp"
+      ]
+    },
+    {
+      "name": "data-analyst",
+      "source": "data-analyst",
+      "description": "Jupyter Data Analyst Python Cursor Rules",
+      "keywords": [
+        "Data Analyst",
+        "Jupyter",
+        "Python"
+      ]
+    },
+    {
+      "name": "deep-learning",
+      "source": "deep-learning",
+      "description": "Deep Learning Developer Python Cursor Rules",
+      "keywords": [
+        "Deep Learning",
+        "Diffusion",
+        "LLM",
+        "Python",
+        "PyTorch",
+        "Transformer"
+      ]
+    },
+    {
+      "name": "devops-backend",
+      "source": "devops-backend",
+      "description": "DevOps Engineer Rules",
+      "keywords": [
+        "ansible",
+        "azure",
+        "bash",
+        "devops",
+        "kubernetes",
+        "python"
+      ]
+    },
+    {
+      "name": "django",
+      "source": "django",
+      "description": "Django Python Cursor Rules",
+      "keywords": [
+        "django",
+        "Django",
+        "djangorestframework",
+        "python",
+        "Python",
+        "REST API",
+        "Web Development"
+      ]
+    },
+    {
+      "name": "dotnet",
+      "source": "dotnet",
+      "description": ".NET Cursor Rules",
+      "keywords": [
+        ".NET",
+        "C#"
+      ]
+    },
+    {
+      "name": "drupal",
+      "source": "drupal",
+      "description": "Drupal 10 Module Development Guidelines",
+      "keywords": [
+        "CMS",
+        "Drupal",
+        "PHP"
+      ]
+    },
+    {
+      "name": "electron",
+      "source": "electron",
+      "description": "TypeScript, Electron, and Desktop App Cursor Rules",
+      "keywords": [
+        "Desktop",
+        "Electron",
+        "Electron Builder",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "elixir",
+      "source": "elixir",
+      "description": "Elixir Development Cursor Rules",
+      "keywords": [
+        "Backend Development",
+        "ecto",
+        "elixir",
+        "Elixir",
+        "ex",
+        "live_view",
+        "phoenix",
+        "Phoenix",
+        "phoenix-framework",
+        "postgresql",
+        "tailwind"
+      ]
+    },
+    {
+      "name": "expo",
+      "source": "expo",
+      "description": "Expo",
+      "keywords": [
+        "Expo",
+        "expo-font",
+        "expo-router",
+        "expo-status-bar",
+        "JavaScript",
+        "React Native",
+        "react-native-fast-image",
+        "react-native-gesture-handler",
+        "react-native-reanimated",
+        "react-native-responsive-screen",
+        "react-native-safe-area-context",
+        "react-navigation",
+        "react-query",
+        "TypeScript",
+        "zod"
+      ]
+    },
+    {
+      "name": "expressjs",
+      "source": "expressjs",
+      "description": "Express.js Best Practices",
+      "keywords": [
+        "Backend",
+        "cors",
+        "dotenv",
+        "express",
+        "Express.js",
+        "fs",
+        "helmet",
+        "http",
+        "morgan",
+        "Node.js",
+        "path"
+      ]
+    },
+    {
+      "name": "fastapi",
+      "source": "fastapi",
+      "description": "FastAPI Python Cursor Rules",
+      "keywords": [
+        "celery",
+        "FastAPI",
+        "Microservices",
+        "Python",
+        "redis",
+        "Serverless",
+        "uvicorn"
+      ]
+    },
+    {
+      "name": "fastify",
+      "source": "fastify",
+      "description": "Fastify TypeScript Cursor Rules",
+      "keywords": [
+        "fastify",
+        "Fastify",
+        "typescript"
+      ]
+    },
+    {
+      "name": "fastmcp",
+      "source": "fastmcp",
+      "description": "FastMCP Best Practices",
+      "keywords": [
+        "Best Practices",
+        "FastMCP",
+        "Performance"
+      ]
+    },
+    {
+      "name": "flask",
+      "source": "flask",
+      "description": "Flask Python Cursor Rules",
+      "keywords": [
+        "Flask",
+        "Python"
+      ]
+    },
+    {
+      "name": "flutter",
+      "source": "flutter",
+      "description": "Flutter & Dart Expert with Provider (Ephemeral) & Bloc (App) State Managements",
+      "keywords": [
+        "AutoRoute",
+        "Bloc",
+        "Clean Architecture",
+        "Cubit",
+        "Dartz",
+        "Feature-first",
+        "Firebase",
+        "Flutter",
+        "flutter_bloc",
+        "Freezed",
+        "GetIt",
+        "Hooks",
+        "Layers",
+        "Provider",
+        "Riverpod",
+        "Supabase"
+      ]
+    },
+    {
+      "name": "frontend",
+      "source": "frontend",
+      "description": "Front-End Developer",
+      "keywords": [
+        "Accessibility",
+        "AI SDK",
+        "App Router",
+        "Bootstrap",
+        "CSS",
+        "Framer Motion",
+        "Frontend",
+        "Genql",
+        "GraphQL",
+        "HTML",
+        "JavaScript",
+        "next",
+        "Next.js",
+        "node",
+        "Node.js",
+        "Radix UI",
+        "react",
+        "React",
+        "redux",
+        "Redux UI",
+        "Responsive Design",
+        "shadcn",
+        "Shadcn UI",
+        "Supabase",
+        "tailwind",
+        "Tailwind",
+        "Tailwind CSS",
+        "TailwindCSS",
+        "TypeScript",
+        "Zod"
+      ]
+    },
+    {
+      "name": "gastby",
+      "source": "gastby",
+      "description": "Gatsby Cursor Rules",
+      "keywords": [
+        "gatsby",
+        "Gatsby",
+        "graphql",
+        "GraphQL",
+        "react",
+        "React",
+        "tailwind",
+        "Tailwind",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "ghost-tailwindcss",
+      "source": "ghost-tailwindcss",
+      "description": "ghost CMS with Tailwind CSS Cursor Rules",
+      "keywords": [
+        "Alpine.js",
+        "alpinejs",
+        "Ghost",
+        "tailwindcss",
+        "TailwindCSS"
+      ]
+    },
+    {
+      "name": "gitcommit",
+      "source": "gitcommit",
+      "description": "Git Commit Rules",
+      "keywords": [
+        "Bitbucket",
+        "Commit",
+        "Git",
+        "GitHub",
+        "GitLab",
+        "VCS"
+      ]
+    },
+    {
+      "name": "global",
+      "source": "global",
+      "description": "Global Cursor Rules",
+      "keywords": [
+        "Global"
+      ]
+    },
+    {
+      "name": "go",
+      "source": "go",
+      "description": "Go API Development with Standard Library (1.22+)",
+      "keywords": [
+        "API",
+        "Best Practices",
+        "Clean Architecture",
+        "Go",
+        "Go modules",
+        "Golang",
+        "golangci-lint",
+        "Jaeger",
+        "Microservices",
+        "net/http",
+        "Observability",
+        "OpenTelemetry",
+        "Prometheus",
+        "Security",
+        "Testing"
+      ]
+    },
+    {
+      "name": "hono",
+      "source": "hono",
+      "description": "Hono",
+      "keywords": [
+        "API",
+        "Hono",
+        "Typescript"
+      ]
+    },
+    {
+      "name": "htmx",
+      "source": "htmx",
+      "description": "htmx Cursor Rules",
+      "keywords": [
+        "html",
+        "htmx",
+        "Web Development"
+      ]
+    },
+    {
+      "name": "java",
+      "source": "java",
+      "description": "Java Quarkus Cursor Rules",
+      "keywords": [
+        "GraalVM",
+        "Jakarta EE",
+        "Java",
+        "MicroProfile",
+        "Quarkus",
+        "Spring",
+        "Spring-Boot",
+        "Vert.x"
+      ]
+    },
+    {
+      "name": "jax",
+      "source": "jax",
+      "description": "JAX Best Practices",
+      "keywords": [
+        "jax",
+        "JAX",
+        "Machine Learning",
+        "numpy",
+        "Python"
+      ]
+    },
+    {
+      "name": "jekyll",
+      "source": "jekyll",
+      "description": "Jekyll Cursor Rules",
+      "keywords": [
+        "jekyll",
+        "Jekyll",
+        "tailwind"
+      ]
+    },
+    {
+      "name": "julia",
+      "source": "julia",
+      "description": "Julia Data Science Cursor Rules",
+      "keywords": [
+        "DataScience",
+        "Julia"
+      ]
+    },
+    {
+      "name": "laravel",
+      "source": "laravel",
+      "description": "Comprehensive Laravel PHP Cursor Rules: Best Practices and Key Principles.",
+      "keywords": [
+        "Alpine.js",
+        "alpinejs",
+        "daisyui",
+        "DaisyUI",
+        "Flux UI",
+        "fluxui",
+        "Franework",
+        "laravel",
+        "Laravel",
+        "livewire",
+        "Livewire",
+        "php",
+        "PHP",
+        "tailwind",
+        "Tailwind CSS",
+        "tailwindcss",
+        "TailwindCSS",
+        "tallstack",
+        "Vite",
+        "Vue.js"
+      ]
+    },
+    {
+      "name": "lua",
+      "source": "lua",
+      "description": "Lua Development Best Practices",
+      "keywords": [
+        "Corona SDK",
+        "Game Development",
+        "LÖVE",
+        "Lua",
+        "LuaJIT",
+        "Scripting"
+      ]
+    },
+    {
+      "name": "manifest",
+      "source": "manifest",
+      "description": "Manifest Cursor Rules",
+      "keywords": [
+        "Backend development",
+        "Manifest"
+      ]
+    },
+    {
+      "name": "mcp-1shot-api",
+      "source": "mcp-1shot-api",
+      "description": "1Shot API is a high-throughput transaction relayer service for EVM blockchain networks. It provides extensive tooling for facilitating agentic payments and web3 product development. 1Shot API's mcp server exposes tools to AI-coding environments like Cursor to produce fully-functional onchain agents and products that interact with smart contracts with minimal prompting. ",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/4o5iheccdn5.svg",
+      "homepage": "https://docs.1shotapi.com/index.html"
+    },
+    {
+      "name": "mcp-21st-dev-magic-ai-agent",
+      "source": "mcp-21st-dev-magic-ai-agent",
+      "description": "Magic AI Agent is an AI-driven tool designed to assist developers in creating modern UI components through natural language descriptions, streamlining the UI development process.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/dzx0qvoinfd.png",
+      "homepage": "https://github.com/21st-dev/magic-mcp"
+    },
+    {
+      "name": "mcp-activepieces-mcp-server",
+      "source": "mcp-activepieces-mcp-server",
+      "description": "Connect 300+ apps (for example, Slack, Stripe, Shopify, Trello, Notion, and many other apps) to  AI assistants like Claude, Cursor, and Windsurf in a very secure environment for free. Activepieces is SOC 2 Type II compliant and also certified by MIT\n\nLearn more about Activepieces MCP server here: https://www.activepieces.com/mcp",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/86lu64cynww.jpeg",
+      "homepage": "https://www.activepieces.com/mcp"
+    },
+    {
+      "name": "mcp-adobe-commerce-magento",
+      "source": "mcp-adobe-commerce-magento",
+      "description": "A Model Context Protocol (MCP) tool for integrating with the Adobe Commerce/ Magento REST API. No direct SQL or server access required.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/z2dkq6z9ipn.png",
+      "homepage": "https://github.com/codexpect/adobe-commerce-mcp"
+    },
+    {
+      "name": "mcp-agent-interviews",
+      "source": "mcp-agent-interviews",
+      "description": "AI interviews as-a-service. Use AI to connect with real humans at scale.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/0jaibhnbmcgh.png",
+      "homepage": "https://docs.agentinterviews.com/MCP/overview/"
+    },
+    {
+      "name": "mcp-apify-rag-web-browser",
+      "source": "mcp-apify-rag-web-browser",
+      "description": "Web browser for LLM apps similar to a web browser in ChatGPT. It queries Google Search, scrapes the top N pages from the results, and returns their cleaned content as Markdown.",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://apify.com/apify/rag-web-browser#anthropic-model-context-protocol-mcp-server"
+    },
+    {
+      "name": "mcp-ashra-mcp-server",
+      "source": "mcp-ashra-mcp-server",
+      "description": "Extract structured data from any website with a simple SDK call. No scraping code, no headless browsers - just prompt and get JSON.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/o9tfdlsaej9.svg",
+      "homepage": "https://github.com/getrupt/ashra-mcp/tree/main/src/operations"
+    },
+    {
+      "name": "mcp-atlassian-2",
+      "source": "mcp-atlassian-2",
+      "description": "https://mcp.atlassian.com/v1/mcp",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://mcp.atlassian.com/v1/mcp"
+    },
+    {
+      "name": "mcp-autodock",
+      "source": "mcp-autodock",
+      "description": "Autodock copies your local work to a cloud environment and gives you secure, live URLs to your frontend, backend, and any other services. No setup, no CORS issues, no port forwarding, no \"I accidentally left the server on overnight.\"",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/k6rirovje8k.svg",
+      "homepage": "https://autodock.io/mcp-server"
+    },
+    {
+      "name": "mcp-aws-api-mcp-server",
+      "source": "mcp-aws-api-mcp-server",
+      "description": "The AWS API MCP Server enables AI assistants to interact with AWS services and resources through AWS CLI commands. It provides programmatic access to manage your AWS infrastructure while maintaining proper security controls.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/3xjf4l3b9rc.png",
+      "homepage": "https://awslabs.github.io/mcp/servers/aws-api-mcp-server/"
+    },
+    {
+      "name": "mcp-aws-knowledge-mcp-1",
+      "source": "mcp-aws-knowledge-mcp-1",
+      "description": "A fully managed remote MCP server that provides up-to-date documentation, code samples, and other official AWS content.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/iau91ovqcp.png",
+      "homepage": "https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server/"
+    },
+    {
+      "name": "mcp-axiom",
+      "source": "mcp-axiom",
+      "description": "Query and analyze logs, traces, and event data using natural language",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/642ysjsghgq.png",
+      "homepage": "https://github.com/axiomhq/mcp-server-axiom"
+    },
+    {
+      "name": "mcp-baz-agentic-code-review",
+      "source": "mcp-baz-agentic-code-review",
+      "description": "Baz is an AI-powered coding platform leveraging specialized models and embeddings to address the limitations of traditional coding tools. Developers no longer have to manually piece together the impact of pull requests; Baz models, analyzes and reviews code changes, detecting breaking changes, enforcing consistency, and highlighting misaligned coding patterns. Baz makes every review faster, more accurate, and aligned with the real-world impact of the code changes being made.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/9xoav5ftbkl.svg",
+      "homepage": "https://docs.baz.co/basics/model-context-protocol"
+    },
+    {
+      "name": "mcp-brave-search",
+      "source": "mcp-brave-search",
+      "description": "Web and local search using Brave's Search API",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/glem9l3zgkc.jpg",
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search"
+    },
+    {
+      "name": "mcp-browser-mcp",
+      "source": "mcp-browser-mcp",
+      "description": "Automate your local Chrome browser",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/fcnjicu69jc.png",
+      "homepage": "https://browsermcp.io/"
+    },
+    {
+      "name": "mcp-browserbase",
+      "source": "mcp-browserbase",
+      "description": "This server provides cloud browser automation capabilities using Browserbase, Puppeteer, and Stagehand (Coming Soon). This server enables LLMs to interact with web pages, take screenshots, and execute JavaScript in a cloud browser environment.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/rbldyhl3oan.png",
+      "homepage": "https://github.com/browserbase/mcp-server-browserbase"
+    },
+    {
+      "name": "mcp-browsertools-mcp",
+      "source": "mcp-browsertools-mcp",
+      "description": "Analyze logs & interact with your browser for rapid debugging",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://github.com/AgentDeskAI/browser-tools-mcp"
+    },
+    {
+      "name": "mcp-caiyun-weather",
+      "source": "mcp-caiyun-weather",
+      "description": "Caiyun Weather is a weather data service that provides real-time weather information, forecasts, and historical weather data through an API.\n\nKey features of Caiyun Weather:\n- Real-time weather data retrieval for specific locations.\n- Hourly and daily weather forecasts.\n- Historical weather data for the past 24 hours.\n- Weather alerts for specific locations.\nComprehensive weather metrics including temperature, humidity, wind speed, and air quality indices.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/iz9l4ks7vng.png",
+      "homepage": "https://github.com/caiyunapp/mcp-caiyun-weather"
+    },
+    {
+      "name": "mcp-callhub-mcp",
+      "source": "mcp-callhub-mcp",
+      "description": "Create Campaigns & more with your CallHub Account",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://github.com/callhub/callhub-mcp"
+    },
+    {
+      "name": "mcp-cashfree-mcp",
+      "source": "mcp-cashfree-mcp",
+      "description": "Cashfree MCP server for cashfree docs and APIs",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/r4lf8cm6ap.png",
+      "homepage": "https://github.com/cashfree/cashfree-mcp"
+    },
+    {
+      "name": "mcp-cloudflare",
+      "source": "mcp-cloudflare",
+      "description": "Cloudflare MCP Server is a tool designed to deploy, configure, and interact with resources on the Cloudflare developer platform, including Workers, KV storage, R2 storage, and D1 databases, through the Model Context Protocol (MCP).",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/2d40xjfd3s1.png",
+      "homepage": "https://github.com/cloudflare/mcp-server-cloudflare"
+    },
+    {
+      "name": "mcp-cockroachdb-mcp-server",
+      "source": "mcp-cockroachdb-mcp-server",
+      "description": "The CockroachDB MCP Server is a natural language interface designed for agentic applications to manage, monitor and query data in CockroachDB.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/t4gbojis35i.avif",
+      "homepage": "https://github.com/amineelkouhen/mcp-cockroachdb"
+    },
+    {
+      "name": "mcp-compresto-mcp",
+      "source": "mcp-compresto-mcp",
+      "description": "A Model Context Protocol (MCP) server for Compresto, providing AI assistants with real-time data about Compresto's usage statistics.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/hv1orz8jdub.png",
+      "homepage": "https://github.com/dqhieu/compresto-mcp"
+    },
+    {
+      "name": "mcp-convex",
+      "source": "mcp-convex",
+      "description": "Cursor, the AI code editor, makes it easy to write and maintain apps built with Convex. Let's walk through how to setup Cursor for the best possible results with Convex.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://pbs.twimg.com/profile_images/1886599096636694528/0Y8VYt94_400x400.png",
+      "homepage": "https://docs.convex.dev/ai/using-cursor#setup-the-convex-mcp-server"
+    },
+    {
+      "name": "mcp-cursor-mcp-installer-mcp",
+      "source": "mcp-cursor-mcp-installer-mcp",
+      "description": "A Model Context Protocol (MCP) server for installing and configuring other MCP servers within Cursor IDE.\n\n",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/kyjpkg2cahe.jpeg",
+      "homepage": "https://github.com/matthewdcage/cursor-mcp-installer"
+    },
+    {
+      "name": "mcp-cursor10x",
+      "source": "mcp-cursor10x",
+      "description": "The Cursor10x MCP is a persistent multi-dimensional memory system for Cursor that enhances AI assistants with conversation context, project history, and code relationships across sessions.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/1qikjzbwm61.jpg",
+      "homepage": "https://github.com/aurda012/cursor10x-mcp"
+    },
+    {
+      "name": "mcp-cyclops",
+      "source": "mcp-cyclops",
+      "description": "Cyclops MCP allows your favorite AI agent to manage your Kubernetes applications. Cyclops MCP server provides tools for agents to create and update existing applications safely.\n\nWith Cyclops MCP, you can now abstract Kubernetes complexity from your developers AND your AI Agents 🔥",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/bgukswtporb.png",
+      "homepage": "https://github.com/cyclops-ui/mcp-cyclops"
+    },
+    {
+      "name": "mcp-dbhub",
+      "source": "mcp-dbhub",
+      "description": "Universal database MCP server connecting to MySQL, PostgreSQL, SQL Server, SQLite, and etc.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/qjijyd4za5.svg",
+      "homepage": "https://github.com/bytebase/dbhub/"
+    },
+    {
+      "name": "mcp-deployhq",
+      "source": "mcp-deployhq",
+      "description": "MCP server for DeployHQ that enables AI agents to interact with your deployment automation platform. Provides comprehensive tools for managing projects, servers, and deployments through natural language. ",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/rchapsi4q9j.svg",
+      "homepage": "https://github.com/deployhq/deployhq-mcp-server#readme"
+    },
+    {
+      "name": "mcp-devcontext",
+      "source": "mcp-devcontext",
+      "description": "DevContext is a state-of-the-art context management system for software development, implementing the Model Context Protocol (MCP) with advanced context retrieval techniques. Empower your development workflow with intelligent context awareness - DevContext understands your codebase, conversations, and development patterns to provide relevant context exactly when you need it.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/zhf4bqihd1c.jpeg",
+      "homepage": "https://github.com/aurda012/devcontext"
+    },
+    {
+      "name": "mcp-docker",
+      "source": "mcp-docker",
+      "description": "Manage containers, images, volumes, and networks",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/eor42x3k8r7.jpg",
+      "homepage": "https://github.com/ckreiling/mcp-server-docker"
+    },
+    {
+      "name": "mcp-dodo-payments",
+      "source": "mcp-dodo-payments",
+      "description": "The Dodo Payments MCP Server integrates with agentic frameworks to provide a lightweight, serverless-compatible interface for AI-driven payment operations like billing, subscriptions, and customer management. It enables autonomous agents to securely act on behalf of users using the Dodo Payments API.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/7x1evcz99u.png",
+      "homepage": "https://docs.dodopayments.com/api-reference/mcp-server"
+    },
+    {
+      "name": "mcp-domain-tools-whois-and-dns",
+      "source": "mcp-domain-tools-whois-and-dns",
+      "description": "mcp-domaintools is a Model Context Protocol (MCP) server providing DNS and WHOIS query capabilities for AI assistants. It enables AI models to perform DNS lookups both via local DNS resolvers and remote DNS-over-HTTPS services.\n\nFor local DNS queries, it uses the system's configured DNS servers. For remote DNS queries, it uses Cloudflare DNS-over-HTTPS queries with a fallback to Google DNS-over-HTTPS. This is more than enough for most use cases.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/l6394ygdf9c.png",
+      "homepage": "https://github.com/patrickdappollonio/mcp-domaintools"
+    },
+    {
+      "name": "mcp-e2b",
+      "source": "mcp-e2b",
+      "description": "Execute code in secure cloud sandboxes",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/pyd9x15usz8.png",
+      "homepage": "https://github.com/e2b-dev/mcp-server"
+    },
+    {
+      "name": "mcp-ecosystem-ai",
+      "source": "mcp-ecosystem-ai",
+      "description": "The ecosystem.Ai runtime, Ecogentic Chat, and Dynamic runtime calling.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/v8crs60vulr.png",
+      "homepage": "https://developer.ecosystem.ai/docs/runtime/mcp"
+    },
+    {
+      "name": "mcp-encore",
+      "source": "mcp-encore",
+      "description": "Encore turns Cursor into more than a coding tool. The open source framework lets you define infrastructure directly in your app code using Cursor's AI, so you can go from prompt to running on AWS in minutes. With Encore's built-in MCP, Cursor can introspect your app, call APIs, view traces, and more.\n\n- Set up your project:\nbrew install encoredev/tap/encore && encore app create --example=ts/hello-world --llm-rules=cursor\n\n- Learn more:\nhttps://encore.dev",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/waii2l5cijj.png",
+      "homepage": "https://encore.dev/docs/ts/cli/mcp"
+    },
+    {
+      "name": "mcp-f2c-mcp-server",
+      "source": "mcp-f2c-mcp-server",
+      "description": "🎨 Convert Figma design nodes to high-fidelity HTML/CSS markup, Industry-leading position\n📚 Provides Figma design context to AI coding tools like Cursor\n🚀 Supports Figma file URLs with fileKey and nodeId parameters",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/aodhdez6z0k.png",
+      "homepage": "https://github.com/f2c-ai/f2c-mcp"
+    },
+    {
+      "name": "mcp-fetch",
+      "source": "mcp-fetch",
+      "description": "Fetch is a Model Context Protocol (MCP) server designed for web content fetching and conversion, allowing Large Language Models (LLMs) to retrieve and process content from web pages by converting HTML into markdown for easier consumption.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/x9m6r946ut.png",
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch"
+    },
+    {
+      "name": "mcp-figma",
+      "source": "mcp-figma",
+      "description": "Proivde coding agents with design data direct from Figma for far more accurate design implementations in one-shot.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/dzswosx8do9.svg",
+      "homepage": "https://github.com/GLips/Figma-Context-MCP"
+    },
+    {
+      "name": "mcp-filesystem",
+      "source": "mcp-filesystem",
+      "description": "Secure file operations with configurable access controls",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem"
+    },
+    {
+      "name": "mcp-firecrawl",
+      "source": "mcp-firecrawl",
+      "description": "Turn entire websites into LLM-ready data",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/tpiydg5jd7.jpg",
+      "homepage": "https://github.com/mendableai/firecrawl-mcp-server"
+    },
+    {
+      "name": "mcp-gcp",
+      "source": "mcp-gcp",
+      "description": "A Model Context Protocol (MCP) server that enables AI assistants like Claude to interact with your Google Cloud Platform environment. This allows for natural language querying and management of your GCP resources during conversations.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/ancluhehsyn.webp",
+      "homepage": "https://github.com/eniayomi/gcp-mcp"
+    },
+    {
+      "name": "mcp-gibsonai",
+      "source": "mcp-gibsonai",
+      "description": "Effortlessly design, deploy, and scale production-grade databases in minutes. Just describe your requirements in natural language, and GibsonAI generates the rest:\n\n- A managed, AI-optimized database usable from anywhere, including serverless functions\n- CRUD API with documentation to manage your data\n- ORM models and validation schemas\n- Entity-Relationship Diagram (ERD) to visualize your database\n- Distinct development and production environments\n... and much more\n\nGet started at gibsonai.com",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/mrjjij2effc.png",
+      "homepage": "https://docs.gibsonai.com/#mcp"
+    },
+    {
+      "name": "mcp-github",
+      "source": "mcp-github",
+      "description": "This server provides integration with Github's issue tracking system through MCP, allowing LLMs to interact with Github issues.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://cdn.brandfetch.io/idZAyF9rlg/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/github"
+    },
+    {
+      "name": "mcp-gologin-mcp",
+      "source": "mcp-gologin-mcp",
+      "description": "Manage your GoLogin browser profiles and automation directly through AI conversations. This MCP server connects to the GoLogin API, letting you create, configure, and control browser profiles using natural language.",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://github.com/gologinapp/gologin-mcp"
+    },
+    {
+      "name": "mcp-google-ads",
+      "source": "mcp-google-ads",
+      "description": "An MCP tool that connects Google Ads with Claude AI, Cursor and others, allowing you to analyze your advertising data through natural language conversations. This integration gives you access to campaign information, performance metrics, keyword analytics, and ad management—all through simple chat with Claude, Cursor or Windsurf.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/3mcnpxvxlrl.svg",
+      "homepage": "https://github.com/cohnen/mcp-google-ads"
+    },
+    {
+      "name": "mcp-google-ads-mcp-by-trueclicks",
+      "source": "mcp-google-ads-mcp-by-trueclicks",
+      "description": "Google Ads MCP by TrueClicks enables your AI (like Claude) to securely access and query your Google Ads account data. It supports both Windows and macOS, including Intel and ARM-based systems. It connects AIs to Google Ads using GAQL.app as a backend.",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://github.com/TrueClicks/google-ads-mcp-js"
+    },
+    {
+      "name": "mcp-google-drive",
+      "source": "mcp-google-drive",
+      "description": "File access and search capabilities for Google Drive",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/oz4xg0ru8t8.jpg",
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive"
+    },
+    {
+      "name": "mcp-hyperbrowser",
+      "source": "mcp-hyperbrowser",
+      "description": "Cloud Browsers for AI Agents. Scrape, navigate, and interact with the web using Hyperbrowser's Model Context Protocol (MCP) servers.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/barthebx7ws.png",
+      "homepage": "https://hyperbrowser.ai/hb-logo.png"
+    },
+    {
+      "name": "mcp-iceberg-mcp",
+      "source": "mcp-iceberg-mcp",
+      "description": "IcebergMCP is an MCP server that lets you interact with your Apache Iceberg Lakehouse using natural language in Claude, Cursor, or any other MCP client.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/jkrrehip788.png",
+      "homepage": "https://github.com/ryft-io/iceberg-mcp"
+    },
+    {
+      "name": "mcp-inbox-zero",
+      "source": "mcp-inbox-zero",
+      "description": "A Model Context Protocol (MCP) server that enables AI assistants like Claude to interact with your Inbox Zero account. This allows for natural language querying and management of your email during conversations.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/tl1axjj3je.jpg",
+      "homepage": "https://github.com/elie222/inbox-zero"
+    },
+    {
+      "name": "mcp-infobip",
+      "source": "mcp-infobip",
+      "description": "Infobip MCP Servers let you build AI agents to interact with the Infobip platform through the Model Context Protocol (MCP).\nConnect to Infobip and enable your agents to perform actions, such as sending messages over channels like SMS, WhatsApp, or Viber, or managing customer data in a controlled, production-grade environment.\nNo more complex integrations or digging through endless documentation. Just plug in and let your AI do the talking.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/ab09yagv8mn.png",
+      "homepage": "https://github.com/infobip/mcp"
+    },
+    {
+      "name": "mcp-instant-domain-search-mcp",
+      "source": "mcp-instant-domain-search-mcp",
+      "description": "Instant MCP brings the world’s fastest domain search into the tool too into Claude, ChatGPT, and Cursor.\n\n",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/uottvf9jhq.webp",
+      "homepage": "https://instantmcp.apidocumentation.com/documentation/cursor"
+    },
+    {
+      "name": "mcp-interactive-mcp",
+      "source": "mcp-interactive-mcp",
+      "description": "Interactive MCP is an AI‑enhanced MCP notification system that delivers real‑time chat completion alerts and gathers user feedback on the fly. Boost your workflow with instant, actionable notifications and seamless interactive feedback. ",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/perlie2cf9.png",
+      "homepage": "https://github.com/ttommyth/interactive-mcp"
+    },
+    {
+      "name": "mcp-json-resume",
+      "source": "mcp-json-resume",
+      "description": "Updates your resume as your code. Will add new skills and projects as you develop.",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://github.com/jsonresume/mcp"
+    },
+    {
+      "name": "mcp-kong-konnect-3",
+      "source": "mcp-kong-konnect-3",
+      "description": "Manage your Kong Konnect API infrastructure right from your development environment.\n\nLearn more about it here: https://developer.konghq.com/konnect-platform/konnect-mcp/",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/8hlyrgb6fsl.png",
+      "homepage": "https://developer.konghq.com/konnect-platform/konnect-mcp/installation/#cursor"
+    },
+    {
+      "name": "mcp-kubernetes",
+      "source": "mcp-kubernetes",
+      "description": "Manage pods, deployments, and services",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/ey5taygqwr.png",
+      "homepage": "https://github.com/Flux159/mcp-server-kubernetes"
+    },
+    {
+      "name": "mcp-lara-translate-mcp",
+      "source": "mcp-lara-translate-mcp",
+      "description": "MCP (Model Context Protocol) Server for Lara Translate API, enabling powerful translation capabilities with support for language detection and context-aware translations.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/biarvcyvr8d.png",
+      "homepage": "https://github.com/translated/lara-mcp/"
+    },
+    {
+      "name": "mcp-linkedin-mcp-assistant",
+      "source": "mcp-linkedin-mcp-assistant",
+      "description": "LiGo MCP is the first Claude + ChatGPT integration built for LinkedIn creators.\n\nIt gives your AI assistant access to your post history - so it can analyze what works, write in your voice, and publish or schedule content directly.\n\nSet it up once, use it daily. No prompt engineering needed.\n\nUse it to:\n\n- Build a LinkedIn-native content engine\n- Post in your voice, fast\n- Schedule straight from chat",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/33kfk1h0s8j.png",
+      "homepage": "https://github.com/ertiqah/linkedin-mcp-runner"
+    },
+    {
+      "name": "mcp-logfire-mcp-server",
+      "source": "mcp-logfire-mcp-server",
+      "description": "This MCP server enables LLMs to retrieve your application's telemetry data, analyze distributed traces, and make use of the results of arbitrary SQL queries executed using the Logfire APIs.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/ar8y4w20eao.png",
+      "homepage": "https://github.com/pydantic/logfire-mcp"
+    },
+    {
+      "name": "mcp-logseq-mcp-tools",
+      "source": "mcp-logseq-mcp-tools",
+      "description": "A Model Context Protocol (MCP) server that provides AI assistants with structured access to your Logseq knowledge graph.",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://github.com/joelhooks/logseq-mcp-tools"
+    },
+    {
+      "name": "mcp-mac-messages-mcp",
+      "source": "mcp-mac-messages-mcp",
+      "description": " An MCP server that securely interfaces with your iMessage database via the Model Context Protocol (MCP), allowing LLMs to query and analyze iMessage conversations. It includes robust phone number validation, attachment processing, contact management, group chat handling, and full support for sending and receiving messages. ",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/dsm4wxyodti.png",
+      "homepage": "https://github.com/carterlasalle/mac_messages_mcp"
+    },
+    {
+      "name": "mcp-mailtrap",
+      "source": "mcp-mailtrap",
+      "description": "Integrates with Mailtrap Email Platform to enable sending transactional emails via API.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/fy6rxh2ho7h.png",
+      "homepage": "https://go.midday.ai/4VANoW7"
+    },
+    {
+      "name": "mcp-maton",
+      "source": "mcp-maton",
+      "description": "Connect to your SaaS tools like HubSpot, Salesforce, and more",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/17odeqrv8eh.png",
+      "homepage": "https://github.com/maton-ai/agent-toolkit"
+    },
+    {
+      "name": "mcp-mcp-linkedinads",
+      "source": "mcp-mcp-linkedinads",
+      "description": "Analyse your LinkedIn Ads performance. Compare to benchmarks and get optimisation recommendations.",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://github.com/radiateb2b/mcp-linkedinads"
+    },
+    {
+      "name": "mcp-mcp-mermaid",
+      "source": "mcp-mcp-mermaid",
+      "description": "❤️ Generate mermaid diagram and chart with AI MCP dynamically.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/5ed440goqp3.svg",
+      "homepage": "https://github.com/hustcc/mcp-mermaid"
+    },
+    {
+      "name": "mcp-mcp-server-chart",
+      "source": "mcp-mcp-server-chart",
+      "description": "🤖 A visualization Model Context Protocol server for generating visual charts using AntV.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/hs4gt6rrjbw.svg",
+      "homepage": "https://github.com/antvis/mcp-server-chart"
+    },
+    {
+      "name": "mcp-mcp-server-webcrawl",
+      "source": "mcp-mcp-server-webcrawl",
+      "description": "Advanced search and retrieval for web crawler data.  \n\nWith mcp-server-webcrawl, your MCP client filters and analyzes web content under your direction or autonomously, extracting insights from your web content. \n\nThe server includes a fulltext search interface with boolean support, resource filtering by type, HTTP status, headers, size, and more.  Support for WARC, wget, InterroBot, Katana, and SiteOne web crawlers is available out of the gate. \n\nmcp-server-webcrawl is open source.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/eqwj1rghnld.png",
+      "homepage": "https://github.com/pragmar/mcp-server-webcrawl"
+    },
+    {
+      "name": "mcp-metabase-mcp",
+      "source": "mcp-metabase-mcp",
+      "description": "Connect AI assistants to your Metabase analytics platform. Access dashboards, execute queries, and retrieve data seamlessly through conversational interfaces. Enhance your analytics experience with structured data access and robust error handling.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/mc1rrdhrrvk.svg",
+      "homepage": "https://github.com/hyeongjun-dev/metabase-mcp-server"
+    },
+    {
+      "name": "mcp-neon",
+      "source": "mcp-neon",
+      "description": "Interact with the Neon serverless Postgres platform",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/oy68m9rzcql.webp",
+      "homepage": "https://github.com/neondatabase-labs/mcp-server-neon"
+    },
+    {
+      "name": "mcp-obsidian",
+      "source": "mcp-obsidian",
+      "description": "Read and search through Markdown notes in Obsidian vaults",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/mkoe8p7bdb.svg",
+      "homepage": "https://github.com/smithery-ai/mcp-obsidian"
+    },
+    {
+      "name": "mcp-obsidian-markdown-notes",
+      "source": "mcp-obsidian-markdown-notes",
+      "description": "Read and search through Markdown notes in Obsidian vaults",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://cdn.brandfetch.io/idGpyxH_Fa/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+      "homepage": "https://github.com/calclavia/mcp-obsidian"
+    },
+    {
+      "name": "mcp-pearl",
+      "source": "mcp-pearl",
+      "description": "The Pearl MCP Server expands the ecosystem of MCP-compatible tools by introducing a distinctive type of tool: humans. Unlike traditional MCP implementations that connect to APIs or code snippets, this server enables AI agents (e.g., Claude, Cursor, GitHub Copilot) to interact with domain-specific human experts in real time. It offers a robust path for tasks that require nuanced judgment, contextual understanding, or legal, medical, and technical advice from certified professionals. ",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/t0tkhkhng5.svg",
+      "homepage": "https://www.pearl.com/api/docs/pearl-api-mcp-server/connecting-to-remote-pearl-api-mcp-server-from-clients"
+    },
+    {
+      "name": "mcp-pgyer-mcp-server",
+      "source": "mcp-pgyer-mcp-server",
+      "description": "MCP Server for PGYER platform, supports uploading, querying apps, etc.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/fucgt0snihr.png",
+      "homepage": "https://github.com/PGYER/pgyer-mcp-server"
+    },
+    {
+      "name": "mcp-postgresql",
+      "source": "mcp-postgresql",
+      "description": "A Model Context Protocol server that provides read-only access to PostgreSQL databases. This server enables LLMs to inspect database schemas and execute read-only queries.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/p1pwmr6z14.svg",
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres"
+    },
+    {
+      "name": "mcp-pre-dev-architect",
+      "source": "mcp-pre-dev-architect",
+      "description": "10x your coding agent with pre.dev. \n\nAsk pre.dev to help with any task and it will architect a complete solution ready for an agent to execute on. ",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/t181skcm8vo.png",
+      "homepage": "https://docs.pre.dev/mcp-server"
+    },
+    {
+      "name": "mcp-prisma",
+      "source": "mcp-prisma",
+      "description": "Gives LLMs the ability to manage Prisma Postgres databases (e.g. spin up new databases and run migrations or queries)",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://cdn.brandfetch.io/idBBE3_R9e/idI_xi9A1U.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+      "homepage": "https://github.com/prisma/mcp"
+    },
+    {
+      "name": "mcp-prodmoh-mcp",
+      "source": "mcp-prodmoh-mcp",
+      "description": "Prodmoh MCP brings your PRDs, user stories, acceptance criteria, and product requirements from your Prodmoh.com workspace directly into Cursor via MCP.\nIt eliminates context switching and gives Cursor’s AI full access to real product specs, enabling accurate code generation, API scaffolding, refactoring, and unit test creation using actual requirements.\n\nDevelopers can fetch PRDs, search product docs, and generate aligned code/tests without leaving the editor.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/kb6heyu706.png",
+      "homepage": "https://github.com/ProdMoh/prodmoh-mcp.git"
+    },
+    {
+      "name": "mcp-pulsetic-mcp-server",
+      "source": "mcp-pulsetic-mcp-server",
+      "description": "The Pulsetic MCP Server connects Pulsetic monitoring with AI agents and MCP-compatible tools, enabling direct access to uptime data, cron monitoring results, incident management workflows, and status page information through the Model Context Protocol (MCP).\n\nIt allows teams to securely expose operational monitoring data in a structured format, making it easy to build AI-driven automation, monitoring assistants, and intelligent operational workflows without custom middleware.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/0ud4xln9n4sp.svg",
+      "homepage": "https://github.com/designmodo/pulsetic-mcp"
+    },
+    {
+      "name": "mcp-pulumi-mcp-server",
+      "source": "mcp-pulumi-mcp-server",
+      "description": "The Pulumi Model Context Protocol (MCP) server enables AI-powered coding assistants to help you codify cloud architectures and get diffs for infrastructure changes right in your development environment",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/006zn94pivhah.png",
+      "homepage": "https://github.com/pulumi/mcp-server"
+    },
+    {
+      "name": "mcp-puppeteer",
+      "source": "mcp-puppeteer",
+      "description": "Puppeteer is a Model Context Protocol server that provides browser automation capabilities, allowing LLMs to interact with web pages, take screenshots, and execute JavaScript in a real browser environment.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/7fhx9d3k7qq.png",
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer"
+    },
+    {
+      "name": "mcp-qdrant",
+      "source": "mcp-qdrant",
+      "description": "Implement semantic memory using the Qdrant vector search engine",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/tc9emb3zgon.png",
+      "homepage": "https://github.com/qdrant/mcp-server-qdrant/"
+    },
+    {
+      "name": "mcp-raygun",
+      "source": "mcp-raygun",
+      "description": "Access crash reporting and monitoring data",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/a9c33dyc6dg.jpg",
+      "homepage": "https://github.com/MindscapeHQ/mcp-server-raygun"
+    },
+    {
+      "name": "mcp-red-telephone-keeping-a-human-in-the-loop",
+      "source": "mcp-red-telephone-keeping-a-human-in-the-loop",
+      "description": "Stop AI hallucinations. A Human-in-the-Loop MCP server that pauses Agent execution and requests approval via Telegram before sensitive actions. Includes \"Approve/Deny\" buttons and customisable urgency levels.",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://dantehark.gumroad.com/l/redphone"
+    },
+    {
+      "name": "mcp-resend",
+      "source": "mcp-resend",
+      "description": "This is a simple MCP server that sends emails using Resend's API. Why? Now you can let Cursor or Claude Desktop compose emails for you and send it right away without having to copy and paste the email content.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://pbs.twimg.com/profile_images/1749861436074151936/MPN32ysD_400x400.jpg",
+      "homepage": "https://github.com/resend/mcp-send-email"
+    },
+    {
+      "name": "mcp-rudderstack",
+      "source": "mcp-rudderstack",
+      "description": "This MCP server exposes RudderStack (Customer Data Infrastructure) workspaces to AI clients, enabling natural‑language pipeline inspection, debugging, and configuration changes from tools like Claude Desktop and Cursor.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/6ytsavi7r0f.svg",
+      "homepage": "https://www.rudderstack.com/docs/ai-features/rudderstack-ai/connect/"
+    },
+    {
+      "name": "mcp-sanity",
+      "source": "mcp-sanity",
+      "description": "Create, query, and manage Sanity content, releases, datasets, and schemas.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/13pdx06zlark.png",
+      "homepage": "https://www.sanity.io/docs/compute-and-ai/mcp-server"
+    },
+    {
+      "name": "mcp-search1api",
+      "source": "mcp-search1api",
+      "description": "Unified API for search, crawling, and sitemaps",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://github.com/fatwang2/search1api-mcp"
+    },
+    {
+      "name": "mcp-semilattice",
+      "source": "mcp-semilattice",
+      "description": "Test content, personalise features, and A/B test decisions with accurate audience prediction. Semilattice MCP lets agents predict things about your audience. Your agent could predict which email subject line or website copy your audience would prefer. Or it could predict which use cases your audience wants in a new product experience. Audience predictions are >87% accurate on average and take <20 seconds to complete.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/6jl51nfscnv.png",
+      "homepage": "https://docs.semilattice.ai/mcp/connect#cursor"
+    },
+    {
+      "name": "mcp-sentry",
+      "source": "mcp-sentry",
+      "description": "A Model Context Protocol server for retrieving and analyzing issues from Sentry.io. This server provides tools to inspect error reports, stacktraces, and other debugging information from your Sentry account.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://cdn.brandfetch.io/idag_928SW/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/sentry"
+    },
+    {
+      "name": "mcp-settlemint",
+      "source": "mcp-settlemint",
+      "description": "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/xe5bsqudct.jpg",
+      "homepage": "https://console.settlemint.com/documentation/building-with-settlemint/dev-tools/mcp"
+    },
+    {
+      "name": "mcp-slack",
+      "source": "mcp-slack",
+      "description": "Slack is a channel management and messaging solution that enables seamless interaction within workspaces, integrating with various tools for efficiency.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/qvo8s5lobd.png",
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack"
+    },
+    {
+      "name": "mcp-slidespeak",
+      "source": "mcp-slidespeak",
+      "description": "Create Presentation using MCP. SlideSpeak allows you to generate PowerPoint presentations with AI within seconds. Create, edit and modify presentations to automate reports, proposals and more.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/wdevlobtqm9.png",
+      "homepage": "https://github.com/SlideSpeak/slidespeak-mcp"
+    },
+    {
+      "name": "mcp-snowflake",
+      "source": "mcp-snowflake",
+      "description": "Interact with Snowflake databases",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/0zcv3459unjm.png",
+      "homepage": "https://github.com/datawiz168/mcp-snowflake-service"
+    },
+    {
+      "name": "mcp-sqlite",
+      "source": "mcp-sqlite",
+      "description": "Database interaction and business intelligence features",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite"
+    },
+    {
+      "name": "mcp-stripe",
+      "source": "mcp-stripe",
+      "description": "Interact with the Stripe API",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/1u8f676t4bi.jpg",
+      "homepage": "https://github.com/stripe/agent-toolkit/tree/main/modelcontextprotocol"
+    },
+    {
+      "name": "mcp-supabase",
+      "source": "mcp-supabase",
+      "description": "This is an MCP server for PostgREST. It allows LLMs perform database queries and operations on Postgres databases via PostgREST.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://cdn.brandfetch.io/idsSceG8fK/w/436/h/449/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+      "homepage": "https://github.com/supabase-community/mcp-supabase/tree/main/packages/mcp-server-postgrest"
+    },
+    {
+      "name": "mcp-suppr-mcp",
+      "source": "mcp-suppr-mcp",
+      "description": "Suppr - AI-powered document translation and academic search service. Supports high-quality translation of PDF, DOCX, PPTX and other formats in 11 languages with optimized mathematical formula handling. Includes PubMed-integrated intelligent literature search for researchers.\n\nAPI Endpoint: https://openapi.suppr.wilddata.cn\nWeb Portal: https://suppr.wilddata.cn\n",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/wijax8tc2s.png",
+      "homepage": "https://github.com/WildDataX/suppr-mcp"
+    },
+    {
+      "name": "mcp-svgverseai-the-ai-vector-generator",
+      "source": "mcp-svgverseai-the-ai-vector-generator",
+      "description": "The SVGverseAI MCP Server lets you connect your AI agents, automation workflows, or creative tools directly to SVGverseAI’s image generation engine — without ever opening the app.\n\nWith just a few API calls, you can:\n\nGenerate SVG, PNG, or WebP images from text prompts\nConvert raster images into vector graphics\nOrganize results inside your collections\nPower your own design tools with SVGverseAI’s creative engine\n\n🔗 Learn more: https://docs.svgverseai.com/mcp-reference/setup",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://vista.svgverseai.com/svg/api/v1/mcp"
+    },
+    {
+      "name": "mcp-tauri-development-mcp-server",
+      "source": "mcp-tauri-development-mcp-server",
+      "description": "Build, test, and debug mobile and desktop apps with the Tauri framework. Screenshots, DOM state, and console logs from your running app give the AI rich context to understand what's happening—and tools to interact with it.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/h7y3yzvht9d.svg",
+      "homepage": "https://hypothesi.github.io/mcp-server-tauri/guides/getting-started"
+    },
+    {
+      "name": "mcp-tencent-rtc-mcp-tuicallkit",
+      "source": "mcp-tencent-rtc-mcp-tuicallkit",
+      "description": "TUICallKit is an audio and video call UI component launched by Tencent RTC, supporting real-time communication with up to nine participants simultaneously. By integrating this component, you only need to write a few lines of code to add audio and video call features to your application.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/f8golbuiybu.png",
+      "homepage": "https://github.com/Tencent-RTC/mcp"
+    },
+    {
+      "name": "mcp-terraform-mcp-server-by-binadox",
+      "source": "mcp-terraform-mcp-server-by-binadox",
+      "description": "MCP server for Terraform — automatically validates, secures, and estimates cloud costs for Terraform configurations. Developed by Binadox, it integrates with any Model Context Protocol (MCP) client (e.g. Claude Desktop or other MCP-compatible AI assistants).",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/vguy1imlo2.png",
+      "homepage": "https://github.com/binadox-public/binadox-terraform-mcp"
+    },
+    {
+      "name": "mcp-ticket-tailor-mcp",
+      "source": "mcp-ticket-tailor-mcp",
+      "description": "The Ticket Tailor Model Context Protocol (MCP) server enables AI assistants to interact with your Ticket Tailor box office through a standardised interface. This allows you to manage events, tickets, orders, and more using natural language commands with compatible AI tools.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/afo5pw1rub7.png",
+      "homepage": "https://developers.tickettailor.com/docs/mcp/"
+    },
+    {
+      "name": "mcp-tinybird",
+      "source": "mcp-tinybird",
+      "description": "Interface with the Tinybird serverless ClickHouse platform",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/6ry45t95rr4.webp",
+      "homepage": "https://github.com/tinybirdco/mcp-tinybird"
+    },
+    {
+      "name": "mcp-todoist",
+      "source": "mcp-todoist",
+      "description": "Task management integration",
+      "keywords": [
+        "mcp"
+      ],
+      "homepage": "https://github.com/abhiz123/todoist-mcp-server"
+    },
+    {
+      "name": "mcp-token-metrics",
+      "source": "mcp-token-metrics",
+      "description": "The Token Metrics Model Context Protocol (MCP) server provides comprehensive cryptocurrency data, analytics, and insights through function calling. This server enables AI assistants and agents to access Token Metrics' powerful API for real-time crypto market data, trading signals, price predictions, and advanced analytics.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/fvstcx1brkc.png",
+      "homepage": "https://github.com/token-metrics/mcp"
+    },
+    {
+      "name": "mcp-twelve-data-mcp-server",
+      "source": "mcp-twelve-data-mcp-server",
+      "description": "Twelve Data MCP Server delivers real-time and historical financial market data, including live quotes, statements, and analysis data. Twelve Data covers global stocks, forex, cryptocurrencies, ETFS, and more. It integrates seamlessly with trading platforms and tools, enabling developers to access and process market insights efficiently. Optimized for performance, the MCP server ensures accurate, timely data to support trading strategies and analytics.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/xi6efb98a6.png",
+      "homepage": "https://github.com/twelvedata/mcp"
+    },
+    {
+      "name": "mcp-twelvelabs",
+      "source": "mcp-twelvelabs",
+      "description": "The TwelveLabs MCP Server provides seamless integration with the TwelveLabs platform. This server enables AI assistants and applications to interact with TwelveLabs powerful video analysis capabilities through a standardized MCP interface.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/zj9re2tu6o9.png",
+      "homepage": "https://mcp-install-instructions.alpic.cloud/servers/twelvelabs-mcp"
+    },
+    {
+      "name": "mcp-ucp-checker",
+      "source": "mcp-ucp-checker",
+      "description": "Use a concise, benefit-driven summary: \"Check if any domain supports Universal Commerce Protocol (UCP). Returns verification status, bot policies (GPTBot, ClaudeBot), and commerce capabilities for agentic workflows.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/4erk45yfqzf.png",
+      "homepage": "https://github.com/ucpchecker"
+    },
+    {
+      "name": "mcp-unleash",
+      "source": "mcp-unleash",
+      "description": "An MCP server for Unleash feature flagging, and your new best coding buddy. It provides API support as well as language- and framework-specific coding guidance for evaluating and wrapping new functionalities automatically.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/num1t2kzf3q.png",
+      "homepage": "https://docs.getunleash.io/integrate/mcp"
+    },
+    {
+      "name": "mcp-upstash",
+      "source": "mcp-upstash",
+      "description": "Model Context Protocol (MCP) is a new, standardized protocol for managing context between large language models (LLMs) and external systems. In this repository, we provide an installer as well as an MCP Server for Upstash Developer API's.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://avatars.githubusercontent.com/u/74989412?s=200&v=4",
+      "homepage": "https://github.com/upstash/mcp-server"
+    },
+    {
+      "name": "mcp-urldna",
+      "source": "mcp-urldna",
+      "description": "Scan and analyze potentially malicious URLs using the urlDNA\n",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/r12gkrit2qd.png",
+      "homepage": "https://github.com/urldna/mcp"
+    },
+    {
+      "name": "mcp-vercel",
+      "source": "mcp-vercel",
+      "description": "Integrates with Vercel's serverless infrastructure to provide a lightweight endpoint for AI model interactions and tasks like chatbots, content generation, and data analysis.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://cdn.brandfetch.io/idDpCfN4VD/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+      "homepage": "https://github.com/nganiet/mcp-vercel"
+    },
+    {
+      "name": "mcp-vibe-1",
+      "source": "mcp-vibe-1",
+      "description": "The social layer for AI-assisted coding. See who's online, send DMs, share context -  without leaving your editor. First MCP server with live presence widget. 43 tools, 531 tests, works with Claude, Cursor, VS Code, Windsurf, Cline, JetBrains.\n",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/a54w0gu40p.png",
+      "homepage": "https://github.com/VibeCodingInc/vibe-mcp"
+    },
+    {
+      "name": "mcp-xpack-ai-mcp-marketplace",
+      "source": "mcp-xpack-ai-mcp-marketplace",
+      "description": "XPack.AI is an incredible MCP platform that empowers your AI Agent to connect with thousands of real-world data sources and tools in under a minute. Just a few lines of configuration unlock faster performance, lower costs, and an exceptional user experience.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/2nti1oj86dp.jpg",
+      "homepage": "https://xpack.ai"
+    },
+    {
+      "name": "mcp-xquik",
+      "source": "mcp-xquik",
+      "description": "Xquik is a Real-time X (Twitter) data platform. 22 MCP tools for tweet search, user lookup, follower/following extraction, engagement metrics, giveaway draws, trending topics, account monitoring with webhooks, reply/retweet/quote extraction, community & Space data, and mutual follow checks. OAuth 2.1 + PKCE authentication, Streamable HTTP transport.",
+      "keywords": [
+        "mcp"
+      ],
+      "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/rd6trmx54qh.png",
+      "homepage": "https://docs.xquik.com/mcp/overview#mcp-server"
+    },
+    {
+      "name": "meta-prompt",
+      "source": "meta-prompt",
+      "description": "Question-Answering Trajectory Analyzer",
+      "keywords": [
+        "Acting",
+        "Critique",
+        "Meta-Prompt",
+        "Reflection",
+        "Trajectory Analysis",
+        "WebShop"
+      ]
+    },
+    {
+      "name": "monorepo-tamagui",
+      "source": "monorepo-tamagui",
+      "description": "Monorepo using Tamagui",
+      "keywords": [
+        "Expo",
+        "i18n",
+        "i18next",
+        "Monorepo",
+        "Next.js",
+        "Solito",
+        "Stripe",
+        "Supabase",
+        "Tamagui",
+        "Turbo",
+        "Zod",
+        "Zustand"
+      ]
+    },
+    {
+      "name": "nango",
+      "source": "nango",
+      "description": "Nango Integrations Best Practices",
+      "keywords": [
+        "Integration",
+        "JavaScript",
+        "Nango"
+      ]
+    },
+    {
+      "name": "nestjs",
+      "source": "nestjs",
+      "description": "Clean NestJs APIs with TypeScript Cursor Rules",
+      "keywords": [
+        "@app/common",
+        "API",
+        "mikro-orm",
+        "NestJs",
+        "Node",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "netlify",
+      "source": "netlify",
+      "description": "Official Netlify Development Rules",
+      "keywords": [
+        "Netlify",
+        "Web Development"
+      ]
+    },
+    {
+      "name": "nextjs",
+      "source": "nextjs",
+      "description": "Next.js React Generalist Cursor Rules",
+      "keywords": [
+        "API Security",
+        "argon2",
+        "Authentication",
+        "axios",
+        "bcrypt",
+        "csrf",
+        "DOMPurify",
+        "JavaScript",
+        "jose",
+        "MongoDB",
+        "next-i18next",
+        "next-rate-limit",
+        "Next.js",
+        "Node.js",
+        "nuqs",
+        "Optimization",
+        "Payload CMS",
+        "radix",
+        "Radix UI",
+        "React",
+        "react-hook-form",
+        "Redux",
+        "redux-toolkit",
+        "Security",
+        "shadcn",
+        "Shadcn UI",
+        "Standard.js",
+        "stylus",
+        "Supabase",
+        "swr",
+        "tailwind",
+        "Tailwind CSS",
+        "TailwindCSS",
+        "tanstack-query",
+        "TypeScript",
+        "Viem v2",
+        "Vite",
+        "Wagmi v2",
+        "zod",
+        "Zod",
+        "zustand",
+        "Zustand"
+      ]
+    },
+    {
+      "name": "nuxtjs",
+      "source": "nuxtjs",
+      "description": "Nuxt - Typescript",
+      "keywords": [
+        "Nuxt",
+        "nuxt/ui",
+        "NuxtJS",
+        "pinia",
+        "radix-vue",
+        "shadcn-vue",
+        "tailwind",
+        "TypeScript",
+        "Vue",
+        "vueuse"
+      ]
+    },
+    {
+      "name": "odoo",
+      "source": "odoo",
+      "description": "Python & Odoo Cursor Rules",
+      "keywords": [
+        "Enterprise",
+        "Odoo",
+        "Python"
+      ]
+    },
+    {
+      "name": "onchainkit",
+      "source": "onchainkit",
+      "description": "OnchainKit Cursor Rules",
+      "keywords": [
+        "onchainkit",
+        "OnchainKit",
+        "React",
+        "Typescript"
+      ]
+    },
+    {
+      "name": "open-api-user-story",
+      "source": "open-api-user-story",
+      "description": "User Story for Open API",
+      "keywords": [
+        "OAS",
+        "Open API",
+        "User Story"
+      ]
+    },
+    {
+      "name": "php",
+      "source": "php",
+      "description": "Modern PHP Web Development",
+      "keywords": [
+        "Backend",
+        "PHP",
+        "PHP7.3"
+      ]
+    },
+    {
+      "name": "pixijs",
+      "source": "pixijs",
+      "description": "Pixi.js TypeScript Game Development Rules",
+      "keywords": [
+        "cloudflare",
+        "Game Development",
+        "ionic-capacitor",
+        "Mobile",
+        "pixi.js",
+        "Pixi.js",
+        "TypeScript",
+        "vercel",
+        "Web"
+      ]
+    },
+    {
+      "name": "plasmic",
+      "source": "plasmic",
+      "description": "Plasmic Cursor Rules",
+      "keywords": [
+        "Low-code",
+        "next.js",
+        "Next.js",
+        "Plasmic",
+        "react",
+        "React"
+      ]
+    },
+    {
+      "name": "playwright",
+      "source": "playwright",
+      "description": "Playwright Cursor Rules",
+      "keywords": [
+        "JavaScript",
+        "playwright",
+        "Playwright",
+        "Testing",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "polar",
+      "source": "polar",
+      "description": "Polar - Typescript",
+      "keywords": [
+        "Polar"
+      ]
+    },
+    {
+      "name": "prisma",
+      "source": "prisma",
+      "description": "Prisma ORM Cursor Rules",
+      "keywords": [
+        "ORM",
+        "prisma",
+        "Prisma",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "python",
+      "source": "python",
+      "description": "Package Management with `uv`",
+      "keywords": [
+        "Cybersecurity",
+        "Function",
+        "Package Management",
+        "Python",
+        "Testing",
+        "Tooling",
+        "uv"
+      ]
+    },
+    {
+      "name": "r",
+      "source": "r",
+      "description": "R Programming Best Practices Assistant",
+      "keywords": [
+        "data-science",
+        "r",
+        "rstats",
+        "statistics"
+      ]
+    },
+    {
+      "name": "rails",
+      "source": "rails",
+      "description": "Rails Ruby API Cursor Rules",
+      "keywords": [
+        "API",
+        "Code Review",
+        "factorybot",
+        "hotwire",
+        "OpenAPI",
+        "postgresql",
+        "rails",
+        "Rails",
+        "Rails Way",
+        "rspec",
+        "RSpec",
+        "ruby",
+        "Ruby",
+        "tailwind",
+        "Testing"
+      ]
+    },
+    {
+      "name": "react",
+      "source": "react",
+      "description": "React Best Practices",
+      "keywords": [
+        "Cypress",
+        "React",
+        "React Testing Library",
+        "Shadcn UI",
+        "TailwindCSS",
+        "TanStack Query",
+        "TypeScript",
+        "Vitest",
+        "Zustand"
+      ]
+    },
+    {
+      "name": "react-native",
+      "source": "react-native",
+      "description": "React Native Cursor Rules",
+      "keywords": [
+        "Expo",
+        "React",
+        "React Native",
+        "React Navigation",
+        "React three fiber",
+        "Tailwind CSS",
+        "three.js",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "react-vite-2026",
+      "source": "react-vite-2026",
+      "description": "Enterprise React 19 + Vite 7 Architecture",
+      "keywords": [
+        "@tanstack/react-query",
+        "@tanstack/react-router",
+        "orval",
+        "Orval",
+        "react",
+        "React",
+        "tailwindcss",
+        "TailwindCSS",
+        "TanStack",
+        "TypeScript",
+        "vite",
+        "Vite"
+      ]
+    },
+    {
+      "name": "remix",
+      "source": "remix",
+      "description": "Remix Cursor Rules",
+      "keywords": [
+        "remix",
+        "Remix"
+      ]
+    },
+    {
+      "name": "remult",
+      "source": "remult",
+      "description": "Remult - Angular",
+      "keywords": [
+        "angular",
+        "Angular",
+        "react",
+        "React",
+        "remult",
+        "Remult",
+        "svelte",
+        "Svelte",
+        "sveltekit",
+        "SvelteKit",
+        "vue",
+        "Vue",
+        "Web Development"
+      ]
+    },
+    {
+      "name": "resend",
+      "source": "resend",
+      "description": "Resend - Typescript",
+      "keywords": [
+        "Resend",
+        "Typescript"
+      ]
+    },
+    {
+      "name": "robocorp",
+      "source": "robocorp",
+      "description": "RoboCorp Python Cursor Rules",
+      "keywords": [
+        "Python",
+        "RoboCorp"
+      ]
+    },
+    {
+      "name": "rush",
+      "source": "rush",
+      "description": "Rush Best Practices",
+      "keywords": [
+        "JavaScript",
+        "Monorepo",
+        "Rush",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "rust",
+      "source": "rust",
+      "description": "Rust Async Programming Development Rules",
+      "keywords": [
+        "anyhow",
+        "async",
+        "channel",
+        "mpsc",
+        "Rust",
+        "serde",
+        "tokio"
+      ]
+    },
+    {
+      "name": "salesforce",
+      "source": "salesforce",
+      "description": "Salesforce Development",
+      "keywords": [
+        "Apex",
+        "Force.com",
+        "LWC",
+        "Salesforce",
+        "SFDX"
+      ]
+    },
+    {
+      "name": "sanity",
+      "source": "sanity",
+      "description": "Roboto Studio Sanity Best Practices",
+      "keywords": [
+        "cms",
+        "headless",
+        "sanity"
+      ]
+    },
+    {
+      "name": "scout",
+      "source": "scout",
+      "description": "Scout - Vibe Testing for Web Apps",
+      "keywords": [
+        "QA",
+        "scout",
+        "testing",
+        "Testing",
+        "Vibe Coding"
+      ]
+    },
+    {
+      "name": "shadcn-ui",
+      "source": "shadcn-ui",
+      "description": "Shadcn",
+      "keywords": [
+        "Components",
+        "Shadcn",
+        "UI"
+      ]
+    },
+    {
+      "name": "shopify-theme-development",
+      "source": "shopify-theme-development",
+      "description": "Shopify Theme Development Guidelines",
+      "keywords": [
+        "Best Practices",
+        "CSS",
+        "HTML",
+        "Javascript",
+        "JavaScript",
+        "Liquid",
+        "Performance",
+        "Shopify",
+        "Shopify Theme",
+        "Theme Development",
+        "UX"
+      ]
+    },
+    {
+      "name": "software-craftsmanship",
+      "source": "software-craftsmanship",
+      "description": "Software Craftsmanship",
+      "keywords": [
+        "BDD",
+        "DDD",
+        "DESIGN PATTERNS",
+        "DRY",
+        "KISS",
+        "Software Craftsmanship",
+        "SOLID",
+        "TDD",
+        "YAGNI"
+      ]
+    },
+    {
+      "name": "solana",
+      "source": "solana",
+      "description": "Solana Program Development Rules",
+      "keywords": [
+        "Anchor",
+        "Blockchain",
+        "Metaplex",
+        "Rust",
+        "Solana",
+        "Solana Web3.js",
+        "Web3.js"
+      ]
+    },
+    {
+      "name": "solidity",
+      "source": "solidity",
+      "description": "Solidity Development Best Practices",
+      "keywords": [
+        "Ethereum",
+        "OpenZeppelin",
+        "Smart Contracts",
+        "Solidity"
+      ]
+    },
+    {
+      "name": "spark",
+      "source": "spark",
+      "description": "Spark",
+      "keywords": [
+        "bigdata",
+        "Databricks",
+        "Delta Lake",
+        "Koalas",
+        "MLflow",
+        "PySpark",
+        "Spark"
+      ]
+    },
+    {
+      "name": "streamlit",
+      "source": "streamlit",
+      "description": "Streamlit Development Best Practices",
+      "keywords": [
+        "Altair",
+        "Data Science",
+        "NumPy",
+        "Pandas",
+        "Plotly",
+        "Python",
+        "Streamlit",
+        "Web Apps"
+      ]
+    },
+    {
+      "name": "supabase",
+      "source": "supabase",
+      "description": "Supabase - Typescript",
+      "keywords": [
+        "Supabase"
+      ]
+    },
+    {
+      "name": "svelte",
+      "source": "svelte",
+      "description": "Svelte 5 and SvelteKit Development Guide",
+      "keywords": [
+        "paraglide-js",
+        "Paraglide.js",
+        "Supabase",
+        "svelte",
+        "Svelte",
+        "sveltekit",
+        "SvelteKit",
+        "tailwind",
+        "Tailwind",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "swift",
+      "source": "swift",
+      "description": "SwiftUI COT Developer Cursor Rules",
+      "keywords": [
+        "COT",
+        "Swift",
+        "SwiftUI"
+      ]
+    },
+    {
+      "name": "tauri",
+      "source": "tauri",
+      "description": "Tauri Cursor Rules",
+      "keywords": [
+        "Cross-Platform Desktop App",
+        "Tauri"
+      ]
+    },
+    {
+      "name": "technical-writing",
+      "source": "technical-writing",
+      "description": "Technical Writer / Documentation Specialist",
+      "keywords": [
+        "Developer Content",
+        "Documentation",
+        "Technical Writing",
+        "Tutorials"
+      ]
+    },
+    {
+      "name": "terraform",
+      "source": "terraform",
+      "description": "Terraform + Cloud Infrastructure as Code Best Practices",
+      "keywords": [
+        "AWS",
+        "Azure",
+        "Cloud",
+        "GCP",
+        "Infrastructure as Code",
+        "Terraform",
+        "Terraform Cloud",
+        "Vault"
+      ]
+    },
+    {
+      "name": "trigger",
+      "source": "trigger",
+      "description": "Trigger.dev - Typescript",
+      "keywords": [
+        "Trigger.dev"
+      ]
+    },
+    {
+      "name": "trpc",
+      "source": "trpc",
+      "description": "tRPC",
+      "keywords": [
+        "React",
+        "tRPC",
+        "Typescript"
+      ]
+    },
+    {
+      "name": "typescript",
+      "source": "typescript",
+      "description": "TypeScript Development Guidelines & Shortcuts",
+      "keywords": [
+        "Lodash",
+        "Node.js",
+        "TypeScript",
+        "Zod"
+      ]
+    },
+    {
+      "name": "uiux-design",
+      "source": "uiux-design",
+      "description": "UI/UX Design Best Practices",
+      "keywords": [
+        "Accessibility",
+        "Design",
+        "react",
+        "react-aria",
+        "react-native",
+        "react-spring",
+        "styled-components",
+        "tailwindcss",
+        "UI",
+        "UX"
+      ]
+    },
+    {
+      "name": "unity",
+      "source": "unity",
+      "description": "C# Unity Game Development Cursor Rules",
+      "keywords": [
+        "C#",
+        "Game Development",
+        "Unity"
+      ]
+    },
+    {
+      "name": "vercel",
+      "source": "vercel",
+      "description": "Vercel - Typescript",
+      "keywords": [
+        "Vercel"
+      ]
+    },
+    {
+      "name": "viewcomfy",
+      "source": "viewcomfy",
+      "description": "ViewComfy API Rules",
+      "keywords": [
+        "Python"
+      ]
+    },
+    {
+      "name": "vivado",
+      "source": "vivado",
+      "description": "AXI-based Data Transfer Optimization in Vivado",
+      "keywords": [
+        "AXI",
+        "DMA",
+        "FPGA",
+        "High-Performance",
+        "Synthesis",
+        "SystemVerilog",
+        "Timing Optimization",
+        "Vivado"
+      ]
+    },
+    {
+      "name": "vue",
+      "source": "vue",
+      "description": "Vue.js TypeScript Best Practices",
+      "keywords": [
+        "Element Plus",
+        "Headless UI",
+        "Node.js",
+        "Pinia",
+        "Tailwind",
+        "TypeScript",
+        "Vite",
+        "Vue.js",
+        "VueUse"
+      ]
+    },
+    {
+      "name": "web-scraping",
+      "source": "web-scraping",
+      "description": "Advanced Web Scraping",
+      "keywords": [
+        "agentQL",
+        "aiohttp",
+        "asyncio",
+        "BeautfiulSoup",
+        "firecrawl",
+        "Jina AI",
+        "lxml",
+        "Oxylabs",
+        "pandas",
+        "playwright",
+        "Python",
+        "python-dotenv",
+        "PyYAML",
+        "requests",
+        "requests-cache",
+        "scrapy",
+        "selectolax",
+        "selenium",
+        "tenacity",
+        "Web Scraping"
+      ]
+    },
+    {
+      "name": "wordpress",
+      "source": "wordpress",
+      "description": "Comprehensive Wordpress PHP Cursor Rules: Best Practices and Key Principles.",
+      "keywords": [
+        "PHP",
+        "WooCommerce",
+        "WordPress"
+      ]
+    },
+    {
+      "name": "zetachain",
+      "source": "zetachain",
+      "description": "ZetaChain Development Rules",
+      "keywords": [
+        "Blockchain",
+        "Cross-Chain",
+        "Multi-Chain",
+        "Solidity",
+        "Universal Apps",
+        "ZetaChain"
+      ]
+    },
+    {
+      "name": "zettelkasten",
+      "source": "zettelkasten",
+      "description": "Zettelkasten Agent Skills (PKM workflows)",
+      "keywords": [
+        "Knowledge Management",
+        "Productivity",
+        "Zettelkasten"
+      ]
+    }
+  ]
+}

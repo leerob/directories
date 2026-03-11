@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "instant-domain-search-mcp": {
+      "name": "Instant Domain Search"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Instant Domain Search MCP",
+    "description": "Instant MCP brings the world’s fastest domain search into the tool too into Claude, ChatGPT, and Cursor.\n\n",
+    "homepage": "https://instantmcp.apidocumentation.com/documentation/cursor",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=Instant%20Domain%20Search&config=eyJ1cmwiOiJodHRwczovL2luc3RhbnRkb21haW5zZWFyY2guY29tL21jcC9zdHJlYW1hYmxlLWh0dHAiLCJoZWFkZXJzIjp7fX0%3D",
+    "provider": "database"
+  }
+}

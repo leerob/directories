@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "gologin-mcp": {
+      "name": "gologin-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Gologin MCP",
+    "description": "Manage your GoLogin browser profiles and automation directly through AI conversations. This MCP server connects to the GoLogin API, letting you create, configure, and control browser profiles using natural language.",
+    "homepage": "https://github.com/gologinapp/gologin-mcp",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=gologin-mcp&config=eyJlbnYiOnsiQVBJX1RPS0VOIjoieW91ci1nb2xvZ2luLWFwaS10b2tlbi1oZXJlIn0sImNvbW1hbmQiOiJucHggZ29sb2dpbi1tY3AifQ%3D%3D",
+    "provider": "database"
+  }
+}

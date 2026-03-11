@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "aws-api-mcp-server": {
+      "name": "awslabs.aws-api-mcp-server"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "AWS API MCP Server ",
+    "description": "The AWS API MCP Server enables AI assistants to interact with AWS services and resources through AWS CLI commands. It provides programmatic access to manage your AWS infrastructure while maintaining proper security controls.",
+    "homepage": "https://awslabs.github.io/mcp/servers/aws-api-mcp-server/",
+    "deepLink": "https://cursor.com/en/install-mcp?name=awslabs.aws-api-mcp-server&config=eyJjb21tYW5kIjoidXZ4IGF3c2xhYnMuYXdzLWFwaS1tY3Atc2VydmVyQGxhdGVzdCIsImVudiI6eyJBV1NfUkVHSU9OIjoidXMtZWFzdC0xIn0sImRpc2FibGVkIjpmYWxzZSwiYXV0b0FwcHJvdmUiOltdfQ%3D%3D",
+    "provider": "database"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "hono",
+  "version": "1.0.0",
+  "description": "Hono",
+  "author": {
+    "name": "Hono"
+  },
+  "keywords": [
+    "API",
+    "Hono",
+    "Typescript"
+  ],
+  "rules": "rules"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "mcp-svgverseai-the-ai-vector-generator",
+  "version": "1.0.0",
+  "description": "The SVGverseAI MCP Server lets you connect your AI agents, automation workflows, or creative tools directly to SVGverseAI’s image generation engine — without ever opening the app.\n\nWith just a few API calls, you can:\n\nGenerate SVG, PNG, or WebP images from text prompts\nConvert raster images into vector graphics\nOrganize results inside your collections\nPower your own design tools with SVGverseAI’s creative engine\n\n🔗 Learn more: https://docs.svgverseai.com/mcp-reference/setup",
+  "author": {
+    "name": "SvgverseAI — The AI Vector Generator MCP"
+  },
+  "homepage": "https://vista.svgverseai.com/svg/api/v1/mcp",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

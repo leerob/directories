@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "browserbase": {
+      "description": "This server provides cloud browser automation capabilities using Browserbase, Puppeteer, and Stagehand (Coming Soon). This server enables LLMs to interact with web pages, take screenshots, and execute JavaScript in a cloud browser environment.",
+      "installUrl": "https://github.com/browserbase/mcp-server-browserbase"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Browserbase",
+    "description": "This server provides cloud browser automation capabilities using Browserbase, Puppeteer, and Stagehand (Coming Soon). This server enables LLMs to interact with web pages, take screenshots, and execute JavaScript in a cloud browser environment.",
+    "homepage": "https://github.com/browserbase/mcp-server-browserbase",
+    "provider": "database"
+  }
+}

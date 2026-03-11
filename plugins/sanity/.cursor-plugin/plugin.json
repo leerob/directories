@@ -1,0 +1,14 @@
+{
+  "name": "sanity",
+  "version": "1.0.0",
+  "description": "Roboto Studio Sanity Best Practices",
+  "author": {
+    "name": "Roboto Studio"
+  },
+  "keywords": [
+    "cms",
+    "headless",
+    "sanity"
+  ],
+  "rules": "rules"
+}

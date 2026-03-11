@@ -1,0 +1,14 @@
+{
+  "name": "mcp-cashfree-mcp",
+  "version": "1.0.0",
+  "description": "Cashfree MCP server for cashfree docs and APIs",
+  "author": {
+    "name": "Cashfree-MCP MCP"
+  },
+  "homepage": "https://github.com/cashfree/cashfree-mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/r4lf8cm6ap.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "mcp-browsertools-mcp",
+  "version": "1.0.0",
+  "description": "Analyze logs & interact with your browser for rapid debugging",
+  "author": {
+    "name": "BrowserTools MCP MCP"
+  },
+  "homepage": "https://github.com/AgentDeskAI/browser-tools-mcp",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

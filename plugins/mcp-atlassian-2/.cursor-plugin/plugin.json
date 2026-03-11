@@ -1,0 +1,13 @@
+{
+  "name": "mcp-atlassian-2",
+  "version": "1.0.0",
+  "description": "https://mcp.atlassian.com/v1/mcp",
+  "author": {
+    "name": "atlassian MCP"
+  },
+  "homepage": "https://mcp.atlassian.com/v1/mcp",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

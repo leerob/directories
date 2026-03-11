@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "browser-mcp": {
+      "description": "Automate your local Chrome browser",
+      "installUrl": "https://browsermcp.io/"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Browser MCP",
+    "description": "Automate your local Chrome browser",
+    "homepage": "https://browsermcp.io/",
+    "provider": "database"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "tauri",
+  "version": "1.0.0",
+  "description": "Tauri Cursor Rules",
+  "author": {
+    "name": "Hiep Nguyen Phi"
+  },
+  "keywords": [
+    "Cross-Platform Desktop App",
+    "Tauri"
+  ],
+  "rules": "rules"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "astro",
+  "version": "1.0.0",
+  "description": "Astro Cursor Rules",
+  "author": {
+    "name": "Mathieu de Gouville"
+  },
+  "keywords": [
+    "astro",
+    "Astro",
+    "tailwind"
+  ],
+  "rules": "rules"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "arduino-framework",
+  "version": "1.0.0",
+  "description": "Arduino-Framework Cursor Rules",
+  "author": {
+    "name": "Sergio Nicelight"
+  },
+  "keywords": [
+    "arduino",
+    "Arduino-Framework",
+    "esp32"
+  ],
+  "rules": "rules"
+}

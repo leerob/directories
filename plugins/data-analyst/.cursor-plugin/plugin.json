@@ -1,0 +1,14 @@
+{
+  "name": "data-analyst",
+  "version": "1.0.0",
+  "description": "Jupyter Data Analyst Python Cursor Rules",
+  "author": {
+    "name": "Cryptoleek"
+  },
+  "keywords": [
+    "Data Analyst",
+    "Jupyter",
+    "Python"
+  ],
+  "rules": "rules"
+}

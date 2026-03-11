@@ -1,0 +1,18 @@
+{
+  "name": "chrome-extension",
+  "version": "1.0.0",
+  "description": "Chrome Extension Development Best Practices",
+  "author": {
+    "name": "MaydayV"
+  },
+  "keywords": [
+    "Browser API",
+    "Chrome API",
+    "Chrome Extension",
+    "JavaScript",
+    "Jest",
+    "TypeScript",
+    "Webpack"
+  ],
+  "rules": "rules"
+}

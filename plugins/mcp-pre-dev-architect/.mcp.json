@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "predev-architect": {
+      "name": "predev"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "pre.dev Architect",
+    "description": "10x your coding agent with pre.dev. \n\nAsk pre.dev to help with any task and it will architect a complete solution ready for an agent to execute on. ",
+    "homepage": "https://docs.pre.dev/mcp-server",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=predev&config=eyJ1cmwiOiJodHRwczovL2FwaS5wcmUuZGV2L21jcCIsImhlYWRlcnMiOnsieC1hcGkta2V5IjoiPFlPVVJfQVBJX0tFWT4ifX0%3D",
+    "provider": "database"
+  }
+}

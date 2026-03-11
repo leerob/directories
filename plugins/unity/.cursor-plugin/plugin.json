@@ -1,0 +1,14 @@
+{
+  "name": "unity",
+  "version": "1.0.0",
+  "description": "C# Unity Game Development Cursor Rules",
+  "author": {
+    "name": "Pontus Abrahamsson"
+  },
+  "keywords": [
+    "C#",
+    "Game Development",
+    "Unity"
+  ],
+  "rules": "rules"
+}

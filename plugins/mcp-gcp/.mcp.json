@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "gcp": {
+      "description": "A Model Context Protocol (MCP) server that enables AI assistants like Claude to interact with your Google Cloud Platform environment. This allows for natural language querying and management of your GCP resources during conversations.",
+      "installUrl": "https://github.com/eniayomi/gcp-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "GCP",
+    "description": "A Model Context Protocol (MCP) server that enables AI assistants like Claude to interact with your Google Cloud Platform environment. This allows for natural language querying and management of your GCP resources during conversations.",
+    "homepage": "https://github.com/eniayomi/gcp-mcp",
+    "provider": "database"
+  }
+}

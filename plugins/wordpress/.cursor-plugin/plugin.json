@@ -1,0 +1,14 @@
+{
+  "name": "wordpress",
+  "version": "1.0.0",
+  "description": "Comprehensive Wordpress PHP Cursor Rules: Best Practices and Key Principles.",
+  "author": {
+    "name": "Ruchit Patel"
+  },
+  "keywords": [
+    "PHP",
+    "WooCommerce",
+    "WordPress"
+  ],
+  "rules": "rules"
+}

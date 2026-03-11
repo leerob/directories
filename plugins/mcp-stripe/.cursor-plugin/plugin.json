@@ -1,0 +1,14 @@
+{
+  "name": "mcp-stripe",
+  "version": "1.0.0",
+  "description": "Interact with the Stripe API",
+  "author": {
+    "name": "Stripe MCP"
+  },
+  "homepage": "https://github.com/stripe/agent-toolkit/tree/main/modelcontextprotocol",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/1u8f676t4bi.jpg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

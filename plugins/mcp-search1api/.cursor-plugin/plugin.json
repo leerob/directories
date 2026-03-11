@@ -1,0 +1,13 @@
+{
+  "name": "mcp-search1api",
+  "version": "1.0.0",
+  "description": "Unified API for search, crawling, and sitemaps",
+  "author": {
+    "name": "Search1API MCP"
+  },
+  "homepage": "https://github.com/fatwang2/search1api-mcp",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

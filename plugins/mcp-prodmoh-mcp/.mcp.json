@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "prodmoh-mcp": {
+      "description": "Prodmoh MCP brings your PRDs, user stories, acceptance criteria, and product requirements from your Prodmoh.com workspace directly into Cursor via MCP.\nIt eliminates context switching and gives Cursor’s AI full access to real product specs, enabling accurate code generation, API scaffolding, refactoring, and unit test creation using actual requirements.\n\nDevelopers can fetch PRDs, search product docs, and generate aligned code/tests without leaving the editor.",
+      "installUrl": "https://github.com/ProdMoh/prodmoh-mcp.git"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Prodmoh MCP",
+    "description": "Prodmoh MCP brings your PRDs, user stories, acceptance criteria, and product requirements from your Prodmoh.com workspace directly into Cursor via MCP.\nIt eliminates context switching and gives Cursor’s AI full access to real product specs, enabling accurate code generation, API scaffolding, refactoring, and unit test creation using actual requirements.\n\nDevelopers can fetch PRDs, search product docs, and generate aligned code/tests without leaving the editor.",
+    "homepage": "https://github.com/ProdMoh/prodmoh-mcp.git",
+    "provider": "database"
+  }
+}

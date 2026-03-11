@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "cyclops": {
+      "description": "Cyclops MCP allows your favorite AI agent to manage your Kubernetes applications. Cyclops MCP server provides tools for agents to create and update existing applications safely.\n\nWith Cyclops MCP, you can now abstract Kubernetes complexity from your developers AND your AI Agents 🔥",
+      "installUrl": "https://github.com/cyclops-ui/mcp-cyclops"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Cyclops",
+    "description": "Cyclops MCP allows your favorite AI agent to manage your Kubernetes applications. Cyclops MCP server provides tools for agents to create and update existing applications safely.\n\nWith Cyclops MCP, you can now abstract Kubernetes complexity from your developers AND your AI Agents 🔥",
+    "homepage": "https://github.com/cyclops-ui/mcp-cyclops",
+    "provider": "database"
+  }
+}

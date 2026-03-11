@@ -1,0 +1,14 @@
+{
+  "name": "mcp-dbhub",
+  "version": "1.0.0",
+  "description": "Universal database MCP server connecting to MySQL, PostgreSQL, SQL Server, SQLite, and etc.",
+  "author": {
+    "name": "DBHub MCP"
+  },
+  "homepage": "https://github.com/bytebase/dbhub/",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/qjijyd4za5.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "axiom": {
+      "description": "Query and analyze logs, traces, and event data using natural language",
+      "installUrl": "https://github.com/axiomhq/mcp-server-axiom"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Axiom",
+    "description": "Query and analyze logs, traces, and event data using natural language",
+    "homepage": "https://github.com/axiomhq/mcp-server-axiom",
+    "provider": "database"
+  }
+}

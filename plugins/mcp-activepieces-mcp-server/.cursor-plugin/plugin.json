@@ -1,0 +1,14 @@
+{
+  "name": "mcp-activepieces-mcp-server",
+  "version": "1.0.0",
+  "description": "Connect 300+ apps (for example, Slack, Stripe, Shopify, Trello, Notion, and many other apps) to  AI assistants like Claude, Cursor, and Windsurf in a very secure environment for free. Activepieces is SOC 2 Type II compliant and also certified by MIT\n\nLearn more about Activepieces MCP server here: https://www.activepieces.com/mcp",
+  "author": {
+    "name": "Activepieces MCP Server MCP"
+  },
+  "homepage": "https://www.activepieces.com/mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/86lu64cynww.jpeg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

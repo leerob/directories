@@ -1,6 +1,5 @@
-import { Menu } from "@/components/menu";
-import { RuleCard } from "@/components/rule-card";
-import { getOfficialRuleBySlug, officialRules } from "@/data/official";
+import { getPluginByLegacyRuleSlug, getPlugins } from "@directories/data/plugins";
+import { redirect } from "next/navigation";
 
 type Params = Promise<{ slug: string }>;
 
@@ -8,37 +7,29 @@ export const revalidate = 86400; // Revalidate every 24 hours (86400 seconds)
 
 export async function generateMetadata({ params }: { params: Params }) {
   const { slug } = await params;
-  const rule = getOfficialRuleBySlug(slug);
+  const plugin = getPluginByLegacyRuleSlug(slug);
 
   return {
-    title: `Official ${rule?.title} rule by ${rule?.author?.name}`,
-    description: rule?.content,
+    title: plugin ? `${plugin.slug} | Cursor Directory` : "Plugin not found",
+    description: plugin?.description,
   };
 }
 
 export async function generateStaticParams() {
-  return officialRules.map((rule) => ({
-    slug: rule.slug,
-  }));
+  return getPlugins()
+    .flatMap((plugin) => plugin.rules)
+    .filter((rule) => rule.slug.startsWith("official/"))
+    .map((rule) => ({
+      slug: rule.slug.replace(/^official\//, ""),
+    }));
 }
 
 export default async function Page({ params }: { params: Params }) {
   const { slug } = await params;
-  const rule = getOfficialRuleBySlug(slug);
-
-  if (!rule) {
-    return <div>Rule not found</div>;
+  const plugin = getPluginByLegacyRuleSlug(slug);
+  if (plugin) {
+    redirect(`/plugins/${plugin.slug}`);
   }
 
-  return (
-    <div className="flex w-full h-full">
-      <div className="hidden md:flex mt-12 sticky top-12 h-[calc(100vh-3rem)]">
-        <Menu />
-      </div>
-
-      <main className="flex-1 p-6 pt-16">
-        <RuleCard rule={rule} isPage={true} />
-      </main>
-    </div>
-  );
+  return <div>Plugin not found</div>;
 }

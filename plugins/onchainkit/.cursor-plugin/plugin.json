@@ -1,0 +1,15 @@
+{
+  "name": "onchainkit",
+  "version": "1.0.0",
+  "description": "OnchainKit Cursor Rules",
+  "author": {
+    "name": "Tina He"
+  },
+  "keywords": [
+    "onchainkit",
+    "OnchainKit",
+    "React",
+    "Typescript"
+  ],
+  "rules": "rules"
+}

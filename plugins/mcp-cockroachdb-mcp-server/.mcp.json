@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "cockroachdb-mcp-server": {
+      "name": "cockroach"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "CockroachDB MCP Server",
+    "description": "The CockroachDB MCP Server is a natural language interface designed for agentic applications to manage, monitor and query data in CockroachDB.",
+    "homepage": "https://github.com/amineelkouhen/mcp-cockroachdb",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=cockroach&config=eyJjb21tYW5kIjoiZG9ja2VyIHJ1biAtLXJtIC1pIC1lIENSREJfSE9TVD08Y29ja3JvYWNoZGJfaG9zdD4gLWUgQ1JEQl9QT1JUPTxjb2Nrcm9hY2hkYl9wb3J0PiAtZSBDUkRCX0RBVEFCQVNFPTxjb2Nrcm9hY2hkYl9kYXRhYmFzZT4gLWUgQ1JEQl9VU0VSTkFNRT08Y29ja3JvYWNoZGJfdXNlcj4gbWNwLWNvY2tyb2FjaGRiIn0%3D",
+    "provider": "database"
+  }
+}

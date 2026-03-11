@@ -1,0 +1,15 @@
+{
+  "name": "rush",
+  "version": "1.0.0",
+  "description": "Rush Best Practices",
+  "author": {
+    "name": "Lincoln"
+  },
+  "keywords": [
+    "JavaScript",
+    "Monorepo",
+    "Rush",
+    "TypeScript"
+  ],
+  "rules": "rules"
+}

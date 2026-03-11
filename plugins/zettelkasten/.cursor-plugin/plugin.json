@@ -1,0 +1,14 @@
+{
+  "name": "zettelkasten",
+  "version": "1.0.0",
+  "description": "Zettelkasten Agent Skills (PKM workflows)",
+  "author": {
+    "name": "mikonos"
+  },
+  "keywords": [
+    "Knowledge Management",
+    "Productivity",
+    "Zettelkasten"
+  ],
+  "rules": "rules"
+}

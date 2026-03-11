@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "convex": {
+      "description": "Cursor, the AI code editor, makes it easy to write and maintain apps built with Convex. Let's walk through how to setup Cursor for the best possible results with Convex.",
+      "installUrl": "https://docs.convex.dev/ai/using-cursor#setup-the-convex-mcp-server"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Convex",
+    "description": "Cursor, the AI code editor, makes it easy to write and maintain apps built with Convex. Let's walk through how to setup Cursor for the best possible results with Convex.",
+    "homepage": "https://docs.convex.dev/ai/using-cursor#setup-the-convex-mcp-server",
+    "provider": "static"
+  }
+}

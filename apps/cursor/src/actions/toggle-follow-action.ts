@@ -1,7 +1,7 @@
 "use server";
 
 import FollowerEmail from "@/emails/templates/follower";
-import { resend } from "@/lib/resend";
+import { getResend } from "@/lib/resend";
 import { createClient as createAdminClient } from "@/utils/supabase/admin-client";
 import { createClient } from "@/utils/supabase/server";
 import { waitUntil } from "@vercel/functions";
@@ -53,22 +53,25 @@ export const toggleFollowAction = authActionClient
           }
 
           if (userData.follow_email) {
-            waitUntil(
-              resend.emails.send({
-                from: "Cursor Directory <hello@transactional.cursor.directory>",
-                to: userData.email!,
-                //   @ts-ignore
-                subject: `${data.follower.name} is now following you on Cursor Directory`,
-                react: FollowerEmail({
-                  name: userData.name!,
-                  // @ts-ignore
-                  followerName: data.follower.name!,
-                  // @ts-ignore
-                  followerSlug: data.follower.slug!,
-                  followingSlug: slug,
+            const resend = getResend();
+            if (resend) {
+              waitUntil(
+                resend.emails.send({
+                  from: "Cursor Directory <hello@transactional.cursor.directory>",
+                  to: userData.email!,
+                  //   @ts-ignore
+                  subject: `${data.follower.name} is now following you on Cursor Directory`,
+                  react: FollowerEmail({
+                    name: userData.name!,
+                    // @ts-ignore
+                    followerName: data.follower.name!,
+                    // @ts-ignore
+                    followerSlug: data.follower.slug!,
+                    followingSlug: slug,
+                  }),
                 }),
-              }),
-            );
+              );
+            }
           }
         }
 

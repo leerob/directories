@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "baz-agentic-code-review": {
+      "name": "baz"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Baz: Agentic Code Review",
+    "description": "Baz is an AI-powered coding platform leveraging specialized models and embeddings to address the limitations of traditional coding tools. Developers no longer have to manually piece together the impact of pull requests; Baz models, analyzes and reviews code changes, detecting breaking changes, enforcing consistency, and highlighting misaligned coding patterns. Baz makes every review faster, more accurate, and aligned with the real-world impact of the code changes being made.",
+    "homepage": "https://docs.baz.co/basics/model-context-protocol",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=baz&config=eyJ1cmwiOiJodHRwczovL2Jhei5jby9tY3AifQ%3D%3D",
+    "provider": "database"
+  }
+}

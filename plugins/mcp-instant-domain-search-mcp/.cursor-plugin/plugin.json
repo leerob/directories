@@ -1,0 +1,14 @@
+{
+  "name": "mcp-instant-domain-search-mcp",
+  "version": "1.0.0",
+  "description": "Instant MCP brings the world’s fastest domain search into the tool too into Claude, ChatGPT, and Cursor.\n\n",
+  "author": {
+    "name": "Instant Domain Search MCP MCP"
+  },
+  "homepage": "https://instantmcp.apidocumentation.com/documentation/cursor",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/uottvf9jhq.webp",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "slack": {
+      "description": "Slack is a channel management and messaging solution that enables seamless interaction within workspaces, integrating with various tools for efficiency.",
+      "installUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Slack",
+    "description": "Slack is a channel management and messaging solution that enables seamless interaction within workspaces, integrating with various tools for efficiency.",
+    "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
+    "provider": "database"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-axiom",
+  "version": "1.0.0",
+  "description": "Query and analyze logs, traces, and event data using natural language",
+  "author": {
+    "name": "Axiom MCP"
+  },
+  "homepage": "https://github.com/axiomhq/mcp-server-axiom",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/642ysjsghgq.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

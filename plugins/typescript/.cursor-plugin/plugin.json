@@ -1,0 +1,15 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "TypeScript Development Guidelines & Shortcuts",
+  "author": {
+    "name": "fearandesire"
+  },
+  "keywords": [
+    "Lodash",
+    "Node.js",
+    "TypeScript",
+    "Zod"
+  ],
+  "rules": "rules"
+}

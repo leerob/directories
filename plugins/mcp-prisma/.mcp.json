@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "prisma": {
+      "description": "Gives LLMs the ability to manage Prisma Postgres databases (e.g. spin up new databases and run migrations or queries)",
+      "installUrl": "https://github.com/prisma/mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Prisma",
+    "description": "Gives LLMs the ability to manage Prisma Postgres databases (e.g. spin up new databases and run migrations or queries)",
+    "homepage": "https://github.com/prisma/mcp",
+    "provider": "static"
+  }
+}

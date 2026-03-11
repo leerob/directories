@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "cashfree-mcp": {
+      "description": "Cashfree MCP server for cashfree docs and APIs",
+      "installUrl": "https://github.com/cashfree/cashfree-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Cashfree-MCP",
+    "description": "Cashfree MCP server for cashfree docs and APIs",
+    "homepage": "https://github.com/cashfree/cashfree-mcp",
+    "provider": "database"
+  }
+}

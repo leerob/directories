@@ -1,0 +1,14 @@
+{
+  "name": "mcp-deployhq",
+  "version": "1.0.0",
+  "description": "MCP server for DeployHQ that enables AI agents to interact with your deployment automation platform. Provides comprehensive tools for managing projects, servers, and deployments through natural language. ",
+  "author": {
+    "name": "DeployHQ MCP"
+  },
+  "homepage": "https://github.com/deployhq/deployhq-mcp-server#readme",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/rchapsi4q9j.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "logseq-mcp-tools": {
+      "description": "A Model Context Protocol (MCP) server that provides AI assistants with structured access to your Logseq knowledge graph.",
+      "installUrl": "https://github.com/joelhooks/logseq-mcp-tools"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Logseq MCP Tools",
+    "description": "A Model Context Protocol (MCP) server that provides AI assistants with structured access to your Logseq knowledge graph.",
+    "homepage": "https://github.com/joelhooks/logseq-mcp-tools",
+    "provider": "static"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "go",
+  "version": "1.0.0",
+  "description": "Go API Development with Standard Library (1.22+)",
+  "author": {
+    "name": "Marvin Kaunda"
+  },
+  "keywords": [
+    "API",
+    "Best Practices",
+    "Clean Architecture",
+    "Go",
+    "Go modules",
+    "Golang",
+    "golangci-lint",
+    "Jaeger",
+    "Microservices",
+    "net/http",
+    "Observability",
+    "OpenTelemetry",
+    "Prometheus",
+    "Security",
+    "Testing"
+  ],
+  "rules": "rules"
+}

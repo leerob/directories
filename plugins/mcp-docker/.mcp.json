@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "docker": {
+      "description": "Manage containers, images, volumes, and networks",
+      "installUrl": "https://github.com/ckreiling/mcp-server-docker"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Docker",
+    "description": "Manage containers, images, volumes, and networks",
+    "homepage": "https://github.com/ckreiling/mcp-server-docker",
+    "provider": "database"
+  }
+}

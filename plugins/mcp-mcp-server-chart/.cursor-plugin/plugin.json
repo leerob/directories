@@ -1,0 +1,14 @@
+{
+  "name": "mcp-mcp-server-chart",
+  "version": "1.0.0",
+  "description": "🤖 A visualization Model Context Protocol server for generating visual charts using AntV.",
+  "author": {
+    "name": "MCP Server Chart MCP"
+  },
+  "homepage": "https://github.com/antvis/mcp-server-chart",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/hs4gt6rrjbw.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

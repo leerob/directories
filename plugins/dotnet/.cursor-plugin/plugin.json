@@ -1,0 +1,13 @@
+{
+  "name": "dotnet",
+  "version": "1.0.0",
+  "description": ".NET Cursor Rules",
+  "author": {
+    "name": "Taylor Beck"
+  },
+  "keywords": [
+    ".NET",
+    "C#"
+  ],
+  "rules": "rules"
+}

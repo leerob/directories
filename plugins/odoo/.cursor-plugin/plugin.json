@@ -1,0 +1,14 @@
+{
+  "name": "odoo",
+  "version": "1.0.0",
+  "description": "Python & Odoo Cursor Rules",
+  "author": {
+    "name": "Akinshola Samuel AKINDE"
+  },
+  "keywords": [
+    "Enterprise",
+    "Odoo",
+    "Python"
+  ],
+  "rules": "rules"
+}

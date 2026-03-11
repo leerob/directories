@@ -1,0 +1,21 @@
+{
+  "name": "svelte",
+  "version": "1.0.0",
+  "description": "Svelte 5 and SvelteKit Development Guide",
+  "author": {
+    "name": "MMBytes"
+  },
+  "keywords": [
+    "paraglide-js",
+    "Paraglide.js",
+    "Supabase",
+    "svelte",
+    "Svelte",
+    "sveltekit",
+    "SvelteKit",
+    "tailwind",
+    "Tailwind",
+    "TypeScript"
+  ],
+  "rules": "rules"
+}

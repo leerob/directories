@@ -1,0 +1,14 @@
+{
+  "name": "mcp-maton",
+  "version": "1.0.0",
+  "description": "Connect to your SaaS tools like HubSpot, Salesforce, and more",
+  "author": {
+    "name": "Maton MCP"
+  },
+  "homepage": "https://github.com/maton-ai/agent-toolkit",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/17odeqrv8eh.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

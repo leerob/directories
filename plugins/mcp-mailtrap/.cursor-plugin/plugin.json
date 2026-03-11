@@ -1,0 +1,14 @@
+{
+  "name": "mcp-mailtrap",
+  "version": "1.0.0",
+  "description": "Integrates with Mailtrap Email Platform to enable sending transactional emails via API.",
+  "author": {
+    "name": "Mailtrap Email Sending MCP"
+  },
+  "homepage": "https://go.midday.ai/4VANoW7",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/fy6rxh2ho7h.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

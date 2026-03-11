@@ -1,0 +1,14 @@
+{
+  "name": "mcp-agent-interviews",
+  "version": "1.0.0",
+  "description": "AI interviews as-a-service. Use AI to connect with real humans at scale.",
+  "author": {
+    "name": "Agent Interviews MCP"
+  },
+  "homepage": "https://docs.agentinterviews.com/MCP/overview/",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/0jaibhnbmcgh.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

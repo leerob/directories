@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "json-resume": {
+      "description": "Updates your resume as your code. Will add new skills and projects as you develop.",
+      "installUrl": "https://github.com/jsonresume/mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "JSON Resume",
+    "description": "Updates your resume as your code. Will add new skills and projects as you develop.",
+    "homepage": "https://github.com/jsonresume/mcp",
+    "provider": "static"
+  }
+}

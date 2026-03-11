@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "pgyer-mcp-server": {
+      "description": "MCP Server for PGYER platform, supports uploading, querying apps, etc.",
+      "installUrl": "https://github.com/PGYER/pgyer-mcp-server"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "pgyer mcp server",
+    "description": "MCP Server for PGYER platform, supports uploading, querying apps, etc.",
+    "homepage": "https://github.com/PGYER/pgyer-mcp-server",
+    "provider": "database"
+  }
+}

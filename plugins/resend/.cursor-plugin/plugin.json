@@ -1,0 +1,13 @@
+{
+  "name": "resend",
+  "version": "1.0.0",
+  "description": "Resend - Typescript",
+  "author": {
+    "name": "Resend"
+  },
+  "keywords": [
+    "Resend",
+    "Typescript"
+  ],
+  "rules": "rules"
+}

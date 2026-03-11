@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "ucp-checker": {
+      "name": "ucp-checker"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "UCP Checker",
+    "description": "Use a concise, benefit-driven summary: \"Check if any domain supports Universal Commerce Protocol (UCP). Returns verification status, bot policies (GPTBot, ClaudeBot), and commerce capabilities for agentic workflows.",
+    "homepage": "https://github.com/ucpchecker",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=ucp-checker&config=eyJ1Y3AtY2hlY2tlciI6eyJ0eXBlIjoiaHR0cCIsInVybCI6Imh0dHBzOi8vdWNwY2hlY2tlci5jb20vbWNoIn19",
+    "provider": "database"
+  }
+}

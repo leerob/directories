@@ -1,0 +1,14 @@
+{
+  "name": "mcp-prisma",
+  "version": "1.0.0",
+  "description": "Gives LLMs the ability to manage Prisma Postgres databases (e.g. spin up new databases and run migrations or queries)",
+  "author": {
+    "name": "Prisma MCP"
+  },
+  "homepage": "https://github.com/prisma/mcp",
+  "logo": "https://cdn.brandfetch.io/idBBE3_R9e/idI_xi9A1U.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

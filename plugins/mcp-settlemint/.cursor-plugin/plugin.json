@@ -1,0 +1,14 @@
+{
+  "name": "mcp-settlemint",
+  "version": "1.0.0",
+  "description": "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
+  "author": {
+    "name": "SettleMint MCP"
+  },
+  "homepage": "https://console.settlemint.com/documentation/building-with-settlemint/dev-tools/mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/xe5bsqudct.jpg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

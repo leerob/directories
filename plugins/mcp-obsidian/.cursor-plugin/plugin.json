@@ -1,0 +1,14 @@
+{
+  "name": "mcp-obsidian",
+  "version": "1.0.0",
+  "description": "Read and search through Markdown notes in Obsidian vaults",
+  "author": {
+    "name": "Obsidian MCP"
+  },
+  "homepage": "https://github.com/smithery-ai/mcp-obsidian",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/mkoe8p7bdb.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

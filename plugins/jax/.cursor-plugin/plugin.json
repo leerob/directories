@@ -1,0 +1,16 @@
+{
+  "name": "jax",
+  "version": "1.0.0",
+  "description": "JAX Best Practices",
+  "author": {
+    "name": "Straughter Guthrie"
+  },
+  "keywords": [
+    "jax",
+    "JAX",
+    "Machine Learning",
+    "numpy",
+    "Python"
+  ],
+  "rules": "rules"
+}

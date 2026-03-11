@@ -2,8 +2,8 @@
 
 import { cn } from "@/lib/utils";
 import { createClient } from "@/utils/supabase/client";
-import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -11,10 +11,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 
 const navigationLinks = [
-  { href: "/rules", label: "Rules" },
+  { href: "/plugins", label: "Plugins" },
   { href: "/board", label: "Board" },
   { href: "/jobs", label: "Jobs" },
-  { href: "/mcp", label: "MCP Store" },
   { href: "/learn", label: "Learn" },
   { href: "/games", label: "Games" },
   { href: "/about", label: "About" },
@@ -32,13 +31,21 @@ type User = {
 export function MobileMenu() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const supabase = createClient();
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function getUser() {
+      if (
+        !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+        !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      ) {
+        setIsLoading(false);
+        return;
+      }
+
       setIsLoading(true);
+      const supabase = createClient();
       const session = await supabase.auth.getSession();
 
       if (!session.data.session) {
@@ -73,6 +80,16 @@ export function MobileMenu() {
   }, [isOpen]);
 
   const handleSignOut = async () => {
+    if (
+      !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+      !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    ) {
+      setUser(null);
+      setIsOpen(false);
+      return;
+    }
+
+    const supabase = createClient();
     await supabase.auth.signOut();
     setUser(null);
     setIsOpen(false);

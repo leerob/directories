@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "description": "Secure file operations with configurable access controls",
+      "installUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Filesystem",
+    "description": "Secure file operations with configurable access controls",
+    "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+    "provider": "static"
+  }
+}

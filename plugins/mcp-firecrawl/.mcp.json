@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "firecrawl": {
+      "description": "Turn entire websites into LLM-ready data",
+      "installUrl": "https://github.com/mendableai/firecrawl-mcp-server"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Firecrawl",
+    "description": "Turn entire websites into LLM-ready data",
+    "homepage": "https://github.com/mendableai/firecrawl-mcp-server",
+    "provider": "database"
+  }
+}

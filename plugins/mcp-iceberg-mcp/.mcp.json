@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "iceberg-mcp": {
+      "description": "IcebergMCP is an MCP server that lets you interact with your Apache Iceberg Lakehouse using natural language in Claude, Cursor, or any other MCP client.",
+      "installUrl": "https://github.com/ryft-io/iceberg-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Iceberg MCP",
+    "description": "IcebergMCP is an MCP server that lets you interact with your Apache Iceberg Lakehouse using natural language in Claude, Cursor, or any other MCP client.",
+    "homepage": "https://github.com/ryft-io/iceberg-mcp",
+    "provider": "database"
+  }
+}

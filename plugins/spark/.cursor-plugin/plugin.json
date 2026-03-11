@@ -1,0 +1,18 @@
+{
+  "name": "spark",
+  "version": "1.0.0",
+  "description": "Spark",
+  "author": {
+    "name": "hammer"
+  },
+  "keywords": [
+    "bigdata",
+    "Databricks",
+    "Delta Lake",
+    "Koalas",
+    "MLflow",
+    "PySpark",
+    "Spark"
+  ],
+  "rules": "rules"
+}

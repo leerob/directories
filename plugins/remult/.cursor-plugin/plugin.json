@@ -1,0 +1,24 @@
+{
+  "name": "remult",
+  "version": "1.0.0",
+  "description": "Remult - Angular",
+  "author": {
+    "name": "Jean-Yves COUET"
+  },
+  "keywords": [
+    "angular",
+    "Angular",
+    "react",
+    "React",
+    "remult",
+    "Remult",
+    "svelte",
+    "Svelte",
+    "sveltekit",
+    "SvelteKit",
+    "vue",
+    "Vue",
+    "Web Development"
+  ],
+  "rules": "rules"
+}

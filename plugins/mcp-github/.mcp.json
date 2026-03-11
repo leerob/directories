@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "github": {
+      "description": "This server provides integration with Github's issue tracking system through MCP, allowing LLMs to interact with Github issues.",
+      "installUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/github"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Github",
+    "description": "This server provides integration with Github's issue tracking system through MCP, allowing LLMs to interact with Github issues.",
+    "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
+    "provider": "static"
+  }
+}

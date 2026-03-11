@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "todoist": {
+      "description": "Task management integration",
+      "installUrl": "https://github.com/abhiz123/todoist-mcp-server"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Todoist",
+    "description": "Task management integration",
+    "homepage": "https://github.com/abhiz123/todoist-mcp-server",
+    "provider": "static"
+  }
+}

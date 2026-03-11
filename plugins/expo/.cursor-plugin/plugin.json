@@ -1,0 +1,26 @@
+{
+  "name": "expo",
+  "version": "1.0.0",
+  "description": "Expo",
+  "author": {
+    "name": "Expo"
+  },
+  "keywords": [
+    "Expo",
+    "expo-font",
+    "expo-router",
+    "expo-status-bar",
+    "JavaScript",
+    "React Native",
+    "react-native-fast-image",
+    "react-native-gesture-handler",
+    "react-native-reanimated",
+    "react-native-responsive-screen",
+    "react-native-safe-area-context",
+    "react-navigation",
+    "react-query",
+    "TypeScript",
+    "zod"
+  ],
+  "rules": "rules"
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "terraform-mcp-server-by-binadox": {
+      "name": "terraform"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Terraform MCP Server by Binadox",
+    "description": "MCP server for Terraform — automatically validates, secures, and estimates cloud costs for Terraform configurations. Developed by Binadox, it integrates with any Model Context Protocol (MCP) client (e.g. Claude Desktop or other MCP-compatible AI assistants).",
+    "homepage": "https://github.com/binadox-public/binadox-terraform-mcp",
+    "deepLink": "mcp://install?name=terraform&config=ewogICJtY3BTZXJ2ZXJzIjogewogICAgInRlcnJhZm9ybSI6IHsKICAgICAgImNvbW1hYW5kIjogIi9wYXRoL3RvL3RlcnJhZm9ybS1tY3Atc2VydmVyIiwKICAgICAgImVudiI6IHsKICAgICAgICAiVEVSUkFGT1JNX0FOQUxZU0lTX1VSTCI6ICJodHRwczovL2FwcC5iaW5hZG94LmNvbS9hcGkvMS9vcmdhbml6YXRpb25zL3ByaWNpbmcvdGVycmFmb3JtL21jcCIsCiAgICAgICAgIlRFRFJBRk9STV9BTkFMWVNTX1RPS0VOIjogInlvdXItdG9rZW4iCiAgICAgIH0KICAgIH0KICB9Cn0=",
+    "provider": "database"
+  }
+}

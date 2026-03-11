@@ -1,0 +1,16 @@
+{
+  "name": "blazor",
+  "version": "1.0.0",
+  "description": "Blazor Cursor Rules",
+  "author": {
+    "name": "Josh Holtzclaw"
+  },
+  "keywords": [
+    "ASP.NET Core",
+    "aspnetcore",
+    "blazor",
+    "Blazor",
+    "C#"
+  ],
+  "rules": "rules"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-ecosystem-ai",
+  "version": "1.0.0",
+  "description": "The ecosystem.Ai runtime, Ecogentic Chat, and Dynamic runtime calling.",
+  "author": {
+    "name": "ecosystem.Ai MCP"
+  },
+  "homepage": "https://developer.ecosystem.ai/docs/runtime/mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/v8crs60vulr.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

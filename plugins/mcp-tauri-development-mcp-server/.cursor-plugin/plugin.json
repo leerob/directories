@@ -1,0 +1,14 @@
+{
+  "name": "mcp-tauri-development-mcp-server",
+  "version": "1.0.0",
+  "description": "Build, test, and debug mobile and desktop apps with the Tauri framework. Screenshots, DOM state, and console logs from your running app give the AI rich context to understand what's happening—and tools to interact with it.",
+  "author": {
+    "name": "Tauri Development MCP Server MCP"
+  },
+  "homepage": "https://hypothesi.github.io/mcp-server-tauri/guides/getting-started",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/h7y3yzvht9d.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "vue",
+  "version": "1.0.0",
+  "description": "Vue.js TypeScript Best Practices",
+  "author": {
+    "name": "Luiz Barreto"
+  },
+  "keywords": [
+    "Element Plus",
+    "Headless UI",
+    "Node.js",
+    "Pinia",
+    "Tailwind",
+    "TypeScript",
+    "Vite",
+    "Vue.js",
+    "VueUse"
+  ],
+  "rules": "rules"
+}

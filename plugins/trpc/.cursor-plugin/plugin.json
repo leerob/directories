@@ -1,0 +1,14 @@
+{
+  "name": "trpc",
+  "version": "1.0.0",
+  "description": "tRPC",
+  "author": {
+    "name": "tRPC"
+  },
+  "keywords": [
+    "React",
+    "tRPC",
+    "Typescript"
+  ],
+  "rules": "rules"
+}

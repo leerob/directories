@@ -1,0 +1,14 @@
+{
+  "name": "mcp-iceberg-mcp",
+  "version": "1.0.0",
+  "description": "IcebergMCP is an MCP server that lets you interact with your Apache Iceberg Lakehouse using natural language in Claude, Cursor, or any other MCP client.",
+  "author": {
+    "name": "Iceberg MCP MCP"
+  },
+  "homepage": "https://github.com/ryft-io/iceberg-mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/jkrrehip788.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

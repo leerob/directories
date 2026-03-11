@@ -1,9 +1,11 @@
 import "./globals.css";
+import type { PluginItem } from "@/components/command-menu";
 import { Header } from "@/components/header";
 import { GlobalModals } from "@/components/modals/global-modals";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
+import { getPlugins } from "@directories/data/plugins";
 import { OpenPanelComponent } from "@openpanel/nextjs";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
@@ -14,7 +16,7 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 export const metadata: Metadata = {
   title: "Cursor Directory",
-  description: "Find the best cursor rules for your framework and language",
+  description: "Browse community plugins, rules, and MCP servers for Cursor",
   icons: [
     {
       rel: "icon",
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Cursor Directory",
-    description: "Find the best cursor rules for your framework and language",
+    description: "Browse community plugins, rules, and MCP servers for Cursor",
     url: "https://cursor.directory",
     locale: "en_US",
     type: "website",
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: "Cursor Directory",
-    description: "Find the best cursor rules for your framework and language",
+    description: "Browse community plugins, rules, and MCP servers for Cursor",
     images: [
       {
         url: "https://pub-abe1cd4008f5412abb77357f87d7d7bb.r2.dev/opengraph-image-v2.png",
@@ -74,6 +76,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const plugins: PluginItem[] = getPlugins().map((plugin) => ({
+    title: plugin.slug,
+    slug: plugin.slug,
+  }));
+
   return (
     <html
       lang="en"
@@ -91,7 +98,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NuqsAdapter>
-            <Header />
+            <Header plugins={plugins} />
             {children}
 
             <a

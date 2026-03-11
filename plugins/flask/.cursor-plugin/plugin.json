@@ -1,0 +1,13 @@
+{
+  "name": "flask",
+  "version": "1.0.0",
+  "description": "Flask Python Cursor Rules",
+  "author": {
+    "name": "Mathieu de Gouville"
+  },
+  "keywords": [
+    "Flask",
+    "Python"
+  ],
+  "rules": "rules"
+}

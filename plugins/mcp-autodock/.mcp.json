@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "autodock": {
+      "name": "autodock"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Autodock",
+    "description": "Autodock copies your local work to a cloud environment and gives you secure, live URLs to your frontend, backend, and any other services. No setup, no CORS issues, no port forwarding, no \"I accidentally left the server on overnight.\"",
+    "homepage": "https://autodock.io/mcp-server",
+    "deepLink": "https://cursor.com/en-US/install-mcp?name=autodock&config=eyJ1cmwiOiJodHRwczovL2F1dG9kb2NrLmlvL2FwaS9tY3Avc3RyZWFtYWJsZS1odHRwIn0%3D",
+    "provider": "database"
+  }
+}

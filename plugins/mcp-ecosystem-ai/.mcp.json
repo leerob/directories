@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "ecosystemai": {
+      "description": "The ecosystem.Ai runtime, Ecogentic Chat, and Dynamic runtime calling.",
+      "installUrl": "https://developer.ecosystem.ai/docs/runtime/mcp",
+      "cursorDeepLink": "https://mcp.ecosystem.ai/mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "ecosystem.Ai",
+    "description": "The ecosystem.Ai runtime, Ecogentic Chat, and Dynamic runtime calling.",
+    "homepage": "https://developer.ecosystem.ai/docs/runtime/mcp",
+    "deepLink": "https://mcp.ecosystem.ai/mcp",
+    "provider": "database"
+  }
+}

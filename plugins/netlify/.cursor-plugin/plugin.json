@@ -1,0 +1,13 @@
+{
+  "name": "netlify",
+  "version": "1.0.0",
+  "description": "Official Netlify Development Rules",
+  "author": {
+    "name": "Sean Roberts"
+  },
+  "keywords": [
+    "Netlify",
+    "Web Development"
+  ],
+  "rules": "rules"
+}

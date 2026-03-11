@@ -1,0 +1,12 @@
+{
+  "name": "abap",
+  "version": "1.0.0",
+  "description": "ABAP Cursor Rules",
+  "author": {
+    "name": "Kristin Krastev"
+  },
+  "keywords": [
+    "ABAP"
+  ],
+  "rules": "rules"
+}

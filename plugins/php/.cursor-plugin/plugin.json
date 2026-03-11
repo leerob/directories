@@ -1,0 +1,14 @@
+{
+  "name": "php",
+  "version": "1.0.0",
+  "description": "Modern PHP Web Development",
+  "author": {
+    "name": "Sahil Darji"
+  },
+  "keywords": [
+    "Backend",
+    "PHP",
+    "PHP7.3"
+  ],
+  "rules": "rules"
+}

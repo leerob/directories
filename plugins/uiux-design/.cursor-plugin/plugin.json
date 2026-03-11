@@ -1,0 +1,21 @@
+{
+  "name": "uiux-design",
+  "version": "1.0.0",
+  "description": "UI/UX Design Best Practices",
+  "author": {
+    "name": "Bence Csernak"
+  },
+  "keywords": [
+    "Accessibility",
+    "Design",
+    "react",
+    "react-aria",
+    "react-native",
+    "react-spring",
+    "styled-components",
+    "tailwindcss",
+    "UI",
+    "UX"
+  ],
+  "rules": "rules"
+}

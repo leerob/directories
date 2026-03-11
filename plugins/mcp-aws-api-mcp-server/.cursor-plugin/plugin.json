@@ -1,0 +1,14 @@
+{
+  "name": "mcp-aws-api-mcp-server",
+  "version": "1.0.0",
+  "description": "The AWS API MCP Server enables AI assistants to interact with AWS services and resources through AWS CLI commands. It provides programmatic access to manage your AWS infrastructure while maintaining proper security controls.",
+  "author": {
+    "name": "AWS API MCP Server  MCP"
+  },
+  "homepage": "https://awslabs.github.io/mcp/servers/aws-api-mcp-server/",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/3xjf4l3b9rc.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

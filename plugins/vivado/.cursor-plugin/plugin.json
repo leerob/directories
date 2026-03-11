@@ -1,0 +1,19 @@
+{
+  "name": "vivado",
+  "version": "1.0.0",
+  "description": "AXI-based Data Transfer Optimization in Vivado",
+  "author": {
+    "name": "JP Shag"
+  },
+  "keywords": [
+    "AXI",
+    "DMA",
+    "FPGA",
+    "High-Performance",
+    "Synthesis",
+    "SystemVerilog",
+    "Timing Optimization",
+    "Vivado"
+  ],
+  "rules": "rules"
+}

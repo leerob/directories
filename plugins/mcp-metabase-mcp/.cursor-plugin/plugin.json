@@ -1,0 +1,14 @@
+{
+  "name": "mcp-metabase-mcp",
+  "version": "1.0.0",
+  "description": "Connect AI assistants to your Metabase analytics platform. Access dashboards, execute queries, and retrieve data seamlessly through conversational interfaces. Enhance your analytics experience with structured data access and robust error handling.",
+  "author": {
+    "name": "Metabase MCP MCP"
+  },
+  "homepage": "https://github.com/hyeongjun-dev/metabase-mcp-server",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/mc1rrdhrrvk.svg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-cursor-mcp-installer-mcp",
+  "version": "1.0.0",
+  "description": "A Model Context Protocol (MCP) server for installing and configuring other MCP servers within Cursor IDE.\n\n",
+  "author": {
+    "name": "Cursor MCP Installer MCP MCP"
+  },
+  "homepage": "https://github.com/matthewdcage/cursor-mcp-installer",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/kyjpkg2cahe.jpeg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

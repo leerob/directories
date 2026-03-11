@@ -1,0 +1,14 @@
+{
+  "name": "mcp-aws-knowledge-mcp-1",
+  "version": "1.0.0",
+  "description": "A fully managed remote MCP server that provides up-to-date documentation, code samples, and other official AWS content.",
+  "author": {
+    "name": "AWS Knowledge MCP MCP"
+  },
+  "homepage": "https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server/",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/iau91ovqcp.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

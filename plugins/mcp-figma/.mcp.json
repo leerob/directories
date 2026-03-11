@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "figma": {
+      "description": "Proivde coding agents with design data direct from Figma for far more accurate design implementations in one-shot.",
+      "installUrl": "https://github.com/GLips/Figma-Context-MCP"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Figma",
+    "description": "Proivde coding agents with design data direct from Figma for far more accurate design implementations in one-shot.",
+    "homepage": "https://github.com/GLips/Figma-Context-MCP",
+    "provider": "database"
+  }
+}

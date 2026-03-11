@@ -1,0 +1,16 @@
+{
+  "name": "cloudflare",
+  "version": "1.0.0",
+  "description": "Cloudflare Workers Best Practices",
+  "author": {
+    "name": "Sunil Pai"
+  },
+  "keywords": [
+    "agents",
+    "Agents",
+    "Cloudflare Workers",
+    "JavaScript",
+    "TypeScript"
+  ],
+  "rules": "rules"
+}

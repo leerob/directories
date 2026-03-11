@@ -1,0 +1,20 @@
+{
+  "name": "software-craftsmanship",
+  "version": "1.0.0",
+  "description": "Software Craftsmanship",
+  "author": {
+    "name": "Bruno Dogbase"
+  },
+  "keywords": [
+    "BDD",
+    "DDD",
+    "DESIGN PATTERNS",
+    "DRY",
+    "KISS",
+    "Software Craftsmanship",
+    "SOLID",
+    "TDD",
+    "YAGNI"
+  ],
+  "rules": "rules"
+}

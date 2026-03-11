@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { CopyIcon, ShareIcon } from "lucide-react";
+import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
 
 interface GeneratedResultsProps {

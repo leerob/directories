@@ -1,0 +1,40 @@
+{
+  "name": "buddy-os",
+  "version": "1.0.0",
+  "description": "Accessibility Guard",
+  "author": {
+    "name": "Buddy OS"
+  },
+  "keywords": [
+    "A11y",
+    "Accessibility",
+    "Architecture",
+    "Async",
+    "Best Practices",
+    "Code Review",
+    "Complex Changes",
+    "Components",
+    "CSR",
+    "Forms",
+    "Functional Components",
+    "Git",
+    "Hooks",
+    "Hydration",
+    "Memory Leaks",
+    "Next.js",
+    "Performance",
+    "Planning",
+    "PR",
+    "Quality Gates",
+    "Race Conditions",
+    "React",
+    "React Hook Form",
+    "react-hook-form",
+    "SSR",
+    "TypeScript",
+    "useEffect",
+    "WCAG",
+    "Yup"
+  ],
+  "rules": "rules"
+}

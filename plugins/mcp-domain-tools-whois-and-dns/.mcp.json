@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "domain-tools-whois-and-dns": {
+      "description": "mcp-domaintools is a Model Context Protocol (MCP) server providing DNS and WHOIS query capabilities for AI assistants. It enables AI models to perform DNS lookups both via local DNS resolvers and remote DNS-over-HTTPS services.\n\nFor local DNS queries, it uses the system's configured DNS servers. For remote DNS queries, it uses Cloudflare DNS-over-HTTPS queries with a fallback to Google DNS-over-HTTPS. This is more than enough for most use cases.",
+      "installUrl": "https://github.com/patrickdappollonio/mcp-domaintools"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Domain Tools (WHOIS and DNS)",
+    "description": "mcp-domaintools is a Model Context Protocol (MCP) server providing DNS and WHOIS query capabilities for AI assistants. It enables AI models to perform DNS lookups both via local DNS resolvers and remote DNS-over-HTTPS services.\n\nFor local DNS queries, it uses the system's configured DNS servers. For remote DNS queries, it uses Cloudflare DNS-over-HTTPS queries with a fallback to Google DNS-over-HTTPS. This is more than enough for most use cases.",
+    "homepage": "https://github.com/patrickdappollonio/mcp-domaintools",
+    "provider": "database"
+  }
+}

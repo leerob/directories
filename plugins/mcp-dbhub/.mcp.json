@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "dbhub": {
+      "description": "Universal database MCP server connecting to MySQL, PostgreSQL, SQL Server, SQLite, and etc.",
+      "installUrl": "https://github.com/bytebase/dbhub/"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "DBHub",
+    "description": "Universal database MCP server connecting to MySQL, PostgreSQL, SQL Server, SQLite, and etc.",
+    "homepage": "https://github.com/bytebase/dbhub/",
+    "provider": "database"
+  }
+}

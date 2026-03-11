@@ -1,0 +1,14 @@
+{
+  "name": "mcp-github",
+  "version": "1.0.0",
+  "description": "This server provides integration with Github's issue tracking system through MCP, allowing LLMs to interact with Github issues.",
+  "author": {
+    "name": "Github MCP"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
+  "logo": "https://cdn.brandfetch.io/idZAyF9rlg/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

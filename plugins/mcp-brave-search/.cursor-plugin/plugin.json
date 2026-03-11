@@ -1,0 +1,14 @@
+{
+  "name": "mcp-brave-search",
+  "version": "1.0.0",
+  "description": "Web and local search using Brave's Search API",
+  "author": {
+    "name": "Brave Search MCP"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/glem9l3zgkc.jpg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

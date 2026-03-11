@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "atlassian": {
+      "description": "https://mcp.atlassian.com/v1/mcp",
+      "installUrl": "https://mcp.atlassian.com/v1/mcp",
+      "cursorDeepLink": "https://mcp.atlassian.com/v1/mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "atlassian",
+    "description": "https://mcp.atlassian.com/v1/mcp",
+    "homepage": "https://mcp.atlassian.com/v1/mcp",
+    "deepLink": "https://mcp.atlassian.com/v1/mcp",
+    "provider": "database"
+  }
+}

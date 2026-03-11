@@ -1,0 +1,13 @@
+{
+  "name": "mcp-gologin-mcp",
+  "version": "1.0.0",
+  "description": "Manage your GoLogin browser profiles and automation directly through AI conversations. This MCP server connects to the GoLogin API, letting you create, configure, and control browser profiles using natural language.",
+  "author": {
+    "name": "Gologin MCP MCP"
+  },
+  "homepage": "https://github.com/gologinapp/gologin-mcp",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-inbox-zero",
+  "version": "1.0.0",
+  "description": "A Model Context Protocol (MCP) server that enables AI assistants like Claude to interact with your Inbox Zero account. This allows for natural language querying and management of your email during conversations.",
+  "author": {
+    "name": "Inbox Zero MCP"
+  },
+  "homepage": "https://github.com/elie222/inbox-zero",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/tl1axjj3je.jpg",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

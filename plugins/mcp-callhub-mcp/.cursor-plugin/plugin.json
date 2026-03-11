@@ -1,0 +1,13 @@
+{
+  "name": "mcp-callhub-mcp",
+  "version": "1.0.0",
+  "description": "Create Campaigns & more with your CallHub Account",
+  "author": {
+    "name": "CallHub MCP MCP"
+  },
+  "homepage": "https://github.com/callhub/callhub-mcp",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

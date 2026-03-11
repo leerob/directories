@@ -1,0 +1,14 @@
+{
+  "name": "mcp-interactive-mcp",
+  "version": "1.0.0",
+  "description": "Interactive MCP is an AI‑enhanced MCP notification system that delivers real‑time chat completion alerts and gathers user feedback on the fly. Boost your workflow with instant, actionable notifications and seamless interactive feedback. ",
+  "author": {
+    "name": "Interactive MCP MCP"
+  },
+  "homepage": "https://github.com/ttommyth/interactive-mcp",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/perlie2cf9.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

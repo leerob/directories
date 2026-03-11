@@ -1,0 +1,14 @@
+{
+  "name": "cpp",
+  "version": "1.0.0",
+  "description": "C++ Development Cursor Rules",
+  "author": {
+    "name": "Dudi Viachleder"
+  },
+  "keywords": [
+    "Backend Development",
+    "c++",
+    "cpp"
+  ],
+  "rules": "rules"
+}

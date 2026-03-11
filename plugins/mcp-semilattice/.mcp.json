@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "semilattice-audience-prediction": {
+      "name": "semilattice"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Semilattice - audience prediction",
+    "description": "Test content, personalise features, and A/B test decisions with accurate audience prediction. Semilattice MCP lets agents predict things about your audience. Your agent could predict which email subject line or website copy your audience would prefer. Or it could predict which use cases your audience wants in a new product experience. Audience predictions are >87% accurate on average and take <20 seconds to complete.",
+    "homepage": "https://docs.semilattice.ai/mcp/connect#cursor",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=semilattice&config=eyJ1cmwiOiJodHRwczovL21jcC5zZW1pbGF0dGljZS5haSJ9",
+    "provider": "database"
+  }
+}

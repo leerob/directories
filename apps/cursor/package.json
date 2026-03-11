@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "biome check src package.json next.config.mjs tsconfig.json",
     "typecheck": "tsc --noEmit",
     "email:dev": "email dev --port 3002 --dir src/emails/templates",
     "email:build": "email build",
@@ -15,6 +15,7 @@
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",
     "@directories/data": "workspace:*",
+    "@directories/kv": "workspace:*",
     "@hookform/resolvers": "^4.1.3",
     "@openpanel/nextjs": "^1.0.7",
     "@polar-sh/nextjs": "^0.9.0",

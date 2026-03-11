@@ -1,0 +1,15 @@
+{
+  "name": "solidity",
+  "version": "1.0.0",
+  "description": "Solidity Development Best Practices",
+  "author": {
+    "name": "Alfredo Bonilla"
+  },
+  "keywords": [
+    "Ethereum",
+    "OpenZeppelin",
+    "Smart Contracts",
+    "Solidity"
+  ],
+  "rules": "rules"
+}

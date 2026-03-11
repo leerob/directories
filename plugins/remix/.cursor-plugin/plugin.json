@@ -1,0 +1,13 @@
+{
+  "name": "remix",
+  "version": "1.0.0",
+  "description": "Remix Cursor Rules",
+  "author": {
+    "name": "Mohammed Farmaan"
+  },
+  "keywords": [
+    "remix",
+    "Remix"
+  ],
+  "rules": "rules"
+}

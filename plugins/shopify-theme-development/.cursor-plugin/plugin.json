@@ -1,0 +1,22 @@
+{
+  "name": "shopify-theme-development",
+  "version": "1.0.0",
+  "description": "Shopify Theme Development Guidelines",
+  "author": {
+    "name": "Md Morshadun Nur"
+  },
+  "keywords": [
+    "Best Practices",
+    "CSS",
+    "HTML",
+    "Javascript",
+    "JavaScript",
+    "Liquid",
+    "Performance",
+    "Shopify",
+    "Shopify Theme",
+    "Theme Development",
+    "UX"
+  ],
+  "rules": "rules"
+}

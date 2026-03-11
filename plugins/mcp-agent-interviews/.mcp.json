@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "agent-interviews": {
+      "description": "AI interviews as-a-service. Use AI to connect with real humans at scale.",
+      "installUrl": "https://docs.agentinterviews.com/MCP/overview/"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Agent Interviews",
+    "description": "AI interviews as-a-service. Use AI to connect with real humans at scale.",
+    "homepage": "https://docs.agentinterviews.com/MCP/overview/",
+    "provider": "database"
+  }
+}

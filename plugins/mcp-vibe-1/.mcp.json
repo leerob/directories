@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "vibe": {
+      "name": "vibe"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "/vibe",
+    "description": "The social layer for AI-assisted coding. See who's online, send DMs, share context -  without leaving your editor. First MCP server with live presence widget. 43 tools, 531 tests, works with Claude, Cursor, VS Code, Windsurf, Cline, JetBrains.\n",
+    "homepage": "https://github.com/VibeCodingInc/vibe-mcp",
+    "deepLink": "cursor://anysphere.cursor-deeplink/mcp/install?name=vibe&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsInNsYXNodmliZS1tY3AiXX0=",
+    "provider": "database"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "sqlite": {
+      "description": "Database interaction and business intelligence features",
+      "installUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "SQLite",
+    "description": "Database interaction and business intelligence features",
+    "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite",
+    "provider": "static"
+  }
+}

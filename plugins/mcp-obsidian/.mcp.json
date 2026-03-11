@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "obsidian": {
+      "description": "Read and search through Markdown notes in Obsidian vaults",
+      "installUrl": "https://github.com/smithery-ai/mcp-obsidian"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Obsidian",
+    "description": "Read and search through Markdown notes in Obsidian vaults",
+    "homepage": "https://github.com/smithery-ai/mcp-obsidian",
+    "provider": "database"
+  }
+}

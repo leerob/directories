@@ -1,0 +1,19 @@
+{
+  "name": "streamlit",
+  "version": "1.0.0",
+  "description": "Streamlit Development Best Practices",
+  "author": {
+    "name": "arnaudmiribel"
+  },
+  "keywords": [
+    "Altair",
+    "Data Science",
+    "NumPy",
+    "Pandas",
+    "Plotly",
+    "Python",
+    "Streamlit",
+    "Web Apps"
+  ],
+  "rules": "rules"
+}

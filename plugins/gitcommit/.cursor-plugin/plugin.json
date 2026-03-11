@@ -1,0 +1,17 @@
+{
+  "name": "gitcommit",
+  "version": "1.0.0",
+  "description": "Git Commit Rules",
+  "author": {
+    "name": "Lukas Wolfsteiner"
+  },
+  "keywords": [
+    "Bitbucket",
+    "Commit",
+    "Git",
+    "GitHub",
+    "GitLab",
+    "VCS"
+  ],
+  "rules": "rules"
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "callhub-mcp": {
+      "description": "Create Campaigns & more with your CallHub Account",
+      "installUrl": "https://github.com/callhub/callhub-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "CallHub MCP",
+    "description": "Create Campaigns & more with your CallHub Account",
+    "homepage": "https://github.com/callhub/callhub-mcp",
+    "provider": "database"
+  }
+}

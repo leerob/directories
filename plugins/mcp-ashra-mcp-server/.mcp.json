@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "ashra-mcp-server": {
+      "description": "Extract structured data from any website with a simple SDK call. No scraping code, no headless browsers - just prompt and get JSON.",
+      "installUrl": "https://github.com/getrupt/ashra-mcp/tree/main/src/operations"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Ashra MCP Server",
+    "description": "Extract structured data from any website with a simple SDK call. No scraping code, no headless browsers - just prompt and get JSON.",
+    "homepage": "https://github.com/getrupt/ashra-mcp/tree/main/src/operations",
+    "provider": "database"
+  }
+}

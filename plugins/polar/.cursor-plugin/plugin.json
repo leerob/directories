@@ -1,0 +1,12 @@
+{
+  "name": "polar",
+  "version": "1.0.0",
+  "description": "Polar - Typescript",
+  "author": {
+    "name": "Polar"
+  },
+  "keywords": [
+    "Polar"
+  ],
+  "rules": "rules"
+}

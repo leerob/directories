@@ -1,0 +1,14 @@
+{
+  "name": "mcp-supabase",
+  "version": "1.0.0",
+  "description": "This is an MCP server for PostgREST. It allows LLMs perform database queries and operations on Postgres databases via PostgREST.",
+  "author": {
+    "name": "Supabase MCP"
+  },
+  "homepage": "https://github.com/supabase-community/mcp-supabase/tree/main/packages/mcp-server-postgrest",
+  "logo": "https://cdn.brandfetch.io/idsSceG8fK/w/436/h/449/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

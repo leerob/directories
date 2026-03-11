@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "supabase": {
+      "description": "This is an MCP server for PostgREST. It allows LLMs perform database queries and operations on Postgres databases via PostgREST.",
+      "installUrl": "https://github.com/supabase-community/mcp-supabase/tree/main/packages/mcp-server-postgrest"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Supabase",
+    "description": "This is an MCP server for PostgREST. It allows LLMs perform database queries and operations on Postgres databases via PostgREST.",
+    "homepage": "https://github.com/supabase-community/mcp-supabase/tree/main/packages/mcp-server-postgrest",
+    "provider": "static"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-puppeteer",
+  "version": "1.0.0",
+  "description": "Puppeteer is a Model Context Protocol server that provides browser automation capabilities, allowing LLMs to interact with web pages, take screenshots, and execute JavaScript in a real browser environment.",
+  "author": {
+    "name": "Puppeteer MCP"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer",
+  "logo": "https://knhgkaawjfqqwmsgmxns.supabase.co/storage/v1/object/public/avatars/mcp/7fhx9d3k7qq.png",
+  "keywords": [
+    "mcp"
+  ],
+  "mcpServers": ".mcp.json"
+}

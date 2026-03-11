@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "pearl": {
+      "description": "The Pearl MCP Server expands the ecosystem of MCP-compatible tools by introducing a distinctive type of tool: humans. Unlike traditional MCP implementations that connect to APIs or code snippets, this server enables AI agents (e.g., Claude, Cursor, GitHub Copilot) to interact with domain-specific human experts in real time. It offers a robust path for tasks that require nuanced judgment, contextual understanding, or legal, medical, and technical advice from certified professionals. ",
+      "installUrl": "https://www.pearl.com/api/docs/pearl-api-mcp-server/connecting-to-remote-pearl-api-mcp-server-from-clients"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Pearl",
+    "description": "The Pearl MCP Server expands the ecosystem of MCP-compatible tools by introducing a distinctive type of tool: humans. Unlike traditional MCP implementations that connect to APIs or code snippets, this server enables AI agents (e.g., Claude, Cursor, GitHub Copilot) to interact with domain-specific human experts in real time. It offers a robust path for tasks that require nuanced judgment, contextual understanding, or legal, medical, and technical advice from certified professionals. ",
+    "homepage": "https://www.pearl.com/api/docs/pearl-api-mcp-server/connecting-to-remote-pearl-api-mcp-server-from-clients",
+    "provider": "database"
+  }
+}

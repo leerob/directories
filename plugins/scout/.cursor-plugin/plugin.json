@@ -1,0 +1,16 @@
+{
+  "name": "scout",
+  "version": "1.0.0",
+  "description": "Scout - Vibe Testing for Web Apps",
+  "author": {
+    "name": "Scout"
+  },
+  "keywords": [
+    "QA",
+    "scout",
+    "testing",
+    "Testing",
+    "Vibe Coding"
+  ],
+  "rules": "rules"
+}

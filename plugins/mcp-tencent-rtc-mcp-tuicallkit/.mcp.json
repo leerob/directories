@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "tencent-rtc-call-mcp": {
+      "description": "TUICallKit is an audio and video call UI component launched by Tencent RTC, supporting real-time communication with up to nine participants simultaneously. By integrating this component, you only need to write a few lines of code to add audio and video call features to your application.",
+      "installUrl": "https://github.com/Tencent-RTC/mcp",
+      "cursorDeepLink": "{   \"mcpServers\": {     \"tencent-rtc\": {       \"command\": \"npx\",       \"args\": [\"-y\", \"@tencent-rtc/mcp\"]     }   } }"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Tencent RTC Call MCP",
+    "description": "TUICallKit is an audio and video call UI component launched by Tencent RTC, supporting real-time communication with up to nine participants simultaneously. By integrating this component, you only need to write a few lines of code to add audio and video call features to your application.",
+    "homepage": "https://github.com/Tencent-RTC/mcp",
+    "deepLink": "{   \"mcpServers\": {     \"tencent-rtc\": {       \"command\": \"npx\",       \"args\": [\"-y\", \"@tencent-rtc/mcp\"]     }   } }",
+    "provider": "database"
+  }
+}

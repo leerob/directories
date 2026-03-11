@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "encore": {
+      "name": "encore-mcp"
+    }
+  },
+  "cursorDirectoryMetadata": {
+    "name": "Encore",
+    "description": "Encore turns Cursor into more than a coding tool. The open source framework lets you define infrastructure directly in your app code using Cursor's AI, so you can go from prompt to running on AWS in minutes. With Encore's built-in MCP, Cursor can introspect your app, call APIs, view traces, and more.\n\n- Set up your project:\nbrew install encoredev/tap/encore && encore app create --example=ts/hello-world --llm-rules=cursor\n\n- Learn more:\nhttps://encore.dev",
+    "homepage": "https://encore.dev/docs/ts/cli/mcp",
+    "deepLink": "https://cursor.com/en/install-mcp?name=encore-mcp&config=eyJjb21tYW5kIjoiZW5jb3JlIG1jcCBydW4gLS1hcHA9eW91ci1hcHAtaWQifQ%3D%3D",
+    "provider": "database"
+  }
+}
