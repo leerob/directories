@@ -247,4 +247,11 @@ export default [
       "Leverage SettleMint's Model Context Protocol server to seamlessly interact with enterprise blockchain infrastructure. Build, deploy, and manage smart contracts through AI-powered assistants, streamlining your blockchain development workflow for maximum efficiency.",
     logo: "https://console.settlemint.com/android-chrome-512x512.png",
   },
+  {
+    name: "Phantom",
+    url: "https://github.com/phantom/phantom-connect-cursor-plugin",
+    description:
+      "Give your AI agent a crypto wallet. Sign messages, send transactions, transfer tokens, and swap across Solana and EVM chains using Phantom's non-custodial wallet. Built by the Phantom team.",
+    logo: "https://raw.githubusercontent.com/phantom/phantom-connect-cursor-plugin/main/assets/avatar.svg",
+  },
 ];
