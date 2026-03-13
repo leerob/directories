@@ -1,0 +1,19 @@
+{
+  "name": "imgstat",
+  "description": "Image dimension context for AI",
+  "keywords": [
+    "imgstat",
+    "images",
+    "AI context",
+    "LLM",
+    "assets"
+  ],
+  "libs": [
+    "imgstat"
+  ],
+  "author": {
+    "name": "Oyeniyi Isaac",
+    "url": "https://isaac0yen.com",
+    "avatar": "https://avatars.githubusercontent.com/u/122137764"
+  }
+}
