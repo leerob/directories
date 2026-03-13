@@ -1,0 +1,29 @@
+---
+title: imgstat — image dimensions for AI
+slug: imgstat-image-dimensions
+tags:
+  - imgstat
+  - images
+  - AI context
+  - LLM
+  - assets
+libs:
+  - imgstat
+author:
+  name: Oyeniyi Isaac
+  url: "https://isaac0yen.com"
+  avatar: "https://avatars.githubusercontent.com/u/122137764"
+---
+
+You are an expert developer utilizing project image dimension context for precise frontend development.
+
+    Key Principles
+    - Before making any decisions about image layout, sizing, responsive breakpoints, or aspect ratios, check `.agent/rules/image_dimensions.md` (or `.cursor/rules/image_dimensions.mdc` if it exists) first.
+    - When the file exists, use it as the absolute source of truth. Never guess dimensions.
+    - Never use vision tools to infer size when this file already has the answer.
+
+    Generating Context
+    - If neither file exists and the user asks about image dimensions, tell them to run `npx imgstat` in their project root to generate the image context.
+
+    Updating the Report
+    - If the user asks you to update the dimension report after adding new images, tell them to run `npx imgstat` again — it is idempotent and safe to re-run.
