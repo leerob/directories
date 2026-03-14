@@ -1,0 +1,574 @@
+---
+title: Shopify Reusable Snippets
+slug: shopify-reusable-snippets
+tags:
+  - Shopify
+  - Theme
+  - Liquid
+  - Snippets
+  - Reusable
+  - Best Practices
+  - DRY
+libs:
+  - Shopify Theme
+  - Liquid
+  - HTML
+  - CSS
+author:
+  name: eyyMinda
+  url: "http://eyyminda.vercel.app/"
+  avatar: "https://avatars.githubusercontent.com/u/100799754?v=4"
+---
+
+# How to Create Reusable Shopify Snippets
+
+A reference for building scalable, easy-to-use Liquid snippets. Use these patterns when creating heading, CTA, announcement, image, and other reusable components.
+
+## When to Create a Snippet
+
+Create a snippet when:
+- The same UI appears in 3+ sections or templates
+- Logic is complex enough to warrant isolation
+- You need consistency (e.g. all CTAs look the same)
+- Schema settings would be duplicated across sections
+
+Avoid snippets for:
+- One-off layouts
+- Content that varies wildly by context
+- Simple output (< 5 lines)
+
+## Snippet Documentation Format
+
+Use structured `{% comment %}` blocks at the top of every snippet:
+
+```liquid
+{% comment %}
+  ===================================================================================
+  SNIPPET NAME
+  ===================================================================================
+  Brief description of what the snippet does and when to use it.
+
+  ********************************************
+  Parameters
+  ********************************************
+  * param_name (Type): Description
+  * optional_param (Type, Optional): Description. Default: value
+
+  ********************************************
+  Usage
+  ********************************************
+  {% render 'snippet-name', param: value, optional: value %}
+
+  ********************************************
+  Schema (for section settings that pass into snippet)
+  ********************************************
+  { "type": "text", "id": "param_id", "label": "Label", "visible_if": "{{ section.settings.enable }}" }
+{% endcomment %}
+```
+
+## Parameter Naming Conventions
+
+### Kebab-case for Multi-word Parameters
+
+Use kebab-case when the parameter name has multiple words:
+
+```liquid
+{% render 'section-heading'
+  title: ss.heading_title,
+  sub_text: ss.heading_sub_text,
+  align: ss.heading_align,
+  align_mb: ss.heading_align_mb,
+  shop_all: ss.heading_shop_all
+%}
+```
+
+### Action-based Select (vs Multiple Booleans)
+
+For mutually exclusive behaviors, use a single `action` param instead of multiple booleans:
+
+```liquid
+{% render 'cta-button'
+  text: ss.cta_text,
+  link: product.url,
+  type: ss.cta_type,
+  action: ss.cta_action,
+  variant_id: product.selected_or_first_available_variant.id,
+  note: ss.cta_note,
+  note_icon: ss.cta_note_icon
+%}
+```
+
+Schema: `action` select with options like `""` (link), `"atc"` (add to cart), `"scroll"` (scroll to product).
+
+### Consistent Parameter Order
+
+Order parameters by: enable flag → content → styling → optional extras. Keeps calls readable.
+
+## Conditional Rendering
+
+### Wrapper Conditionals
+
+Wrap the entire output when the snippet may render nothing:
+
+```liquid
+{% if enable %}
+  <div class="section-heading">
+    <!-- Content -->
+  </div>
+{% endif %}
+```
+
+### Element-level Conditionals
+
+Check blanks before rendering individual elements:
+
+```liquid
+{% if title != blank %}
+  <h2 class="section-heading__title">{{ title }}</h2>
+{% endif %}
+
+{% if text != blank %}
+  <div class="section-heading__text">{{ text }}</div>
+{% endif %}
+```
+
+### Early Skip
+
+For complex snippets, wrap everything in a single top-level conditional:
+
+```liquid
+{% if enable and (title != blank or text != blank) %}
+  <div class="section-heading">
+    <!-- Content -->
+  </div>
+{% endif %}
+```
+
+Liquid has no early return; use a single wrapping conditional instead.
+
+## Variable Assignments
+
+### Default Values
+
+Use `default` filter for fallbacks:
+
+```liquid
+{% assign heading_tag = h1 | default: false %}
+{% assign heading_tag = heading_tag | replace: 'true', '1' | replace: 'false', '2' | prepend: 'h' %}
+```
+
+### Class Concatenation
+
+Build class strings from parameters:
+
+```liquid
+{% assign classes = variant | append: ' ' | append: class | strip %}
+<div class="cta-button {{ classes }}">
+```
+
+### Liquid Block for Multiple Assignments
+
+Use `{% liquid %}` for cleaner multi-step logic:
+
+```liquid
+{% liquid
+  assign product = product | default: section.settings.product
+  assign link = link | default: product.url
+  assign variant_id = variant_id | default: product.selected_or_first_available_variant.id
+%}
+```
+
+### String Manipulation for Derived Values
+
+Extract link title from URL for `title` attribute:
+
+```liquid
+{% assign link_title = link | split: '?' | first | split: '//' | last | split: '/' | slice: 1, 2 | join: ' ' | capitalize %}
+```
+
+## Dynamic HTML Elements
+
+### Dynamic Tag Names
+
+Use variables for tag names (e.g. h1 vs h2):
+
+```liquid
+{% assign tag = h1 | default: false | replace: 'true', '1' | replace: 'false', '2' | prepend: 'h' %}
+<{{ tag }} class="section-heading__title">{{ title }}</{{ tag }}>
+```
+
+### Configurable Element Type
+
+Allow link vs button based on context:
+
+```liquid
+{% assign el = element | default: 'a' %}
+<{{ el }} href="{{ link }}" class="cta-button">
+  {{ text }}
+</{{ el }}>
+```
+
+## Multiple Rendering Modes
+
+### Action-based Branching
+
+Use `action` param for mutually exclusive behaviors. Keeps schema simple (one select vs multiple checkboxes):
+
+```liquid
+{% if scroll or action == 'scroll' %}
+  <div class="cta-button {{ type }}" data-scroll-to="product" aria-label="Scroll to product">
+    {% if text != blank %}{{ text }}{% else %}{{ 'products.product.shop_now' | t }}{% endif %}
+  </div>
+{% elsif action == 'atc' and variant_id != blank %}
+  <div class="cta-button {{ type }}" data-variant-id="{{ variant_id }}" aria-label="Add to Cart">
+    {% if text != blank %}{{ text }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}
+  </div>
+{% else %}
+  <a href="{% if link != blank %}{{ link }}{% else %}/{% endif %}" title="{{ link_title }}" class="cta-button {{ type }}">
+    {% if text != blank %}{{ text }}{% else %}{{ 'products.product.shop_now' | t }}{% endif %}
+  </a>
+{% endif %}
+```
+
+Add-to-cart uses a `div` with `data-variant-id`; JavaScript handles the form submission. No `<form>` in snippet.
+
+### Captured Auxiliary Content
+
+Use `{% capture %}` for optional content reused across all modes (e.g. CTA note below button):
+
+```liquid
+{% capture cta_note %}
+  {% if note != blank %}
+    <div class="cta-note">
+      {% if note_icon != blank %}
+        {{ note_icon | image_url: width: 30 | image_tag: loading: 'lazy', alt: '' }}
+      {% endif %}
+      <p>{{ note }}</p>
+    </div>
+  {% endif %}
+{% endcapture %}
+
+{% if action == 'scroll' %}
+  <div class="cta-button {{ type }}">...</div>
+  {{ cta_note }}
+{% elsif action == 'atc' %}
+  <div class="cta-button {{ type }}">...</div>
+  {{ cta_note }}
+{% else %}
+  <a href="{{ link }}" class="cta-button {{ type }}">...</a>
+  {{ cta_note }}
+{% endif %}
+```
+
+### Translation Fallbacks
+
+Use locale key when text is blank:
+
+```liquid
+{% if text != blank %}{{ text }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}
+```
+
+## Nested Snippet Rendering
+
+### Conditional Nesting
+
+Render child snippets only when relevant:
+
+```liquid
+{% if show_ratings %}
+  {% if ratings_type == 'custom' %}
+    {% render 'ratings-custom', stars: ratings_stars, logo: ratings_logo, text: ratings_text %}
+  {% else %}
+    {% render 'ratings-widget', type: ratings_type %}
+  {% endif %}
+{% endif %}
+```
+
+### Pass-through Parameters
+
+Forward all needed params to nested snippets. Avoid passing whole objects when a few values suffice:
+
+```liquid
+{% render 'countdown-timer'
+  enabled: timer,
+  type: timer_type,
+  end_date: timer_date,
+  timezone: timer_timezone,
+  format: timer_format,
+  class: 'section-heading__timer'
+%}
+```
+
+## Block Iteration
+
+When sections pass blocks into a snippet:
+
+```liquid
+{% if items.size > 0 %}
+  <div class="section-heading__items">
+    {% for item in items %}
+      <div class="section-heading__item" {{ item.shopify_attributes }}>
+        {% if item.settings.icon %}
+          {{ item.settings.icon | image_url: width: 60 | image_tag: loading: 'lazy', alt: item.settings.text }}
+        {% endif %}
+        <p>{{ item.settings.text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+```
+
+## Data Attributes for JavaScript
+
+Use data attributes instead of inline scripts:
+
+```liquid
+<div class="countdown-timer {{ class }}"
+  data-type="{{ type }}"
+  data-end-date="{{ end_date }}"
+  {% if timezone %}data-timezone="{{ timezone }}"{% endif %}
+  {% if format %}data-format="{{ format }}"{% endif %}>
+  <span class="countdown-timer__display">00:00:00</span>
+</div>
+```
+
+JavaScript reads these and initializes behavior. Keeps snippet portable.
+
+## Inline Styles for Dynamic Values
+
+Use inline styles for colors/sizes passed from schema:
+
+```liquid
+<div class="announcement-bar" style="background-color: {{ bg_color }}; color: {{ text_color }};">
+  <!-- Content -->
+</div>
+```
+
+## Case Statements
+
+Use `case` for multiple variants:
+
+```liquid
+{% case variant %}
+  {% when 'accent' %}
+    {% assign btn_class = 'cta-button--accent' %}
+  {% when 'outline' %}
+    {% assign btn_class = 'cta-button--outline' %}
+  {% else %}
+    {% assign btn_class = 'cta-button--primary' %}
+{% endcase %}
+```
+
+## Class Variants
+
+Support variants via parameter concatenation:
+
+```liquid
+{% assign classes = variant | append: ' ' | append: class | strip %}
+<div class="cta-button {{ classes }}">
+```
+
+Conditional modifier:
+
+```liquid
+<div class="section-heading__text{% if read_more %} section-heading__text--expandable{% endif %}">{{ text }}</div>
+```
+
+## Object Access
+
+Pass objects when the snippet needs them. Derive values with fallbacks:
+
+```liquid
+{% liquid
+  assign product = product | default: section.settings.product
+  assign link = link | default: product.url
+  assign variant_id = variant_id | default: product.selected_or_first_available_variant.id
+%}
+```
+
+For collection links:
+
+```liquid
+{% if shop_all != blank %}
+  <a href="{{ shop_all.url }}" class="section-heading__shop-all">{{ shop_all.title }}</a>
+{% endif %}
+```
+
+## Icon and Image Rendering
+
+Conditional icon:
+
+```liquid
+{% if show_icon %}{% render 'icon-arrow' %}{% endif %}
+```
+
+If your theme has an image snippet, use it. Otherwise use built-in filters:
+
+```liquid
+{% if image %}
+  {% assign img_width = width | default: 400 %}
+  {{ image | image_url: width: img_width | image_tag: loading: 'lazy', alt: alt | default: '' }}
+{% endif %}
+```
+
+## Snippet Types (Reference Examples)
+
+### Heading Snippet
+
+- **Purpose**: Reusable section heading (title, subtitle, alignment, optional link)
+- **Params**: `title`, `sub_text`, `align`, `align_mb`, `shop_all`, `h1`, `class`
+- **Pattern**: Wrapper conditional, dynamic tag, element-level blanks
+
+### CTA Snippet
+
+- **Purpose**: Links, scroll-to-product, or add-to-cart with optional note
+- **Params**: `text`, `link`, `type` (style variant), `action` (`""` | `"atc"` | `"scroll"`), `variant_id`, `product` (fallback for link/variant_id), `note`, `note_icon`
+- **Pattern**: Action-based branching, `{% capture %}` for note, translation fallbacks, data attributes for ATC/scroll (JS handles submit)
+- **Add-to-cart**: Use `div` with `data-variant-id`; theme JS intercepts and submits AJAX form
+
+### Announcement Bar Snippet
+
+- **Purpose**: Top bar with text, optional timer, colors from schema
+- **Params**: `text`, `bg_color`, `text_color`, `timer`, `timer_*` (pass-through)
+- **Pattern**: Inline styles, nested timer snippet, wrapper conditional
+
+### Image Snippet
+
+- **Purpose**: Consistent image output with lazy load, alt, sizes
+- **Params**: `image`, `width`, `alt`, `loading`, `class`
+- **Pattern**: Blank check, default width, optional class
+
+### Countdown/Timer Snippet
+
+- **Purpose**: JS-driven countdown with config from data attributes
+- **Params**: `type`, `end_date`, `timezone`, `format`, `class`
+- **Pattern**: Data attributes, no inline JS, placeholder display text
+
+## Schema Integration
+
+When sections use snippets, schema should mirror snippet params:
+
+1. **Header** to group related settings
+2. **Checkbox** for enable/disable
+3. **Text/richtext** for content
+4. **Select** for variant/type/action
+5. **Color** for dynamic colors
+6. **URL** for links
+7. **image_picker** for optional icons (e.g. CTA note icon)
+8. **visible_if** – **Required on every setting** that depends on an enable/parent checkbox
+
+### CTA Schema Example
+
+```json
+{
+  "type": "header",
+  "content": "CTA"
+},
+{
+  "type": "checkbox",
+  "id": "show_cta",
+  "label": "Show CTA",
+  "default": true
+},
+{
+  "type": "select",
+  "id": "cta_action",
+  "label": "CTA Action",
+  "default": "atc",
+  "visible_if": "{{ section.settings.show_cta }}",
+  "options": [
+    { "value": "", "label": "Link" },
+    { "value": "atc", "label": "Add to Cart" },
+    { "value": "scroll", "label": "Scroll to Product" }
+  ]
+},
+{
+  "type": "select",
+  "id": "cta_type",
+  "label": "CTA Style",
+  "default": "accent",
+  "visible_if": "{{ section.settings.show_cta }}",
+  "options": [
+    { "value": "light", "label": "Light" },
+    { "value": "dark", "label": "Dark" },
+    { "value": "accent", "label": "Accent" }
+  ]
+},
+{
+  "type": "text",
+  "id": "cta_text",
+  "label": "CTA Text",
+  "default": "Add to Cart",
+  "visible_if": "{{ section.settings.show_cta }}"
+},
+{
+  "type": "text",
+  "id": "cta_note",
+  "label": "CTA Note",
+  "visible_if": "{{ section.settings.show_cta }}"
+},
+{
+  "type": "image_picker",
+  "id": "cta_note_icon",
+  "label": "CTA Note Icon",
+  "visible_if": "{{ section.settings.show_cta }}"
+}
+```
+
+### Heading Schema Example
+
+```json
+{
+  "type": "header",
+  "content": "Heading"
+},
+{
+  "type": "checkbox",
+  "id": "heading",
+  "label": "Show Heading",
+  "default": true
+},
+{
+  "type": "text",
+  "id": "heading_title",
+  "label": "Title",
+  "visible_if": "{{ section.settings.heading }}"
+},
+{
+  "type": "text",
+  "id": "heading_sub_text",
+  "label": "Subtitle",
+  "visible_if": "{{ section.settings.heading }}"
+},
+{
+  "type": "select",
+  "id": "heading_align",
+  "label": "Alignment",
+  "default": "center",
+  "visible_if": "{{ section.settings.heading }}",
+  "options": [
+    { "value": "start", "label": "Start" },
+    { "value": "center", "label": "Center" },
+    { "value": "end", "label": "End" }
+  ]
+}
+```
+
+## Best Practices
+
+1. **Wrap in conditionals** when snippet might output nothing
+2. **Use kebab-case** for multi-word parameters
+3. **Provide defaults** with `default` filter (`product | default: section.settings.product`)
+4. **Check blank** before rendering content
+5. **Document params** in structured comment blocks
+6. **Use action select** instead of multiple booleans for mutually exclusive modes
+7. **Use `{% capture %}`** for auxiliary content (notes, badges) reused across branches
+8. **Use data attributes** for JS (ATC, scroll); keep snippets free of inline scripts
+9. **Use translation fallbacks** when text is blank: `{% if text != blank %}{{ text }}{% else %}{{ 'key' | t }}{% endif %}`
+10. **Support class/variant params** for styling flexibility
+11. **Use inline styles** only for schema-driven values (colors, etc.)
+12. **Use `case`** for 3+ conditional branches
+13. **Keep snippets focused** – one clear responsibility per file
+14. **Avoid deep nesting** – 2–3 levels max; extract if deeper
+15. **Name consistently** – `section-heading`, `cta-button`, `announcement-bar`
+16. **Add visible_if to every setting** – All settings under an enable checkbox must have `visible_if` referencing that checkbox

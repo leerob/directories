@@ -1,0 +1,26 @@
+{
+  "name": "Shopify App Extension Typescript Conversion",
+  "description": "Convert Shopify App Extension from JavaScript to TypeScript with best practices",
+  "keywords": [
+    "Shopify",
+    "App Extension",
+    "Typescript Conversion",
+    "Best Practices",
+    "Preact",
+    "Polaris",
+    "Web Components",
+    "TypeScript"
+  ],
+  "libs": [
+    "Shopify App",
+    "Preact",
+    "Polaris",
+    "Web Components",
+    "TypeScript"
+  ],
+  "author": {
+    "name": "eyyMinda",
+    "url": "http://eyyminda.vercel.app/",
+    "avatar": "https://avatars.githubusercontent.com/u/100799754?v=4"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "shopify-rich-schema-sections",
+  "description": "Conventions and patterns for building rich Shopify theme sections with blocks, schema, and Liquid",
+  "keywords": [
+    "Shopify",
+    "Theme",
+    "Liquid",
+    "Schema",
+    "Sections",
+    "Blocks",
+    "Best Practices",
+    "CSS",
+    "BEM"
+  ],
+  "libs": [
+    "Shopify Theme",
+    "Liquid",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "author": {
+    "name": "eyyMinda",
+    "url": "http://eyyminda.vercel.app/",
+    "avatar": "https://avatars.githubusercontent.com/u/100799754?v=4"
+  }
+}

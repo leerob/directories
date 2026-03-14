@@ -1,0 +1,28 @@
+{
+  "name": "shopify-app-ui-extension-development",
+  "description": "Shopify App UI Extension Development rules and best practices for Cursor",
+  "keywords": [
+    "Shopify",
+    "App Extension",
+    "UI Development",
+    "Best Practices",
+    "Preact",
+    "Polaris",
+    "Web Components",
+    "JavaScript",
+    "TypeScript"
+  ],
+  "libs": [
+    "Shopify App",
+    "Preact",
+    "Polaris",
+    "Web Components",
+    "JavaScript",
+    "TypeScript"
+  ],
+  "author": {
+    "name": "eyyMinda",
+    "url": "http://eyyminda.vercel.app/",
+    "avatar": "https://avatars.githubusercontent.com/u/100799754?v=4"
+  }
+}

@@ -1,0 +1,753 @@
+---
+title: Shopify Rich Schema Sections
+slug: shopify-rich-schema-sections
+tags:
+  - Shopify
+  - Theme
+  - Liquid
+  - Schema
+  - Sections
+  - Blocks
+  - Best Practices
+  - CSS
+  - BEM
+libs:
+  - Shopify Theme
+  - Liquid
+  - HTML
+  - CSS
+  - JavaScript
+author:
+  name: eyyMinda
+  url: "http://eyyminda.vercel.app/"
+  avatar: "https://avatars.githubusercontent.com/u/100799754?v=4"
+---
+
+# Rich Shopify Schema Sections Conventions
+
+Universal conventions for building Shopify theme sections with blocks, schema, and Liquid. Works with any theme setup.
+
+## Liquid Variable Assignments
+
+### Section Settings Shorthand
+
+Always assign section settings to a shorthand variable at the top of the file:
+
+```liquid
+{% assign ss = section.settings %}
+```
+
+### Section Selector Variable
+
+Create a section selector variable for CSS scoping:
+
+```liquid
+{% assign sc = '#shopify-section-' | append: section.id %}
+```
+
+### Block Settings Shorthand
+
+When iterating over blocks, assign block settings to a shorthand variable:
+
+```liquid
+{% for block in section.blocks %}
+  {% assign bs = block.settings %}
+  <!-- Use bs instead of block.settings -->
+{% endfor %}
+```
+
+### Block Filtering by Type
+
+Filter blocks by type using the `where` filter. Use `first` to get a single block, or iterate over the filtered array:
+
+```liquid
+{% liquid
+  assign faqs = section.blocks | where: 'type', 'faq'
+  assign hero_block = section.blocks | where: 'type', 'hero' | first
+  assign cards = section.blocks | where: 'type', 'card'
+%}
+```
+
+### Default Fallbacks
+
+Use the `default` filter for fallback values:
+
+```liquid
+{% assign image_mb = ss.image_mb | default: ss.image %}
+{% assign bg_image_mb = ss.bg_image_mb | default: ss.bg_image %}
+```
+
+## HTML Structure
+
+### Root Container
+
+Use a `<div>` with a section-specific class as the root wrapper:
+
+```liquid
+<div class="feature-cards" {{ block.shopify_attributes }}>
+  <!-- Content -->
+</div>
+```
+
+For dynamic styling, use inline styles when needed:
+
+```liquid
+<div class="feature-cards" style="background-color: {{ ss.bg_color }};">
+  <!-- Content -->
+</div>
+```
+
+### Semantic HTML
+
+Use standard semantic elements for layout:
+
+- `<div>` with flex/grid classes for layout containers
+- `<section>`, `<article>`, `<header>` for semantic grouping
+- `<ul>`/`<li>` for list content (e.g. FAQ, feature lists)
+- `<a>` for links
+
+```liquid
+<div class="feature-cards__wrapper">
+  <div class="feature-cards__content">
+    <div class="feature-cards__items">
+      <!-- Cards -->
+    </div>
+  </div>
+  <div class="feature-cards__image">
+    <!-- Image -->
+  </div>
+</div>
+```
+
+### BEM Naming Convention
+
+Follow BEM (Block Element Modifier) naming:
+
+- **Block**: Component name (e.g. `feature-cards`)
+- **Element**: `feature-cards__item`, `feature-cards__title`, `feature-cards__content`
+- **Modifier**: Use `--` prefix (e.g. `feature-cards--compact`)
+
+### Conditional Rendering
+
+Always check for blank values before rendering:
+
+```liquid
+{% if bs.subtitle != blank %}
+  <div class="feature-cards__subtitle">{{ bs.subtitle }}</div>
+{% endif %}
+```
+
+### Snippet Rendering
+
+Use `{% render %}` for reusable snippets when your theme provides them. Pass all necessary parameters:
+
+```liquid
+{% render 'section-heading',
+  title: ss.heading_title,
+  alignment: ss.heading_align,
+  subtitle: ss.heading_subtitle
+%}
+```
+
+If your theme does not have a heading snippet, output the HTML directly in the section.
+
+## CSS Styling
+
+### Scoped Styles
+
+Use `{% style %}` tag for section-specific styles that reference settings:
+
+```liquid
+{% style %}
+  {{ sc }} {
+    background-color: {{ ss.bg_color }};
+  }
+  {{ sc }} .feature-cards__item {
+    --accent-color: {{ ss.accent_color }};
+    background-color: {{ ss.card_bg_color }};
+  }
+{% endstyle %}
+```
+
+### CSS Variables
+
+Define CSS variables in the style tag for dynamic values, then reference in CSS:
+
+```liquid
+{{ sc }} .feature-cards__item {
+  --accent-color: {{ ss.accent_color }};
+}
+```
+
+```css
+.feature-cards__item-title strong {
+  color: var(--accent-color, #000);
+}
+```
+
+### Inline Styles
+
+Use inline styles for dynamic block-level values:
+
+```liquid
+<div class="feature-cards__progress" style="background-color: {{ bs.progress_bg_color }};">
+  <div class="feature-cards__progress-bar" style="width: {{ bs.progress_num }}%; background-color: {{ bs.progress_color }};">
+    {{ bs.progress_num }}% {{ bs.progress_text }}
+  </div>
+</div>
+```
+
+### Conditional Style Tags
+
+Use `<style>` tag for conditional responsive styles (not `{% style %}`):
+
+```liquid
+{% if ss.content_first or ss.content_first_mb %}
+  <style>
+    {% if ss.content_first_mb %}
+      @media (max-width: 767px) {
+        {{ sc }} .feature-cards__content {
+          order: -1;
+        }
+      }
+    {% endif %}
+    {% if ss.content_first %}
+      @media (min-width: 768px) {
+        {{ sc }} .feature-cards__content {
+          order: -1;
+        }
+      }
+    {% endif %}
+  </style>
+{% endif %}
+```
+
+### Complex Style Logic
+
+Use Liquid logic within style tags for calculations:
+
+```liquid
+<style>
+  {{ sc }} .hero__card {
+    {% assign opacity = ss.card_bg_opacity | divided_by: 100.0 %}
+    background-color: {{ ss.card_bg_color | color_modify: 'alpha', opacity }};
+  }
+  {{ sc }} .hero__title {
+    max-width: {{ ss.title_max_width }}px;
+    font-family: {{ ss.title_font }};
+    font-weight: {{ ss.title_font_weight }};
+  }
+  @media (min-width: 1024px) {
+    {{ sc }} .hero {
+      height: {{ ss.background_height }}px;
+    }
+  }
+</style>
+```
+
+## Schema Structure
+
+### Section Name
+
+Use descriptive, capitalized names:
+
+```json
+{
+  "name": "Feature Cards"
+}
+```
+
+### Settings Organization
+
+Group related settings with headers:
+
+```json
+{
+  "type": "header",
+  "content": "Heading"
+}
+```
+
+### Setting Types
+
+#### Color Pickers
+
+Always provide defaults:
+
+```json
+{
+  "type": "color",
+  "id": "bg_color",
+  "label": "Background Color",
+  "default": "#ffffff"
+}
+```
+
+#### Checkboxes
+
+Use for boolean toggles:
+
+```json
+{
+  "type": "checkbox",
+  "id": "heading_h1",
+  "label": "Heading as H1"
+}
+```
+
+#### Select Dropdowns
+
+Provide clear, short labels:
+
+```json
+{
+  "type": "select",
+  "id": "heading_align",
+  "label": "Heading Alignment",
+  "default": "center",
+  "options": [
+    { "value": "start", "label": "Start" },
+    { "value": "center", "label": "Center" },
+    { "value": "end", "label": "End" }
+  ]
+}
+```
+
+#### Range Inputs
+
+Specify min, max, step, and default:
+
+```json
+{
+  "type": "range",
+  "id": "progress_num",
+  "label": "Progress Percentage",
+  "default": 80,
+  "min": 0,
+  "max": 100,
+  "step": 1
+}
+```
+
+#### Rich Text
+
+Use for formatted text with optional info hints:
+
+```json
+{
+  "type": "richtext",
+  "id": "spec_title",
+  "label": "Specification Title",
+  "info": "Use bold to emphasize with accent color",
+  "default": "<p>Feature <strong>highlight</strong></p>"
+}
+```
+
+#### Textarea
+
+Use for longer text without formatting:
+
+```json
+{
+  "type": "textarea",
+  "id": "description",
+  "label": "Description",
+  "default": "Default description text"
+}
+```
+
+#### Video
+
+Use for video picker:
+
+```json
+{
+  "type": "video",
+  "id": "video",
+  "label": "Background Video (Optional)"
+}
+```
+
+#### Image Picker
+
+Use for image selection:
+
+```json
+{
+  "type": "image_picker",
+  "id": "image",
+  "label": "Image"
+}
+```
+
+#### URL
+
+Use for link inputs:
+
+```json
+{
+  "type": "url",
+  "id": "cta_url",
+  "label": "CTA Link"
+}
+```
+
+#### Collection
+
+Use for collection picker:
+
+```json
+{
+  "type": "collection",
+  "id": "collection",
+  "label": "Collection"
+}
+```
+
+### Conditional Settings (visible_if)
+
+Use `visible_if` to show settings conditionally:
+
+```json
+{
+  "type": "text",
+  "id": "heading_title",
+  "label": "Heading Title",
+  "visible_if": "{{ section.settings.heading }}"
+}
+```
+
+Chain multiple conditions:
+
+```json
+{
+  "type": "select",
+  "id": "ratings_type",
+  "label": "Ratings Type",
+  "options": [
+    { "value": "custom", "label": "Custom" },
+    { "value": "widget", "label": "Widget" }
+  ],
+  "visible_if": "{{ section.settings.show_ratings }}"
+}
+```
+
+### Blocks Configuration
+
+#### Block Type and Name
+
+Use descriptive names with kebab-case for type:
+
+```json
+{
+  "type": "card",
+  "name": "Card",
+  "limit": 3
+}
+```
+
+#### Multiple Block Types
+
+Sections can have multiple block types:
+
+```json
+{
+  "blocks": [
+    {
+      "type": "video-item",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        }
+      ]
+    },
+    {
+      "type": "heading-block",
+      "name": "Heading",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    }
+  ]
+}
+```
+
+#### Block Settings
+
+Follow same patterns as section settings, organized logically.
+
+### Presets
+
+Always include a preset. Optionally include default settings and blocks:
+
+```json
+{
+  "presets": [
+    {
+      "name": "Feature Cards",
+      "category": "Content"
+    }
+  ]
+}
+```
+
+With default settings and blocks:
+
+```json
+{
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "settings": {
+        "bg_color": "#f7f7f7",
+        "heading": true,
+        "heading_title": "FREQUENTLY ASKED QUESTIONS",
+        "cta_url": "shopify://collections/all"
+      },
+      "blocks": [
+        {
+          "type": "faq",
+          "settings": {
+            "title": "Question title?",
+            "text": "<p>Answer text here</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+## Block Iteration Patterns
+
+### Basic Loop
+
+Iterate over blocks and assign settings:
+
+```liquid
+{% for block in section.blocks %}
+  {% assign bs = block.settings %}
+  <div class="feature-cards__item" {{ block.shopify_attributes }}>
+    <!-- Block content -->
+  </div>
+{% endfor %}
+```
+
+### Conditional Block Features
+
+Check for feature flags before rendering:
+
+```liquid
+{% if bs.progress %}
+  <div class="feature-cards__progress">
+    <!-- Progress bar content -->
+  </div>
+{% endif %}
+```
+
+### Filtered Block Iteration
+
+Iterate over filtered blocks:
+
+```liquid
+{% assign faqs = section.blocks | where: 'type', 'faq' %}
+{% if faqs.size > 0 %}
+  <ul class="faq-section__list">
+    {% for faq in faqs %}
+      <li class="faq-section__item" {{ faq.shopify_attributes }}>
+        {{ faq.settings.title }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+```
+
+### Multiple Block Type Handling
+
+Handle different block types separately:
+
+```liquid
+{% assign videos = section.blocks | where: 'type', 'video-item' %}
+{% assign heading_blocks = section.blocks | where: 'type', 'heading-block' %}
+
+{% if heading_blocks.size > 0 %}
+  <div class="video-section__headings">
+    {% for block in heading_blocks %}
+      <div class="video-section__heading" {{ block.shopify_attributes }}>
+        <h4>{{ block.settings.title }}</h4>
+        <p>{{ block.settings.text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<div class="video-section__videos">
+  {% for video in videos %}
+    <div class="video-section__video" {{ video.shopify_attributes }}>
+      <!-- Video content -->
+    </div>
+  {% endfor %}
+</div>
+```
+
+### Image Rendering
+
+Use Shopify's built-in filters for images:
+
+```liquid
+{% if bs.icon %}
+  <div class="feature-cards__icon">
+    {{ bs.icon | image_url: width: 200 | image_tag: loading: 'lazy', alt: bs.icon_alt | default: 'Icon' }}
+  </div>
+{% endif %}
+```
+
+For responsive images with mobile/desktop variants, use `default` for fallback:
+
+```liquid
+{% assign image_mb = ss.image_mb | default: ss.image %}
+{% if image_mb %}
+  {% if ss.image and ss.image_mb %}
+    <picture>
+      <source media="(min-width: 768px)" srcset="{{ ss.image | image_url: width: 840 }}">
+      {{ image_mb | image_url: width: 600 | image_tag: loading: 'lazy' }}
+    </picture>
+  {% else %}
+    {{ image_mb | image_url: width: 840 | image_tag: loading: 'lazy' }}
+  {% endif %}
+{% endif %}
+```
+
+If your theme provides a `responsive-image` or `responsive-picture` snippet, use that instead.
+
+### Video Rendering
+
+Use the `video_tag` filter for video elements:
+
+```liquid
+{% if ss.video %}
+  {% if ss.bg_preload %}
+    {% assign video_preload = 'metadata' %}
+  {% else %}
+    {% assign video_preload = 'none' %}
+  {% endif %}
+  <div class="hero__video">
+    {{ ss.video | video_tag: controls: false, autoplay: true, loop: true, muted: true, playsinline: true, preload: video_preload }}
+  </div>
+{% endif %}
+```
+
+For video blocks:
+
+```liquid
+{% if video.settings.video %}
+  {{ video.settings.video | video_tag: autoplay: false, loop: false, muted: true, controls: true }}
+{% endif %}
+```
+
+## CTA Rendering
+
+Wrap CTAs in a wrapper div for consistent spacing:
+
+```liquid
+{% if ss.cta and ss.cta_url != blank %}
+  <div class="feature-cards__cta-wrapper">
+    <a href="{{ ss.cta_url }}" class="button button--{{ ss.cta_style }}">
+      {{ ss.cta_text | default: 'Learn more' }}
+    </a>
+  </div>
+{% endif %}
+```
+
+If your theme has a CTA/button snippet (e.g. `main-cta`, `button`), use `{% render %}` and pass the parameters your snippet expects.
+
+## Conditional Classes
+
+Add conditional classes based on settings:
+
+```liquid
+<div class="cards-section__grid {{ ss.layout }}{% if ss.enable_carousel %} cards-section__grid--carousel{% endif %}">
+  <!-- Content -->
+</div>
+```
+
+## CSS Patterns
+
+### Component Structure
+
+- Use BEM naming consistently
+- Mobile-first responsive design
+- Use CSS variables for dynamic colors
+- Define variables in `{% style %}` tag, reference in global CSS
+
+### Responsive Breakpoints
+
+Follow standard breakpoints:
+
+- Mobile: default (no media query)
+- Tablet: `@media screen and (min-width: 768px)`
+- Desktop: `@media screen and (min-width: 1024px)`
+- Large Desktop: `@media screen and (min-width: 1280px)`
+
+### Card Layout Example
+
+```css
+.feature-cards__items {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+@media screen and (min-width: 1024px) {
+  .feature-cards__items {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: 24px;
+  }
+  .feature-cards__item {
+    flex: 1;
+  }
+}
+```
+
+## Icon Rendering
+
+If your theme provides icon snippets, use them:
+
+```liquid
+<div class="video-button play">
+  {% render 'icon-play' %}Play
+</div>
+```
+
+Otherwise use inline SVG, icon fonts, or image pickers. Avoid hardcoding icons that merchants cannot customize.
+
+## Best Practices
+
+1. **Always check for blank values** before rendering content
+2. **Use shorthand variables** (`ss`, `bs`) for cleaner code
+3. **Group related settings** with headers in schema
+4. **Provide defaults** for all settings
+5. **Use descriptive labels** in schema (avoid redundancy with type)
+6. **Scope CSS** using section selector variable (`sc`)
+7. **Use CSS variables** for dynamic colors referenced in global CSS
+8. **Use inline styles** for block-level dynamic values
+9. **Include `{{ block.shopify_attributes }}`** on block root elements for theme editor
+10. **Follow BEM naming** consistently throughout component
+11. **Filter blocks by type** when sections have multiple block types
+12. **Use `default` filter** for fallback values (especially mobile images)
+13. **Use conditional `<style>` tags** for responsive conditional styles
+14. **Use `visible_if`** in schema for progressive disclosure of settings
+15. **Include default settings in presets** for better merchant experience
+16. **Check block size** before iterating: `{% if faqs.size > 0 %}`
+17. **Use `video_tag` filter** with appropriate attributes for video elements
+18. **Prefer built-in Liquid filters** (`image_url`, `image_tag`) unless your theme has standardized snippets

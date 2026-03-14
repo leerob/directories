@@ -1,0 +1,209 @@
+---
+title: Shopify App UI Extension Development
+slug: shopify-app-ui-extension-development
+tags:
+  - Shopify
+  - App Extension
+  - Typescript Conversion
+  - Best Practices
+  - Preact
+  - Polaris
+  - Web Components
+  - TypeScript
+libs:
+  - Shopify App
+  - Preact
+  - Polaris
+  - Web Components
+  - TypeScript
+author:
+  name: eyyMinda
+  url: "http://eyyminda.vercel.app/"
+  avatar: "https://avatars.githubusercontent.com/u/100799754?v=4"
+---
+
+# Converting Shopify Extensions from JavaScript to TypeScript
+
+## Overview
+
+Shopify Checkout UI Extensions can be written in TypeScript (`.tsx`) instead of JavaScript (`.jsx`). This provides better type safety and IDE support.
+
+## Conversion Steps
+
+### 1. Rename the file
+- Change `src/Checkout.jsx` → `src/Checkout.tsx`
+
+### 2. Update `shopify.extension.toml`
+```toml
+[[extensions.targeting]]
+module = "./src/Checkout.tsx"  # Changed from .jsx
+target = "purchase.checkout.block.render"
+```
+
+### 3. Update `shopify.d.ts`
+```typescript
+import '@shopify/ui-extensions';
+
+declare module './src/Checkout.tsx' {  // Changed from .jsx
+  const shopify: import('@shopify/ui-extensions/purchase.checkout.block.render').Api;
+  const globalThis: { shopify: typeof shopify };
+}
+```
+
+### 4. Update `tsconfig.json`
+Remove `checkJs` and `allowJs`, add `strict`:
+```json
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "target": "ES2020",
+    "strict": true,  // Add this
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": "../..",
+    "paths": {
+      "@lib/utils": ["./lib/utils.ts"],
+      "@lib/*": ["./lib/*"]
+    }
+  },
+  "include": ["./src", "./shopify.d.ts", "../../lib/**/*"]
+}
+```
+
+### 5. Add TypeScript Types
+
+Add type definitions for your settings and component props:
+
+```typescript
+// Common types
+type PaddingKeyword = 'none' | 'small' | 'small-100' | 'base' | 'large' | 'large-100';
+type JustifyContent = 'start' | 'center' | 'end';
+type Tone = 'auto' | 'neutral' | 'info' | 'success' | 'warning' | 'critical' | 'custom';
+
+// Example usage
+const paddingMap: Record<string, PaddingKeyword> = {
+  'none': 'none',
+  'extraTight': 'small',
+  // ...
+};
+const safePadding: PaddingKeyword = paddingMap[paddingValue] || 'none';
+```
+
+### 6. Type Your Variables
+
+```typescript
+// Before (JSX)
+const text = String(settings?.text || '');
+const padding = String(settings?.padding || 'none');
+
+// After (TSX)
+const text: string = String(settings?.text || '');
+const padding: string = String(settings?.padding || 'none');
+const safePadding: PaddingKeyword = paddingMap[padding] || 'none';
+```
+
+### 7. Type JSX Elements
+
+```typescript
+// Before
+let content;
+if (condition) {
+  content = <s-text>Hello</s-text>;
+}
+
+// After
+let content: JSX.Element | null;
+if (condition) {
+  content = <s-text>Hello</s-text>;
+} else {
+  content = null;
+}
+```
+
+## Benefits
+
+1. **Type Safety**: Catch errors at compile time
+2. **Better IDE Support**: Autocomplete, refactoring, navigation
+3. **Self-Documenting**: Types serve as documentation
+4. **Easier Refactoring**: TypeScript helps ensure changes are consistent
+
+## Common Type Patterns
+
+### Settings Values
+```typescript
+// Settings from shopify.settings.value can be: string | number | boolean | null | undefined
+const text = String(settings?.text || '');
+const number = typeof settings?.number === 'number' ? settings.number : 0;
+const enabled = Boolean(settings?.enabled);
+```
+
+### Padding/Spacing Values
+```typescript
+type PaddingKeyword = 'none' | 'small' | 'small-100' | 'base' | 'large' | 'large-100';
+const paddingMap: Record<string, PaddingKeyword> = {
+  'none': 'none',
+  'extraTight': 'small',
+  'tight': 'small-100',
+  'base': 'base',
+  'loose': 'large',
+  'extraLoose': 'large-100'
+};
+```
+
+### Tone/Appearance Values
+```typescript
+type Tone = 'auto' | 'neutral' | 'info' | 'success' | 'warning' | 'critical' | 'custom';
+const toneMap: Record<string, Tone> = {
+  'normal': 'auto',
+  'accent': 'neutral',
+  'subdued': 'neutral',
+  'info': 'info',
+  'success': 'success',
+  'warning': 'warning',
+  'critical': 'critical',
+  'decorative': 'custom'
+};
+```
+
+## Example: Complete Conversion
+
+**Before (Checkout.jsx):**
+```jsx
+import '@shopify/ui-extensions/preact';
+import { render } from 'preact';
+
+export default async () => {
+  render(<Extension />, document.body);
+};
+
+function Extension() {
+  const settings = shopify.settings.value;
+  const text = String(settings?.text || '');
+  return <s-text>{text}</s-text>;
+}
+```
+
+**After (Checkout.tsx):**
+```tsx
+import '@shopify/ui-extensions/preact';
+import { render } from 'preact';
+
+export default async () => {
+  render(<Extension />, document.body);
+};
+
+function Extension() {
+  const settings = shopify.settings.value;
+  const text: string = String(settings?.text || '');
+  return <s-text>{text}</s-text>;
+}
+```
+
+## Notes
+
+- Shopify's extension bundler supports TypeScript and will compile `.tsx` files
+- The `shopify` global object is typed via `shopify.d.ts`
+- Path aliases (`@lib/*`) work the same in TypeScript
+- All Polaris web components are typed via `@shopify/ui-extensions/preact`
