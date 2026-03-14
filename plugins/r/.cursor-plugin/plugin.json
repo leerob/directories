@@ -1,0 +1,15 @@
+{
+  "name": "R",
+  "description": "R rules and best practices for Cursor",
+  "keywords": [
+    "r",
+    "rstats",
+    "data-science",
+    "statistics"
+  ],
+  "author": {
+    "name": "Mohamed El Fodil Ihaddaden",
+    "url": "https://github.com/feddelegrand7",
+    "avatar": "https://avatars.githubusercontent.com/u/28841210?v=4"
+  }
+}

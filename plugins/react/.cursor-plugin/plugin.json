@@ -1,0 +1,28 @@
+{
+  "name": "React",
+  "description": "React rules and best practices for Cursor",
+  "keywords": [
+    "React",
+    "TypeScript",
+    "Shadcn UI",
+    "TanStack Query",
+    "Zustand",
+    "TailwindCSS"
+  ],
+  "libs": [
+    "React",
+    "TypeScript",
+    "Shadcn UI",
+    "TanStack Query",
+    "Zustand",
+    "TailwindCSS",
+    "Vitest",
+    "React Testing Library",
+    "Cypress"
+  ],
+  "author": {
+    "name": "Bruno Carneiro",
+    "url": "https://tautorn.com.br/",
+    "avatar": "https://www.tautorn.com.br/assets/images/bruno-7bd4ebdafa4d265cb70f14c06c1ece6a.jpg"
+  }
+}

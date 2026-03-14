@@ -1,0 +1,21 @@
+{
+  "name": "Rspec",
+  "description": "Rspec rules and best practices for Cursor",
+  "keywords": [
+    "Ruby",
+    "Rails",
+    "RSpec",
+    "Testing"
+  ],
+  "libs": [
+    "rspec",
+    "ruby",
+    "rails",
+    "factorybot"
+  ],
+  "author": {
+    "name": "Karine Rostirola Ballardin",
+    "url": "https://github.com/ineBallardin",
+    "avatar": "https://github.com/ineBallardin.png"
+  }
+}

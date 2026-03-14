@@ -1,0 +1,17 @@
+{
+  "name": "Onchainkit",
+  "description": "Onchainkit rules and best practices for Cursor",
+  "keywords": [
+    "React",
+    "OnchainKit",
+    "Typescript"
+  ],
+  "libs": [
+    "onchainkit"
+  ],
+  "author": {
+    "name": "Tina He",
+    "url": "https://twitter.com/fkpxls",
+    "avatar": "https://pbs.twimg.com/profile_images/1850873298931834880/qxmCviaE_400x400.jpg"
+  }
+}

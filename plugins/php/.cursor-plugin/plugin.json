@@ -1,0 +1,14 @@
+{
+  "name": "Php",
+  "description": "Php rules and best practices for Cursor",
+  "keywords": [
+    "PHP",
+    "PHP7.3",
+    "Backend"
+  ],
+  "author": {
+    "name": "Sahil Darji",
+    "url": "https://github.com/sahildarji29",
+    "avatar": "https://avatars.githubusercontent.com/u/30234093?s=400&u=58c238987371e0e78d6b07ff964735d56079622f&v=4"
+  }
+}

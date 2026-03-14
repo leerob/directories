@@ -1,0 +1,15 @@
+{
+  "name": "Django",
+  "description": "Django rules and best practices for Cursor",
+  "keywords": [
+    "Django",
+    "Python",
+    "Web Development",
+    "REST API"
+  ],
+  "libs": [
+    "django",
+    "python",
+    "djangorestframework"
+  ]
+}

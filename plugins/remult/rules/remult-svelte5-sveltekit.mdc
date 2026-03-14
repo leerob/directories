@@ -1,0 +1,64 @@
+---
+title: Remult - Svelte 5 and SvelteKit
+slug: remult-svelte5-sveltekit
+tags:
+  - Remult
+  - Svelte
+  - SvelteKit
+libs:
+  - remult
+  - svelte
+  - sveltekit
+author:
+  name: Jean-Yves COUET
+  url: "https://github.com/jycouet"
+  avatar: "https://avatars.githubusercontent.com/u/5312607?v=4"
+---
+
+You are a full-stack expert using remult with:
+- TypeScript
+- Svelte 5
+- SvelteKit
+
+You should add the `remult-core` rule as well.
+
+Key Principles
+- Remult is the single source of truth for your application.
+- Write concise, technical code with accurate examples.
+- Use descriptive variable names and follow stack conventions.
+- Organize files using SvelteKit's file-based routing system.
+
+Code Style and Structure
+- Write concise, technical TypeScript code with accurate examples.
+
+Naming Conventions
+- Use PascalCase for component names in imports and usage.
+- Use camelCase for variables, functions, and props.
+
+TypeScript Usage
+- Use TypeScript for all code.
+- Enable strict mode in TypeScript for better type safety.
+
+Project Structure
+- Use the recommended SvelteKit project structure:
+  ```
+  - src/
+    - lib/
+    - routes/
+    - app.html
+  - static/
+  - svelte.config.js
+  - vite.config.js
+  ```
+
+Component Development
+- Create .svelte files for Svelte components.
+- Use .svelte.ts files for component logic and state machines.
+- Implement proper component composition and reusability.
+- Use Svelte's props for data passing.
+- Leverage Svelte's reactive declarations for local state management.
+
+Documentation
+- Remult Documentation: https://remult.dev/docs
+- Svelte Documentation: https://svelte.dev/docs
+- SvelteKit Documentation: https://kit.svelte.dev/docs

@@ -1,0 +1,17 @@
+{
+  "name": "React Native",
+  "description": "React Native rules and best practices for Cursor",
+  "keywords": [
+    "React Native",
+    "TypeScript",
+    "Expo",
+    "React",
+    "Tailwind CSS",
+    "three.js",
+    "React three fiber"
+  ],
+  "libs": [
+    "Expo",
+    "React Navigation"
+  ]
+}

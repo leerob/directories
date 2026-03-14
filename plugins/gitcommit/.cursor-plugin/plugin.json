@@ -1,0 +1,21 @@
+{
+  "name": "Gitcommit",
+  "description": "Gitcommit rules and best practices for Cursor",
+  "keywords": [
+    "Git",
+    "Commit",
+    "VCS"
+  ],
+  "libs": [
+    "Git",
+    "VCS",
+    "GitHub",
+    "GitLab",
+    "Bitbucket"
+  ],
+  "author": {
+    "name": "Lukas Wolfsteiner",
+    "url": "https://lukas.wolfsteiner.media/links/github?ref=cursor-rules",
+    "avatar": "https://lukas.wolfsteiner.media/assets/img/photo.jpg"
+  }
+}

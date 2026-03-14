@@ -1,0 +1,19 @@
+{
+  "name": "Htmlandcss",
+  "description": "Htmlandcss rules and best practices for Cursor",
+  "keywords": [
+    "HTML",
+    "CSS",
+    "Accessibility",
+    "Responsive Design"
+  ],
+  "libs": [
+    "Bootstrap",
+    "Tailwind CSS"
+  ],
+  "author": {
+    "name": "Ravi Kumar E",
+    "url": "https://github.com/Rudra-ravi",
+    "avatar": "https://avatars.githubusercontent.com/u/116959728?v=4"
+  }
+}

@@ -159,6 +159,7 @@ export const officialRules = [
 export const officialRulesSections = [
   {
     tag: "Official",
+    slug: "official",
     rules: officialRules.filter(
       (rule) =>
         rule.content &&

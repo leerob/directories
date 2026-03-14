@@ -1,0 +1,30 @@
+{
+  "name": "Software Craftsmanship",
+  "description": "Software Craftsmanship rules and best practices for Cursor",
+  "keywords": [
+    "Software Craftsmanship",
+    "TDD",
+    "BDD",
+    "DDD",
+    "SOLID",
+    "KISS",
+    "YAGNI",
+    "DRY",
+    "DESIGN PATTERNS"
+  ],
+  "libs": [
+    "TDD",
+    "BDD",
+    "DDD",
+    "SOLID",
+    "KISS",
+    "YAGNI",
+    "DRY",
+    "DESIGN PATTERNS"
+  ],
+  "author": {
+    "name": "Bruno Dogbase",
+    "url": "https://www.linkedin.com/in/bruno-dogbase/",
+    "avatar": "https://media.licdn.com/dms/image/v2/D5603AQFN_Q-xlxcX6g/profile-displayphoto-shrink_800_800/B56ZSPXRbuGoAk-/0/1737572031181?e=1747872000&v=beta&t=zoy9psP6KlJeu56QMmNY1p5zRzS2THoEcTBuE2IIFwE"
+  }
+}

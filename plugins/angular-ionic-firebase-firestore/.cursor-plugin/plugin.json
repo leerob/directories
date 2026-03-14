@@ -1,0 +1,23 @@
+{
+  "name": "Angular Ionic Firebase Firestore",
+  "description": "Angular Ionic Firebase Firestore rules and best practices for Cursor",
+  "keywords": [
+    "ionic",
+    "cordova",
+    "angular",
+    "firebase",
+    "firestore"
+  ],
+  "libs": [
+    "ionic",
+    "cordova",
+    "angular",
+    "firebase",
+    "firestore"
+  ],
+  "author": {
+    "name": "Jaro Navales",
+    "url": "https://github.com/jaronavales",
+    "avatar": "https://avatars.githubusercontent.com/u/7483452"
+  }
+}

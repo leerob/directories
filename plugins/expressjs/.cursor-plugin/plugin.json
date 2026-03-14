@@ -1,0 +1,24 @@
+{
+  "name": "Expressjs",
+  "description": "Expressjs rules and best practices for Cursor",
+  "keywords": [
+    "Express.js",
+    "Node.js",
+    "Backend"
+  ],
+  "libs": [
+    "express",
+    "http",
+    "path",
+    "fs",
+    "cors",
+    "helmet",
+    "morgan",
+    "dotenv"
+  ],
+  "author": {
+    "name": "David Bulpitt",
+    "url": "https://nctnetwork.co.uk",
+    "avatar": "https://1.gravatar.com/avatar/829d05aa10d5116c7cbb1102ad39e39949fc6771cc495fa3cd5ec64e4724db69?size=256"
+  }
+}

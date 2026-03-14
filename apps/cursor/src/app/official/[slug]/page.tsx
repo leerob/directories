@@ -1,6 +1,7 @@
 import { Menu } from "@/components/menu";
 import { RuleCard } from "@/components/rule-card";
 import { getOfficialRuleBySlug, officialRules } from "@/data/official";
+import { getSections } from "@directories/data/rules";
 
 type Params = Promise<{ slug: string }>;
 
@@ -30,10 +31,16 @@ export default async function Page({ params }: { params: Params }) {
     return <div>Rule not found</div>;
   }
 
+  const sections = getSections().map((s) => ({
+    tag: s.tag,
+    slug: s.slug,
+    rulesCount: s.rules.length,
+  }));
+
   return (
     <div className="flex w-full h-full">
       <div className="hidden md:flex mt-12 sticky top-12 h-[calc(100vh-3rem)]">
-        <Menu />
+        <Menu sections={sections} />
       </div>
 
       <main className="flex-1 p-6 pt-16">

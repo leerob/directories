@@ -1,0 +1,19 @@
+{
+  "name": "Kotlin Jetpack",
+  "description": "Kotlin Jetpack rules and best practices for Cursor",
+  "keywords": [
+    "android",
+    "kotlin",
+    "jetpack",
+    "compose"
+  ],
+  "libs": [
+    "android",
+    "kotlin",
+    "jetpack"
+  ],
+  "author": {
+    "name": "lizy",
+    "url": "https://github.com/lizy-coding"
+  }
+}

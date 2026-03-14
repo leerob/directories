@@ -1,0 +1,14 @@
+{
+  "name": "Nestjs",
+  "description": "Nestjs rules and best practices for Cursor",
+  "keywords": [
+    "NestJs",
+    "Node",
+    "API",
+    "TypeScript",
+    "@app/common"
+  ],
+  "libs": [
+    "mikro-orm"
+  ]
+}

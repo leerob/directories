@@ -1,0 +1,17 @@
+{
+  "name": "Prisma",
+  "description": "Prisma rules and best practices for Cursor",
+  "keywords": [
+    "Prisma",
+    "TypeScript",
+    "ORM"
+  ],
+  "libs": [
+    "prisma"
+  ],
+  "author": {
+    "name": "gniting",
+    "url": "https://github.com/gniting",
+    "avatar": "https://avatars.githubusercontent.com/u/1123016?v=4"
+  }
+}

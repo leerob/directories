@@ -1,0 +1,22 @@
+{
+  "name": "Vue",
+  "description": "Vue rules and best practices for Cursor",
+  "keywords": [
+    "Vue.js",
+    "TypeScript",
+    "Node.js",
+    "Vite"
+  ],
+  "libs": [
+    "Pinia",
+    "VueUse",
+    "Headless UI",
+    "Element Plus",
+    "Tailwind"
+  ],
+  "author": {
+    "name": "Luiz Barreto",
+    "url": "https://github.com/llbarre",
+    "avatar": "https://avatars.githubusercontent.com/u/11854739?v=4"
+  }
+}

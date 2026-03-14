@@ -1,0 +1,14 @@
+{
+  "name": "Java",
+  "description": "Java rules and best practices for Cursor",
+  "keywords": [
+    "Java",
+    "Spring",
+    "Spring-Boot",
+    "Quarkus",
+    "Jakarta EE",
+    "MicroProfile",
+    "GraalVM",
+    "Vert.x"
+  ]
+}

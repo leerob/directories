@@ -27,15 +27,15 @@ export function HeroTitle({ totalUsers }: { totalUsers: number }) {
           animation: "fadeIn 0.2s ease forwards 0.1s",
         }}
       >
-        The home for Cursor enthusiasts where you can explore and{" "}
+        The home for Cursor enthusiasts where you can browse{" "}
+        <Link href="/plugins" className="border-b border-border border-dashed">
+          plugins
+        </Link>
+        ,{" "}
         <Link href="/generate" className="border-b border-border border-dashed">
           generate
         </Link>{" "}
-        rules, browse{" "}
-        <Link href="/mcp" className="border-b border-border border-dashed">
-          MCPs
-        </Link>
-        , post and follow the latest news on the board, learn, connect, and
+        rules, post and follow the latest news on the board, learn, connect, and
         discover{" "}
         <Link href="/jobs" className="border-b border-border border-dashed">
           jobs

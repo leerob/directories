@@ -4,7 +4,7 @@ import { createClient } from "@/utils/supabase/client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { type ChangeEvent, useRef } from "react";
-import { CompanySponsored } from "./company-sponsored";
+
 
 export function CompanyHero({
   companyId,
@@ -134,7 +134,6 @@ export function CompanyHero({
           </svg>
         </button>
       )}
-      <CompanySponsored />
     </div>
   );
 }

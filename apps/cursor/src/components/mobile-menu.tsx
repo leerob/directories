@@ -11,13 +11,18 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 
 const navigationLinks = [
-  { href: "/rules", label: "Rules" },
-  { href: "/board", label: "Board" },
+  { href: "/plugins", label: "Plugins" },
+  { href: "/board", label: "Trending" },
   { href: "/jobs", label: "Jobs" },
-  { href: "/mcp", label: "MCP Store" },
-  { href: "/learn", label: "Learn" },
+  { href: "/members", label: "Members" },
+  {
+    href: "https://cursor.com/learn?utm_source=cursor-directory&utm_medium=referral&utm_campaign=nav",
+    label: "Learn",
+    external: true,
+  },
   { href: "/games", label: "Games" },
   { href: "/about", label: "About" },
+  { href: "/companies", label: "Companies" },
   { href: "/events", label: "Events" },
 ] as const;
 
@@ -125,9 +130,12 @@ export function MobileMenu() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
+                    {...("external" in link && link.external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
                     className={cn(
                       "block py-5 text-sm font-medium",
-                      pathname === link.href
+                      !("external" in link) && pathname === link.href
                         ? "text-primary"
                         : "text-[#878787]",
                     )}

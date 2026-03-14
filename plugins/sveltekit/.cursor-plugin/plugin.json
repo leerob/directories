@@ -1,0 +1,22 @@
+{
+  "name": "Sveltekit",
+  "description": "Sveltekit rules and best practices for Cursor",
+  "keywords": [
+    "Svelte",
+    "SvelteKit",
+    "Tailwind",
+    "Paraglide.js",
+    "TypeScript",
+    "Supabase"
+  ],
+  "libs": [
+    "svelte",
+    "sveltekit",
+    "tailwind",
+    "paraglide-js",
+    "Supabase",
+    "Tailwind",
+    "TypeScript",
+    "SvelteKit"
+  ]
+}

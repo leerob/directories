@@ -1,0 +1,14 @@
+{
+  "name": "Nango",
+  "description": "Nango rules and best practices for Cursor",
+  "keywords": [
+    "Nango",
+    "JavaScript",
+    "Integration"
+  ],
+  "author": {
+    "name": "Ayodeji Adeoti",
+    "url": "https://nango.dev",
+    "avatar": "https://1.gravatar.com/avatar/a1fdce7586e886826a40bf90b20d7fe9fdaa9721d681b94c199ff9cdce754828"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Technical Writer",
+  "description": "Technical Writer rules and best practices for Cursor",
+  "keywords": [
+    "Technical Writing",
+    "Documentation",
+    "Developer Content"
+  ],
+  "author": {
+    "name": "Cursor Directory",
+    "url": "https://github.com/pontusab/cursor.directory",
+    "avatar": "https://avatars.githubusercontent.com/u/pontusab"
+  }
+}

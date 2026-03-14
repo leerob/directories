@@ -5,10 +5,11 @@
   "main": "src/index.ts",
   "exports": {
     "./rules": "./src/rules/index.ts",
-    "./mcp": "./src/mcp/index.ts",
+    "./plugins": "./src/plugins/index.ts",
     "./popular": "./src/popular/index.ts"
   },
   "dependencies": {
-    "@directories/kv": "workspace:*"
+    "@directories/kv": "workspace:*",
+    "server-only": "^0.0.1"
   }
 }

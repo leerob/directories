@@ -4,7 +4,7 @@ import { createClient } from "@/utils/supabase/client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { type ChangeEvent, useRef } from "react";
-import { ProfileSponsored } from "./profile-sponsored";
+
 
 export function ProfileHero({
   userId,
@@ -134,7 +134,6 @@ export function ProfileHero({
           </svg>
         </button>
       )}
-      <ProfileSponsored />
     </div>
   );
 }

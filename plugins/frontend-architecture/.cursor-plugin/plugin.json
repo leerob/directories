@@ -1,0 +1,23 @@
+{
+  "name": "Frontend Architecture",
+  "description": "Frontend Architecture rules and best practices for Cursor",
+  "keywords": [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Frontend",
+    "JavaScript"
+  ],
+  "libs": [
+    "TailwindCSS",
+    "Shadcn UI",
+    "Radix UI",
+    "Framer Motion",
+    "Zod"
+  ],
+  "author": {
+    "name": "Elina Lesyk",
+    "url": "https://github.com/EliaLesyk",
+    "avatar": "https://avatars.githubusercontent.com/u/56804907?v=4"
+  }
+}

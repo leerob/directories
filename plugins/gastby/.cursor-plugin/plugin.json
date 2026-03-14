@@ -1,0 +1,22 @@
+{
+  "name": "Gastby",
+  "description": "Gastby rules and best practices for Cursor",
+  "keywords": [
+    "Gatsby",
+    "React",
+    "GraphQL",
+    "Tailwind",
+    "TypeScript"
+  ],
+  "libs": [
+    "gatsby",
+    "react",
+    "graphql",
+    "tailwind"
+  ],
+  "author": {
+    "name": "Nathan Brachotte",
+    "url": "https://x.com/nathanbrachotte",
+    "avatar": "https://avatars.githubusercontent.com/u/22449049?v=4"
+  }
+}

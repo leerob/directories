@@ -1,0 +1,21 @@
+{
+  "name": "Zetachain",
+  "description": "Zetachain rules and best practices for Cursor",
+  "keywords": [
+    "ZetaChain",
+    "Multi-Chain",
+    "Cross-Chain",
+    "Universal Apps",
+    "Blockchain",
+    "Solidity"
+  ],
+  "libs": [
+    "Solidity",
+    "ZetaChain"
+  ],
+  "author": {
+    "name": "ZetaChain",
+    "url": "https://www.zetachain.com/",
+    "avatar": "https://avatars.githubusercontent.com/u/86979844?s=400&v=4"
+  }
+}

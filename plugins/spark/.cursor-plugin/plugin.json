@@ -1,0 +1,20 @@
+{
+  "name": "Spark",
+  "description": "Spark rules and best practices for Cursor",
+  "keywords": [
+    "Spark",
+    "Databricks",
+    "bigdata",
+    "PySpark"
+  ],
+  "libs": [
+    "PySpark",
+    "Delta Lake",
+    "MLflow",
+    "Koalas"
+  ],
+  "author": {
+    "name": "hammer",
+    "url": "https://github.com/hammerZh-Z"
+  }
+}

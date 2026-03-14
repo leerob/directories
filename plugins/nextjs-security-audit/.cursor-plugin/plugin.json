@@ -1,0 +1,24 @@
+{
+  "name": "Nextjs Security Audit",
+  "description": "Nextjs Security Audit rules and best practices for Cursor",
+  "keywords": [
+    "Security",
+    "Next.js",
+    "TypeScript",
+    "API Security",
+    "Authentication"
+  ],
+  "libs": [
+    "next-rate-limit",
+    "zod",
+    "bcrypt",
+    "argon2",
+    "jose",
+    "csrf"
+  ],
+  "author": {
+    "name": "Security Expert",
+    "url": "https://github.com/security-expert",
+    "avatar": "https://avatars.githubusercontent.com/u/security?v=4"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Robocorp",
+  "description": "Robocorp rules and best practices for Cursor",
+  "keywords": [
+    "RoboCorp",
+    "Python"
+  ],
+  "author": {
+    "name": "Thiago Martins",
+    "url": "https://github.com/0xthiagomartins",
+    "avatar": "https://github.com/0xthiagomartins.png"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Netlify",
+  "description": "Netlify rules and best practices for Cursor",
+  "keywords": [
+    "Netlify",
+    "Web Development"
+  ],
+  "author": {
+    "name": "Sean Roberts",
+    "url": "https://github.com/sean-roberts",
+    "avatar": "https://avatars.githubusercontent.com/u/950274?s=48&v=4"
+  }
+}

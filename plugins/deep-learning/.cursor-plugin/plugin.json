@@ -1,0 +1,17 @@
+{
+  "name": "Deep Learning",
+  "description": "Deep Learning rules and best practices for Cursor",
+  "keywords": [
+    "Deep Learning",
+    "PyTorch",
+    "Python",
+    "Transformer",
+    "LLM",
+    "Diffusion"
+  ],
+  "author": {
+    "name": "Yu Changqian",
+    "url": "https://yu-changqian.github.io/",
+    "avatar": "https://x.com/ChangqianYu/photo"
+  }
+}

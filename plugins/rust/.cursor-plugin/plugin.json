@@ -1,0 +1,21 @@
+{
+  "name": "Rust",
+  "description": "Rust rules and best practices for Cursor",
+  "keywords": [
+    "Rust",
+    "async",
+    "channel",
+    "mpsc"
+  ],
+  "libs": [
+    "Rust",
+    "tokio",
+    "anyhow",
+    "serde"
+  ],
+  "author": {
+    "name": "Sheng-Yan, Zhang",
+    "url": "https://x.com/yancode",
+    "avatar": "https://pbs.twimg.com/profile_images/690799075583655936/ugGFxMsi_400x400.jpg"
+  }
+}

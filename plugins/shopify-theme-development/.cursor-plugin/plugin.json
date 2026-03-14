@@ -1,0 +1,26 @@
+{
+  "name": "Shopify Theme Development",
+  "description": "Shopify Theme Development rules and best practices for Cursor",
+  "keywords": [
+    "Shopify",
+    "Theme Development",
+    "Best Practices",
+    "Liquid",
+    "CSS",
+    "JavaScript",
+    "UX",
+    "Performance"
+  ],
+  "libs": [
+    "Liquid",
+    "Javascript",
+    "HTML",
+    "CSS",
+    "Shopify Theme"
+  ],
+  "author": {
+    "name": "Md Morshadun Nur",
+    "url": "https://morshadunnur.me",
+    "avatar": "https://avatars.githubusercontent.com/u/11367467?v=4"
+  }
+}

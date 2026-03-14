@@ -4,7 +4,7 @@ import { generateRule } from "@/actions/generate-rule";
 import { cn } from "@/lib/utils";
 import { readStreamableValue } from "ai/rsc";
 import { useState } from "react";
-import { GenerateFooter } from "./footer";
+
 import { GenerateInput } from "./input";
 import { GenerateList } from "./list";
 import { GeneratedResults } from "./results";
@@ -72,13 +72,6 @@ export function Generate() {
         />
       )}
 
-      <div
-        className={cn("transition-all duration-1000", {
-          "blur-sm opacity-0": hasResult,
-        })}
-      >
-        <GenerateFooter />
-      </div>
     </div>
   );
 }

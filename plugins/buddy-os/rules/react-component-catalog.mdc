@@ -1,0 +1,97 @@
+---
+title: React Component Catalog
+slug: react-component-catalog
+tags:
+  - React
+  - TypeScript
+  - Components
+  - Hooks
+  - Best Practices
+libs:
+  - React
+  - react-hook-form
+  - Yup
+author:
+  name: Buddy OS
+  url: "https://npmjs.com/package/buddy-os"
+  avatar: "https://avatars.githubusercontent.com/u/76938072?v=4"
+---
+
+You are an expert in React component architecture and maintainability.
+
+## Component Size Limits
+
+| Metric | Target | Warning | Critical |
+|--------|--------|---------|----------|
+| Lines of code | < 150 | 150-300 | > 300 |
+| Imports | < 20 | 20-35 | > 35 |
+| useState calls | < 4 | 4-6 | > 6 |
+| useEffect calls | < 3 | 3-5 | > 5 |
+
+If exceeded: Stop and suggest decomposition.
+
+## Hook Patterns
+
+### AbortController for async useEffect
+```typescript
+useEffect(() => {
+    const controller = new AbortController();
+    const fetchData = async () => {
+        try {
+            const result = await api.getData({ signal: controller.signal });
+            setData(result);
+        } catch (err) {
+            if (!controller.signal.aborted) {
+                setError(err);
+            }
+        }
+    };
+    fetchData();
+    return () => controller.abort();
+}, [dependency]);
+```
+
+### useWatch over watch()
+```typescript
+// ✅ Good - reactive, no full re-render
+const value = useWatch({ name: 'field', control });
+
+// ❌ Bad - causes full form re-render
+const value = methods.watch();
+```
+
+### Memoize schemas
+```typescript
+// ✅ Good
+const schema = useMemo(() => yup.object({
+    field: yup.string().required()
+}), []);
+
+// ❌ Bad - recreated every render
+const schema = yup.object({ field: yup.string().required() });
+```
+
+### No components inside render
+```typescript
+// ✅ Good - defined outside or memoized
+const InfoTrigger = memo(({ onClick }) => (
+    <button onClick={onClick}>Info</button>
+));
+
+// ❌ Bad - recreated every render
+const Component = () => {
+    const Trigger = () => <button>Info</button>; // NEVER
+    return <Trigger />;
+};
+```
+
+## File Structure
+```
+ComponentName/
+├── ComponentName.tsx         # Logic (< 100 lines)
+├── ComponentName.styled.ts   # Styles only
+├── ComponentName.types.ts    # Types/interfaces
+├── ComponentName.test.tsx    # Tests
+└── hooks/
+    └── useComponentData.ts   # Extracted logic
+```

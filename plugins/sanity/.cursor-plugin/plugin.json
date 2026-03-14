@@ -1,0 +1,14 @@
+{
+  "name": "Sanity",
+  "description": "Sanity rules and best practices for Cursor",
+  "keywords": [
+    "sanity",
+    "cms",
+    "headless"
+  ],
+  "author": {
+    "name": "Roboto Studio",
+    "url": "https://robotostudio.com",
+    "avatar": "https://avatars.githubusercontent.com/u/60408063"
+  }
+}

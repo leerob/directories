@@ -60,11 +60,6 @@ const mcps2 = [
 
 const posts = [
   {
-    title: "CodeRabbit CLI",
-    description: "Free AI code reviews in your command line.",
-    url: "https://www.coderabbit.ai/blog/coderabbit-cli-free-ai-code-reviews-in-your-cli",
-  },
-  {
     title: "Working with coding agents",
     description: "Tips for AI coding agents and prompting.",
     url: "https://anyblockers.com/posts/working-with-coding-agents",
@@ -975,58 +970,6 @@ const Newsletter = () => {
                   >
                     © 2025 Cursor Directory. Made for the developer community.
                   </Text>
-                </Column>
-              </Row>
-              <Row style={{ marginTop: "32px" }}>
-                <Column>
-                  <table
-                    cellPadding="0"
-                    cellSpacing="0"
-                    border={0}
-                    align="center"
-                    style={{
-                      margin: "0 auto",
-                    }}
-                  >
-                    <tr>
-                      <td style={{ textAlign: "center", paddingBottom: "8px" }}>
-                        <Text
-                          style={{
-                            fontSize: "12px",
-                            color: "#666666",
-                            margin: 0,
-                          }}
-                        >
-                          Sponsored by
-                        </Text>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style={{ textAlign: "center" }}>
-                        <a
-                          href="https://www.coderabbit.ai/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{
-                            textDecoration: "none",
-                            display: "inline-block",
-                          }}
-                        >
-                          <Img
-                            src="https://pub-abe1cd4008f5412abb77357f87d7d7bb.r2.dev/email/coderabbit-light.png"
-                            alt="CodeRabbit"
-                            width="110"
-                            height="18"
-                            style={{
-                              display: "block",
-                              width: "110px",
-                              height: "18px",
-                            }}
-                          />
-                        </a>
-                      </td>
-                    </tr>
-                  </table>
                 </Column>
               </Row>
             </Section>

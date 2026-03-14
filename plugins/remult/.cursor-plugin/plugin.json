@@ -1,0 +1,21 @@
+{
+  "name": "Remult",
+  "description": "Remult rules and best practices for Cursor",
+  "keywords": [
+    "Remult",
+    "Web Development",
+    "Svelte",
+    "SvelteKit",
+    "React",
+    "Angular",
+    "Vue"
+  ],
+  "libs": [
+    "remult",
+    "svelte",
+    "sveltekit",
+    "react",
+    "angular",
+    "vue"
+  ]
+}

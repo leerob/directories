@@ -1,0 +1,22 @@
+{
+  "name": "Pixijs",
+  "description": "Pixijs rules and best practices for Cursor",
+  "keywords": [
+    "Pixi.js",
+    "TypeScript",
+    "Game Development",
+    "Web",
+    "Mobile"
+  ],
+  "libs": [
+    "pixi.js",
+    "ionic-capacitor",
+    "vercel",
+    "cloudflare"
+  ],
+  "author": {
+    "name": "Václav Vančura",
+    "url": "https://github.com/vancura",
+    "avatar": "https://avatars.githubusercontent.com/u/4982"
+  }
+}

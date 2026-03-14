@@ -1,0 +1,20 @@
+{
+  "name": "Front End",
+  "description": "Front End rules and best practices for Cursor",
+  "keywords": [
+    "JavaScript",
+    "TypeScript",
+    "Next.js",
+    "React"
+  ],
+  "libs": [
+    "Tailwind CSS",
+    "Shadcn UI",
+    "Radix UI"
+  ],
+  "author": {
+    "name": "Mohammadali Karimi",
+    "url": "https://github.com/devbymak",
+    "avatar": "https://avatars.githubusercontent.com/u/65307721?v=4"
+  }
+}

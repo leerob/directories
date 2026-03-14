@@ -1,0 +1,17 @@
+---
+title: Minimal Laravel PHP Cursor Rules
+slug: minimal-laravel-php-cursor-rules
+tags:
+  - Laravel
+  - PHP
+libs:
+  - laravel
+author:
+  name: Marcial Paul Gargoles
+  url: "https://github.com/marcialpaulg"
+  avatar: "https://avatars.githubusercontent.com/u/6005221?v=4"
+---
+
+Write code that follows Laravel & PHP guidelines from spatie.be.
+  Do not remove the PHPDoc blocks or comments from the code.
+  Use snake_case for naming regular variables. Otherwise, follow the guidelines.

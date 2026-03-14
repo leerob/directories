@@ -1,0 +1,12 @@
+{
+  "name": "Julia",
+  "description": "Julia rules and best practices for Cursor",
+  "keywords": [
+    "Julia",
+    "DataScience"
+  ],
+  "author": {
+    "name": "Jan Siml",
+    "url": "https://github.com/svilupp"
+  }
+}

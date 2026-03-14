@@ -1,0 +1,15 @@
+{
+  "name": "Remix",
+  "description": "Remix rules and best practices for Cursor",
+  "keywords": [
+    "Remix"
+  ],
+  "libs": [
+    "remix"
+  ],
+  "author": {
+    "name": "Mohammed Farmaan",
+    "url": "https://twitter.com/zxcodes",
+    "avatar": "https://pbs.twimg.com/profile_images/1809609931441729537/ajFEBsnE_400x400.jpg"
+  }
+}

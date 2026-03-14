@@ -1,0 +1,16 @@
+{
+  "name": "Terraform",
+  "description": "Terraform rules and best practices for Cursor",
+  "keywords": [
+    "Terraform",
+    "Cloud",
+    "Infrastructure as Code"
+  ],
+  "libs": [
+    "AWS",
+    "Azure",
+    "GCP",
+    "Vault",
+    "Terraform Cloud"
+  ]
+}

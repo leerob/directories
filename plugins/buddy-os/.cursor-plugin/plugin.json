@@ -1,0 +1,39 @@
+{
+  "name": "Buddy Os",
+  "description": "Buddy Os rules and best practices for Cursor",
+  "keywords": [
+    "React",
+    "TypeScript",
+    "Components",
+    "Hooks",
+    "Best Practices",
+    "Accessibility",
+    "WCAG",
+    "A11y",
+    "Async",
+    "useEffect",
+    "Race Conditions",
+    "Memory Leaks",
+    "React Hook Form",
+    "Forms",
+    "Performance",
+    "Next.js",
+    "SSR",
+    "Hydration",
+    "CSR",
+    "Git",
+    "PR",
+    "Code Review",
+    "Quality Gates",
+    "Architecture",
+    "Planning",
+    "Complex Changes",
+    "Functional Components"
+  ],
+  "libs": [
+    "React",
+    "react-hook-form",
+    "Yup",
+    "Next.js"
+  ]
+}

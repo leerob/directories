@@ -219,11 +219,39 @@ export async function getNewUsers() {
 export async function getMCPs({
   page = 1,
   limit = 36,
+  fetchAll = false,
 }: {
   page?: number;
   limit?: number;
+  fetchAll?: boolean;
 } = {}) {
   const supabase = await createClient();
+
+  if (fetchAll) {
+    const PAGE_SIZE = 100;
+    let allData: any[] = [];
+    let from = 0;
+    let hasMore = true;
+
+    while (hasMore) {
+      const { data, error } = await supabase
+        .from("mcps")
+        .select("*")
+        .eq("active", true)
+        .order("company_id", { ascending: true, nullsFirst: false })
+        .range(from, from + PAGE_SIZE - 1);
+
+      if (error) return { data: null, error };
+      if (!data || data.length === 0) break;
+
+      allData = allData.concat(data);
+      hasMore = data.length === PAGE_SIZE;
+      from += PAGE_SIZE;
+    }
+
+    return { data: allData, error: null };
+  }
+
   const { data, error } = await supabase
     .from("mcps")
     .select("*")
@@ -231,6 +259,18 @@ export async function getMCPs({
     .order("company_id", { ascending: true, nullsFirst: false })
     .limit(limit)
     .range((page - 1) * limit, page * limit - 1);
+
+  return { data, error };
+}
+
+export async function getRecentMCPs({ limit = 8 }: { limit?: number } = {}) {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("mcps")
+    .select("*")
+    .eq("active", true)
+    .order("created_at", { ascending: false })
+    .limit(limit);
 
   return { data, error };
 }

@@ -1,0 +1,14 @@
+{
+  "name": "Odoo",
+  "description": "Odoo rules and best practices for Cursor",
+  "keywords": [
+    "Odoo",
+    "Python",
+    "Enterprise"
+  ],
+  "author": {
+    "name": "Akinshola Samuel AKINDE",
+    "url": "https://github.com/thisishaykins",
+    "avatar": "https://gravatar.com/thisishaykins"
+  }
+}

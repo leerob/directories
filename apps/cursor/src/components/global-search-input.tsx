@@ -1,12 +1,19 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import { useQueryState } from "nuqs";
 
 export function GlobalSearchInput() {
   const [search, setSearch] = useQueryState("q", { defaultValue: "" });
+  const router = useRouter();
 
-  const placeholder = "Search for a rule or MCP server...";
+  const placeholder = "Search plugins, MCPs, jobs...";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (search.trim()) {
+      router.push(`/plugins?q=${encodeURIComponent(search.trim())}`);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

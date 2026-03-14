@@ -1,0 +1,18 @@
+{
+  "name": "Ghost Tailwindcss",
+  "description": "Ghost Tailwindcss rules and best practices for Cursor",
+  "keywords": [
+    "Ghost",
+    "Alpine.js",
+    "TailwindCSS"
+  ],
+  "libs": [
+    "tailwindcss",
+    "alpinejs"
+  ],
+  "author": {
+    "name": "ghostFam",
+    "url": "https://ghostfam.com/en/",
+    "avatar": "https://ghostfam.com/en/content/images/size/w300/format/webp/2023/08/ghostfam-1.webp"
+  }
+}

@@ -17,25 +17,33 @@ import { Button } from "./ui/button";
 import { UserMenu } from "./user-menu";
 
 const navigationLinks = [
-  { href: "/rules", label: "Rules" },
+  { href: "/plugins", label: "Plugins" },
   { href: "/board", label: "Trending" },
   { href: "/jobs", label: "Jobs" },
-  { href: "/mcp", label: "MCPs" },
-  { href: "/generate", label: "Generate" },
   { href: "/members", label: "Members" },
+  {
+    href: "https://cursor.com/learn?utm_source=cursor-directory&utm_medium=referral&utm_campaign=nav",
+    label: "Learn",
+    external: true,
+  },
   { href: "/games", label: "Games" },
-  { href: "/learn", label: "Learn" },
   { href: "/about", label: "About" },
   { href: "/companies", label: "Companies" },
   { href: "/events", label: "Events" },
 ] as const;
 
-export function Header() {
+const MAIN_NAV_COUNT = 5;
+
+export function Header({
+  pluginItems,
+}: {
+  pluginItems?: { name: string; slug: string }[];
+}) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const mainNavItems = navigationLinks.slice(0, 6);
-  const dropdownNavItems = navigationLinks.slice(6);
+  const mainNavItems = navigationLinks.slice(0, MAIN_NAV_COUNT);
+  const dropdownNavItems = navigationLinks.slice(MAIN_NAV_COUNT);
 
   return (
     <div className="flex justify-between items-center mt-2 md:mt-0">
@@ -49,9 +57,12 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
+              {...("external" in link && link.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
               className={cn(
                 "flex items-center gap-2 text-sm font-medium",
-                pathname.includes(link.href)
+                !("external" in link) && pathname.includes(link.href)
                   ? "text-primary"
                   : "text-[#878787]",
               )}
@@ -96,7 +107,7 @@ export function Header() {
         </div>
       </div>
       <MobileMenu />
-      <CommandMenu open={open} setOpen={setOpen} />
+      <CommandMenu open={open} setOpen={setOpen} items={pluginItems} />
     </div>
   );
 }

@@ -1,0 +1,17 @@
+{
+  "name": "Nuxtjs",
+  "description": "Nuxtjs rules and best practices for Cursor",
+  "keywords": [
+    "NuxtJS",
+    "Vue",
+    "TypeScript"
+  ],
+  "libs": [
+    "shadcn-vue",
+    "radix-vue",
+    "vueuse",
+    "tailwind",
+    "pinia",
+    "nuxt/ui"
+  ]
+}

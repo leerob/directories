@@ -1,0 +1,21 @@
+{
+  "name": "Chrome Extension",
+  "description": "Chrome Extension rules and best practices for Cursor",
+  "keywords": [
+    "Chrome Extension",
+    "JavaScript",
+    "TypeScript",
+    "Browser API"
+  ],
+  "libs": [
+    "Chrome API",
+    "TypeScript",
+    "Webpack",
+    "Jest"
+  ],
+  "author": {
+    "name": "MaydayV",
+    "url": "https://github.com/MaydayV",
+    "avatar": "https://avatars.githubusercontent.com/u/61279703?v=4"
+  }
+}

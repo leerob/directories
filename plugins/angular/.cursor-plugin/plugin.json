@@ -1,0 +1,10 @@
+{
+  "name": "Angular",
+  "description": "Angular rules and best practices for Cursor",
+  "keywords": [
+    "Angular"
+  ],
+  "libs": [
+    "angular"
+  ]
+}

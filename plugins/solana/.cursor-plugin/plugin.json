@@ -1,0 +1,23 @@
+{
+  "name": "Solana",
+  "description": "Solana rules and best practices for Cursor",
+  "keywords": [
+    "Solana",
+    "Blockchain",
+    "Rust",
+    "Anchor",
+    "Web3.js",
+    "Metaplex"
+  ],
+  "libs": [
+    "Rust",
+    "Anchor",
+    "Solana Web3.js",
+    "Metaplex"
+  ],
+  "author": {
+    "name": "Guney Uzel",
+    "url": "https://x.com/guneysol",
+    "avatar": "https://avatars.githubusercontent.com/u/112765917?v=4"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Expo",
+  "description": "Expo rules and best practices for Cursor",
+  "keywords": [
+    "Expo",
+    "React Native",
+    "TypeScript",
+    "JavaScript"
+  ],
+  "libs": [
+    "expo-router",
+    "expo-status-bar",
+    "expo-font",
+    "react-navigation",
+    "react-native-gesture-handler",
+    "react-native-reanimated",
+    "react-query",
+    "zod",
+    "react-native-safe-area-context",
+    "react-native-responsive-screen",
+    "react-native-fast-image"
+  ]
+}

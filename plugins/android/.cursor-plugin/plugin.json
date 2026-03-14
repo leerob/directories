@@ -1,0 +1,15 @@
+{
+  "name": "Android",
+  "description": "Android rules and best practices for Cursor",
+  "keywords": [
+    "android",
+    "kotlin"
+  ],
+  "libs": [
+    "android"
+  ],
+  "author": {
+    "name": "aman satija",
+    "url": "http://amansatija.com"
+  }
+}

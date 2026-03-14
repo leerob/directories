@@ -1,10 +1,31 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  outputFileTracingIncludes: {
+    "/plugins": ["../../plugins/**/*"],
+    "/plugins/[slug]": ["../../plugins/**/*"],
+    "/": ["../../plugins/**/*"],
+    "/sitemap.xml": ["../../plugins/**/*"],
+  },
   redirects: async () => {
     return [
       {
         source: "/popular",
-        destination: "/rules/popular",
+        destination: "/plugins",
+        permanent: true,
+      },
+      {
+        source: "/rules",
+        destination: "/plugins",
+        permanent: true,
+      },
+      {
+        source: "/rules/:path*",
+        destination: "/plugins/:path*",
+        permanent: true,
+      },
+      {
+        source: "/mcp",
+        destination: "/plugins",
         permanent: true,
       },
     ];
