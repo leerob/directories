@@ -1,6 +1,0 @@
-node_modules
-.next
-.DS_Store
-.package-lock.json
-.env
-.react-email

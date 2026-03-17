@@ -1,0 +1,1 @@
+I want to generate a cursor rule for this/these component. Please analyze it carefully and outline all of the conventions found. Output as one rule file only. If CSS or JS has more code that used in this component, partially ignore it. Get all the takeaways only relevant for this component and its asset code.

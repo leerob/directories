@@ -1,0 +1,476 @@
+---
+description: Conventions and patterns for reusable Shopify snippets
+alwaysApply: false
+---
+
+# Reusable Shopify Snippets Conventions
+
+This document outlines the conventions and patterns used in reusable Shopify snippets, including `heading.liquid`, `main-cta.liquid`, `announcement.liquid`, and their nested dependencies.
+
+## Snippet Documentation Format
+
+Use structured `{% comment %}` blocks for documentation. Format:
+
+```liquid
+{% comment %}
+  ===================================================================================
+  SNIPPET NAME
+  ===================================================================================
+  Brief description of what the snippet does and its purpose.
+
+  ********************************************
+  Parameters
+  ********************************************
+  * parameter_name (Type): Description
+  * optional_parameter (Type, Optional): Description with default value
+
+  ********************************************
+  Usage Example
+  ********************************************
+  {% render 'snippet-name' param1: value1, param2: value2 %}
+
+  ********************************************
+  Schema Example
+  ********************************************
+  {
+    "type": "text",
+    "id": "setting_id",
+    "label": "Setting Label"
+  }
+{% endcomment %}
+```
+
+## Parameter Naming Conventions
+
+### Kebab-case for Multi-word Parameters
+
+Use kebab-case for parameter names with multiple words:
+
+```liquid
+{% render 'heading'
+  heading: true,
+  heading_title: ss.heading_title,
+  sub-text: ss.heading_sub_text,
+  text: ss.heading_text,
+  align: ss.heading_align,
+  align_mb: ss.heading_align_mb
+%}
+```
+
+### Boolean Flags
+
+Use descriptive boolean parameter names:
+
+```liquid
+{% render 'main-cta' scroll: ss.cta_scroll, atc: false, arrow: true %}
+```
+
+## Conditional Rendering
+
+### Wrapper Conditionals
+
+Wrap entire snippet output in conditional when appropriate:
+
+```liquid
+{% if heading %}
+  <div class="heading-wrapper">
+    <!-- Content -->
+  </div>
+{% endif %}
+```
+
+### Element-level Conditionals
+
+Check for blank values before rendering individual elements:
+
+```liquid
+{% if title != blank %}
+  <h2 class="heading-title">{{ title }}</h2>
+{% endif %}
+
+{% if text != blank %}
+  <div class="heading-text">{{ text }}</div>
+{% endif %}
+```
+
+## Variable Assignments
+
+### Class Concatenation
+
+Build class strings by concatenating parameters:
+
+```liquid
+{% assign classes = align | append: ' ' | append: align_mb | append: ' ' | append: class %}
+<div class="heading-wrapper {{ classes }}">
+```
+
+### Default Values
+
+Use `default` filter for fallback values:
+
+```liquid
+{% assign heading_tag = h1 | default: '2' | replace: 'true', '1' | replace: 'false', '2' | prepend: 'h' %}
+```
+
+### String Manipulation
+
+Use Liquid filters for string transformations:
+
+```liquid
+{% assign title = title | replace: '&', '<span class="heading-title-amp">&amp;</span>' %}
+{% assign link_title = link | split: '?' | first | split: '//' | last | split: '/' | slice: 1, 2 | join: ' ' | capitalize %}
+```
+
+## Dynamic HTML Elements
+
+### Dynamic Tag Names
+
+Use variables for HTML tag names:
+
+```liquid
+{% assign heading_tag = h1 | default: '2' | replace: 'true', '1' | replace: 'false', '2' | prepend: 'h' %}
+<{{ heading_tag }} class="heading-title">{{ title }}</{{ heading_tag }}>
+```
+
+### Dynamic Element Types
+
+Allow element type to be configurable:
+
+```liquid
+{% assign cta_element = cta_element | default: "a" %}
+<{{ cta_element }} href="{{ link }}" class="main-cta">
+  {{ text }}
+</{{ cta_element }}>
+```
+
+## Inline Styles
+
+Use inline styles for dynamic values passed as parameters:
+
+```liquid
+<flex class="announcement" style="background-color: {{ bg_color }}; color: {{ text_color }};">
+  <!-- Content -->
+</flex>
+```
+
+## Nested Snippet Rendering
+
+### Conditional Nested Rendering
+
+Render nested snippets conditionally based on parameters:
+
+```liquid
+{% if ratings %}
+  {% if ratings_type == 'custom' %}
+    {% render 'tp-ratings' ratings: ratings, ratings_stars: ratings_stars, ratings_logo: ratings_logo, ratings_text: ratings_text %}
+  {% else %}
+    {% render 'trustpilot-widget' type: ratings_type %}
+  {% endif %}
+{% endif %}
+```
+
+### Pass-through Parameters
+
+Pass parameters through to nested snippets:
+
+```liquid
+{% render 'heading-timer'
+  timer: timer,
+  timer_settings: timer_settings,
+  timer_text: timer_text,
+  timer_type: timer_type,
+  timer_time: timer_time,
+  timer_date: timer_date,
+  timer_timezone: timer_timezone,
+  timer_format: timer_format,
+  timer_labels: timer_labels,
+  class: "hidden"
+%}
+```
+
+## Block Iteration
+
+Iterate over blocks passed as parameters:
+
+```liquid
+{% if properties.size > 0 %}
+  <div class="heading-properties">
+    {% for property in properties %}
+      <div class="heading-property">
+        {% render 'responsive-image' image: property.settings.icon, image_width: 30, custom_alt: "property-icon", class: "block_icon" %}
+        <p>{{ property.settings.text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+```
+
+## Multiple Rendering Modes
+
+Support different rendering modes based on parameters:
+
+```liquid
+{% if scroll %}
+  <div class="main-cta {{ classes }} ScrollToProduct" aria-label="Click to Scroll to Product">
+    {{ text }}
+  </div>
+{% elsif atc %}
+  <button id="add-to-cart-button" class="main-cta {{ classes }}{% unless selected_variant.available %} soldout{% endunless %}">
+    {{ text }}
+  </button>
+{% else %}
+  <{{ cta_element }} href="{{ link }}" class="main-cta {{ classes }}">
+    {{ text }}
+  </{{ cta_element }}>
+{% endif %}
+```
+
+## Data Attributes
+
+Use data attributes for JavaScript functionality:
+
+```liquid
+<info-box class="heading-timer {{ class }}"
+  data-timer-type="{{ timer_type }}"
+  data-time="{{ timer_time }}"
+  {% if timer_date %}data-timer-date="{{ timer_date }}"{% endif %}
+  {% if timer_timezone %}data-timer-timezone="{{ timer_timezone }}"{% endif %}
+  {% if timer_format %}data-timer-format="{{ timer_format }}"{% endif %}
+  {% if timer_labels %}data-timer-labels="{{ timer_labels }}"{% endif %}>
+  <span class="timer">24:00:00</span>
+</info-box>
+```
+
+## Icon Rendering
+
+Render icons conditionally:
+
+```liquid
+{% if arrow %}{% render 'icon-arrow-right' %}{% endif %}
+```
+
+## Custom HTML Elements
+
+Use custom semantic HTML elements:
+
+- `<flex>` - Flexbox container
+- `<info-box>` - Info box container
+- Custom elements defined in global CSS
+
+```liquid
+<flex class="announcement" style="background-color: {{ bg_color }}; color: {{ text_color }};">
+  <flex class="announcement__wrapper">
+    <!-- Content -->
+  </flex>
+</flex>
+```
+
+## Global Settings Access
+
+Access global theme settings when needed:
+
+```liquid
+{% render 'responsive-image' image: settings.logo, image_width: 100, custom_alt: shop.name %}
+```
+
+## Liquid Tag Usage
+
+### Liquid Block for Multiple Assignments
+
+Use `{% liquid %}` block for cleaner multiple assignments:
+
+```liquid
+{% liquid
+  assign timer_settings = timer_settings | default: 'section'
+  if timer_settings == 'global'
+    assign timer_text = settings.timer_text
+    assign timer_type = settings.timer_type
+    assign timer_time = settings.timer_time
+    assign timer_date = settings.timer_date
+    assign timer_timezone = settings.timer_timezone
+    assign timer_format = settings.timer_format
+    assign timer_labels = settings.timer_labels
+  endif
+%}
+```
+
+### Case Statements
+
+Use `case` for multiple conditional branches:
+
+```liquid
+{% case type %}
+  {% when 'micro-combo' %}
+    <!-- Micro Combo widget -->
+  {% when 'micro-star' %}
+    <!-- Micro Star widget -->
+{% endcase %}
+```
+
+## CSS Classes and Modifiers
+
+### Conditional Classes
+
+Add classes conditionally:
+
+```liquid
+<div class="heading-text{% if text_read_more %} heading-text--read-more{% endif %}">{{ text }}</div>
+```
+
+### Class Variants
+
+Support multiple class variants:
+
+```liquid
+{% assign classes = type | append: ' ' | append: class %}
+<div class="main-cta {{ classes }}">
+```
+
+## Collection/Shop Object Access
+
+Access shop and collection objects directly:
+
+```liquid
+{% if shop-all != blank %}
+  <a href="{{ shop-all.url }}" alt="All products" class="heading-shop-all">SHOP ALL</a>
+{% endif %}
+```
+
+## CSS Patterns (from Global Stylesheet)
+
+### Heading Styles
+
+Styles are defined in `custom_global.css`:
+
+- `.heading-wrapper` - Main wrapper with flex layout
+- `.heading-title` - Title styling (Playfair Display font)
+- `.heading-sub-text` - Subtitle styling
+- `.heading-text` - Text content styling
+- `.heading-shop-all` - Shop all link styling
+- Alignment classes: `.start`, `.center`, `.end` (desktop), `.start-mb`, `.center-mb`, `.end-mb` (mobile)
+
+### Main CTA Styles
+
+Styles are defined in `custom_global.css`:
+
+- `.main-cta` - Base button/link styling
+- Variants: `.accent`, `.dark`, `.v2`, `.v2-dark`
+- States: `:hover`, `.soldout`
+- Special IDs: `#inquire-btn`, `#add-to-cart-button`
+
+### Announcement Styles
+
+Styles are defined in `custom_global.css`:
+
+- `.announcement` - Main wrapper
+- `.announcement__wrapper` - Grid layout container
+- `.announcement__prepend` - Desktop prepend text
+- `.announcement__text` - Main text content
+- `.announcement__timer` - Timer container
+
+## JavaScript Functionality
+
+### Scroll to Product
+
+The `.ScrollToProduct` class triggers scroll functionality defined in `custom_sitewide.js`:
+
+```javascript
+$(".ScrollToProduct").on("click", function (e) {
+  e.preventDefault();
+  const offsetTop = $("#product-main").offset().top - 160;
+  $("html, body").animate(
+    {
+      scrollTop: offsetTop
+    },
+    600
+  );
+});
+```
+
+### Heading Timer
+
+The `.heading-timer` class initializes timer functionality from `custom_sitewide.js`:
+
+- Reads data attributes: `data-timer-type`, `data-time`, `data-timer-date`, `data-timer-timezone`, `data-timer-format`, `data-timer-labels`
+- Supports countdown and countdown_to_date modes
+- Updates `.timer` element content
+
+## Best Practices
+
+1. **Always wrap in conditionals** when the snippet might not render anything
+2. **Use descriptive parameter names** in kebab-case for multi-word parameters
+3. **Provide default values** using the `default` filter
+4. **Check for blank values** before rendering content
+5. **Use `{% liquid %}` blocks** for multiple variable assignments
+6. **Document parameters** in structured comment blocks
+7. **Support multiple rendering modes** when appropriate (scroll, atc, link)
+8. **Use data attributes** for JavaScript functionality
+9. **Pass parameters through** to nested snippets
+10. **Use custom HTML elements** for semantic structure
+11. **Access global settings** when needed via `settings` object
+12. **Support class variants** through parameter concatenation
+13. **Use inline styles** for dynamic color/background values
+14. **Iterate over blocks** when passed as parameters
+15. **Use case statements** for multiple conditional branches
+
+## Snippet Dependencies
+
+### heading.liquid
+
+- **Nested snippets**: `tp-ratings`, `trustpilot-widget`, `responsive-image`, `heading-timer`
+- **CSS**: `custom_global.css` (`.heading-*` classes)
+- **JS**: `custom_sitewide.js` (timer functionality)
+
+### main-cta.liquid
+
+- **Nested snippets**: `icon-arrow-right`, `responsive-image`
+- **CSS**: `custom_global.css` (`.main-cta` classes)
+- **JS**: `custom_sitewide.js` (`.ScrollToProduct` functionality)
+
+### announcement.liquid
+
+- **Nested snippets**: `heading-timer`
+- **CSS**: `custom_global.css` (`.announcement-*` classes)
+- **JS**: `custom_sitewide.js` (timer functionality)
+
+### tp-ratings.liquid
+
+- **Nested snippets**: `responsive-image`
+- **CSS**: `custom_global.css` (`.tp-ratings` classes)
+
+### heading-timer.liquid
+
+- **CSS**: `custom_global.css` (`.heading-timer` class)
+- **JS**: `custom_sitewide.js` (timer tick functionality)
+
+## Schema Integration
+
+When documenting schema settings for snippets, include:
+
+1. **Header** for grouping
+2. **Checkbox** for enabling/disabling
+3. **Text/richtext** for content
+4. **Select** for options
+5. **Color** for styling
+6. **URL** for links
+7. **Image picker** for images
+8. **Visible_if** for conditional settings
+
+Example schema structure:
+
+```json
+{
+  "type": "header",
+  "content": "Heading"
+}, {
+  "type": "checkbox",
+  "id": "heading",
+  "label": "Display Heading",
+  "default": true
+}, {
+  "type": "text",
+  "id": "heading_title",
+  "label": "Heading Title",
+  "visible_if": "{{ section.settings.heading }}"
+}
+```

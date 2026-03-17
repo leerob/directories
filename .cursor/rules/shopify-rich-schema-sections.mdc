@@ -1,0 +1,760 @@
+---
+description: Conventions and patterns for rich shopify schema sections
+alwaysApply: false
+---
+
+# Rich Shopify Schema Sections Conventions
+
+This document outlines the conventions and patterns used across rich Shopify section components, including `rich-flex.liquid`, `faq-split.liquid`, `cards-split.liquid`, `lp-hero.liquid`, `tp-reviews.liquid`, and `video-reviews.liquid`.
+
+## Liquid Variable Assignments
+
+### Section Settings Shorthand
+
+Always assign section settings to a shorthand variable at the top of the file:
+
+```liquid
+{% assign ss = section.settings %}
+```
+
+### Section Selector Variable
+
+Create a section selector variable for CSS scoping:
+
+```liquid
+{% assign sc = '#shopify-section-' | append: section.id %}
+```
+
+### Block Settings Shorthand
+
+When iterating over blocks, assign block settings to a shorthand variable:
+
+```liquid
+{% for block in section.blocks %}
+  {% assign bs = block.settings %}
+  <!-- Use bs instead of block.settings -->
+{% endfor %}
+```
+
+### Block Filtering by Type
+
+Filter blocks by type using the `where` filter. Use `first` to get a single block, or iterate over the filtered array:
+
+```liquid
+{% liquid
+  assign faqs = section.blocks | where: 'type', 'faq'
+  assign heading_timer = section.blocks | where: 'type', 'heading_timer' | first
+  assign videos = section.blocks | where: 'type', 'video-review'
+  assign heading_blocks = section.blocks | where: 'type', 'heading-block'
+%}
+```
+
+### Default Fallbacks
+
+Use the `default` filter for fallback values:
+
+```liquid
+{% assign image_mb = ss.image_mb | default: ss.image %}
+{% assign bg_image_mb = ss.bg_image_mb | default: ss.bg_image %}
+```
+
+## HTML Structure
+
+### Container Element
+
+Use the custom `<container>` element as the root wrapper:
+
+```liquid
+<container class="rich-flex scroll-trigger animate--slide-in">
+  <!-- Content -->
+</container>
+```
+
+Alternatively, use a regular `<div>` when container isn't needed:
+
+```liquid
+<div class="faq-split scroll-trigger animate--slide-in" style="background-color: {{ ss.bg_color }};">
+  <!-- Content -->
+</div>
+```
+
+### Custom HTML Elements
+
+Use custom semantic HTML elements for layout:
+
+- `<flex>` - Flexbox container with horizontal layout
+- `<flex-col>` - Flexbox container with column layout
+- `<flex-center>` - Centered flexbox container
+- `<point>` - Point/icon with text layout
+- `<container>` - Max-width container wrapper
+
+```liquid
+<flex class="cards-split__wrapper">
+  <flex-col class="cards-split__content">
+    <flex-col class="cards-split__cards">
+      <!-- Cards -->
+    </flex-col>
+  </flex-col>
+  <flex-center class="cards-split__image">
+    <!-- Image -->
+  </flex-center>
+</flex>
+```
+
+### BEM Naming Convention
+
+Follow BEM (Block Element Modifier) naming:
+
+- **Block**: `rich-flex` (component name)
+- **Element**: `rich-flex__cards`, `rich-flex__card`, `rich-flex__card-title`
+- **Modifier**: Use `--` prefix if needed (e.g., `rich-flex--variant`)
+
+### Conditional Rendering
+
+Always check for blank values before rendering:
+
+```liquid
+{% if bs.subtitle != blank %}
+  <div class="rich-flex__card-subtitle">{{ bs.subtitle }}</div>
+{% endif %}
+```
+
+### Snippet Rendering
+
+Use `{% render %}` tag for reusable snippets, passing all necessary parameters:
+
+```liquid
+{% render 'heading'
+  heading: true,
+  h1: ss.heading_h1,
+  title: ss.heading_title,
+  align: ss.heading_align,
+  sub-text: ss.heading_sub_text,
+  text: ss.heading_text,
+  ratings: ss.heading_ratings,
+  ratings_stars: ss.heading_ratings_stars,
+  ratings_logo: ss.heading_ratings_logo,
+  ratings_text: ss.heading_ratings_text,
+  shop-all: ss.heading_shop_all
+%}
+```
+
+## CSS Styling
+
+### Scoped Styles
+
+Use `{% style %}` tag for section-specific styles that reference settings:
+
+```liquid
+{% style %}
+  {{ sc }} {
+    background-color: {{ ss.bg_color }};
+  }
+  {{ sc }} .rich-flex__card {
+    --accent-color: {{ ss.accent_color }};
+    background-color: {{ ss.card_bg_color }};
+  }
+{% endstyle %}
+```
+
+### CSS Variables
+
+Define CSS variables in the style tag for dynamic values:
+
+```liquid
+{{ sc }} .rich-flex__card {
+  --accent-color: {{ ss.accent_color }};
+}
+```
+
+Then reference in global CSS:
+
+```css
+.rich-flex__card-spec-title strong {
+  color: var(--accent-color, #000);
+}
+```
+
+### Inline Styles
+
+Use inline styles for dynamic block-level values:
+
+```liquid
+<div class="rich-flex__card-progress" style="background-color: {{ bs.progress_bg_color }} 50%;">
+  <div class="rich-flex__card-progress-bar" style="width: {{ bs.progress_num }}%; background-color: {{ bs.progress_color }};">
+    {{ bs.progress_num }}% {{ bs.progress_text }}
+  </div>
+</div>
+```
+
+### Conditional Style Tags
+
+Use `<style>` tag (not `{% style %}`) for conditional responsive styles:
+
+```liquid
+{% if ss.content_first or ss.content_first_mb %}
+  <style>
+    {% if ss.content_first_mb %}
+      @media(max-width: 768px) {
+        {{sc}} .faq-split__content {
+          order: -1;
+        }
+      }
+    {% endif %}
+    {% if ss.content_first %}
+      @media(min-width: 768px) {
+        {{sc}} .faq-split__content {
+          order: -1;
+        }
+      }
+    {% endif %}
+  </style>
+{% endif %}
+```
+
+### Complex Style Logic
+
+Use Liquid logic within style tags for calculations:
+
+```liquid
+<style>
+  {{sc}} .lp-hero__card {
+    {% assign opacity = ss.card_bg_opacity | divided_by: 100.0 %}
+    background-color: {{ ss.card_bg_color | color_modify: 'alpha', opacity }};
+  }
+  {{sc}} .lp-hero__title {
+    max-width: {{ ss.title_max_width }}px;
+    font-family: {{ ss.title_font }};
+    font-weight: {{ ss.title_font_weight }};
+  }
+  @media (min-width: 1024px) {
+    {{sc}} .lp-hero {
+      height: {{ ss.background_height }}px;
+    }
+  }
+</style>
+```
+
+## Schema Structure
+
+### Section Name
+
+Use descriptive, capitalized names:
+
+```json
+{
+  "name": "Rich Flex Blocks"
+}
+```
+
+### Settings Organization
+
+Group related settings with headers:
+
+```json
+{
+  "type": "header",
+  "content": "Heading"
+}
+```
+
+### Setting Types
+
+#### Color Pickers
+
+Always provide defaults:
+
+```json
+{
+  "type": "color",
+  "id": "bg_color",
+  "label": "Background Color",
+  "default": "#ffffff"
+}
+```
+
+#### Checkboxes
+
+Use for boolean toggles:
+
+```json
+{
+  "type": "checkbox",
+  "id": "heading_h1",
+  "label": "Heading H1"
+}
+```
+
+#### Select Dropdowns
+
+Provide clear, short labels:
+
+```json
+{
+  "type": "select",
+  "id": "heading_align",
+  "label": "Heading Alignment",
+  "default": "center",
+  "options": [
+    { "value": "start", "label": "Start" },
+    { "value": "center", "label": "Center" },
+    { "value": "end", "label": "End" }
+  ]
+}
+```
+
+#### Range Inputs
+
+Specify min, max, step, and default:
+
+```json
+{
+  "type": "range",
+  "id": "progress_num",
+  "label": "Progress Percentage",
+  "default": 80,
+  "min": 0,
+  "max": 100,
+  "step": 1
+}
+```
+
+#### Rich Text
+
+Use for formatted text with info hints:
+
+```json
+{
+  "type": "richtext",
+  "id": "spec-title",
+  "label": "Specification Title",
+  "info": "Make the title bold to emphasize it with accent color",
+  "default": "<p>Buy jewellery to <strong>appreciate</strong></p>"
+}
+```
+
+#### Textarea
+
+Use for longer text content without formatting:
+
+```json
+{
+  "type": "textarea",
+  "id": "description",
+  "label": "Description",
+  "default": "Default description text"
+}
+```
+
+#### Video
+
+Use for video picker:
+
+```json
+{
+  "type": "video",
+  "id": "video",
+  "label": "Background Video (Optional)"
+}
+```
+
+#### Image Picker
+
+Use for image selection:
+
+```json
+{
+  "type": "image_picker",
+  "id": "image",
+  "label": "Image"
+}
+```
+
+#### URL
+
+Use for link inputs:
+
+```json
+{
+  "type": "url",
+  "id": "cta_url",
+  "label": "CTA Link"
+}
+```
+
+#### Collection
+
+Use for collection picker:
+
+```json
+{
+  "type": "collection",
+  "id": "heading_shop_all",
+  "label": "Shop All"
+}
+```
+
+### Conditional Settings (Visible If)
+
+Use `visible_if` to show settings conditionally based on other settings:
+
+```json
+{
+  "type": "text",
+  "id": "heading_title",
+  "label": "Heading Title",
+  "visible_if": "{{ section.settings.heading }}"
+}
+```
+
+Chain multiple conditions:
+
+```json
+{
+  "type": "select",
+  "id": "heading_ratings_type",
+  "label": "Heading Ratings Type",
+  "options": [
+    { "value": "custom", "label": "Custom" },
+    { "value": "micro-combo", "label": "Micro Combo | Widget" }
+  ],
+  "visible_if": "{{ section.settings.heading_ratings }}"
+}
+```
+
+### Blocks Configuration
+
+#### Block Type and Name
+
+Use descriptive names:
+
+```json
+{
+  "type": "card",
+  "name": "Card",
+  "limit": 3
+}
+```
+
+#### Multiple Block Types
+
+Sections can have multiple block types:
+
+```json
+{
+  "blocks": [
+    {
+      "type": "video-review",
+      "name": "Video Review",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        }
+      ]
+    },
+    {
+      "type": "heading-block",
+      "name": "Heading-block",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    }
+  ]
+}
+```
+
+#### Block Settings
+
+Follow same patterns as section settings, organized logically.
+
+### Presets
+
+Always include a preset. Optionally include default settings and blocks:
+
+```json
+{
+  "presets": [
+    {
+      "name": "Rich Flex Blocks",
+      "category": "Rich"
+    }
+  ]
+}
+```
+
+With default settings and blocks:
+
+```json
+{
+  "presets": [
+    {
+      "name": "FAQ Split",
+      "settings": {
+        "bg_color": "#f7f7f7",
+        "heading": true,
+        "heading_title": "FREQUENTLY ASKED QUESTIONS",
+        "image": "shopify://shop_images/Faq.png",
+        "cta_type": "dark",
+        "cta_url": "shopify://collections/all-products"
+      },
+      "blocks": [
+        {
+          "type": "faq",
+          "settings": {
+            "title": "Is pure 24K and 999 Platinum too soft?",
+            "text": "<p>Answer text here</p>",
+            "icon": "shopify://shop_images/weui_arrow-filled.png"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+## Block Iteration Patterns
+
+### Basic Loop
+
+Iterate over blocks and assign settings:
+
+```liquid
+{% for block in section.blocks %}
+  {% assign bs = block.settings %}
+  <div class="rich-flex__card">
+    <!-- Block content -->
+  </div>
+{% endfor %}
+```
+
+### Conditional Block Features
+
+Check for feature flags before rendering:
+
+```liquid
+{% if bs.progress %}
+  <div class="rich-flex__card-progress">
+    <!-- Progress bar content -->
+  </div>
+{% endif %}
+```
+
+### Filtered Block Iteration
+
+Iterate over filtered blocks:
+
+```liquid
+{% assign faqs = section.blocks | where: 'type', 'faq' %}
+{% if faqs.size > 0 %}
+  <ul class="faq-split__faqs accordion">
+    {% for faq in faqs %}
+      <li class="faq-split__faq accordion-item">
+        {{ faq.settings.title }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+```
+
+### Multiple Block Type Handling
+
+Handle different block types separately:
+
+```liquid
+{% assign videos = section.blocks | where: 'type', 'video-review' %}
+{% assign heading_blocks = section.blocks | where: 'type', 'heading-block' %}
+
+{% if heading_blocks.size > 0 %}
+  <div class="video-reviews__heading-blocks">
+    {% for block in heading_blocks %}
+      <div class="video-reviews__heading-block">
+        <h4>{{ block.settings.title }}</h4>
+        <p>{{ block.settings.text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<div class="video-reviews__wrapper">
+  {% for video in videos %}
+    <div class="video-reviews__video">
+      <!-- Video content -->
+    </div>
+  {% endfor %}
+</div>
+```
+
+### Image Rendering
+
+Use the `responsive-image` snippet for single images:
+
+```liquid
+{% if bs.icon %}
+  <div class="rich-flex__icon">
+    {% render 'responsive-image', image: bs.icon, image_width: 200, custom_alt: "Icon", class: "icon-class" %}
+  </div>
+{% endif %}
+```
+
+### Responsive Picture
+
+Use the `responsive-picture` snippet for images with mobile/desktop variants:
+
+```liquid
+{% assign image_mb = ss.image_mb | default: ss.image %}
+{% render 'responsive-picture', image: ss.image, image_mb: image_mb, image_width: 840, breakpoint_set: 'S', eager: ss.bg_preload %}
+```
+
+Parameters:
+
+- `image`: Desktop image
+- `image_mb`: Mobile image (falls back to desktop if not provided)
+- `image_width`: Max width for responsive sizing
+- `breakpoint_set`: Breakpoint set ('S' for small, 'L' for large)
+- `eager`: Boolean for eager loading
+
+### Video Rendering
+
+Use the `video_tag` filter for video elements:
+
+```liquid
+{% if ss.video %}
+  {% if ss.bg_preload %}
+    {% assign video_preload = 'full' %}
+  {% else %}
+    {% assign video_preload = 'none' %}
+  {% endif %}
+  <div class="lp-hero__video">
+    {{ ss.video | video_tag: controls: false, autoplay: true, loop: true, muted: true, playsinline: true, preload: video_preload }}
+  </div>
+{% endif %}
+```
+
+For video blocks, capture and process the video tag:
+
+```liquid
+{%- capture video_tag -%}
+  {{ video.settings.video | video_tag: autoplay: false, loop: false, muted: true, controls: false }}
+{%- endcapture -%}
+{{ video_tag | replace: '_small', '' }}
+```
+
+## CTA Rendering
+
+Wrap CTAs in a wrapper div or use custom elements:
+
+```liquid
+{% if ss.cta %}
+  <div class="rich-flex__cta-wrapper">
+    {% render 'main-cta'
+      scroll: ss.cta_scroll,
+      type: ss.cta_type,
+      link: ss.cta_url,
+      text: ss.cta_text
+    %}
+  </div>
+{% endif %}
+```
+
+Or without wrapper when using custom elements:
+
+```liquid
+{% if ss.cta %}
+  {% render 'main-cta' scroll: ss.cta_scroll, type: ss.cta_type, link: ss.cta_url, text: ss.cta_text %}
+{% endif %}
+```
+
+## Conditional Classes
+
+Add conditional classes based on settings:
+
+```liquid
+<div class="tp-reviews__cards {{ ss.slick_layout }}{% if ss.desktop_carousel %} desktop-carousel{% endif %}">
+  <!-- Content -->
+</div>
+```
+
+## CSS Patterns (from Global Stylesheet)
+
+### Component Structure
+
+- Use BEM naming consistently
+- Mobile-first responsive design
+- Use CSS variables for dynamic colors
+- Define variables in `{% style %}` tag, reference in global CSS
+
+### Responsive Breakpoints
+
+Follow standard breakpoints:
+
+- Mobile: default (no media query)
+- Tablet: `@media screen and (min-width: 768px)`
+- Desktop: `@media screen and (min-width: 1024px)`
+- Large Desktop: `@media screen and (min-width: 1280px)`
+
+### Card Layout
+
+- Mobile: Stack vertically (`flex-direction: column`)
+- Desktop: Horizontal layout (`flex-direction: row`)
+
+```css
+.rich-flex__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+@media screen and (min-width: 1024px) {
+  .rich-flex__cards {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: 24px;
+  }
+  .rich-flex__card {
+    flex: 1;
+  }
+}
+```
+
+## Icon Rendering
+
+Use icon snippets for play/pause buttons and other icons:
+
+```liquid
+<div class="video-reviews__video-button play">
+  {% render 'icon-play' %}Play
+</div>
+<div class="video-reviews__video-button pause">
+  {% render 'icon-pause' %}Pause
+</div>
+```
+
+## Best Practices
+
+1. **Always check for blank values** before rendering content
+2. **Use shorthand variables** (`ss`, `bs`) for cleaner code
+3. **Group related settings** with headers in schema
+4. **Provide defaults** for all settings
+5. **Use descriptive labels** in schema (avoid redundancy with type)
+6. **Scope CSS** using section selector variable (`sc`)
+7. **Use CSS variables** for dynamic colors that need to be referenced in global CSS
+8. **Use inline styles** for block-level dynamic values
+9. **Wrap CTAs** in wrapper divs for consistent spacing (when not using custom elements)
+10. **Follow BEM naming** consistently throughout component
+11. **Filter blocks by type** when sections have multiple block types
+12. **Use `default` filter** for fallback values (especially for mobile images)
+13. **Use conditional style tags** (`<style>`) for responsive conditional styles
+14. **Use `visible_if`** in schema for progressive disclosure of settings
+15. **Include default settings in presets** for better merchant experience
+16. **Use custom HTML elements** (`<flex>`, `<flex-col>`, etc.) for semantic layout
+17. **Check block size** before iterating: `{% if faqs.size > 0 %}`
+18. **Use `responsive-picture`** for images with mobile/desktop variants
+19. **Use `video_tag` filter** with appropriate attributes for video elements

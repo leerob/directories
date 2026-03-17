@@ -1,0 +1,100 @@
+---
+description: REST API design and implementation standards for route handlers
+globs: src/app/api/**/*.ts
+alwaysApply: false
+---
+
+# REST API Best Practices
+
+Follow these standards when adding or editing API routes. Reference: [src/app/api/v1/admin/events/route.ts](src/app/api/v1/admin/events/route.ts)
+
+## URL and Versioning
+
+- Use `/api/v1/` prefix for all routes
+- Resource-based URLs: nouns only, no verbs
+  - Good: `GET /api/v1/admin/programs`, `PATCH /api/v1/admin/messages/[id]`
+  - Bad: `GET /api/get-programs`, `POST /api/admin/update-message`
+
+## HTTP Status Codes
+
+| Status | Use                           |
+| ------ | ----------------------------- |
+| 200    | Success (GET, PATCH, DELETE)  |
+| 201    | Created (POST)                |
+| 401    | Unauthenticated               |
+| 403    | Authenticated but not allowed |
+| 404    | Resource not found            |
+| 422    | Validation error              |
+| 429    | Rate limit exceeded           |
+| 500    | Internal server error         |
+
+## Response Structure
+
+**Success (list):**
+
+```typescript
+return NextResponse.json({
+  data: [...],
+  meta: { page, limit, total, totalPages, hasMore }
+});
+```
+
+**Success (single/create):**
+
+```typescript
+return NextResponse.json({ data: { ... }, meta: {} });
+```
+
+**Error:** Use `Errors` from `@/src/lib/api/errors`:
+
+```typescript
+import { Errors } from "@/src/lib/api/errors";
+
+if (!params) return Errors.validation("Invalid query parameters", [...]);
+if (!isAdmin) return Errors.unauthorized();
+return Errors.tooManyRequests();
+```
+
+## Required Imports and Flow
+
+```typescript
+import { NextRequest, NextResponse } from "next/server";
+import { requireAdminSession } from "@/src/lib/admin/adminAuth";
+import { Errors } from "@/src/lib/api/errors";
+import { rateLimitMiddleware } from "@/src/lib/api/rateLimit";
+
+export async function GET(req: NextRequest) {
+  const { ok: rateOk, remaining } = rateLimitMiddleware(req);
+  if (!rateOk) return Errors.tooManyRequests();
+
+  const admin = await requireAdminSession();
+  if (admin instanceof Response) return admin;
+
+  // Validate query/body, then business logic
+}
+```
+
+Admin routes: always call `requireAdminSession()` and return early if it returns a `Response`. Public routes: apply rate limiting only.
+
+## Pagination, Filtering, Sorting
+
+- List endpoints: support `?page=1&limit=20` (default limit 20, max 100)
+- Filtering: `?search=`, `?programSlug=`, etc. as query params
+- Sorting: `?sort=createdAt&order=asc|desc`
+
+## Input Validation
+
+- Validate all inputs: types, lengths, allowed values
+- Return `Errors.validation(message, details)` with field-level details when invalid
+- Apply length limits (e.g. string max 200, 500) to prevent abuse
+
+## Naming Convention
+
+- Use camelCase for JSON keys consistently
+- Success: `data`, `meta`; Error: `error: { code, message, details? }`
+
+## Security
+
+- Rate limit: use `rateLimitMiddleware(req)` for admin and public routes
+- Admin-only: enforce with `requireAdminSession()` before any data access
+- Cron/webhooks: validate auth header (e.g. `NEXT_PUBLIC_CRON_SECRET`) instead of admin check
