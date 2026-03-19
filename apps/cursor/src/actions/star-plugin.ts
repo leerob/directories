@@ -12,7 +12,7 @@ export const starPluginAction = authActionClient
   })
   .inputSchema(
     z.object({
-      pluginId: z.string().uuid(),
+      pluginId: z.uuid(),
       slug: z.string(),
     }),
   )

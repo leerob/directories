@@ -13,7 +13,7 @@ export const upsertCompanyAction = authActionClient
     z.object({
       id: z.string().optional(),
       name: z.string(),
-      image: z.string().url().nullable(),
+      image: z.url().nullable(),
       slug: z.string().optional(),
       location: z.string().nullable(),
       bio: z.string().nullable(),

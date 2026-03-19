@@ -29,13 +29,17 @@ export const createPluginAction = authActionClient
   })
   .inputSchema(
     z.object({
-      name: z.string().min(2, "Name must be at least 2 characters"),
-      description: z.string().min(10, "Description must be at least 10 characters"),
+      name: z.string().min(2, { error: "Name must be at least 2 characters" }),
+      description: z
+        .string()
+        .min(10, { error: "Description must be at least 10 characters" }),
       logo: z.string().nullable().optional(),
-      repository: z.string().url().nullable().optional(),
-      homepage: z.string().url().nullable().optional(),
+      repository: z.url().nullable().optional(),
+      homepage: z.url().nullable().optional(),
       keywords: z.array(z.string()).optional(),
-      components: z.array(componentSchema).min(1, "At least one component is required"),
+      components: z
+        .array(componentSchema)
+        .min(1, { error: "At least one component is required" }),
     }),
   )
   .action(

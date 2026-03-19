@@ -16,7 +16,7 @@ export const updateMCPListingAction = authActionClient
       company_id: z.string().optional(),
       description: z.string(),
       config: z.record(z.string(), z.any()).nullable(),
-      link: z.string().url(),
+      link: z.url(),
       logo: z.string().optional(),
     }),
   )

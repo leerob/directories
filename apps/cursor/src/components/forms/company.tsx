@@ -26,33 +26,33 @@ const formSchema = z.object({
   name: z
     .string()
     .min(2, {
-      message: "Name must be at least 2 characters.",
+      error: "Name must be at least 2 characters.",
     })
     .max(50, {
-      message: "Name must be less than 50 characters.",
+      error: "Name must be less than 50 characters.",
     }),
   location: z
     .string()
     .max(100, {
-      message: "Location must be less than 100 characters.",
+      error: "Location must be less than 100 characters.",
     })
     .optional(),
   bio: z
     .string()
     .max(500, {
-      message: "Bio must be less than 500 characters.",
+      error: "Bio must be less than 500 characters.",
     })
     .optional(),
   website: z
     .string()
-    .url({ message: "Please enter a valid website URL." })
+    .url({ error: "Please enter a valid website URL." })
     .or(z.literal("")),
   social_x_link: z
     .string()
-    .url({ message: "Please enter a valid X URL." })
+    .url({ error: "Please enter a valid X URL." })
     .or(z.literal("")),
   is_public: z.boolean().optional(),
-  image: z.string().url().nullable(),
+  image: z.url().nullable(),
 });
 
 type CompanyData = {

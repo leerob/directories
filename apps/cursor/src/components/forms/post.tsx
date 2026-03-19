@@ -32,7 +32,7 @@ const formSchema = z.object({
       message: "Content must be less than 500 characters.",
     })
     .optional(),
-  url: z.string().url(),
+  url: z.url(),
 });
 
 export function PostForm({ onSuccess }: { onSuccess: () => void }) {

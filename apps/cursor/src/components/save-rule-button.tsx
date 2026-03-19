@@ -29,7 +29,7 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const SaveRuleSchema = z.object({
-  fileName: z.string().min(1, "File name is required."),
+  fileName: z.string().min(1, { error: "File name is required." }),
 });
 
 type SaveRuleFormData = z.infer<typeof SaveRuleSchema>;

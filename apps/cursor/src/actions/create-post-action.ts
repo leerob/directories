@@ -13,7 +13,7 @@ export const createPostAction = authActionClient
     z.object({
       title: z.string(),
       content: z.string().optional().nullable(),
-      url: z.string().url().nullable(),
+      url: z.url().nullable(),
     }),
   )
   .action(async ({ parsedInput: { title, content, url }, ctx: { userId } }) => {

@@ -97,9 +97,8 @@ function slugify(value: string) {
 
 const autoFormSchema = z.object({
   url: z
-    .string()
-    .url("Please enter a valid URL")
-    .regex(/github\.com/, "Must be a GitHub URL"),
+    .url({ error: "Please enter a valid URL" })
+    .regex(/github\.com/, { error: "Must be a GitHub URL" }),
 });
 
 export function PluginForm() {
