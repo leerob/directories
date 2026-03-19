@@ -4,3 +4,4 @@ node_modules
 .package-lock.json
 .env
 .react-email
+next-env.d.ts
