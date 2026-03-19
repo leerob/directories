@@ -1,4 +1,4 @@
-import { getPendingPlugins } from "@/data/queries";
+import { getDeclinedPlugins, getPendingPlugins } from "@/data/queries";
 import { isAdmin } from "@/utils/admin";
 import { getSession } from "@/utils/supabase/auth";
 import type { Metadata } from "next";
@@ -16,9 +16,10 @@ export default async function AdminPluginsPage() {
     redirect("/");
   }
 
-  const { data: plugins } = await getPendingPlugins({
-    since: "2026-03-16T00:00:00Z",
-  });
+  const [{ data: plugins }, { data: declined }] = await Promise.all([
+    getPendingPlugins({ since: "2026-03-16T00:00:00Z" }),
+    getDeclinedPlugins({ since: "2026-03-16T00:00:00Z" }),
+  ]);
 
   return (
     <div className="min-h-screen px-6 pt-24 md:pt-32 pb-32">
@@ -32,6 +33,17 @@ export default async function AdminPluginsPage() {
         </div>
 
         <PluginReviewList plugins={plugins ?? []} />
+
+        {declined && declined.length > 0 && (
+          <div className="mt-16">
+            <h2 className="mb-1 text-sm font-medium">Declined</h2>
+            <p className="mb-4 text-xs text-muted-foreground">
+              {declined.length} declined{" "}
+              {declined.length === 1 ? "plugin" : "plugins"}
+            </p>
+            <PluginReviewList plugins={declined} variant="declined" />
+          </div>
+        )}
       </div>
     </div>
   );

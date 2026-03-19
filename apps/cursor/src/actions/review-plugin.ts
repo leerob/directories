@@ -16,7 +16,7 @@ export const approvePluginAction = adminActionClient
 
     const { error } = await supabase
       .from("plugins")
-      .update({ active: true })
+      .update({ active: true, status: "approved" })
       .eq("id", pluginId);
 
     if (error) {
@@ -70,7 +70,7 @@ export const declinePluginAction = adminActionClient
 
     const { error } = await supabase
       .from("plugins")
-      .delete()
+      .update({ active: false, status: "declined" })
       .eq("id", pluginId);
 
     if (error) {

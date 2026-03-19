@@ -12,7 +12,10 @@ import { useAction } from "next-safe-action/hooks";
 import { useState } from "react";
 import { toast } from "sonner";
 
-function PluginReviewCard({ plugin }: { plugin: PluginRow }) {
+function PluginReviewCard({
+  plugin,
+  variant = "pending",
+}: { plugin: PluginRow; variant?: "pending" | "declined" }) {
   const [dismissed, setDismissed] = useState(false);
 
   const { execute: approve, isExecuting: isApproving } = useAction(
@@ -32,7 +35,7 @@ function PluginReviewCard({ plugin }: { plugin: PluginRow }) {
     declinePluginAction,
     {
       onSuccess: () => {
-        toast.success(`"${plugin.name}" declined and removed.`);
+        toast.success(`"${plugin.name}" declined.`);
         setDismissed(true);
       },
       onError: ({ error }) => {
@@ -50,7 +53,7 @@ function PluginReviewCard({ plugin }: { plugin: PluginRow }) {
   ];
 
   return (
-    <div className="rounded-lg border border-border bg-card p-5 shadow-cursor">
+    <div className={`rounded-lg border p-5 shadow-cursor ${variant === "declined" ? "border-border/50 bg-card/50 opacity-75" : "border-border bg-card"}`}>
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0 flex-1">
           <Link
@@ -104,19 +107,21 @@ function PluginReviewCard({ plugin }: { plugin: PluginRow }) {
         </div>
 
         <div className="flex shrink-0 items-center gap-2">
-          <Button
-            variant="outline"
-            size="sm"
-            disabled={busy}
-            onClick={() => decline({ pluginId: plugin.id })}
-          >
-            {isDeclining ? (
-              <Loader2 className="size-3.5 animate-spin" />
-            ) : (
-              <Trash2 className="size-3.5" />
-            )}
-            <span className="ml-1.5">Decline</span>
-          </Button>
+          {variant === "pending" && (
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={busy}
+              onClick={() => decline({ pluginId: plugin.id })}
+            >
+              {isDeclining ? (
+                <Loader2 className="size-3.5 animate-spin" />
+              ) : (
+                <Trash2 className="size-3.5" />
+              )}
+              <span className="ml-1.5">Decline</span>
+            </Button>
+          )}
           <Button
             size="sm"
             disabled={busy}
@@ -135,12 +140,15 @@ function PluginReviewCard({ plugin }: { plugin: PluginRow }) {
   );
 }
 
-export function PluginReviewList({ plugins }: { plugins: PluginRow[] }) {
+export function PluginReviewList({
+  plugins,
+  variant = "pending",
+}: { plugins: PluginRow[]; variant?: "pending" | "declined" }) {
   if (plugins.length === 0) {
     return (
       <div className="rounded-lg border border-border bg-card p-10 text-center shadow-cursor">
         <p className="text-sm text-muted-foreground">
-          No pending plugins to review.
+          No {variant} plugins to review.
         </p>
       </div>
     );
@@ -149,7 +157,7 @@ export function PluginReviewList({ plugins }: { plugins: PluginRow[] }) {
   return (
     <div className="space-y-3">
       {plugins.map((plugin) => (
-        <PluginReviewCard key={plugin.id} plugin={plugin} />
+        <PluginReviewCard key={plugin.id} plugin={plugin} variant={variant} />
       ))}
     </div>
   );
