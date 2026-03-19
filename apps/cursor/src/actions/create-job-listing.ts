@@ -10,7 +10,7 @@ export const createJobListingAction = authActionClient
   .metadata({
     actionName: "create-job-listing",
   })
-  .schema(
+  .inputSchema(
     z.object({
       title: z.string(),
       company_id: z.string(),

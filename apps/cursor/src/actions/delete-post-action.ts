@@ -7,7 +7,7 @@ export const deletePostAction = authActionClient
   .metadata({
     actionName: "delete-post",
   })
-  .schema(
+  .inputSchema(
     z.object({
       postId: z.number(),
     }),

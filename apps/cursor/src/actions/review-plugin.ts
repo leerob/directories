@@ -10,7 +10,7 @@ import { ActionError, adminActionClient } from "./safe-action";
 
 export const approvePluginAction = adminActionClient
   .metadata({ actionName: "approve-plugin" })
-  .schema(z.object({ pluginId: z.string().uuid() }))
+  .inputSchema(z.object({ pluginId: z.string().uuid() }))
   .action(async ({ parsedInput: { pluginId } }) => {
     const supabase = await createClient();
 
@@ -60,7 +60,7 @@ export const approvePluginAction = adminActionClient
 
 export const declinePluginAction = adminActionClient
   .metadata({ actionName: "decline-plugin" })
-  .schema(z.object({ pluginId: z.string().uuid() }))
+  .inputSchema(z.object({ pluginId: z.string().uuid() }))
   .action(async ({ parsedInput: { pluginId } }) => {
     const supabase = await createClient();
 

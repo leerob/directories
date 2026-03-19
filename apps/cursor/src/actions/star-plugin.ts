@@ -10,7 +10,7 @@ export const starPluginAction = authActionClient
   .metadata({
     actionName: "star-plugin",
   })
-  .schema(
+  .inputSchema(
     z.object({
       pluginId: z.string().uuid(),
       slug: z.string(),

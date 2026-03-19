@@ -9,7 +9,7 @@ export const createPostAction = authActionClient
   .metadata({
     actionName: "create-post",
   })
-  .schema(
+  .inputSchema(
     z.object({
       title: z.string(),
       content: z.string().optional().nullable(),

@@ -26,7 +26,7 @@ export const updatePluginAction = authActionClient
   .metadata({
     actionName: "update-plugin",
   })
-  .schema(
+  .inputSchema(
     z.object({
       id: z.string().uuid(),
       name: z.string().min(2, "Name must be at least 2 characters"),

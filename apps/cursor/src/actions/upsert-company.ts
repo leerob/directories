@@ -9,7 +9,7 @@ export const upsertCompanyAction = authActionClient
   .metadata({
     actionName: "upsert-company",
   })
-  .schema(
+  .inputSchema(
     z.object({
       id: z.string().optional(),
       name: z.string(),

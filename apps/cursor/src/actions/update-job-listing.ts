@@ -9,7 +9,7 @@ export const updateJobListingAction = authActionClient
   .metadata({
     actionName: "update-job-listing",
   })
-  .schema(
+  .inputSchema(
     z.object({
       id: z.number(),
       title: z.string(),

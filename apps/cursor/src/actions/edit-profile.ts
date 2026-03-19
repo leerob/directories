@@ -9,7 +9,7 @@ export const editProfileAction = authActionClient
   .metadata({
     actionName: "edit-profile",
   })
-  .schema(
+  .inputSchema(
     z.object({
       name: z.string(),
       slug: z.string().nullable(),

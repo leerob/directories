@@ -9,7 +9,7 @@ export const toggleMCPListingAction = authActionClient
   .metadata({
     actionName: "toggle-mcp-listing",
   })
-  .schema(
+  .inputSchema(
     z.object({
       id: z.string(),
       active: z.boolean(),

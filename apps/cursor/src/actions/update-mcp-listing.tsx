@@ -9,7 +9,7 @@ export const updateMCPListingAction = authActionClient
   .metadata({
     actionName: "update-mcp-listing",
   })
-  .schema(
+  .inputSchema(
     z.object({
       id: z.string(),
       name: z.string(),
