@@ -319,8 +319,8 @@ function RulesSection({
 function resolveMcpConfig(
   content: string | null,
   meta: Record<string, unknown>,
+  componentName: string,
 ): { name: string; config: Record<string, unknown> } | null {
-  // Try content first, then metadata.config
   let parsed: Record<string, unknown> | null = null;
 
   if (content) {
@@ -333,22 +333,35 @@ function resolveMcpConfig(
     const cfg = (meta?.config as Record<string, unknown>) ?? {};
     if (cfg.mcpServers) {
       parsed = { mcpServers: cfg.mcpServers } as Record<string, unknown>;
+    } else if (cfg.command) {
+      parsed = cfg;
     }
   }
 
-  if (!parsed) return null;
+  if (parsed) {
+    const servers = parsed.mcpServers as Record<string, unknown> | undefined;
+    if (servers && typeof servers === "object") {
+      const keys = Object.keys(servers);
+      if (keys.length > 0) {
+        return { name: keys[0], config: servers[keys[0]] as Record<string, unknown> };
+      }
+    }
 
-  // Unwrap mcpServers wrapper if present
-  const servers = parsed.mcpServers as Record<string, unknown> | undefined;
-  if (servers && typeof servers === "object") {
-    const keys = Object.keys(servers);
-    if (keys.length > 0) {
-      return { name: keys[0], config: servers[keys[0]] as Record<string, unknown> };
+    if (parsed.command) {
+      return { name: componentName, config: parsed };
     }
   }
 
-  // Content is already a raw config (no mcpServers wrapper)
-  return { name: (meta?.name as string) ?? "server", config: parsed };
+  if (meta?.command) {
+    const config: Record<string, unknown> = { command: meta.command };
+    if (meta.args) config.args = meta.args;
+    if (meta.env && typeof meta.env === "object" && Object.keys(meta.env as object).length > 0) {
+      config.env = meta.env;
+    }
+    return { name: componentName, config };
+  }
+
+  return null;
 }
 
 function McpSection({
@@ -367,7 +380,7 @@ function McpSection({
 
         let installLink = mcpLink ?? null;
         if (!installLink) {
-          const resolved = resolveMcpConfig(mcp.content, meta);
+          const resolved = resolveMcpConfig(mcp.content, meta, mcp.name);
           if (resolved) {
             installLink = buildMCPInstallDeepLink(resolved.name, JSON.stringify(resolved.config));
           }
