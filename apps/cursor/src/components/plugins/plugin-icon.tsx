@@ -1,8 +1,22 @@
-export function PluginIconFallback({ size = 36 }: { size?: number }) {
+import { cn } from "@/lib/utils";
+
+export function PluginIconFallback({
+  size = 36,
+  bordered = true,
+  transparent = false,
+}: {
+  size?: number;
+  bordered?: boolean;
+  transparent?: boolean;
+}) {
   const iconSize = Math.round(size * 0.44);
   return (
     <div
-      className="flex items-center justify-center rounded-[4px] border border-border bg-muted/50"
+      className={cn(
+        "flex items-center justify-center rounded-[4px]",
+        !transparent && "bg-muted/50",
+        bordered && "border border-border",
+      )}
       style={{ width: size, height: size }}
     >
       <svg

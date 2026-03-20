@@ -2,6 +2,8 @@
 
 import type { PluginCardData } from "@/components/plugins/plugin-card";
 import { PluginCard } from "@/components/plugins/plugin-card";
+import { CollectionCard } from "@/components/collections/collection-card";
+import type { CollectionSummary } from "@/data/collections";
 import Fuse from "fuse.js";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
@@ -33,6 +35,7 @@ export function Startpage({
   members,
   popularPosts,
   forumPosts,
+  collections,
 }: {
   featuredPlugins: PluginCardData[];
   popularPlugins: PluginCardData[];
@@ -44,6 +47,7 @@ export function Startpage({
   members: unknown[] | null;
   popularPosts: unknown[] | null;
   forumPosts: ForumPostType[];
+  collections: CollectionSummary[];
 }) {
   const [search] = useQueryState("q", { defaultValue: "" });
 
@@ -222,6 +226,49 @@ export function Startpage({
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {popularPlugins.map((plugin) => (
                   <PluginCard key={plugin.slug} plugin={plugin} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {collections.length > 0 && !isSearching && (
+            <div className="mb-14">
+              <div className="mb-5 flex items-center justify-between">
+                <h3 className="section-eyebrow">Popular Collections</h3>
+                <Link
+                  href="/collections"
+                  className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+                >
+                  <span>View all</span>
+                  <svg
+                    width="12"
+                    height="13"
+                    viewBox="0 0 12 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <mask
+                      id="mask0_106_981"
+                      maskUnits="userSpaceOnUse"
+                      x="0"
+                      y="0"
+                      width="12"
+                      height="13"
+                    >
+                      <rect y="0.5" width="12" height="12" fill="#D9D9D9" />
+                    </mask>
+                    <g mask="url(#mask0_106_981)">
+                      <path
+                        d="M3.2 9.5L2.5 8.8L7.3 4H3V3H9V9H8V4.7L3.2 9.5Z"
+                        fill="currentColor"
+                      />
+                    </g>
+                  </svg>
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {collections.slice(0, 4).map((collection) => (
+                  <CollectionCard key={collection.id} collection={collection} />
                 ))}
               </div>
             </div>

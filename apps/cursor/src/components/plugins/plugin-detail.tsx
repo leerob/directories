@@ -13,6 +13,31 @@ import Link from "next/link";
 import { useAction } from "next-safe-action/hooks";
 import { useCallback, useEffect, useState } from "react";
 import { StarButton } from "./star-button";
+import { AddToCollectionButton } from "@/components/collections/add-to-collection-button";
+
+type PluginInfo = {
+  id: string;
+  name: string;
+  slug: string;
+  logo: string | null;
+};
+
+function buildCollectionItem(
+  component: NonNullable<PluginRow["plugin_components"]>[number],
+  plugin: PluginInfo,
+) {
+  return {
+    entity_type: component.type as "rule" | "mcp_server" | "skill" | "plugin",
+    entity_id: component.id,
+    plugin_id: plugin.id,
+    title: component.name,
+    slug: component.slug,
+    description: component.description,
+    plugin_name: plugin.name,
+    plugin_slug: plugin.slug,
+    plugin_logo: plugin.logo,
+  };
+}
 
 function isValidImageUrl(url: string | null): url is string {
   if (!url) return false;
@@ -87,6 +112,13 @@ export function PluginDetailView({
       }
     });
   }, [plugin.owner_id]);
+
+  const pluginInfo: PluginInfo = {
+    id: plugin.id,
+    name: plugin.name,
+    slug: plugin.slug,
+    logo: plugin.logo,
+  };
 
   const { execute: trackInstall } = useAction(trackInstallAction);
 
@@ -232,15 +264,16 @@ export function PluginDetailView({
             expandedRule={expandedRule}
             setExpandedRule={setExpandedRule}
             onInstall={handleInstall}
+            plugin={pluginInfo}
           />
         )}
 
         {activeTab === "mcp_server" && mcps.length > 0 && (
-          <McpSection mcps={mcps} onInstall={handleInstall} />
+          <McpSection mcps={mcps} onInstall={handleInstall} plugin={pluginInfo} />
         )}
 
         {activeTab !== "rule" && activeTab !== "mcp_server" && activeComponents.length > 0 && (
-          <GenericComponentSection components={activeComponents} type={activeTab} onInstall={handleInstall} />
+          <GenericComponentSection components={activeComponents} type={activeTab} onInstall={handleInstall} plugin={pluginInfo} />
         )}
       </div>
     </div>
@@ -252,11 +285,13 @@ function RulesSection({
   expandedRule,
   setExpandedRule,
   onInstall,
+  plugin,
 }: {
   rules: NonNullable<PluginRow["plugin_components"]>;
   expandedRule: string | null;
   setExpandedRule: (slug: string | null) => void;
   onInstall: () => void;
+  plugin: PluginInfo;
 }) {
   return (
     <div>
@@ -287,16 +322,21 @@ function RulesSection({
                     {rule.name}
                   </span>
                 </button>
-                <a
-                  href={buildRuleDeepLink(rule.slug, rule.content ?? "")}
-                  className="shrink-0 rounded-md border border-border px-2 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onInstall();
-                  }}
-                >
-                  Add to Cursor
-                </a>
+                <div className="flex items-center gap-2 shrink-0">
+                  <AddToCollectionButton
+                    item={buildCollectionItem(rule, plugin)}
+                  />
+                  <a
+                    href={buildRuleDeepLink(rule.slug, rule.content ?? "")}
+                    className="shrink-0 rounded-md border border-border px-2 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onInstall();
+                    }}
+                  >
+                    Add to Cursor
+                  </a>
+                </div>
               </div>
 
               {isExpanded && (
@@ -354,9 +394,11 @@ function resolveMcpConfig(
 function McpSection({
   mcps,
   onInstall,
+  plugin,
 }: {
   mcps: NonNullable<PluginRow["plugin_components"]>;
   onInstall: () => void;
+  plugin: PluginInfo;
 }) {
   return (
     <div className="space-y-3">
@@ -384,22 +426,27 @@ function McpSection({
               </span>
               <span className="truncate text-sm font-medium">{mcp.name}</span>
             </div>
-            <div className="flex items-center gap-3 shrink-0">
-              {link && (
-                <Link
-                  href={link}
-                  className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
-                  target="_blank"
-                >
-                  <span>Source</span>
-                  <ExternalLinkIcon />
-                </Link>
-              )}
-              {installLink ? (
-                <CursorDeepLink mcp_link={installLink} onInstall={onInstall} />
-              ) : mcp.content ? (
-                <CopyButton text={mcp.content} onCopy={onInstall} />
-              ) : null}
+            <div className="flex items-center gap-2 shrink-0">
+              <AddToCollectionButton
+                item={buildCollectionItem(mcp, plugin)}
+              />
+              <div className="flex items-center gap-3">
+                {link && (
+                  <Link
+                    href={link}
+                    className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+                    target="_blank"
+                  >
+                    <span>Source</span>
+                    <ExternalLinkIcon />
+                  </Link>
+                )}
+                {installLink ? (
+                  <CursorDeepLink mcp_link={installLink} onInstall={onInstall} />
+                ) : mcp.content ? (
+                  <CopyButton text={mcp.content} onCopy={onInstall} />
+                ) : null}
+              </div>
             </div>
           </div>
         );
@@ -665,10 +712,12 @@ function GenericComponentSection({
   components,
   type,
   onInstall,
+  plugin,
 }: {
   components: NonNullable<PluginRow["plugin_components"]>;
   type: ComponentType;
   onInstall: () => void;
+  plugin: PluginInfo;
 }) {
   return (
     <div>
@@ -681,19 +730,24 @@ function GenericComponentSection({
             <CardContent className="p-4 space-y-2">
               <div className="flex items-center justify-between gap-4">
                 <h3 className="text-sm font-medium">{comp.name}</h3>
-                {comp.content && (
-                  type === "command" ? (
-                    <a
-                      href={buildCommandDeepLink(comp.slug, comp.content)}
-                      className="shrink-0 rounded-md border border-border px-2 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
-                      onClick={onInstall}
-                    >
-                      Add to Cursor
-                    </a>
-                  ) : (
-                    <CopyButton text={comp.content} onCopy={onInstall} />
-                  )
-                )}
+                <div className="flex items-center gap-2 shrink-0">
+                  <AddToCollectionButton
+                    item={buildCollectionItem(comp, plugin)}
+                  />
+                  {comp.content && (
+                    type === "command" ? (
+                      <a
+                        href={buildCommandDeepLink(comp.slug, comp.content)}
+                        className="shrink-0 rounded-md border border-border px-2 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                        onClick={onInstall}
+                      >
+                        Add to Cursor
+                      </a>
+                    ) : (
+                      <CopyButton text={comp.content} onCopy={onInstall} />
+                    )
+                  )}
+                </div>
               </div>
               {comp.description && (
                 <p className="text-xs leading-5 text-muted-foreground">{comp.description}</p>

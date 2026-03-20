@@ -1,5 +1,6 @@
 import type { PluginCardData } from "@/components/plugins/plugin-card";
 import { Startpage } from "@/components/startpage";
+import { getPublicCollections } from "@/data/collections";
 import {
   getFeaturedJobs,
   getFeaturedPlugins,
@@ -66,6 +67,7 @@ export default async function Page() {
     { data: allPluginsData },
     { entries: eventsData },
     { data: forumPosts },
+    { data: collections },
   ] = await Promise.all([
     getFeaturedJobs({ onlyPremium: true }),
     getFeaturedPlugins({ onlyPremium: true }),
@@ -75,6 +77,7 @@ export default async function Page() {
     getPlugins({ fetchAll: true }),
     getEvents(),
     getForumPosts(),
+    getPublicCollections({ limit: 4 }),
   ]);
 
   const featuredPlugins = (featuredPluginsData ?? []).slice(0, 8).map(toPluginCard);
@@ -122,6 +125,7 @@ export default async function Page() {
             members={members}
             popularPosts={popularPosts}
             forumPosts={forumPosts}
+            collections={collections ?? []}
           />
         </Suspense>
       </div>
