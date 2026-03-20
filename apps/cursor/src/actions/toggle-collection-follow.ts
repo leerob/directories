@@ -1,7 +1,7 @@
 "use server";
 
 import { getCollectionUrl } from "@/lib/collections";
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/utils/supabase/admin-client";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { ActionError, authActionClient } from "./safe-action";

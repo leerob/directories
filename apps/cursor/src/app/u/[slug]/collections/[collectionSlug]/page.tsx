@@ -75,11 +75,9 @@ export default async function Page({ params }: { params: Params }) {
               <div className="flex items-center gap-2">
                 {data.is_owner ? (
                   <>
-                    <span className="flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-sm text-muted-foreground">
+                    <span className="flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs text-muted-foreground">
                       <Users className="size-3.5" />
-                      <span className="text-xs">
-                        {formatCount(data.follower_count)}
-                      </span>
+                      <span>{formatCount(data.follower_count)}</span>
                     </span>
                     <Link
                       href={`/u/${data.owner.slug}/collections/${data.slug}/edit`}
