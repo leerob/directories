@@ -108,6 +108,12 @@ export function UserMenu() {
                 <Link href={`/u/${user?.slug}`}>Profile</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
+                <Link href="/collections/new">New collection</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/feed">Feed</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
                 <button
                   type="button"
                   onClick={() =>

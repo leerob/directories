@@ -7,6 +7,7 @@ import type { ReactNode } from "react";
 const TABS = [
   { key: "posts", label: "Posts" },
   { key: "plugins", label: "Plugins" },
+  { key: "collections", label: "Collections" },
   { key: "companies", label: "Companies" },
   { key: "starred", label: "Starred" },
 ] as const;

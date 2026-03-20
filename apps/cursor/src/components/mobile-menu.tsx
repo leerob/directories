@@ -129,6 +129,22 @@ export function MobileMenu() {
                         Profile
                       </Button>
                     </Link>
+                    <Link href="/collections/new" onClick={() => setIsOpen(false)}>
+                      <Button
+                        variant="outline"
+                        className="mb-4 h-9 w-full rounded-full"
+                      >
+                        New collection
+                      </Button>
+                    </Link>
+                    <Link href="/feed" onClick={() => setIsOpen(false)}>
+                      <Button
+                        variant="outline"
+                        className="mb-4 h-9 w-full rounded-full"
+                      >
+                        Feed
+                      </Button>
+                    </Link>
                     <Button
                       variant="default"
                       className="h-9 w-full rounded-full"

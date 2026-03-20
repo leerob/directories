@@ -2,6 +2,7 @@ import { getUserProfile } from "@/data/queries";
 import { getSession } from "@/utils/supabase/auth";
 import { format } from "date-fns";
 import { Suspense } from "react";
+import { ProfileCollections } from "../collections/profile-collections";
 import { ProfileCompanies } from "./profile-companies";
 import { ProfileContent } from "./profile-content";
 import { ProfilePlugins } from "./profile-plugins";
@@ -53,6 +54,15 @@ export async function Profile({
           plugins: (
             <Suspense fallback={<div>Loading...</div>}>
               <ProfilePlugins userId={data?.id} isOwner={isOwner} />
+            </Suspense>
+          ),
+          collections: (
+            <Suspense fallback={<div>Loading...</div>}>
+              <ProfileCollections
+                userId={data?.id}
+                viewerId={session?.user?.id}
+                isOwner={isOwner}
+              />
             </Suspense>
           ),
           companies: (

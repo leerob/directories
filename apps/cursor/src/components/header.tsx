@@ -9,6 +9,7 @@ import { UserMenu } from "./user-menu";
 
 export const navigationLinks = [
   { href: "/plugins", label: "Plugins" },
+  { href: "/collections", label: "Collections" },
   { href: "/events", label: "Events" },
   { href: "/jobs", label: "Jobs" },
   { href: "/members", label: "Members" },

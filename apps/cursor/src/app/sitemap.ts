@@ -1,3 +1,4 @@
+import { getPublicCollections } from "@/data/collections";
 import { getCompanies, getPlugins } from "@/data/queries";
 import type { MetadataRoute } from "next";
 
@@ -16,6 +17,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/collections`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.85,
     },
     {
       url: `${BASE_URL}/learn`,
@@ -45,6 +52,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 0.5,
+      });
+    }
+  }
+
+  const { data: collections } = await getPublicCollections();
+  if (collections) {
+    for (const collection of collections) {
+      routes.push({
+        url: `${BASE_URL}/u/${collection.owner.slug}/collections/${collection.slug}`,
+        lastModified: new Date(collection.updated_at),
+        changeFrequency: "weekly",
+        priority: 0.6,
       });
     }
   }
