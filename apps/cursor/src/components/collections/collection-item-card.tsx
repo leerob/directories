@@ -1,87 +1,64 @@
 import { getCollectionItemHref, getCollectionTypeLabel } from "@/lib/collections";
 import Link from "next/link";
 import type { CollectionItemRecord } from "@/lib/collections";
+import { PluginIconFallback } from "../plugins/plugin-icon";
+import { AddToCollectionButton } from "./add-to-collection-button";
 
 export function CollectionItemCard({
   item,
-  index,
 }: {
   item: CollectionItemRecord;
-  index: number;
+  index?: number;
 }) {
   const href = getCollectionItemHref(item);
   const isPlugin = item.entity_type === "plugin";
 
   return (
-    <div className="surface-card flex flex-col gap-4 rounded-[24px] border border-border p-5">
-      <div className="flex items-start gap-4">
-        <div className="flex size-8 flex-shrink-0 items-center justify-center rounded-full border border-border bg-card text-xs text-muted-foreground">
-          {index + 1}
-        </div>
-        <div className="flex size-14 flex-shrink-0 items-center justify-center rounded-[16px] border border-border bg-muted p-3">
+    <div className="flex items-center justify-between gap-4 rounded-lg border border-border p-4">
+      <Link href={href} className="flex min-w-0 items-center gap-3">
+        <div className="flex size-8 flex-shrink-0 items-center justify-center rounded-lg border border-border bg-card p-1">
           {item.plugin_logo ? (
             <img
               src={item.plugin_logo}
               alt=""
-              className="max-h-10 max-w-full object-contain"
+              className="max-h-6 max-w-full object-contain"
             />
           ) : (
-            <span className="text-[11px] uppercase text-muted-foreground">
-              {getCollectionTypeLabel(item.entity_type)}
-            </span>
+            <PluginIconFallback size={24} bordered={false} transparent />
           )}
         </div>
 
-        <div className="min-w-0 flex-1">
-          <div className="mb-2 flex flex-wrap gap-2">
-            <span className="rounded-full border border-border px-2.5 py-1 text-[11px] uppercase tracking-[0.08em] text-muted-foreground">
-              {getCollectionTypeLabel(item.entity_type)}
-            </span>
-            {!isPlugin && (
-              <span className="rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
-                from {item.plugin_name}
-              </span>
-            )}
-          </div>
-
-          <h3 className="text-base font-medium tracking-[0.005em] text-foreground">
-            {item.title}
-          </h3>
-
-          {item.description && (
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
-              {item.description}
-            </p>
-          )}
-        </div>
-      </div>
-
-      {item.note && (
-        <div className="rounded-[18px] border border-border bg-card px-4 py-3">
-          <p className="mb-2 text-[11px] uppercase tracking-[0.08em] text-muted-foreground">
-            Curator note
-          </p>
-          <p className="text-sm leading-6 text-muted-foreground">{item.note}</p>
-        </div>
-      )}
-
-      <div className="flex items-center justify-between gap-3 text-sm">
         <div className="min-w-0">
-          <div className="truncate text-muted-foreground">
-            {isPlugin ? "Full plugin" : item.plugin_name}
-          </div>
+          <span className="truncate text-sm font-medium text-foreground">
+            {item.title}
+          </span>
           {!isPlugin && (
-            <div className="mt-1 truncate text-xs text-muted-foreground/70">
-              Linked from the parent plugin page
-            </div>
+            <span className="ml-2 text-xs text-muted-foreground">
+              {getCollectionTypeLabel(item.entity_type)}
+            </span>
           )}
         </div>
+      </Link>
 
+      <div className="flex shrink-0 items-center gap-2">
+        <AddToCollectionButton
+          item={{
+            entity_type: item.entity_type,
+            entity_id: item.entity_id,
+            plugin_id: item.plugin_id,
+            title: item.title,
+            slug: item.slug,
+            description: item.description,
+            plugin_name: item.plugin_name,
+            plugin_slug: item.plugin_slug,
+            plugin_logo: item.plugin_logo,
+          }}
+        />
         <Link
           href={href}
-          className="rounded-full border border-border px-3 py-1.5 text-foreground transition-colors hover:bg-accent"
+          className="shrink-0 rounded-md border border-border px-2 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
         >
-          View source
+          Add to Cursor
         </Link>
       </div>
     </div>

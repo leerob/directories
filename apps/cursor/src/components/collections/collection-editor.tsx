@@ -6,6 +6,8 @@ import {
 } from "@/actions/upsert-collection";
 import { cn } from "@/lib/utils";
 import {
+  compareCollectionEditorOptions,
+  getRandomizedCollectionEditorOptions,
   getCollectionTypeLabel,
   type CollectionEditorOption,
   type CollectionItemRecord,
@@ -14,12 +16,14 @@ import {
 import {
   ChevronDown,
   ChevronUp,
+  RefreshCw,
   Plus,
   Search,
   Trash2,
 } from "lucide-react";
 import { useAction } from "next-safe-action/hooks";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { PluginIconFallback } from "../plugins/plugin-icon";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import {
@@ -51,12 +55,14 @@ function itemKey(item: {
 
 export function CollectionEditor({
   availableItems,
+  popularPicks = [],
   initialCollection,
   defaultTitle,
   defaultDescription,
   ownerName,
 }: {
   availableItems: CollectionEditorOption[];
+  popularPicks?: CollectionEditorOption[];
   initialCollection?: InitialCollection;
   defaultTitle?: string;
   defaultDescription?: string;
@@ -71,6 +77,8 @@ export function CollectionEditor({
   );
   const [query, setQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
+  const [browseSeed, setBrowseSeed] = useState(() => Math.random().toString(36));
+  const [visibleCount, setVisibleCount] = useState(24);
   const [selectedItems, setSelectedItems] = useState<
     Array<CollectionEditorOption & { note: string | null }>
   >(
@@ -117,10 +125,15 @@ export function CollectionEditor({
     return counts;
   }, [availableItems, selectedSet]);
 
+  useEffect(() => {
+    setVisibleCount(24);
+  }, [activeFilter, query]);
+
   const filteredItems = useMemo<CollectionEditorOption[]>(() => {
     const term = query.trim().toLowerCase();
 
-    return availableItems
+    return getRandomizedCollectionEditorOptions(
+      availableItems
       .filter((item) => !selectedSet.has(itemKey(item)))
       .filter((item) =>
         activeFilter === "all" ? true : item.entity_type === activeFilter,
@@ -136,42 +149,32 @@ export function CollectionEditor({
           item.description ?? "",
           getCollectionTypeLabel(item.entity_type),
         ].some((value) => value.toLowerCase().includes(term));
-      })
-      .slice(0, 24);
-  }, [activeFilter, availableItems, query, selectedSet]);
+      }),
+      browseSeed,
+    );
+  }, [activeFilter, availableItems, browseSeed, query, selectedSet]);
+
+  const visibleItems = useMemo(
+    () => filteredItems.slice(0, visibleCount),
+    [filteredItems, visibleCount],
+  );
 
   const groupedItems = useMemo(() => {
     return {
-      plugin: filteredItems.filter((item) => item.entity_type === "plugin"),
-      mcp_server: filteredItems.filter((item) => item.entity_type === "mcp_server"),
-      rule: filteredItems.filter((item) => item.entity_type === "rule"),
-      skill: filteredItems.filter((item) => item.entity_type === "skill"),
+      plugin: visibleItems.filter((item) => item.entity_type === "plugin"),
+      mcp_server: visibleItems.filter((item) => item.entity_type === "mcp_server"),
+      rule: visibleItems.filter((item) => item.entity_type === "rule"),
+      skill: visibleItems.filter((item) => item.entity_type === "skill"),
     };
-  }, [filteredItems]);
+  }, [visibleItems]);
 
   const quickStartItems = useMemo(() => {
     if (query.trim().length > 0 || selectedItems.length > 0) {
       return [];
     }
 
-    const picks: CollectionEditorOption[] = [];
-    const seen = new Set<string>();
-
-    for (const type of ["plugin", "mcp_server", "rule", "skill"] as const) {
-      for (const item of availableItems) {
-        if (item.entity_type !== type) continue;
-        if (selectedSet.has(itemKey(item))) continue;
-        const key = itemKey(item);
-        if (seen.has(key)) continue;
-
-        seen.add(key);
-        picks.push(item);
-        break;
-      }
-    }
-
-    return picks.slice(0, 4);
-  }, [availableItems, query, selectedItems.length, selectedSet]);
+    return popularPicks.filter((item) => !selectedSet.has(itemKey(item)));
+  }, [popularPicks, query, selectedItems.length, selectedSet]);
 
   const selectedCounts = useMemo(() => {
     const counts = {
@@ -210,14 +213,6 @@ export function CollectionEditor({
       [next[index], next[target]] = [next[target], next[index]];
       return next;
     });
-  };
-
-  const updateNote = (index: number, note: string) => {
-    setSelectedItems((prev) =>
-      prev.map((item, itemIndex) =>
-        itemIndex === index ? { ...item, note: note || null } : item,
-      ),
-    );
   };
 
   const handleSubmit = () => {
@@ -275,17 +270,16 @@ export function CollectionEditor({
         <div className="grid gap-6 p-6 md:grid-cols-[minmax(0,1fr)_300px] md:p-8">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1.5 text-xs text-muted-foreground backdrop-blur">
-              Draft collection
+              Collection draft
             </div>
 
             <div className="space-y-3">
               <h2 className="text-2xl font-medium tracking-tight text-foreground md:text-3xl">
-                Curate a collection people will actually want to open
+                Create a collection
               </h2>
               <p className="max-w-2xl text-sm leading-6 text-muted-foreground md:text-base">
-                Start with a strong title, pull in the best plugins and
-                components, and add just enough context to make the curation feel
-                thoughtful.
+                Add a clear title, pick the best plugins and components, and
+                arrange them into a collection that is easy to understand and share.
               </p>
             </div>
 
@@ -308,9 +302,6 @@ export function CollectionEditor({
 
           <div className="rounded-[24px] border border-border bg-card/90 p-5 backdrop-blur">
             <div className="space-y-3">
-              <p className="section-eyebrow">
-                Live summary
-              </p>
               <h3 className="line-clamp-2 text-xl font-medium tracking-tight text-foreground">
                 {title.trim() || defaultTitle || "Untitled collection"}
               </h3>
@@ -347,10 +338,10 @@ export function CollectionEditor({
               <div>
                 <p className="section-eyebrow">Collection</p>
                 <h3 className="mt-2 text-lg font-medium tracking-tight">
-                  Set the tone
+                  Collection details
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Start with a clear name and a short promise of value.
+                  Add the title, description, and visibility for this collection.
                 </p>
               </div>
             </div>
@@ -414,8 +405,7 @@ export function CollectionEditor({
                   Add items
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Search across plugins and components, then build a mixed
-                  collection.
+                  Search across plugins and components, then add them to the collection.
                 </p>
               </div>
             </div>
@@ -453,12 +443,21 @@ export function CollectionEditor({
                   </span>
                 </button>
               ))}
+
+              <button
+                type="button"
+                onClick={() => setBrowseSeed(Math.random().toString(36))}
+                className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <RefreshCw className="size-3.5" />
+                Shuffle
+              </button>
             </div>
 
             {quickStartItems.length > 0 && (
               <div className="mb-6">
                 <p className="mb-3 text-xs uppercase tracking-[0.12em] text-muted-foreground">
-                  Quick start ideas
+                  Popular picks
                 </p>
                 <div className="grid gap-2 md:grid-cols-2">
                   {quickStartItems.map((item) => (
@@ -476,7 +475,11 @@ export function CollectionEditor({
                             className="max-h-7 max-w-full object-contain"
                           />
                         ) : (
-                          <Plus className="size-4 text-muted-foreground" />
+                          <PluginIconFallback
+                            size={28}
+                            bordered={false}
+                            transparent
+                          />
                         )}
                       </div>
                       <div className="min-w-0 flex-1">
@@ -510,7 +513,7 @@ export function CollectionEditor({
                         {getCollectionTypeLabel(type)}s
                       </p>
                       <span className="text-xs text-muted-foreground">
-                        {items.length} available
+                        {items.length} shown
                       </span>
                     </div>
                     <div className="space-y-2">
@@ -529,7 +532,11 @@ export function CollectionEditor({
                                 className="max-h-7 max-w-full object-contain"
                               />
                             ) : (
-                              <Plus className="size-4 text-muted-foreground" />
+                              <PluginIconFallback
+                                size={28}
+                                bordered={false}
+                                transparent
+                              />
                             )}
                           </div>
 
@@ -540,7 +547,7 @@ export function CollectionEditor({
                             <div className="truncate text-xs text-muted-foreground">
                               {type !== "plugin"
                                 ? `${item.plugin_name} · ${getCollectionTypeLabel(item.entity_type)}`
-                                : "Full plugin"}
+                                : "Plugin"}
                             </div>
                           </div>
 
@@ -561,6 +568,23 @@ export function CollectionEditor({
                   </p>
                 </div>
               )}
+
+              {filteredItems.length > visibleCount && (
+                <div className="pt-1">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="w-full"
+                    onClick={() =>
+                      setVisibleCount((current) =>
+                        Math.min(current + 24, filteredItems.length),
+                      )
+                    }
+                  >
+                    Load more items
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -571,10 +595,10 @@ export function CollectionEditor({
               <div>
                 <p className="section-eyebrow">Preview</p>
                 <h3 className="mt-2 text-lg font-medium tracking-tight">
-                  Your collection
+                  Review and reorder
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Reorder items and add context so the curation feels intentional.
+                  Reorder items until the collection looks right from top to bottom.
                 </p>
               </div>
             </div>
@@ -616,8 +640,8 @@ export function CollectionEditor({
             </Button>
 
             <p className="mb-5 text-xs leading-5 text-muted-foreground">
-              Tip: collections with a clear description and a few thoughtful notes
-              feel much more followable.
+              Tip: the best collections have a clear title, a useful description,
+              and a strong top few items.
             </p>
 
             {selectedItems.length > 0 ? (
@@ -636,36 +660,23 @@ export function CollectionEditor({
                             className="max-h-8 max-w-full object-contain"
                           />
                         ) : (
-                          <span className="text-[11px] uppercase text-muted-foreground">
-                            {getCollectionTypeLabel(item.entity_type)}
-                          </span>
+                          <PluginIconFallback
+                            size={32}
+                            bordered={false}
+                            transparent
+                          />
                         )}
                       </div>
 
                       <div className="min-w-0 flex-1">
-                        <div className="mb-2 flex flex-wrap gap-2">
-                          <span className="rounded-full border border-border px-2.5 py-1 text-[11px] uppercase tracking-[0.08em] text-muted-foreground">
-                            {getCollectionTypeLabel(item.entity_type)}
-                          </span>
-                          {item.entity_type !== "plugin" && (
-                            <span className="rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
-                              {item.plugin_name}
-                            </span>
-                          )}
-                        </div>
-
                         <div className="text-sm font-medium text-foreground">
                           {item.title}
                         </div>
-
-                        <Textarea
-                          value={item.note ?? ""}
-                          onChange={(event) =>
-                            updateNote(index, event.target.value)
-                          }
-                          placeholder="Optional note: why is this in the collection?"
-                          className="mt-3 min-h-[84px]"
-                        />
+                        <div className="mt-1 text-xs text-muted-foreground">
+                          {item.entity_type === "plugin"
+                            ? "Plugin"
+                            : `${getCollectionTypeLabel(item.entity_type)} · ${item.plugin_name}`}
+                        </div>
                       </div>
                     </div>
 

@@ -1,6 +1,7 @@
 import { CollectionEditor } from "@/components/collections/collection-editor";
 import { Login } from "@/components/login";
 import { buildCollectionEditorOptions } from "@/data/collections";
+import { getPopularCollectionSuggestions } from "@/lib/collections";
 import { getPlugins } from "@/data/queries";
 import { getSession } from "@/utils/supabase/auth";
 import { createClient } from "@/utils/supabase/server";
@@ -36,6 +37,7 @@ export default async function Page() {
     .eq("id", session.user.id)
     .single();
   const availableItems = buildCollectionEditorOptions(plugins ?? []);
+  const popularPicks = getPopularCollectionSuggestions(availableItems);
   const rawName =
     user?.name?.trim() ||
     (session.user.user_metadata.name as string | undefined)?.trim() ||
@@ -46,16 +48,9 @@ export default async function Page() {
 
   return (
     <div className="page-shell pb-20 pt-24 md:pt-32">
-      <div className="mb-10 max-w-2xl space-y-3">
-        <h1 className="marketing-page-title">Create collection</h1>
-        <p className="marketing-copy">
-          Mix full plugins with individual MCPs, rules, and skills, then share
-          the collection from your profile.
-        </p>
-      </div>
-
       <CollectionEditor
         availableItems={availableItems}
+        popularPicks={popularPicks}
         defaultTitle={defaultTitle}
         defaultDescription={defaultDescription}
         ownerName={name}

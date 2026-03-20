@@ -1,7 +1,7 @@
 import {
   COLLECTION_ENTITY_TYPES,
+  compareCollectionEditorOptions,
   type CollectionEditorOption,
-  type CollectionEventType,
   type CollectionItemRecord,
   type CollectionOwner,
   type CollectionVisibility,
@@ -18,7 +18,6 @@ export type CollectionSummary = {
   visibility: CollectionVisibility;
   follower_count: number;
   item_count: number;
-  last_activity_at: string;
   created_at: string;
   updated_at: string;
   owner: CollectionOwner;
@@ -26,23 +25,8 @@ export type CollectionSummary = {
   is_following: boolean;
 };
 
-export type CollectionActivity = {
-  id: string;
-  collection_id: string;
-  actor_user_id: string;
-  event_type: CollectionEventType;
-  entity_type: CollectionItemRecord["entity_type"] | null;
-  entity_id: string | null;
-  entity_title: string | null;
-  metadata: Record<string, unknown>;
-  created_at: string;
-  actor: CollectionOwner | null;
-  collection: Pick<CollectionSummary, "id" | "slug" | "title" | "owner"> | null;
-};
-
 export type CollectionDetail = CollectionSummary & {
   items: CollectionItemRecord[];
-  activities: CollectionActivity[];
   related_collections: CollectionSummary[];
   is_owner: boolean;
 };
@@ -121,7 +105,6 @@ function normalizeCollectionRow(
     visibility: row.visibility,
     follower_count: row.follower_count ?? 0,
     item_count: row.item_count ?? 0,
-    last_activity_at: row.last_activity_at,
     created_at: row.created_at,
     updated_at: row.updated_at,
     owner: normalizeOwner(row.owner),
@@ -151,6 +134,8 @@ export function buildCollectionEditorOptions(plugins: PluginRow[]) {
   const options: CollectionEditorOption[] = [];
 
   for (const plugin of plugins) {
+    const popularity_score = plugin.install_count;
+
     options.push({
       entity_type: "plugin",
       entity_id: plugin.id,
@@ -161,6 +146,7 @@ export function buildCollectionEditorOptions(plugins: PluginRow[]) {
       plugin_name: plugin.name,
       plugin_slug: plugin.slug,
       plugin_logo: plugin.logo,
+      popularity_score,
     });
 
     for (const component of plugin.plugin_components ?? []) {
@@ -178,15 +164,12 @@ export function buildCollectionEditorOptions(plugins: PluginRow[]) {
         plugin_name: plugin.name,
         plugin_slug: plugin.slug,
         plugin_logo: plugin.logo,
+        popularity_score,
       });
     }
   }
 
-  return options.sort((a, b) => {
-    if (a.entity_type === "plugin" && b.entity_type !== "plugin") return -1;
-    if (a.entity_type !== "plugin" && b.entity_type === "plugin") return 1;
-    return a.title.localeCompare(b.title);
-  });
+  return options.sort(compareCollectionEditorOptions);
 }
 
 export async function getPublicCollections({
@@ -200,10 +183,10 @@ export async function getPublicCollections({
   let query = supabase
     .from("collections")
     .select(
-      "id, owner_id, slug, title, description, visibility, follower_count, item_count, last_activity_at, created_at, updated_at, owner:owner_id(id, name, slug, image)",
+      "id, owner_id, slug, title, description, visibility, follower_count, item_count, created_at, updated_at, owner:owner_id(id, name, slug, image)",
     )
     .eq("visibility", "public")
-    .order("last_activity_at", { ascending: false });
+    .order("updated_at", { ascending: false });
 
   if (limit) {
     query = query.limit(limit);
@@ -226,10 +209,10 @@ export async function getUserCollections({
   let query = supabase
     .from("collections")
     .select(
-      "id, owner_id, slug, title, description, visibility, follower_count, item_count, last_activity_at, created_at, updated_at, owner:owner_id(id, name, slug, image)",
+      "id, owner_id, slug, title, description, visibility, follower_count, item_count, created_at, updated_at, owner:owner_id(id, name, slug, image)",
     )
     .eq("owner_id", ownerId)
-    .order("last_activity_at", { ascending: false });
+    .order("updated_at", { ascending: false });
 
   if (!includePrivate) {
     query = query.eq("visibility", "public");
@@ -275,10 +258,9 @@ export async function getCollectionByUserAndSlug({
     return { data: null as CollectionDetail | null };
   }
 
-  const [itemsMap, following, eventsResult, relatedResult] = await Promise.all([
+  const [itemsMap, following, relatedResult] = await Promise.all([
     getCollectionItemsMap([collectionRow.id]),
     getCollectionFollowingSet([collectionRow.id], viewerId),
-    getCollectionActivities([collectionRow.id]),
     getUserCollections({
       ownerId: owner.id,
       viewerId,
@@ -303,149 +285,8 @@ export async function getCollectionByUserAndSlug({
     data: {
       ...summary,
       items: sortItems(itemsMap.get(collectionRow.id) ?? []),
-      activities: eventsResult.data.filter(
-        (event) => event.collection_id === collectionRow.id,
-      ),
       related_collections,
       is_owner: viewerId === owner.id,
     } satisfies CollectionDetail,
-  };
-}
-
-export async function getCollectionActivities(collectionIds: string[]) {
-  if (!collectionIds.length) {
-    return { data: [] as CollectionActivity[] };
-  }
-
-  const supabase = await createClient();
-  const { data: events } = await supabase
-    .from("collection_events")
-    .select("*")
-    .in("collection_id", collectionIds)
-    .order("created_at", { ascending: false })
-    .limit(50);
-
-  const rows = events ?? [];
-  const actorIds = [...new Set(rows.map((row) => row.actor_user_id).filter(Boolean))];
-  const uniqueCollectionIds = [...new Set(rows.map((row) => row.collection_id))];
-
-  const [{ data: actors }, { data: collections }] = await Promise.all([
-    actorIds.length
-      ? supabase
-          .from("users")
-          .select("id, name, slug, image")
-          .in("id", actorIds)
-      : Promise.resolve({ data: [] }),
-    uniqueCollectionIds.length
-      ? supabase
-          .from("collections")
-          .select("id, slug, title, owner:owner_id(id, name, slug, image)")
-          .in("id", uniqueCollectionIds)
-      : Promise.resolve({ data: [] }),
-  ]);
-
-  const actorMap = new Map<string, CollectionOwner>();
-  for (const actor of actors ?? []) {
-    actorMap.set(actor.id, normalizeOwner(actor));
-  }
-
-  const collectionMap = new Map<
-    string,
-    Pick<CollectionSummary, "id" | "slug" | "title" | "owner">
-  >();
-  for (const collection of collections ?? []) {
-    collectionMap.set(collection.id, {
-      id: collection.id,
-      slug: collection.slug,
-      title: collection.title,
-      owner: normalizeOwner(collection.owner),
-    });
-  }
-
-  return {
-    data: rows.map(
-      (row) =>
-        ({
-          ...row,
-          actor: actorMap.get(row.actor_user_id) ?? null,
-          collection: collectionMap.get(row.collection_id) ?? null,
-        }) satisfies CollectionActivity,
-    ),
-  };
-}
-
-export async function getFeedForUser(userId: string) {
-  const supabase = await createClient();
-
-  const [{ data: followedUsers }, { data: followedCollections }] = await Promise.all([
-    supabase
-      .from("followers")
-      .select("following_id")
-      .eq("follower_id", userId),
-    supabase
-      .from("collection_follows")
-      .select("collection_id")
-      .eq("user_id", userId),
-  ]);
-
-  const followedUserIds = (followedUsers ?? []).map((row) => row.following_id);
-  const followedCollectionIds = (followedCollections ?? []).map(
-    (row) => row.collection_id,
-  );
-
-  const queries: any[] = [];
-
-  if (followedUserIds.length) {
-    queries.push(
-      supabase
-        .from("collection_events")
-        .select("*")
-        .in("actor_user_id", followedUserIds)
-        .order("created_at", { ascending: false })
-        .limit(40),
-    );
-  }
-
-  if (followedCollectionIds.length) {
-    queries.push(
-      supabase
-        .from("collection_events")
-        .select("*")
-        .in("collection_id", followedCollectionIds)
-        .order("created_at", { ascending: false })
-        .limit(40),
-    );
-  }
-
-  if (!queries.length) {
-    return { data: [] as CollectionActivity[] };
-  }
-
-  const results = await Promise.all(queries);
-  const merged = new Map<string, any>();
-
-  for (const result of results) {
-    for (const row of result.data ?? []) {
-      merged.set(row.id, row);
-    }
-  }
-
-  const sorted = [...merged.values()]
-    .sort(
-      (a, b) =>
-        new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
-    )
-    .slice(0, 50);
-
-  const activities = await getCollectionActivities(
-    [...new Set(sorted.map((row) => row.collection_id))],
-  );
-
-  const activityMap = new Map(activities.data.map((item) => [item.id, item]));
-
-  return {
-    data: sorted
-      .map((row) => activityMap.get(row.id))
-      .filter(Boolean) as CollectionActivity[],
   };
 }

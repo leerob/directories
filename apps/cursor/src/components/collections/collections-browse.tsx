@@ -56,8 +56,8 @@ export function CollectionsBrowse({
       default:
         results = [...results].sort(
           (a, b) =>
-            new Date(b.last_activity_at).getTime() -
-            new Date(a.last_activity_at).getTime(),
+            new Date(b.updated_at).getTime() -
+            new Date(a.updated_at).getTime(),
         );
         break;
     }

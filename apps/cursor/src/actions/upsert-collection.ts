@@ -5,6 +5,7 @@ import {
   COLLECTION_VISIBILITIES,
   compareCollectionItems,
   createCollectionSlug,
+  getCollectionShareUrl,
   getCollectionUrl,
 } from "@/lib/collections";
 import { createClient } from "@/utils/supabase/server";
@@ -64,44 +65,6 @@ async function ensureUniqueCollectionSlug(
   }
 
   return `${baseSlug}-${suffix}`;
-}
-
-async function insertCollectionEvents(
-  supabase: Awaited<ReturnType<typeof createClient>>,
-  collectionId: string,
-  actorUserId: string,
-  events: Array<{
-    event_type:
-      | "collection_created"
-      | "collection_updated"
-      | "item_added"
-      | "item_removed"
-      | "items_reordered";
-    entity_type?: string | null;
-    entity_id?: string | null;
-    entity_title?: string | null;
-    metadata?: Record<string, unknown>;
-  }>,
-) {
-  if (!events.length) {
-    return;
-  }
-
-  const rows = events.map((event) => ({
-    collection_id: collectionId,
-    actor_user_id: actorUserId,
-    event_type: event.event_type,
-    entity_type: event.entity_type ?? null,
-    entity_id: event.entity_id ?? null,
-    entity_title: event.entity_title ?? null,
-    metadata: event.metadata ?? {},
-  }));
-
-  const { error } = await supabase.from("collection_events").insert(rows);
-
-  if (error) {
-    throw new ActionError(error.message);
-  }
 }
 
 function withPositions(items: CollectionItemInput[], collectionId: string) {
@@ -166,18 +129,13 @@ export const createCollectionAction = authActionClient
       throw new ActionError(itemsError.message);
     }
 
-    await insertCollectionEvents(supabase, collection.id, userId, [
-      {
-        event_type: "collection_created",
-        metadata: { item_count: parsedInput.items.length },
-      },
-    ]);
-
     const path = getCollectionUrl(owner.slug, collection.slug);
+    const sharePath = getCollectionShareUrl(owner.slug, collection.slug);
     revalidatePath("/collections");
     revalidatePath(`/u/${owner.slug}`);
     revalidatePath(path);
-    redirect(path);
+    revalidatePath(sharePath);
+    redirect(sharePath);
   });
 
 export const updateCollectionAction = authActionClient
@@ -227,29 +185,10 @@ export const updateCollectionAction = authActionClient
       position: index,
     }));
 
-    const addedItems = incomingItems.filter(
-      (item) =>
-        !(existingItems ?? []).some((existing) => compareCollectionItems(existing, item)),
-    );
-
     const removedItems = (existingItems ?? []).filter(
       (existing) =>
         !incomingItems.some((item) => compareCollectionItems(existing, item)),
     );
-
-    const isReordered =
-      addedItems.length === 0 &&
-      removedItems.length === 0 &&
-      (existingItems ?? []).some(
-        (existing, index) =>
-          existing.position !== incomingItems[index]?.position ||
-          !compareCollectionItems(existing, incomingItems[index]),
-      );
-
-    const collectionChanged =
-      collection.title !== parsedInput.title ||
-      (collection.description ?? null) !== parsedInput.description ||
-      collection.visibility !== parsedInput.visibility;
 
     const { error: updateError } = await supabase
       .from("collections")
@@ -288,44 +227,163 @@ export const updateCollectionAction = authActionClient
       }
     }
 
-    const events: Parameters<typeof insertCollectionEvents>[3] = [];
-
-    if (collectionChanged) {
-      events.push({
-        event_type: "collection_updated",
-      });
-    }
-
-    if (isReordered) {
-      events.push({
-        event_type: "items_reordered",
-        metadata: { item_count: incomingItems.length },
-      });
-    }
-
-    for (const item of addedItems) {
-      events.push({
-        event_type: "item_added",
-        entity_type: item.entity_type,
-        entity_id: item.entity_id,
-        entity_title: item.title,
-      });
-    }
-
-    for (const item of removedItems) {
-      events.push({
-        event_type: "item_removed",
-        entity_type: item.entity_type,
-        entity_id: item.entity_id,
-        entity_title: item.title,
-      });
-    }
-
-    await insertCollectionEvents(supabase, collection.id, userId, events);
-
     const path = getCollectionUrl(owner.slug, collection.slug);
     revalidatePath("/collections");
     revalidatePath(`/u/${owner.slug}`);
     revalidatePath(path);
     redirect(path);
+  });
+
+export const addItemToCollectionAction = authActionClient
+  .metadata({
+    actionName: "add-item-to-collection",
+  })
+  .schema(
+    z.object({
+      collectionId: z.string().uuid(),
+      item: collectionItemSchema,
+    }),
+  )
+  .action(async ({ parsedInput, ctx: { userId } }) => {
+    const supabase = await createClient();
+
+    const { data: collection, error: collectionError } = await supabase
+      .from("collections")
+      .select("id, owner_id, slug, item_count")
+      .eq("id", parsedInput.collectionId)
+      .single();
+
+    if (collectionError || !collection) {
+      throw new ActionError("Collection not found");
+    }
+
+    if (collection.owner_id !== userId) {
+      throw new ActionError("You do not have permission to edit this collection");
+    }
+
+    const { data: existing } = await supabase
+      .from("collection_items")
+      .select("id")
+      .eq("collection_id", collection.id)
+      .eq("entity_type", parsedInput.item.entity_type)
+      .eq("entity_id", parsedInput.item.entity_id)
+      .maybeSingle();
+
+    if (existing) {
+      throw new ActionError("This item is already in the collection");
+    }
+
+    const nextPosition = collection.item_count ?? 0;
+
+    const row = {
+      collection_id: collection.id,
+      entity_type: parsedInput.item.entity_type,
+      entity_id: parsedInput.item.entity_id,
+      plugin_id: parsedInput.item.plugin_id,
+      title: parsedInput.item.title,
+      slug: parsedInput.item.slug,
+      description: parsedInput.item.description,
+      plugin_name: parsedInput.item.plugin_name,
+      plugin_slug: parsedInput.item.plugin_slug,
+      plugin_logo: parsedInput.item.plugin_logo,
+      note: parsedInput.item.note ?? null,
+      position: nextPosition,
+    };
+
+    const { error: insertError } = await supabase
+      .from("collection_items")
+      .insert(row);
+
+    if (insertError) {
+      throw new ActionError(insertError.message);
+    }
+
+    const { data: owner } = await supabase
+      .from("users")
+      .select("slug")
+      .eq("id", userId)
+      .single();
+
+    if (owner) {
+      const path = getCollectionUrl(owner.slug, collection.slug);
+      revalidatePath(path);
+      revalidatePath(`/u/${owner.slug}`);
+      revalidatePath("/collections");
+    }
+
+    return { success: true };
+  });
+
+export const quickCreateCollectionAction = authActionClient
+  .metadata({
+    actionName: "quick-create-collection",
+  })
+  .schema(
+    z.object({
+      title: z.string().min(2).max(80),
+      description: z.string().max(600).nullable(),
+      item: collectionItemSchema,
+    }),
+  )
+  .action(async ({ parsedInput, ctx: { userId } }) => {
+    const supabase = await createClient();
+
+    const { data: owner, error: ownerError } = await supabase
+      .from("users")
+      .select("id, slug")
+      .eq("id", userId)
+      .single();
+
+    if (ownerError || !owner) {
+      throw new ActionError("Unable to load your profile");
+    }
+
+    const slug = await ensureUniqueCollectionSlug(supabase, userId, parsedInput.title);
+
+    const { data: collection, error } = await supabase
+      .from("collections")
+      .insert({
+        owner_id: userId,
+        slug,
+        title: parsedInput.title,
+        description: parsedInput.description,
+        visibility: "public" as const,
+      })
+      .select("id, slug")
+      .single();
+
+    if (error || !collection) {
+      throw new ActionError(error?.message ?? "Unable to create collection");
+    }
+
+    const row = {
+      collection_id: collection.id,
+      entity_type: parsedInput.item.entity_type,
+      entity_id: parsedInput.item.entity_id,
+      plugin_id: parsedInput.item.plugin_id,
+      title: parsedInput.item.title,
+      slug: parsedInput.item.slug,
+      description: parsedInput.item.description,
+      plugin_name: parsedInput.item.plugin_name,
+      plugin_slug: parsedInput.item.plugin_slug,
+      plugin_logo: parsedInput.item.plugin_logo,
+      note: parsedInput.item.note ?? null,
+      position: 0,
+    };
+
+    const { error: itemError } = await supabase
+      .from("collection_items")
+      .insert(row);
+
+    if (itemError) {
+      throw new ActionError(itemError.message);
+    }
+
+    const path = getCollectionUrl(owner.slug, collection.slug);
+    const sharePath = getCollectionShareUrl(owner.slug, collection.slug);
+    revalidatePath("/collections");
+    revalidatePath(`/u/${owner.slug}`);
+    revalidatePath(path);
+    revalidatePath(sharePath);
+    redirect(sharePath);
   });

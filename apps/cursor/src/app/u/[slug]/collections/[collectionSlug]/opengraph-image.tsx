@@ -1,5 +1,5 @@
 import { getCollectionByUserAndSlug } from "@/data/collections";
-import { dedupeCollectionLogos } from "@/lib/collections";
+import { buildCollectionShareModel } from "@/lib/collection-share";
 import { OG, OGLayout, createOGResponse } from "@/lib/og";
 
 export const alt = "Collection";
@@ -34,42 +34,68 @@ export default async function Image({
     );
   }
 
-  const logos = dedupeCollectionLogos(data.items, 6);
+  const shareModel = buildCollectionShareModel(data);
+  const displayLogos = shareModel.logos.slice(0, 5);
+  const hasLogos = displayLogos.length > 0;
 
   return createOGResponse(
     <OGLayout>
-      <div style={{ display: "flex", gap: 44, alignItems: "center" }}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 18,
-            flex: 1,
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 14,
-              fontSize: 22,
-              color: OG.textSecondary,
-            }}
-          >
-            {data.owner.image && (
-              <img
-                src={data.owner.image}
-                width={42}
-                height={42}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 32,
+          width: "100%",
+        }}
+      >
+        {hasLogos && (
+          <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+            {displayLogos.map((logo, index) => (
+              <div
+                key={`${logo}-${index}`}
                 style={{
-                  borderRadius: 12,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 80,
+                  height: 80,
+                  background: OG.cardBg,
                   border: `1px solid ${OG.border}`,
+                  borderRadius: 20,
+                  padding: 14,
                 }}
-              />
+              >
+                <img
+                  src={logo}
+                  width={52}
+                  height={52}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+            ))}
+            {shareModel.itemCount > displayLogos.length && (
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 80,
+                  height: 80,
+                  background: OG.cardBg,
+                  border: `1px solid ${OG.border}`,
+                  borderRadius: 20,
+                  fontSize: 20,
+                  fontWeight: 700,
+                  color: OG.textTertiary,
+                }}
+              >
+                +{shareModel.itemCount - displayLogos.length}
+              </div>
             )}
-            <span>{data.owner.name}</span>
           </div>
+        )}
 
+        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           <div
             style={{
               fontSize: 56,
@@ -77,87 +103,56 @@ export default async function Image({
               color: OG.text,
               letterSpacing: "-0.03em",
               lineHeight: 1.05,
+              maxWidth: 900,
             }}
           >
-            {data.title}
+            {shareModel.title}
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              gap: 14,
-              fontSize: 22,
-              color: OG.textSecondary,
-            }}
-          >
-            <span>{data.item_count} items</span>
-            <span>{data.follower_count} followers</span>
-          </div>
-
-          {data.description && (
+          {shareModel.shortDescription && (
             <div
               style={{
                 fontSize: 24,
                 color: OG.textTertiary,
-                lineHeight: 1.35,
-                maxWidth: 620,
+                lineHeight: 1.4,
+                maxWidth: 800,
               }}
             >
-              {data.description.length > 110
-                ? `${data.description.slice(0, 110)}...`
-                : data.description}
+              {shareModel.shortDescription}
             </div>
           )}
         </div>
 
         <div
           style={{
-            width: 340,
-            height: 340,
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 18,
+            display: "flex",
+            alignItems: "center",
+            gap: 20,
+            fontSize: 22,
+            color: OG.textSecondary,
           }}
         >
-          {logos.length > 0 ? (
-            logos.map((logo, index) => (
-              <div
-                key={`${logo}-${index}`}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background: OG.cardBg,
-                  border: `1px solid ${OG.border}`,
-                  borderRadius: 24,
-                  padding: 18,
-                }}
-              >
-                <img
-                  src={logo}
-                  width={72}
-                  height={72}
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
-            ))
-          ) : (
-            <div
+          {data.owner.image && (
+            <img
+              src={data.owner.image}
+              width={40}
+              height={40}
               style={{
-                gridColumn: "1 / span 3",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background: OG.cardBg,
+                borderRadius: 10,
                 border: `1px solid ${OG.border}`,
-                borderRadius: 24,
-                color: OG.textSecondary,
-                fontSize: 22,
               }}
-            >
-              Real plugin logos appear here
-            </div>
+            />
           )}
+          <span>{shareModel.ownerName}</span>
+          <div
+            style={{
+              width: 4,
+              height: 4,
+              borderRadius: 2,
+              background: OG.textTertiary,
+            }}
+          />
+          <span>{shareModel.itemCount} items</span>
         </div>
       </div>
     </OGLayout>,

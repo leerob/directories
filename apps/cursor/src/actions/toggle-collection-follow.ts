@@ -48,7 +48,6 @@ export const toggleCollectionFollowAction = authActionClient
 
       const path = getCollectionUrl(ownerSlug, collectionSlug);
       revalidatePath("/collections");
-      revalidatePath("/feed");
       revalidatePath(path);
     },
   );

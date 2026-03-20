@@ -111,9 +111,6 @@ export function UserMenu() {
                 <Link href="/collections/new">New collection</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/feed">Feed</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
                 <button
                   type="button"
                   onClick={() =>

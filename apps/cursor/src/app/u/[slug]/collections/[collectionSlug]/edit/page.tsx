@@ -1,6 +1,7 @@
 import { CollectionEditor } from "@/components/collections/collection-editor";
 import { Login } from "@/components/login";
 import { buildCollectionEditorOptions, getCollectionByUserAndSlug } from "@/data/collections";
+import { getPopularCollectionSuggestions } from "@/lib/collections";
 import { getPlugins } from "@/data/queries";
 import { getSession } from "@/utils/supabase/auth";
 import type { Metadata } from "next";
@@ -46,6 +47,7 @@ export default async function Page({ params }: { params: Params }) {
 
   const { data: plugins } = await getPlugins({ fetchAll: true });
   const availableItems = buildCollectionEditorOptions(plugins ?? []);
+  const popularPicks = getPopularCollectionSuggestions(availableItems);
 
   return (
     <div className="page-shell pb-20 pt-24 md:pt-32">
@@ -59,6 +61,7 @@ export default async function Page({ params }: { params: Params }) {
 
       <CollectionEditor
         availableItems={availableItems}
+        popularPicks={popularPicks}
         initialCollection={{
           id: collection.id,
           title: collection.title,
