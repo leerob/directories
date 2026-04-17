@@ -16,7 +16,7 @@ export const approvePluginAction = adminActionClient
 
     const { error } = await supabase
       .from("plugins")
-      .update({ active: true })
+      .update({ active: true, review_status: "approved" })
       .eq("id", pluginId);
 
     if (error) {
@@ -79,6 +79,55 @@ export const declinePluginAction = adminActionClient
 
     revalidatePath("/admin/plugins");
     revalidatePath("/plugins");
+
+    return { success: true };
+  });
+
+export const rerunPluginScanAction = adminActionClient
+  .metadata({ actionName: "rerun-plugin-scan" })
+  .schema(z.object({ pluginId: z.string().uuid() }))
+  .action(async ({ parsedInput: { pluginId } }) => {
+    const supabase = await createClient();
+
+    const { error: scanError } = await supabase
+      .from("plugin_scans")
+      .insert({ plugin_id: pluginId, status: "queued" });
+
+    if (scanError) {
+      throw new ActionError(
+        `Failed to enqueue scan: ${scanError.message}`,
+      );
+    }
+
+    revalidatePath("/admin/plugins");
+
+    return { success: true };
+  });
+
+export const disablePluginAction = adminActionClient
+  .metadata({ actionName: "disable-plugin" })
+  .schema(z.object({ pluginId: z.string().uuid() }))
+  .action(async ({ parsedInput: { pluginId } }) => {
+    const supabase = await createClient();
+
+    const { error } = await supabase
+      .from("plugins")
+      .update({ active: false, review_status: "flagged" })
+      .eq("id", pluginId);
+
+    if (error) {
+      throw new ActionError(`Failed to disable plugin: ${error.message}`);
+    }
+
+    const { data: plugin } = await supabase
+      .from("plugins")
+      .select("slug")
+      .eq("id", pluginId)
+      .single();
+
+    revalidatePath("/admin/plugins");
+    revalidatePath("/plugins");
+    if (plugin?.slug) revalidatePath(`/plugins/${plugin.slug}`);
 
     return { success: true };
   });

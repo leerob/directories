@@ -57,6 +57,7 @@ export const createPluginAction = authActionClient
           owner_id: userId,
           active: false,
           plan: "standard",
+          review_status: "pending",
         })
         .select("id, slug")
         .single();
@@ -98,6 +99,16 @@ export const createPluginAction = authActionClient
         throw new ActionError(
           `Failed to save plugin components: ${compError.message}`,
         );
+      }
+
+      // Queue an automated review. Cron picks this up and runs a Cursor cloud
+      // agent against the plugin payload. Failure here is non-fatal: worst
+      // case the plugin falls back to pure manual review.
+      const { error: scanError } = await supabase
+        .from("plugin_scans")
+        .insert({ plugin_id: plugin.id, status: "queued" });
+      if (scanError) {
+        console.error("Failed to enqueue plugin scan:", scanError.message);
       }
 
       revalidatePath("/plugins");
