@@ -335,6 +335,21 @@ export type PluginComponent = {
   created_at: string;
 };
 
+export type PluginReviewStatus =
+  | "pending"
+  | "scanning"
+  | "auto_approved"
+  | "approved"
+  | "flagged"
+  | "auto_declined"
+  | "declined";
+
+export type PluginReviewFlag = {
+  severity: "low" | "medium" | "high" | "critical";
+  category: "security" | "quality" | "spam" | "license" | "other";
+  message: string;
+};
+
 export type PluginRow = {
   id: string;
   name: string;
@@ -357,7 +372,33 @@ export type PluginRow = {
   star_count: number;
   created_at: string;
   updated_at: string;
+  review_status?: PluginReviewStatus;
+  last_scanned_at?: string | null;
+  security_score?: number | null;
+  quality_score?: number | null;
+  review_summary?: string | null;
+  flagged_reasons?: PluginReviewFlag[];
   plugin_components?: PluginComponent[];
+};
+
+export type PluginScanRow = {
+  id: string;
+  plugin_id: string;
+  status: "queued" | "running" | "finished" | "error" | "cancelled";
+  agent_id: string | null;
+  run_id: string | null;
+  verdict: {
+    recommendation?: "approve" | "flag" | "decline";
+    summary?: string;
+    flags?: PluginReviewFlag[];
+  } | null;
+  security_score: number | null;
+  quality_score: number | null;
+  recommendation: "approve" | "flag" | "decline" | null;
+  error: string | null;
+  started_at: string | null;
+  finished_at: string | null;
+  created_at: string;
 };
 
 export async function getPlugins({
@@ -469,6 +510,37 @@ export async function getPendingPlugins({
   }
 
   return { data: allData as PluginRow[], error: null };
+}
+
+export async function getFlaggedPlugins() {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("plugins")
+    .select("*, plugin_components(*)")
+    .eq("review_status", "flagged")
+    .order("last_scanned_at", { ascending: false, nullsFirst: false });
+  return { data: (data as PluginRow[] | null) ?? [], error };
+}
+
+export async function getScanningPlugins() {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("plugins")
+    .select("*, plugin_components(*)")
+    .eq("review_status", "scanning")
+    .order("updated_at", { ascending: false });
+  return { data: (data as PluginRow[] | null) ?? [], error };
+}
+
+export async function getPluginScans(pluginId: string, limit = 10) {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("plugin_scans")
+    .select("*")
+    .eq("plugin_id", pluginId)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  return { data: (data as PluginScanRow[] | null) ?? [], error };
 }
 
 export async function getStarredPlugins(userId: string) {

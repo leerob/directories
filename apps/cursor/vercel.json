@@ -1,3 +1,13 @@
 {
-  "regions": ["sfo1", "fra1"]
+  "regions": ["sfo1", "fra1"],
+  "crons": [
+    {
+      "path": "/api/cron/scan-plugins/start",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/scan-plugins/poll",
+      "schedule": "*/5 * * * *"
+    }
+  ]
 }
