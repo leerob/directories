@@ -1,9 +1,3 @@
 {
-  "regions": ["sfo1", "fra1"],
-  "crons": [
-    {
-      "path": "/api/cron/sync-ambassadors",
-      "schedule": "0 * * * *"
-    }
-  ]
+  "regions": ["sfo1", "fra1"]
 }
