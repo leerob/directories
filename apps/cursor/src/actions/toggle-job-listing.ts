@@ -9,7 +9,7 @@ export const toggleJobListingAction = authActionClient
   .metadata({
     actionName: "toggle-job-listing",
   })
-  .schema(
+  .inputSchema(
     z.object({
       id: z.number(),
       active: z.boolean(),

@@ -9,14 +9,14 @@ export const updateJobListingAction = authActionClient
   .metadata({
     actionName: "update-job-listing",
   })
-  .schema(
+  .inputSchema(
     z.object({
       id: z.number(),
       title: z.string(),
       company_id: z.string(),
       location: z.string().nullable(),
       description: z.string(),
-      link: z.string().url(),
+      link: z.url(),
       workplace: z.enum(["On site", "Remote", "Hybrid"]),
       experience: z.string().nullable(),
     }),

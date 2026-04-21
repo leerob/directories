@@ -13,10 +13,10 @@ export const toggleFollowAction = authActionClient
   .metadata({
     actionName: "toggle-follow",
   })
-  .schema(
+  .inputSchema(
     z.object({
       action: z.enum(["follow", "unfollow"]),
-      userId: z.string().uuid(),
+      userId: z.uuid(),
       slug: z.string(),
     }),
   )

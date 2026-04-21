@@ -9,7 +9,7 @@ export const votePostAction = authActionClient
   .metadata({
     actionName: "vote-post",
   })
-  .schema(
+  .inputSchema(
     z.object({
       postId: z.number(),
       action: z.enum(["upvote", "downvote"]),

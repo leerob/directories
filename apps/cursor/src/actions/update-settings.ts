@@ -9,7 +9,7 @@ export const updateSettingsAction = authActionClient
   .metadata({
     actionName: "update-settings",
   })
-  .schema(
+  .inputSchema(
     z.object({
       follow_email: z.boolean(),
     }),

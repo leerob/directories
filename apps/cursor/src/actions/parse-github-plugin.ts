@@ -156,9 +156,9 @@ async function fetchGitHubTree(
 
 export const parseGitHubPluginAction = authActionClient
   .metadata({ actionName: "parse-github-plugin" })
-  .schema(
+  .inputSchema(
     z.object({
-      url: z.string().url("Please enter a valid GitHub URL"),
+      url: z.url({ error: "Please enter a valid GitHub URL" }),
     }),
   )
   .action(async ({ parsedInput: { url } }) => {

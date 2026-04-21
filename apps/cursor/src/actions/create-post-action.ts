@@ -9,11 +9,11 @@ export const createPostAction = authActionClient
   .metadata({
     actionName: "create-post",
   })
-  .schema(
+  .inputSchema(
     z.object({
       title: z.string(),
       content: z.string().optional().nullable(),
-      url: z.string().url().nullable(),
+      url: z.url().nullable(),
     }),
   )
   .action(async ({ parsedInput: { title, content, url }, ctx: { userId } }) => {
