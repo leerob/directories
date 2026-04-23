@@ -351,6 +351,7 @@ export type PluginRow = {
   author_avatar: string | null;
   owner_id: string | null;
   active: boolean;
+  status: "pending" | "approved" | "declined";
   plan: string;
   order: number;
   install_count: number;
@@ -431,6 +432,39 @@ export async function getPendingPlugins({
       .from("plugins")
       .select("*, plugin_components(*)")
       .eq("active", false)
+      .eq("status", "pending")
+      .order("created_at", { ascending: false })
+      .range(from, from + PAGE_SIZE - 1);
+
+    if (since) {
+      query = query.gte("created_at", since);
+    }
+
+    const { data, error } = await query;
+    if (error) return { data: allData.length ? allData : null, error };
+    if (!data || data.length === 0) break;
+
+    allData = allData.concat(data as PluginRow[]);
+    if (data.length < PAGE_SIZE) break;
+    from += PAGE_SIZE;
+  }
+
+  return { data: allData as PluginRow[], error: null };
+}
+
+export async function getDeclinedPlugins({
+  since,
+}: { since?: string } = {}) {
+  const supabase = await createClient();
+  const PAGE_SIZE = 100;
+  let allData: PluginRow[] = [];
+  let from = 0;
+
+  while (true) {
+    let query = supabase
+      .from("plugins")
+      .select("*, plugin_components(*)")
+      .eq("status", "declined")
       .order("created_at", { ascending: false })
       .range(from, from + PAGE_SIZE - 1);
 
