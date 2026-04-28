@@ -1,0 +1,10 @@
+{
+  "spikes": {
+    "command": "npx",
+    "args": ["-y", "spikes-mcp"],
+    "env": {
+      "SPIKES_TOKEN": "${SPIKES_TOKEN}",
+      "SPIKES_API_URL": "${SPIKES_API_URL:-https://spikes.sh/api}"
+    }
+  }
+}
