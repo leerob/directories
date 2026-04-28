@@ -5,6 +5,11 @@
     "env": {
       "SPIKES_TOKEN": "${SPIKES_TOKEN}",
       "SPIKES_API_URL": "${SPIKES_API_URL:-https://spikes.sh/api}"
+    },
+    "_metadata": {
+      "registry": "io.github.bierlingm/spikes",
+      "homepage": "https://spikes.sh",
+      "install": "npx -y spikes-mcp"
     }
   }
 }
