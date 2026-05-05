@@ -1,9 +1,26 @@
 export const aethexRules = [
   {
-    tags: ["AeThex", "TypeScript", "Node.js", "Express", "Supabase", "Stripe", "Discord", "React"],
+    tags: [
+      "AeThex",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Supabase",
+      "Stripe",
+      "Discord",
+      "React",
+    ],
     title: "AeThex OS Toolkit",
     slug: "aethex-os-toolkit",
-    libs: ["@aethex.os/supabase", "@aethex.os/stripe", "@aethex.os/discord", "@aethex.os/ai", "@aethex.os/passport", "@aethex.os/registry", "@aethex.os/middleware"],
+    libs: [
+      "@aethex.os/supabase",
+      "@aethex.os/stripe",
+      "@aethex.os/discord",
+      "@aethex.os/ai",
+      "@aethex.os/passport",
+      "@aethex.os/registry",
+      "@aethex.os/middleware",
+    ],
     content: `# AeThex Stack
 
 ## Stack overview
