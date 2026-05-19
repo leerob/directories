@@ -5,6 +5,8 @@ next-env.d.ts
 .package-lock.json
 .env
 .env.local
+.env*.local
+.react-email
 .vercel/
 .seed/
 tsconfig.tsbuildinfo
