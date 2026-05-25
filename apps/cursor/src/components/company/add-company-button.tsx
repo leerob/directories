@@ -31,8 +31,12 @@ export function AddCompanyButton({ redirect }: { redirect?: boolean }) {
     // Adding a company requires an authenticated session: the save action is
     // auth-guarded and the logo upload hits an auth-only storage policy. Send
     // signed-out visitors to sign in instead of into a form that can't succeed.
-    if (!isAuthenticated) {
+    if (isAuthenticated === false) {
       router.push(`/login?next=${pathname}`);
+      return;
+    }
+
+    if (isAuthenticated === null) {
       return;
     }
 
