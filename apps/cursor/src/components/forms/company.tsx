@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { nanoid } from "nanoid";
 import { useAction } from "next-safe-action/hooks";
 import { parseAsBoolean, useQueryState } from "nuqs";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { upsertCompanyAction } from "@/actions/upsert-company";
@@ -87,7 +88,9 @@ export function CompanyForm({
     },
   });
 
-  const id = data?.id ?? nanoid();
+  // Generate the id once per mount. Recomputing it on every render would change
+  // the submitted id (and logo upload path) and defeat duplicate prevention.
+  const [id] = useState(() => data?.id ?? nanoid());
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

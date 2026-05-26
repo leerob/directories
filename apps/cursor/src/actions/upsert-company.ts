@@ -5,6 +5,10 @@ import { z } from "zod";
 import { createClient } from "@/utils/supabase/server";
 import { ActionError, authActionClient } from "./safe-action";
 
+// Postgres unique_violation. Raised when an insert/update collides with the
+// case-insensitive company name index (companies_name_key_unique).
+const UNIQUE_VIOLATION = "23505";
+
 export const upsertCompanyAction = authActionClient
   .metadata({
     actionName: "upsert-company",
@@ -27,7 +31,7 @@ export const upsertCompanyAction = authActionClient
     async ({
       parsedInput: {
         id,
-        name,
+        name: rawName,
         image,
         slug,
         location,
@@ -41,6 +45,9 @@ export const upsertCompanyAction = authActionClient
     }) => {
       const supabase = await createClient();
 
+      const name = rawName.trim();
+      const nameKey = name.toLowerCase();
+
       // Only treat the request as an edit when a row with the provided id
       // already exists. The form always generates a client-side nanoid for new
       // companies, so the presence of `id` alone does not imply an edit.
@@ -51,36 +58,84 @@ export const upsertCompanyAction = authActionClient
           .eq("id", id)
           .maybeSingle();
 
-        if (existing && existing.owner_id !== userId) {
-          throw new ActionError(
-            "You don't have permission to edit this company",
-          );
+        if (existing) {
+          if (existing.owner_id !== userId) {
+            throw new ActionError(
+              "You don't have permission to edit this company",
+            );
+          }
+
+          const { data, error } = await supabase
+            .from("companies")
+            .update({
+              name,
+              image,
+              location,
+              bio,
+              website,
+              social_x_link,
+              public: is_public,
+            })
+            .eq("id", id)
+            .select("id, slug")
+            .single();
+
+          if (error) {
+            if (error.code === UNIQUE_VIOLATION) {
+              throw new ActionError("A company with this name already exists.");
+            }
+            throw new ActionError(error.message);
+          }
+
+          if (shouldRedirect) {
+            redirect(`/c/${data?.slug}`);
+          }
+
+          return data;
         }
       }
 
+      // New company. Insert directly so the case-insensitive unique index can
+      // reject duplicates even under concurrent/double submissions. The slug is
+      // assigned by the `generate_company_slug` trigger.
       const { data, error } = await supabase
         .from("companies")
-        .upsert(
-          {
-            id: id ?? undefined,
-            name,
-            image,
-            location,
-            slug: slug ?? undefined,
-            bio,
-            website,
-            social_x_link,
-            public: is_public,
-            owner_id: userId,
-          },
-          {
-            onConflict: "id",
-          },
-        )
+        .insert({
+          id: id ?? undefined,
+          name,
+          image,
+          location,
+          slug: slug ?? undefined,
+          bio,
+          website,
+          social_x_link,
+          public: is_public,
+          owner_id: userId,
+        })
         .select("id, slug")
         .single();
 
       if (error) {
+        // A company with this name already exists. Reuse it instead of creating
+        // a duplicate so retries/double-clicks resolve to the same record.
+        if (error.code === UNIQUE_VIOLATION) {
+          const { data: existing } = await supabase
+            .from("companies")
+            .select("id, slug")
+            .eq("name_key", nameKey)
+            .maybeSingle();
+
+          if (existing) {
+            if (shouldRedirect) {
+              redirect(`/c/${existing.slug}`);
+            }
+
+            return existing;
+          }
+
+          throw new ActionError("A company with this name already exists.");
+        }
+
         throw new ActionError(error.message);
       }
 
