@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { DeleteCompanyButton } from "./delete-company-button";
 import { EditCompanyModal } from "../modals/edit-company-modal";
 
 export function CompanyHeader({
@@ -47,7 +48,8 @@ export function CompanyHeader({
       </div>
 
       {isOwner && (
-        <div className="self-start md:ml-auto md:self-center">
+        <div className="flex self-start gap-2 md:ml-auto md:self-center">
+          <DeleteCompanyButton id={id} slug={slug} />
           <EditCompanyModal
             data={{
               id,
