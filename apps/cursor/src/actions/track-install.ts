@@ -4,7 +4,11 @@ import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { installGlobalLimit, installPerPluginLimit } from "@/lib/rate-limit";
 import { createClient as createAdminClient } from "@/utils/supabase/admin-client";
-import { ActionError, actionClient } from "./safe-action";
+import { actionClient } from "./safe-action";
+
+export type TrackInstallResult =
+  | { tracked: true }
+  | { tracked: false; rateLimited: true };
 
 export const trackInstallAction = actionClient
   .metadata({
@@ -23,7 +27,7 @@ export const trackInstallAction = actionClient
     ]);
 
     if (!global.success || !perPlugin.success) {
-      throw new ActionError("Rate limit exceeded. Please try again later.");
+      return { tracked: false, rateLimited: true } satisfies TrackInstallResult;
     }
 
     const admin = await createAdminClient();
@@ -34,4 +38,6 @@ export const trackInstallAction = actionClient
 
     revalidatePath("/");
     revalidatePath(`/plugins/${slug}`);
+
+    return { tracked: true } satisfies TrackInstallResult;
   });

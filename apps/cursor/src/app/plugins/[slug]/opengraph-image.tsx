@@ -1,15 +1,17 @@
 import { getPluginBySlug } from "@/data/queries";
 import {
-  CursorIcon,
   createOGResponse,
   formatCount,
   OG,
   OGLayout,
+  resolveOgImageUrl,
 } from "@/lib/og";
 
 export const alt = "Plugin";
 export const size = { width: OG.width, height: OG.height };
 export const contentType = "image/png";
+// Must be a literal — Next.js segment config does not accept imported values.
+export const revalidate = 86400;
 
 export default async function Image({
   params,
@@ -35,6 +37,8 @@ export default async function Image({
       </OGLayout>,
     );
   }
+
+  const logoUrl = resolveOgImageUrl(data.logo);
 
   const components = data.plugin_components ?? [];
   const typeCounts: Record<string, number> = {};
@@ -62,9 +66,9 @@ export default async function Image({
               padding: 6,
             }}
           >
-            {data.logo ? (
+            {logoUrl ? (
               <img
-                src={data.logo}
+                src={logoUrl}
                 width={60}
                 height={60}
                 style={{ borderRadius: 10, objectFit: "contain" }}
@@ -72,6 +76,7 @@ export default async function Image({
             ) : (
               <span
                 style={{
+                  display: "flex",
                   fontSize: 32,
                   fontWeight: 700,
                   color: OG.textSecondary,
@@ -90,6 +95,7 @@ export default async function Image({
           >
             <div
               style={{
+                display: "flex",
                 fontSize: 48,
                 fontWeight: 700,
                 color: OG.text,
@@ -100,7 +106,13 @@ export default async function Image({
               {data.name}
             </div>
             {data.author_name && (
-              <div style={{ fontSize: 22, color: OG.textSecondary }}>
+              <div
+                style={{
+                  display: "flex",
+                  fontSize: 22,
+                  color: OG.textSecondary,
+                }}
+              >
                 by {data.author_name}
               </div>
             )}
@@ -110,6 +122,7 @@ export default async function Image({
         {data.description && (
           <div
             style={{
+              display: "flex",
               fontSize: 24,
               color: OG.textSecondary,
               lineHeight: 1.4,
@@ -146,13 +159,15 @@ export default async function Image({
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            <span style={{ fontWeight: 700 }}>
+            <span style={{ display: "flex", fontWeight: 700 }}>
               {formatCount(data.install_count)}
             </span>
           </div>
 
           {componentSummary && (
-            <div style={{ fontSize: 20, color: OG.textTertiary }}>
+            <div
+              style={{ display: "flex", fontSize: 20, color: OG.textTertiary }}
+            >
               {componentSummary}
             </div>
           )}
@@ -164,6 +179,7 @@ export default async function Image({
               <div
                 key={kw}
                 style={{
+                  display: "flex",
                   fontSize: 16,
                   color: OG.textSecondary,
                   padding: "6px 14px",

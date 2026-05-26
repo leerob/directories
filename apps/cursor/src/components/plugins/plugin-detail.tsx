@@ -13,6 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useAction } from "next-safe-action/hooks";
 import { useCallback, useEffect, useState } from "react";
+import { toast } from "sonner";
 import { trackInstallAction } from "@/actions/track-install";
 import { CursorDeepLink } from "@/components/cursor-deeplink";
 import { Card, CardContent } from "@/components/ui/card";
@@ -211,10 +212,17 @@ export function PluginDetailView({ plugin }: { plugin: PluginRow }) {
     });
   }, [plugin.owner_id]);
 
-  const { execute: trackInstall } = useAction(trackInstallAction);
+  const { execute: trackInstall } = useAction(trackInstallAction, {
+    onSuccess: ({ data }) => {
+      if (data?.tracked) {
+        setInstallCount((c) => c + 1);
+      } else if (data?.rateLimited) {
+        toast("Too many installs right now. Please try again in a bit.");
+      }
+    },
+  });
 
   const handleInstall = useCallback(() => {
-    setInstallCount((c) => c + 1);
     trackInstall({ pluginId: plugin.id, slug: plugin.slug });
   }, [plugin.id, plugin.slug, trackInstall]);
 

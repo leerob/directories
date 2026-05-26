@@ -1,9 +1,15 @@
 import { getCompanyProfile } from "@/data/queries";
-import { createOGResponse, OG, OGLayout } from "@/lib/og";
+import {
+  createOGResponse,
+  OG,
+  OGLayout,
+  resolveOgImageUrl,
+} from "@/lib/og";
 
 export const alt = "Company Profile";
 export const size = { width: OG.width, height: OG.height };
 export const contentType = "image/png";
+export const revalidate = 86400;
 
 export default async function Image({
   params,
@@ -30,10 +36,12 @@ export default async function Image({
     );
   }
 
+  const logoUrl = resolveOgImageUrl(data.image);
+
   return createOGResponse(
     <OGLayout>
       <div style={{ display: "flex", alignItems: "center", gap: 40 }}>
-        {data.image && (
+        {logoUrl && (
           <div
             style={{
               display: "flex",
@@ -48,7 +56,7 @@ export default async function Image({
             }}
           >
             <img
-              src={data.image}
+              src={logoUrl}
               width={104}
               height={104}
               style={{ borderRadius: 14, objectFit: "contain" }}
@@ -66,6 +74,7 @@ export default async function Image({
         >
           <div
             style={{
+              display: "flex",
               fontSize: 52,
               fontWeight: 700,
               color: OG.text,
@@ -106,6 +115,7 @@ export default async function Image({
           {data.bio && (
             <div
               style={{
+                display: "flex",
                 fontSize: 22,
                 color: OG.textTertiary,
                 lineHeight: 1.4,

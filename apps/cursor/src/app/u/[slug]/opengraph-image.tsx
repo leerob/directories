@@ -1,9 +1,15 @@
 import { getUserProfile } from "@/data/queries";
-import { createOGResponse, OG, OGLayout } from "@/lib/og";
+import {
+  createOGResponse,
+  OG,
+  OGLayout,
+  resolveOgImageUrl,
+} from "@/lib/og";
 
 export const alt = "User Profile";
 export const size = { width: OG.width, height: OG.height };
 export const contentType = "image/png";
+export const revalidate = 86400;
 
 export default async function Image({
   params,
@@ -30,12 +36,14 @@ export default async function Image({
     );
   }
 
+  const avatarUrl = resolveOgImageUrl(data.image);
+
   return createOGResponse(
     <OGLayout>
       <div style={{ display: "flex", alignItems: "center", gap: 40 }}>
-        {data.image && (
+        {avatarUrl && (
           <img
-            src={data.image}
+            src={avatarUrl}
             width={140}
             height={140}
             style={{ borderRadius: "50%", border: `1px solid ${OG.border}` }}
@@ -52,6 +60,7 @@ export default async function Image({
         >
           <div
             style={{
+              display: "flex",
               fontSize: 52,
               fontWeight: 700,
               color: OG.text,
@@ -65,6 +74,7 @@ export default async function Image({
           {data.work && (
             <div
               style={{
+                display: "flex",
                 fontSize: 24,
                 color: OG.textSecondary,
                 lineHeight: 1.3,
@@ -77,6 +87,7 @@ export default async function Image({
           {data.bio && (
             <div
               style={{
+                display: "flex",
                 fontSize: 22,
                 color: OG.textTertiary,
                 lineHeight: 1.4,

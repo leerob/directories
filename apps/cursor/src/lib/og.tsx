@@ -17,6 +17,39 @@ export const OG = {
   cardBg: "#1b1913",
 };
 
+const OG_CACHE_CONTROL =
+  "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800";
+
+function ogSiteOrigin(): string {
+  const configured = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
+  if (configured) return configured;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  return "https://cursor.directory";
+}
+
+/**
+ * Satori requires absolute http(s) image URLs. Plugin logos are sometimes stored
+ * as site-relative paths (e.g. `assets/logo.png`).
+ */
+export function resolveOgImageUrl(
+  src: string | null | undefined,
+): string | null {
+  const trimmed = src?.trim();
+  if (!trimmed) return null;
+
+  try {
+    const parsed = new URL(trimmed);
+    if (parsed.protocol === "http:" || parsed.protocol === "https:") {
+      return parsed.toString();
+    }
+  } catch {
+    // Fall through — treat as a path relative to the site origin.
+  }
+
+  const path = trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+  return new URL(path, ogSiteOrigin()).toString();
+}
+
 export async function loadFonts() {
   const [regular, bold] = await Promise.all([
     readFile(
@@ -121,6 +154,9 @@ export async function createOGResponse(element: ReactElement) {
     width: OG.width,
     height: OG.height,
     fonts,
+    headers: {
+      "Cache-Control": OG_CACHE_CONTROL,
+    },
   });
 }
 
@@ -130,6 +166,7 @@ export async function createListingOG(title: string, subtitle: string) {
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
         <div
           style={{
+            display: "flex",
             fontSize: 64,
             fontWeight: 700,
             color: OG.text,
@@ -141,6 +178,7 @@ export async function createListingOG(title: string, subtitle: string) {
         </div>
         <div
           style={{
+            display: "flex",
             fontSize: 28,
             color: OG.textSecondary,
             lineHeight: 1.4,

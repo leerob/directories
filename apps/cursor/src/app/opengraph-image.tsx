@@ -1,8 +1,14 @@
-import { CursorIcon, createOGResponse, OG, OGLayout } from "@/lib/og";
+import {
+  CursorIcon,
+  createOGResponse,
+  OG,
+  OGLayout,
+} from "@/lib/og";
 
 export const alt = "Cursor Directory";
 export const size = { width: OG.width, height: OG.height };
 export const contentType = "image/png";
+export const revalidate = 86400;
 
 export default async function Image() {
   return createOGResponse(
@@ -20,6 +26,7 @@ export default async function Image() {
         <CursorIcon size={80} />
         <div
           style={{
+            display: "flex",
             fontSize: 56,
             fontWeight: 700,
             color: OG.text,
@@ -31,6 +38,7 @@ export default async function Image() {
         </div>
         <div
           style={{
+            display: "flex",
             fontSize: 26,
             color: OG.textSecondary,
             lineHeight: 1.4,
