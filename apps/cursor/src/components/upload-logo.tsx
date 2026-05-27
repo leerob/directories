@@ -40,8 +40,10 @@ export default function UploadLogo({
     // Show an optimistic preview while the upload is in flight. It is reverted
     // below if the upload fails so the UI never shows an image that wasn't
     // actually saved.
+    let allowReaderPreview = true;
     const reader = new FileReader();
     reader.onload = (e) => {
+      if (!allowReaderPreview) return;
       setPreview(e.target?.result as string);
     };
     reader.readAsDataURL(file);
@@ -59,6 +61,7 @@ export default function UploadLogo({
 
       if (!user) {
         toast.error("Please sign in to upload an image.");
+        allowReaderPreview = false;
         setPreview(previousPreview);
         return;
       }
@@ -82,6 +85,7 @@ export default function UploadLogo({
         data: { publicUrl },
       } = supabase.storage.from("avatars").getPublicUrl(path);
 
+      allowReaderPreview = false;
       setPreview(publicUrl);
       onUpload?.(publicUrl);
     } catch (error) {
@@ -89,6 +93,7 @@ export default function UploadLogo({
       toast.error(
         error instanceof Error ? error.message : "Failed to upload image.",
       );
+      allowReaderPreview = false;
       setPreview(previousPreview);
     } finally {
       setIsUploading(false);
