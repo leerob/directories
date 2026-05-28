@@ -54,12 +54,8 @@ begin
     keywords = excluded.keywords,
     author_name = excluded.author_name,
     author_url = excluded.author_url,
-    active = excluded.active,
     plan = excluded.plan,
-    scan_status = excluded.scan_status,
-    discovery_source = excluded.discovery_source,
-    verified = excluded.verified,
-    verified_at = coalesce(public.plugins.verified_at, excluded.verified_at)
+    discovery_source = excluded.discovery_source
   returning id into v_plugin_id;
 
   delete from public.plugin_components
