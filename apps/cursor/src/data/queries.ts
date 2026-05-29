@@ -86,13 +86,21 @@ export async function getUserCompanies(userId: string) {
   return { data, error };
 }
 
-export async function getUserPlugins(userId: string) {
+export async function getUserPlugins(
+  userId: string,
+  { includeInactive = false }: { includeInactive?: boolean } = {},
+) {
   const supabase = await createClient();
-  const { data, error } = await supabase
+  let query = supabase
     .from("plugins")
     .select("*, plugin_components(*)")
-    .eq("owner_id", userId)
-    .eq("active", true)
+    .eq("owner_id", userId);
+
+  if (!includeInactive) {
+    query = query.eq("active", true);
+  }
+
+  const { data, error } = await query
     .order("install_count", { ascending: false })
     .order("created_at", { ascending: false });
 

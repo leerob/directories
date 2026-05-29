@@ -24,6 +24,8 @@ function toPluginCard(plugin: PluginRow): PluginCardData {
     mcpCount: components.filter((c) => c.type === "mcp_server").length,
     keywords: plugin.keywords,
     installCount: plugin.install_count,
+    verified: plugin.verified,
+    unpublished: !plugin.active,
     href: `/plugins/${plugin.slug}`,
   };
 }
@@ -35,7 +37,7 @@ export async function ProfilePlugins({
   userId: string;
   isOwner: boolean;
 }) {
-  const { data } = await getUserPlugins(userId);
+  const { data } = await getUserPlugins(userId, { includeInactive: isOwner });
   const plugins = (data ?? []).map(toPluginCard);
 
   if (!plugins?.length) {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import { EditPluginForm } from "@/components/forms/edit-plugin-form";
+import { PluginOwnerMenu } from "@/components/plugins/plugin-owner-menu";
 import { Login } from "@/components/login";
 import { getPluginBySlug } from "@/data/queries";
 import { getSession } from "@/utils/supabase/auth";
@@ -41,8 +42,9 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <div className="min-h-screen px-6 pt-24 md:pt-32 pb-32">
       <div className="mx-auto w-full max-w-lg">
-        <div className="mb-10">
+        <div className="mb-10 flex items-start justify-between gap-4">
           <h1 className="marketing-page-title mb-3">Edit Plugin</h1>
+          <PluginOwnerMenu plugin={plugin} />
         </div>
 
         <EditPluginForm data={plugin} />

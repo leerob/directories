@@ -16,6 +16,7 @@ export type PluginCardData = {
   keywords?: string[];
   installCount?: number;
   verified?: boolean;
+  unpublished?: boolean;
   href: string;
 };
 
@@ -57,6 +58,11 @@ export function PluginCard({ plugin }: { plugin: PluginCardData }) {
             <h3 className="flex min-w-0 items-center gap-1.5 truncate text-sm font-medium tracking-[0.005em] text-foreground">
               <span className="truncate">{plugin.name}</span>
               {plugin.verified && <VerifiedBadge size="sm" />}
+              {plugin.unpublished && (
+                <span className="shrink-0 rounded border border-border px-1.5 py-0.5 text-[10px] font-mono uppercase text-muted-foreground">
+                  Unpublished
+                </span>
+              )}
             </h3>
           </div>
 
