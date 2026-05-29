@@ -20,7 +20,7 @@ export const togglePluginListingAction = authActionClient
 
     const { data: existing, error: fetchError } = await supabase
       .from("plugins")
-      .select("id, owner_id, slug, permanently_blocked")
+      .select("id, owner_id, slug, permanently_blocked, scan_status")
       .eq("id", id)
       .single();
 
@@ -38,6 +38,12 @@ export const togglePluginListingAction = authActionClient
       );
     }
 
+    if (active && existing.scan_status !== "safe") {
+      throw new ActionError(
+        "This plugin cannot be published until the security scan passes.",
+      );
+    }
+
     const { data, error } = await supabase
       .from("plugins")
       .update({ active })
@@ -46,8 +52,8 @@ export const togglePluginListingAction = authActionClient
       .select("slug")
       .single();
 
-    if (error) {
-      throw new ActionError(error.message);
+    if (error || !data) {
+      throw new ActionError(error?.message ?? "Plugin not found.");
     }
 
     revalidatePath("/");

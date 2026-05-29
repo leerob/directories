@@ -126,7 +126,8 @@ export function PluginOwnerMenu({ plugin }: Props) {
 
   const busy = isRequesting || isToggling || isDeleting;
   const canVerify = !plugin.verified && !requestPending;
-  const canPublish = !active && !plugin.permanently_blocked;
+  const canPublish =
+    !active && !plugin.permanently_blocked && plugin.scan_status === "safe";
 
   return (
     <>
